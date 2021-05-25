@@ -1,0 +1,609 @@
+@import "./Colors";
+@import "./svgBackground";
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+$navTextTransparent: rgba(255,255,255,.8);
+$navText: $mainOrange;
+$navbarGap: 16px;
+
+.App{
+    background: $secondaryOrange;
+    min-height: 100vh;
+    background-image: url($cogBackground);
+}
+
+.logo img{
+    height: 50px !important;
+}
+
+.navbar-custom {
+    background-color: $darkPurple;
+
+    #flag {
+        width: 20px;
+    }
+
+    .navbar-brand, .navbar-text{
+        color: $navTextTransparent;
+    }
+
+    .navbar-nav{
+        .nav-item{
+            display: flex;
+            flex-direction: row-reverse;
+        }
+        .customNavbarLink{
+            color: $navTextTransparent;
+            text-decoration: none;
+            display: inline-block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: $navbarGap/2;
+            margin-right: $navbarGap/2;
+        }
+
+        .customNavbarLink:hover{
+            color: $navText;
+        }
+
+        .customNavbarLink.customNavbarActiveLink{
+            color: $navText;
+            font-weight: bold;
+        }
+
+        #settingsButton{
+            display: block;
+            box-sizing: border-box;
+            margin-left: $navbarGap/2;
+            margin-right: $navbarGap/2;
+            margin-top: 6px;
+            margin-bottom: 6px;
+            height: 36px;
+            line-height: 18px;
+            color: $navTextTransparent;
+            border-color: $navTextTransparent;
+            border-width: 2px;
+            background-color: transparent;
+            &:hover{
+                background-color: rgba($navTextTransparent, 0.8);
+                color: $darkPurple;
+                border-color: $navTextTransparent;
+            }
+            &:focus{
+                outline-color: initial;
+                box-shadow: 0 0 0 0.2rem rgba(123, 95, 165,.50);
+            }
+        }
+    }
+
+    .navbar-dropdown{
+        margin-left: $navbarGap/2;
+        margin-right: $navbarGap/2;
+        margin-top:6px;
+        margin-bottom:6px;
+        
+        button{
+            background-color: $mainOrange;
+            border: none;
+        }
+
+        div{
+            background-color: $mainOrange;
+        }
+    }
+
+    .navbar-dropdown.show{
+        margin-left: $navbarGap/2;
+        margin-right: $navbarGap/2;
+        button{
+            background-color: $darkPurple;
+            border: none;
+        }
+
+        div{
+            background-color: $mainOrange;
+
+            button{
+                background-color: $mainOrange;
+            }
+
+            button:hover{
+                background-color: $secondaryOrange;
+            }
+        }
+    }
+}
+
+//Footer
+footer{
+    background: $darkPurple;
+    color:  rgba(255,255,255,.6);
+}
+
+//About page
+a.iconWrapper{
+    color: $darkPurple;
+    height: 48px !important;
+    min-height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    svg{
+        font-size: 2rem;
+        transition: font-size, color 2s ease-in-out;
+        &:hover{
+            font-size: 48px;
+            color: $lightPurple;
+        }
+    }
+}
+
+.about{
+    padding-top: 100px;
+    padding-bottom: 5rem;
+    color: $darkPurple;
+}
+
+
+.expander-icon{
+    font-size: 2rem;
+    transition: font-size .5s ease-in-out;
+    cursor: pointer;
+}
+
+.expander-icon:hover{
+    font-size: 1.5rem;
+}
+
+#profile-pic{
+    border: $darkPurple solid 8px;
+    width: 300px;
+}
+
+
+.purpleButtonOutline{
+    color: $darkPurple;
+    border-color: $darkPurple;
+    border-width: 3px;
+    background-color: transparent;
+    margin-bottom: 2rem;
+    &:hover{
+        background-color: $darkPurple;
+        color: $secondaryOrange;
+        border-color: $darkPurple;
+    }
+    &:active{
+        background-color: $darkPurple !important;
+        color: $secondaryOrange !important;
+        border-color: $darkPurple !important;
+    }
+    &:focus{
+        outline-color: $lightPurple;
+        box-shadow: 0 0 0 0.2rem rgba(123, 95, 165,.50);
+    }
+    &.open{
+        background-color: $darkPurple !important;
+        color: $secondaryOrange !important;
+        border-color: $darkPurple !important;
+    }
+}
+
+.svgLogo{
+    display: block;
+    max-width:100px;
+    width: auto;
+    height: auto;
+}
+
+.AboutTitle{
+    padding-bottom: 0.8em;;
+}
+
+.AboutDetailsRow{
+    padding-bottom: 3em;
+}
+
+.AboutDetailsParagraph {
+    margin-bottom: 0px;
+}
+
+.expanded-section{
+    background-color: rgba(lighten($lightPurple, 20%), 0.72);
+    margin-bottom: 15px;
+    z-index: 1;
+    margin-top: -2rem;
+    padding-top: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+//Experience
+$mostLightPurple: lighten($lightPurple, 10%);
+
+#experience{
+    padding-top: 100px;
+    padding-bottom: 5rem;
+    color: $darkPurple;
+    h5{
+        padding-top: 0.5em;
+    }
+    .workPlaceLink, .educationPlaceLink{
+        color: $darkPurple;
+        text-decoration: none;
+    }
+    
+    .workPlaceLink:hover, .educationPlaceLink:hover{
+        color: $darkPurple;
+        text-decoration: underline $darkPurple wavy !important;
+        cursor: pointer !important;
+    }
+    
+    .vertical-timeline-element{
+        cursor: default;
+    }
+    
+    .vertical-timeline-element-content p {
+        margin-top: 0.5em !important;
+        margin-bottom: 0.5em !important;
+        line-height: normal;
+    }
+
+    .vertical-timeline-element-content{
+        background-color: $mostLightPurple;
+        box-shadow: 0 3px 0 lighten($mostLightPurple, 20%);
+        border-radius: 0.7em;
+        &::before{
+            border-right-color: $mostLightPurple;
+        }
+    }
+    
+    .vertical-timeline::before{
+        background-color: $darkPurple;
+    }
+    .vertical-timeline-element-icon{
+        background-color: $secondaryOrange;
+        color: $darkPurple;
+        box-shadow: 0 0 0 4px $darkPurple, inset 0 2px 0 rgba(0,0,0,.08), 0 3px 0 4px rgba(0,0,0,.05);
+    }
+    
+    @media only screen and (min-width: 1170px){
+        .vertical-timeline--two-columns .vertical-timeline-element-content::before{
+            border-color: transparent;
+            border-left-color: $mostLightPurple;
+        }
+        .vertical-timeline--two-columns .vertical-timeline-element.vertical-timeline-element--right .vertical-timeline-element-content::before, .vertical-timeline--two-columns .vertical-timeline-element:nth-child(even):not(.vertical-timeline-element--left) .vertical-timeline-element-content::before{
+            border-color: transparent;
+            border-right-color: $mostLightPurple;
+        }
+    
+        .vertical-timeline-element{
+            &.rtl {
+                .vertical-timeline-element-date{
+                    direction: rtl;
+                }
+            }
+        }
+    }
+    
+    @media (max-width: 1169px){
+        .vertical-timeline-element{
+            &.rtl {
+                .vertical-timeline-element-content{
+                    direction: rtl;
+                }
+                .vertical-timeline-element-date{
+                    float: right;
+                }
+            }
+        }
+    }
+    
+    .vertical-timeline-element-date{
+        font-size: large !important;
+        font-weight: bolder !important;
+    }
+    
+    .rdt_TableHeadRow > div{
+        font-weight: bolder !important;
+        font-size: larger;
+    }
+    .rdt_TableCell > div{
+        font-size: 1.1rem !important;
+    }
+    
+    .showCoursesButton{
+        color: $darkPurple !important;
+        font-weight: bold !important;
+        border-color: $darkPurple !important;
+        border-width: 2px !important;
+        background-color: rgba(255, 255, 255, 0.7) !important;
+        &:hover{
+            background-color: $darkPurple !important;
+            color: $secondaryOrange !important;
+            border-color: $darkPurple !important;
+        }
+        &:active{
+            background-color: $darkPurple !important;
+            color: $secondaryOrange !important;
+            border-color: $darkPurple !important;
+        }
+        &:focus{
+            outline-color: $lightPurple !important;
+            box-shadow: 0 0 0 0.2rem rgba(123, 95, 165,.50) !important;
+        }
+    }
+}
+
+//Hobbies
+#hobbies{
+    a.iconWrapper{
+        color: $darkPurple;
+        text-decoration: none;
+        vertical-align: middle;
+        font-size: 48px;
+        transition: font-size 0.5s ease-in-out;
+    }
+    
+    a.iconWrapper:hover{
+        font-size: 2rem;
+        vertical-align: middle;
+    }
+    
+    #hobbies{
+        padding-top: 100px;
+        padding-bottom: 5rem;
+        color: $darkPurple;
+        .react-card-flip{
+            margin-bottom: 20px;
+        }
+        .card {
+            height: 350px;
+            background-color: $darkPurple;
+            color: $secondaryOrange;
+            border: $darkPurple solid 2px;
+        
+            &.cardFront {
+                background-color: $lightPurple;
+            }
+        }
+        
+        .card-body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+        
+            h1 {
+                text-align: center;
+            }
+        }
+        
+        .card-footer{
+            border: none !important;
+            background-color: transparent;
+        }
+        
+        #cookingBack{
+            background: url("/assets/img/cooking.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        #travellingBack{
+            background: url("/assets/img/travelling.jpeg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .card-img-overlay{
+            padding: 0px;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+        }
+        
+        .card-text {
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.7);
+            font-size: 1.2rem;
+            color: $darkPurple;
+            border: $darkPurple solid 2px;
+        }
+        
+        .purpleButtonOutline{
+            color: $darkPurple;
+            font-weight: bold;
+            border-color: $darkPurple;
+            border-width: 2px;
+            background-color: rgba(255, 255, 255, 0.7);
+            &:hover{
+                background-color: $darkPurple;
+                color: $secondaryOrange;
+                border-color: $darkPurple;
+            }
+            &:active{
+                background-color: $darkPurple !important;
+                color: $secondaryOrange !important;
+                border-color: $darkPurple !important;
+            }
+            &:focus{
+                outline-color: $lightPurple;
+                box-shadow: 0 0 0 0.2rem rgba(123, 95, 165,.50);
+            }
+        }
+    }
+}
+
+//Portfolio
+#portfolio{
+    padding-top: 100px;
+    padding-bottom: 5rem;
+    color: $darkPurple;
+
+    .ProjectCard{
+        background-color: lighten($lightPurple, 20%);
+        border-color: $darkPurple;
+        margin-bottom: 10px;
+        .ProjectTitle{
+            text-align: center;
+        }
+        .ProjectTagContainer{
+            min-height: 50px;
+            .ProjectTag{
+                background-color: $secondaryOrange;
+        
+                &.ltr{
+                    margin-left: 0px;
+                    margin-right: 3px;
+                }
+                &.rtl{
+                    margin-left: 3px;
+                    margin-right: 0px;
+                }
+            }
+    
+        }
+        
+        hr{
+            border-top: 1px solid $darkPurple;
+        }
+
+        .ProjectDescription{
+            height: 300px;
+            overflow: auto;
+            white-space: pre-line;
+
+            &.extended{
+                height: 340px;
+                margin-bottom: 1em;
+            }
+        }
+
+        .ProjectButtonContainer{
+            margin-top: 1em;
+            height: 40px;
+
+            .btn{
+                color: $secondaryOrange;
+                font-weight: bold;
+                border-color: $secondaryOrange;
+                border-width: 2px;
+                background-color: rgba(255, 255, 255, 0.4);
+                &:hover{
+                    background-color: $secondaryOrange;
+                    color: $darkPurple;
+                    border-color: $secondaryOrange;
+                }
+                &:active{
+                    background-color: $secondaryOrange !important;
+                    color: $darkPurple !important;
+                    border-color: $secondaryOrange !important;
+                }
+                &:focus{
+                    outline-color: lighten($secondaryOrange, 20%);
+                    box-shadow: 0 0 0 0.2rem lighten($secondaryOrange, 20%);
+                }
+            }
+        }
+    }
+}
+
+//Ranker
+.rankerPoint{
+    color: #31263E;
+}
+
+//Softskills
+#softskills{
+    padding-top: 100px;
+    padding-bottom: 5rem;
+    color: $darkPurple;
+    .react-card-flip{
+        margin-bottom: 20px;
+    }
+    .card {
+        height: 350px;
+        background-color: $darkPurple;
+        color: $secondaryOrange;
+        border: $darkPurple solid 2px;
+    
+        &.cardFront {
+            background-color: $lightPurple;
+        }
+    }
+    
+    .card-body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    
+        h1 {
+            text-align: center;
+        }
+    }
+    
+    .card-footer{
+        border: none !important;
+        background-color: transparent;
+    }
+    
+    #learningBack{
+        background: url("/assets/img/learning.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    #responsabilityBack{
+        background: url("/assets/img/travelling.jpeg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    .card-img-overlay{
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+    }
+    
+    .card-text {
+        padding: 20px;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.7);
+        font-size: 1.2rem;
+        color: $darkPurple;
+        border: $darkPurple solid 2px;
+    }
+    
+    .purpleButtonOutline{
+        color: $darkPurple;
+        font-weight: bold;
+        border-color: $darkPurple;
+        border-width: 2px;
+        background-color: rgba(255, 255, 255, 0.7);
+        &:hover{
+            background-color: $darkPurple;
+            color: $secondaryOrange;
+            border-color: $darkPurple;
+        }
+        &:active{
+            background-color: $darkPurple !important;
+            color: $secondaryOrange !important;
+            border-color: $darkPurple !important;
+        }
+        &:focus{
+            outline-color: $lightPurple;
+            box-shadow: 0 0 0 0.2rem rgba(123, 95, 165,.50);
+        }
+    }
+}
