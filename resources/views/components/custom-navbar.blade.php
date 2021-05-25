@@ -2,9 +2,19 @@
     <a class="logo navbar-brand" href="/about">
         <img src="{{asset("assets/img/logo.svg")}}" alt="SB.dev logo" height="50"/>
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a href="{{url("/about")}}" class="nav-link active customNavbarLink customNavbarActiveLink">About me</a></li>
+            <li class="nav-item"><a href="{{url("/experience")}}" class="nav-link customNavbarLink">Experience</a></li>
+            <li class="nav-item"><a href="{{url("/softskills")}}" class="nav-link customNavbarLink">Soft skills</a></li>
+            <li class="nav-item"><a href="{{url("/portfolio")}}" class="nav-link customNavbarLink">Portfolio</a></li>
+            <li class="nav-item"><a href="{{url("/hobbies")}}" class="nav-link customNavbarLink">Hobbies</a></li>
+            <li class="nav-item"><button class="btn btn-primary" id="settingsButton">Settings</button></li>
+        </ul>
+    </div>
 </nav>
 <!--
 <Navbar className="navbar-custom" expand="md" dir={dir} fixed="top" dark>

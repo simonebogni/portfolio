@@ -1,8 +1,7 @@
 @import "./Colors";
 @import "./svgBackground";
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+
 
 $navTextTransparent: rgba(255,255,255,.8);
 $navText: $mainOrange;
@@ -19,7 +18,7 @@ $navbarGap: 16px;
 }
 
 .navbar-custom {
-    background-color: $darkPurple;
+    background-color: $darkPurple !important;
 
     #flag {
         width: 20px;
