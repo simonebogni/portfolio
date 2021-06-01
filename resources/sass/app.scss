@@ -7,12 +7,20 @@ $navTextTransparent: rgba(255,255,255,.8);
 $navText: $mainOrange;
 $navbarGap: 16px;
 
-.App{
+//General
+#app{
     background: $secondaryOrange;
     min-height: 100vh;
     background-image: url($cogBackground);
 }
 
+main.content{
+    padding-top: 100px;
+    padding-bottom: 5rem;
+    color: $darkPurple;
+}
+
+//Navbar
 .logo img{
     height: 50px !important;
 }
@@ -123,6 +131,10 @@ footer{
 }
 
 //About page
+#about{
+    
+}
+
 a.iconWrapper{
     color: $darkPurple;
     height: 48px !important;
@@ -139,12 +151,6 @@ a.iconWrapper{
             color: $lightPurple;
         }
     }
-}
-
-.about{
-    padding-top: 100px;
-    padding-bottom: 5rem;
-    color: $darkPurple;
 }
 
 
@@ -222,13 +228,11 @@ a.iconWrapper{
     border-bottom-right-radius: 10px;
 }
 
+
 //Experience
 $mostLightPurple: lighten($lightPurple, 10%);
 
 #experience{
-    padding-top: 100px;
-    padding-bottom: 5rem;
-    color: $darkPurple;
     h5{
         padding-top: 0.5em;
     }
@@ -443,9 +447,6 @@ $mostLightPurple: lighten($lightPurple, 10%);
 
 //Portfolio
 #portfolio{
-    padding-top: 100px;
-    padding-bottom: 5rem;
-    color: $darkPurple;
 
     .ProjectCard{
         background-color: lighten($lightPurple, 20%);
@@ -522,9 +523,6 @@ $mostLightPurple: lighten($lightPurple, 10%);
 
 //Softskills
 #softskills{
-    padding-top: 100px;
-    padding-bottom: 5rem;
-    color: $darkPurple;
     .react-card-flip{
         margin-bottom: 20px;
     }
