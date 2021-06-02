@@ -17,6 +17,10 @@ mix.js('resources/js/app.js', 'public/js')
         require('tailwindcss'),
     ])
     .sass('resources/sass/app.scss', 'public/css')
+    .copy(
+        'node_modules/@fortawesome/fontawesome-free/webfonts',
+        'public/webfonts'
+    )
     .sourceMaps();
 
 if (mix.inProduction()) {

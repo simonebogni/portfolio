@@ -1,7 +1,11 @@
+$fa-font-path: "../webfonts";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+
 @import "./Colors";
 @import "./svgBackground";
-
-
 
 $navTextTransparent: rgba(255,255,255,.8);
 $navText: $mainOrange;
@@ -132,7 +136,9 @@ footer{
 
 //About page
 #about{
-    
+    .languageRatingMeaning {
+        font-weight: bold;
+    }
 }
 
 a.iconWrapper{
