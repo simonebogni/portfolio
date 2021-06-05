@@ -13,11 +13,13 @@ class AboutController extends Controller
      */
     public function index()
     {
-        $languages = app('App\Http\Controllers\LanguageController')->getLanguages();
+        $languages = LanguageController::getLanguages();
         $languageRanksMeaning = LanguageController::getRatingsMeaning();
+        $skillCategories = SkillCategoryController::getCategoriesWithSkills();
         return view('about', [
             'languages' => $languages,
             'languageRanksMeaning' => $languageRanksMeaning,
+            'skillCategories' => $skillCategories
         ]);
     }
 }

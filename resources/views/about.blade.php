@@ -37,7 +37,18 @@
             </div>
         </div>
         <div class="row mt-5 justify-content-center">
-
+            @foreach ($skillCategories as $category)
+            <div class="col-12 col-md skill-category-button">
+                <button class="btn btn-block purpleButtonOutline">
+                    <h2 class="h2 text-center">
+                        @if (isset($category->icon_class))
+                            <i class="{{$category->icon_class}}"></i>&nbsp;
+                        @endif
+                        {{$category->name}}
+                    </h2>
+                </button>
+            </div>
+            @endforeach
         </div>
     @endif
 </div>

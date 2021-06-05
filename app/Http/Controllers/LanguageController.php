@@ -11,7 +11,7 @@ class LanguageController extends Controller
     /**
      * Return a collection of all the languages
      */
-    public function getLanguages(){
+    public static function getLanguages(){
         return Language::orderByDesc('rating')
             ->get();
     }

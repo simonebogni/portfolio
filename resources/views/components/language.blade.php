@@ -9,6 +9,10 @@
         </div>
     </div>
     @if (isset($certificate_level))
-        <p><a href="{{$certificate_img_path}}" target="_blank">{{$certificate_level}}</a></p>
+    <div class="row">
+        <div class="col text-center">
+            Certificate - <a href="{{$certificate_img_path}}" target="_blank"><strong>{{$certificate_level}}</strong> <i class="fas fa-external-link-alt certificate-link-icon"></i></a>
+        </div>
+    </div>
     @endif
 </div>
