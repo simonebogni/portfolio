@@ -17,7 +17,7 @@ class CreateSkillSubcategoriesTable extends Migration
             $table->id();
             $table->string('name');
             $table->integer('order');
-            $table->foreignId('about_category_id');
+            $table->foreignId('skill_category_id');
             $table->softDeletes();
             $table->timestamps();
         });

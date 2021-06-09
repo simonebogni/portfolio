@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Skill extends Model
 {
     use HasFactory;
+
+    /**
+     * Get the subcategory of this skill
+     */
+    public function subcategory(){
+        return $this->belongsTo(SkillSubcategory::class);
+    }
 }

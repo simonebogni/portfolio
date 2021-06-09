@@ -19,12 +19,13 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
     <body>
-        <div id="app">
+        <div id="app" verbosity="false">
             <x-custom-navbar/>
-            <main class="container content">
+            <main class="container-fluid content">
                 @yield('content')
             </main>
             <x-footer/>
         </div>
     </body>
+    @yield('scripts')
 </html>

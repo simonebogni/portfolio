@@ -15,4 +15,11 @@ class SkillSubcategory extends Model
     public function category(){
         return $this->belongsTo(SkillCategory::class);
     }
+
+    /**
+     * Get the skills of this subcatory
+     */
+    public function skills(){
+        return $this->hasMany(Skill::class);
+    }
 }

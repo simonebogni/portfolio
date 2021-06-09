@@ -37,93 +37,13 @@
             </div>
         </div>
         <div class="row mt-5 justify-content-center">
-            @foreach ($skillCategories as $category)
-            <div class="col-12 col-md skill-category-button">
-                <button class="btn btn-block purpleButtonOutline">
-                    <h2 class="h2 text-center">
-                        @if (isset($category->icon_class))
-                            <i class="{{$category->icon_class}}"></i>&nbsp;
-                        @endif
-                        {{$category->name}}
-                    </h2>
-                </button>
-            </div>
+            @foreach ($skillCategories as $skillCategory)
+            <x-skill-category :skillCategory="$skillCategory"></x-skill-category>
             @endforeach
         </div>
     @endif
 </div>
-<!--
-<div dir={dir} className="about">
-    <Row className="mt-5 justify-content-center">
-        {/* Java */}
-        <Col xs={12} md style={minWidth: "33%"}>
-            <Button block onClick={this.toggleJava} className={"purpleButtonOutline"+(this.state.javaOpen ? " open":"")}>
-                <h2 className="text-center" dir={dir}><FontAwesomeIcon icon={["fab", "java"]} onClick={this.toggleJava}/> Java</h2>
-            </Button>
-        </Col>
-        <Col className="text-center" xs={12} style={display: this.state.javaOpen ? "block" : "none"}>
-            {javaExpandedSection}
-        </Col>
-
-        {/* PHP */}
-        <Col xs={12} style={display: this.state.phpOpen ? "block" : "none"}>
-        </Col>
-        <Col xs={12}  md style={minWidth: "33%"}>
-            <Button block onClick={this.togglePhp} className={"purpleButtonOutline"+(this.state.phpOpen ? " open":"")}>
-                <h2 className="text-center" dir={dir}><FontAwesomeIcon icon={["fab", "php"]}/> PHP</h2>
-            </Button>
-        </Col>
-        <Col className="text-center" xs={12} style={display: this.state.phpOpen ? "block" : "none", marginBottom: "15px"}>
-            {phpExpandedSection}
-        </Col>
-        {/* JavaScript*/}
-        <Col xs={12} style={display: this.state.javaScriptOpen ? "block" : "none"}>
-        </Col>
-        <Col xs={12} md style={minWidth: "33%"}>
-            <Button block onClick={this.toggleJavaScript} className={"purpleButtonOutline"+(this.state.javaScriptOpen ? " open":"")}>
-                <h2 className="text-center" dir={dir}><FontAwesomeIcon icon={["fab", "js-square"]}/> Javascript</h2>
-            </Button>
-        </Col>
-        <Col className="text-center" xs={12} style={display: this.state.javaScriptOpen ? "block" : "none",  marginBottom: "15px"}>
-            {javascriptExpandedSection}
-        </Col>
-
-        {/* HTML & CSS*/}
-        <Col xs={12} style={display: this.state.htmlCssOpen ? "block" : "none"}>
-        </Col>
-        <Col xs={12} md style={minWidth: "33%"}>
-            <Button block onClick={this.toggleHtmlCss} className={"purpleButtonOutline"+(this.state.htmlCssOpen ? " open":"")}>
-                <h2 className="text-center" dir={dir}><FontAwesomeIcon icon="file-code"/> HTML+CSS</h2>
-            </Button>
-        </Col>
-        <Col className="text-center" xs={12} style={display: this.state.htmlCssOpen ? "block" : "none",  marginBottom: "15px"}>
-            {htmlCssExpandedSection}
-        </Col>
-
-        {/* Databases*/}
-        <Col xs={12} style={display: this.state.databaseOpen ? "block" : "none"}>
-        </Col>
-        <Col xs={12} md style={minWidth: "33%"}>
-            <Button block onClick={this.toggleDatabase} className={"purpleButtonOutline"+(this.state.databaseOpen ? " open":"")}>
-                <h2 className="text-center" dir={dir}><FontAwesomeIcon icon="database"/> Databases</h2>
-            </Button>
-        </Col>
-        <Col className="text-center" xs={12} style={display: this.state.databaseOpen ? "block" : "none",  marginBottom: "15px"}>
-            {databaseExpandedSection}
-        </Col>
-
-        {/* Tools*/}
-        <Col xs={12} style={display: this.state.toolsOpen ? "block" : "none"}>
-        </Col>
-        <Col xs={12} md style={minWidth: "33%"}>
-            <Button block onClick={this.toggleTools} className={"purpleButtonOutline"+(this.state.toolsOpen ? " open":"")}>
-                <h2 className="text-center" dir={dir}><FontAwesomeIcon icon="tools"/> Tools</h2>
-            </Button>
-        </Col>
-        <Col className="text-center" xs={12} style={display: this.state.toolsOpen ? "block" : "none",  marginBottom: "15px"}>
-            {toolsExpandedSection}
-        </Col>
-    </Row>
-</div>
--->
+@endsection
+@section('scripts')
+    <script src="{{asset('js/about.js')}}"></script>
 @endsection

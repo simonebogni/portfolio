@@ -19,6 +19,7 @@ class CreateSkillsTable extends Migration
             $table->text('description')->nullable();
             $table->integer('order');
             $table->string('picture_source')->nullable();
+            $table->boolean('familiarity')->default(false);
             $table->foreignId('skill_subcategory_id');
             $table->softDeletes();
             $table->timestamps();

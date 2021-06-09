@@ -134,18 +134,48 @@ footer{
     color:  rgba(255,255,255,.6);
 }
 
+//verbosity
+#app[verbosity="false"]{
+    .verbosity-on{
+        display: none;
+    }
+}
+#app[verbosity="true"]{
+    .verbosity-off{
+        display:none;
+    }
+}
+
+
 //About page
 #about{
     .languageRatingMeaning {
         font-weight: bold;
     }
 
-    .skill-category-button{
-        min-width: 33%;
+    .skill-category-button-container{
+        @media (min-width: 576px) { min-width: 50%; }
+        @media (min-width: 768px) { min-width: 33%; }
+        &.open{
+            min-width: 100% !important;
+        }
+    }
+
+    .skill-category-button-text{
+        font-size: 1.8rem;
     }
 
     .certificate-link-icon{
         font-size: 12px;
+    }
+
+    .skill-category-content{
+        &[visibility="true"]{
+            display: block;
+        }
+        &[visibility="false"]{
+            display: none;
+        }
     }
 }
 
@@ -219,11 +249,12 @@ a.iconWrapper{
 }
 
 .AboutTitle{
-    padding-bottom: 0.8em;;
+    margin-bottom: 0px;
+    padding-top: 3rem;
 }
 
 .AboutDetailsRow{
-    padding-bottom: 3em;
+    padding-top: 1.8rem;
 }
 
 .AboutDetailsParagraph {
@@ -235,9 +266,9 @@ a.iconWrapper{
     margin-bottom: 15px;
     z-index: 1;
     margin-top: -2rem;
-    padding-top: 3rem;
     padding-left: 2rem;
     padding-right: 2rem;
+    padding-bottom: 2rem;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
