@@ -1,15 +1,4 @@
 $( document ).ready(function() {
-  //check wheter verbosity is on
-  if(localStorage.getItem('verbosity') == "true"){
-      //set attribute verbosity = on
-      //set verbosity button as selected
-  } else {
-      //set attribute verbosity = off
-      //set verbosity button as not selected
-  }
-
-  //verbosity button click listener
-
   //category button click listener
   function setCategoryButtonEventListener($categoryId){
       $("#skill-category-button-"+$categoryId).click(function(){
@@ -27,7 +16,6 @@ $( document ).ready(function() {
   }
 
   $(".skill-category-button").each(function(){
-      console.log("executing: setCategoryButtonEventListener("+$(this).attr("categoryId")+")");
       setCategoryButtonEventListener($(this).attr("categoryId"));
   });
 });
