@@ -2,10 +2,10 @@
 @section('content')
 <div id="about">
     <div class="row mt-5 justify-content-center">
-        <div class="col-4 col-md-3 mb-5 mb-md-0 align-self-center">
-            <img src="{{asset('assets/img/profile.jpg')}}" alt="Simone Bogni's face" id="profile-pic" class="img-fluid rounded-circle">
+        <div class="col-4 col-md-4 mb-5 mb-md-0 align-self-center">
+            <img src="{{asset('assets/img/profile.jpg')}}" alt="Simone Bogni's face" id="profile-pic" class="img-fluid rounded-circle ml-auto mr-auto">
         </div>
-        <div class="col-xs-12 col-md-8 offset-md-1 align-self-center">
+        <div class="col-xs-12 col-md-8 align-self-center">
             <div id="description">
                 <p><span role="img" aria-label="Waving hand">👋🏼</span> Hello, my name is Simone Bogni, I am a <strong>full stack webdeveloper</strong> with a good competence in various stages of development, including the design of the system and database.</p>
                 <p><span role="img" aria-label="Strong">💪🏼</span> I'm proficient in various programming languages, methodologies and products and I have good <strong>problem solving skills</strong>.<br>
