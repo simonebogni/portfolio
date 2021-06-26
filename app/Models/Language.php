@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Language extends Model
 {
     use HasFactory;
+    use SoftDeletes;
 
     /**
      * The model's default values for attributes.
@@ -21,4 +23,6 @@ class Language extends Model
         'writing' => "Beginner",
         'listening' => "Beginner",
     ];
+
+    protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 }
