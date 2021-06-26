@@ -1,0 +1,103 @@
+//Navbar
+.logo img{
+    height: 50px !important;
+}
+
+.navbar-custom {
+    background-color: $darkPurple !important;
+
+    #flag {
+        width: 20px;
+    }
+
+    .navbar-brand, .navbar-text{
+        color: $navTextTransparent;
+    }
+
+    .navbar-nav{
+        .nav-item{
+            display: flex;
+            flex-direction: row-reverse;
+        }
+        .customNavbarLink{
+            color: $navTextTransparent;
+            text-decoration: none;
+            display: inline-block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: $navbarGap/2;
+            margin-right: $navbarGap/2;
+        }
+
+        .customNavbarLink:hover{
+            color: $navText;
+        }
+
+        .customNavbarLink.customNavbarActiveLink{
+            color: $navText;
+            font-weight: bold;
+        }
+
+        #settingsButton{
+            display: block;
+            box-sizing: border-box;
+            margin-left: $navbarGap/2;
+            margin-right: $navbarGap/2;
+            margin-top: 6px;
+            margin-bottom: 6px;
+            height: 36px;
+            line-height: 18px;
+            color: $navTextTransparent;
+            border-color: $navTextTransparent;
+            border-width: 2px;
+            background-color: transparent;
+            &:hover{
+                background-color: rgba($navTextTransparent, 0.8);
+                color: $darkPurple;
+                border-color: $navTextTransparent;
+            }
+            &:focus{
+                outline-color: initial;
+                box-shadow: 0 0 0 0.2rem rgba(123, 95, 165,.50);
+            }
+        }
+    }
+
+    .navbar-dropdown{
+        margin-left: $navbarGap/2;
+        margin-right: $navbarGap/2;
+        margin-top:6px;
+        margin-bottom:6px;
+        
+        button{
+            background-color: $mainOrange;
+            border: none;
+        }
+
+        div{
+            background-color: $mainOrange;
+        }
+    }
+
+    .navbar-dropdown.show{
+        margin-left: $navbarGap/2;
+        margin-right: $navbarGap/2;
+        button{
+            background-color: $darkPurple;
+            border: none;
+        }
+
+        div{
+            background-color: $mainOrange;
+
+            button{
+                background-color: $mainOrange;
+            }
+
+            button:hover{
+                background-color: $secondaryOrange;
+            }
+        }
+    }
+}

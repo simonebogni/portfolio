@@ -1,0 +1,62 @@
+//Experience
+#experience{
+    .card-company{
+        border-color: $darkPurple;
+        border-width: 3px;
+        border-radius: .5rem;
+        .card-header-company{
+            color: $secondaryOrange;
+            background-color: $darkPurple;
+            .company-location{
+                color: rgb(198,186,216);
+            }
+        }
+        .card-body-company{
+            background-color: rgba(lighten($lightPurple, 20%), 0.72);
+            color: $darkPurple;
+            border-bottom-right-radius: 0.3rem;
+            border-bottom-left-radius: 0.3rem;
+            .company-website{
+                padding-top: 0.75rem;
+                padding-bottom: 0.75rem;
+                font-weight: bold;
+            }
+        }
+    }
+    
+    h5{
+        padding-top: 0.5em;
+    }
+    .workPlaceLink, .educationPlaceLink{
+        color: $darkPurple;
+        text-decoration: none;
+    }
+    
+    .workPlaceLink:hover, .educationPlaceLink:hover{
+        color: $darkPurple;
+        text-decoration: underline $darkPurple wavy !important;
+        cursor: pointer !important;
+    }
+    
+    .showCoursesButton{
+        color: $darkPurple !important;
+        font-weight: bold !important;
+        border-color: $darkPurple !important;
+        border-width: 2px !important;
+        background-color: rgba(255, 255, 255, 0.7) !important;
+        &:hover{
+            background-color: $darkPurple !important;
+            color: $secondaryOrange !important;
+            border-color: $darkPurple !important;
+        }
+        &:active{
+            background-color: $darkPurple !important;
+            color: $secondaryOrange !important;
+            border-color: $darkPurple !important;
+        }
+        &:focus{
+            outline-color: $lightPurple !important;
+            box-shadow: 0 0 0 0.2rem rgba(123, 95, 165,.50) !important;
+        }
+    }
+}

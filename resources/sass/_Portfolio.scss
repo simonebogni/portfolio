@@ -1,0 +1,70 @@
+//Portfolio
+#portfolio{
+
+    .ProjectCard{
+        background-color: lighten($lightPurple, 20%);
+        border-color: $darkPurple;
+        margin-bottom: 10px;
+        .ProjectTitle{
+            text-align: center;
+        }
+        .ProjectTagContainer{
+            min-height: 50px;
+            .ProjectTag{
+                background-color: $secondaryOrange;
+        
+                &.ltr{
+                    margin-left: 0px;
+                    margin-right: 3px;
+                }
+                &.rtl{
+                    margin-left: 3px;
+                    margin-right: 0px;
+                }
+            }
+    
+        }
+        
+        hr{
+            border-top: 1px solid $darkPurple;
+        }
+
+        .ProjectDescription{
+            height: 300px;
+            overflow: auto;
+            white-space: pre-line;
+
+            &.extended{
+                height: 340px;
+                margin-bottom: 1em;
+            }
+        }
+
+        .ProjectButtonContainer{
+            margin-top: 1em;
+            height: 40px;
+
+            .btn{
+                color: $secondaryOrange;
+                font-weight: bold;
+                border-color: $secondaryOrange;
+                border-width: 2px;
+                background-color: rgba(255, 255, 255, 0.4);
+                &:hover{
+                    background-color: $secondaryOrange;
+                    color: $darkPurple;
+                    border-color: $secondaryOrange;
+                }
+                &:active{
+                    background-color: $secondaryOrange !important;
+                    color: $darkPurple !important;
+                    border-color: $secondaryOrange !important;
+                }
+                &:focus{
+                    outline-color: lighten($secondaryOrange, 20%);
+                    box-shadow: 0 0 0 0.2rem lighten($secondaryOrange, 20%);
+                }
+            }
+        }
+    }
+}

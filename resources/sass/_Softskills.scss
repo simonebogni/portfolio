@@ -1,0 +1,83 @@
+//Softskills
+#softskills{
+    .react-card-flip{
+        margin-bottom: 20px;
+    }
+    .card {
+        height: 350px;
+        background-color: $darkPurple;
+        color: $secondaryOrange;
+        border: $darkPurple solid 2px;
+    
+        &.cardFront {
+            background-color: $lightPurple;
+        }
+    }
+    
+    .card-body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    
+        h1 {
+            text-align: center;
+        }
+    }
+    
+    .card-footer{
+        border: none !important;
+        background-color: transparent;
+    }
+    
+    #learningBack{
+        background: url("/assets/img/learning.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    #responsabilityBack{
+        background: url("/assets/img/travelling.jpeg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    .card-img-overlay{
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+    }
+    
+    .card-text {
+        padding: 20px;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.7);
+        font-size: 1.2rem;
+        color: $darkPurple;
+        border: $darkPurple solid 2px;
+    }
+    
+    .purpleButtonOutline{
+        color: $darkPurple;
+        font-weight: bold;
+        border-color: $darkPurple;
+        border-width: 2px;
+        background-color: rgba(255, 255, 255, 0.7);
+        &:hover{
+            background-color: $darkPurple;
+            color: $secondaryOrange;
+            border-color: $darkPurple;
+        }
+        &:active{
+            background-color: $darkPurple !important;
+            color: $secondaryOrange !important;
+            border-color: $darkPurple !important;
+        }
+        &:focus{
+            outline-color: $lightPurple;
+            box-shadow: 0 0 0 0.2rem rgba(123, 95, 165,.50);
+        }
+    }
+}
