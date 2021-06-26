@@ -7,11 +7,31 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarContent">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a href="{{url("/about")}}" class="nav-link active customNavbarLink customNavbarActiveLink">About me</a></li>
-            <li class="nav-item"><a href="{{url("/experience")}}" class="nav-link customNavbarLink">Experience</a></li>
-            <li class="nav-item"><a href="{{url("/softskills")}}" class="nav-link customNavbarLink">Soft skills</a></li>
-            <li class="nav-item"><a href="{{url("/portfolio")}}" class="nav-link customNavbarLink">Portfolio</a></li>
-            <li class="nav-item"><a href="{{url("/hobbies")}}" class="nav-link customNavbarLink">Hobbies</a></li>
+            <li class="nav-item"><a href="{{url("/about")}}" class="nav-link customNavbarLink 
+                @if (\Request::is('about'))  
+                active customNavbarActiveLink
+                @endif
+                ">About me</a></li>
+            <li class="nav-item"><a href="{{url("/experience")}}" class="nav-link customNavbarLink
+                @if (\Request::is('experience'))  
+                active customNavbarActiveLink
+                @endif
+                ">Experience</a></li>
+            <li class="nav-item"><a href="{{url("/softskills")}}" class="nav-link customNavbarLink
+                @if (\Request::is('softskills'))  
+                active customNavbarActiveLink
+                @endif
+                ">Soft skills</a></li>
+            <li class="nav-item"><a href="{{url("/portfolio")}}" class="nav-link customNavbarLink
+                @if (\Request::is('portfolio'))  
+                active customNavbarActiveLink
+                @endif
+                ">Portfolio</a></li>
+            <li class="nav-item"><a href="{{url("/hobbies")}}" class="nav-link customNavbarLink
+                @if (\Request::is('hobbies'))  
+                active customNavbarActiveLink
+                @endif
+                ">Hobbies</a></li>
             <li class="nav-item"><button class="btn btn-primary" id="settingsButton" data-toggle="modal" data-target="#settingsModal">Settings</button></li>
         </ul>
     </div>
