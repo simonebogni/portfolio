@@ -82,11 +82,11 @@ class SkillCategorySeeder extends Seeder
                         'skills' => [
                             [
                                 'name' => "Laravel",
-                                'description' => "",
+                                'description' => "Laravel is a free, open-source PHP web framework, intended for the rapid development of web applications following the model–view–controller (MVC) architectural pattern and based on Symfony. Laravel features a modular packaging system with a dedicated dependency manager, different ways for accessing databases, a powerful template engine (Blade) and several utilities that aid in application deployment and maintenance. Laravel also provides ready-to-use packages for a variety of uses: from subscription, coupons and invoices management with Cashier, to task management with Envoy, to OAuth with Socialite and Passport, to the scaffolding of the app itself.",
                                 'picture_source' => asset('assets/img/logos/php/laravel.svg')
                             ],[
                                 'name' => "CakePHP",
-                                'description' => "CakePHP is a php framework that helps in rapidly building web applications, while requiring less code. It is based on the design pattern Model-View-Controller and offers, among other features, a flexible database access layer and a powerful scaffolding system that makes building both small and complex systems simpler and easier.",
+                                'description' => "Like Laravel, CakePHP is a PHP framework based on the MVC architectural patter.",
                                 'picture_source' => asset('assets/img/logos/php/cakephp-logo.svg'),
                                 'familiarity' => true
                             ]
