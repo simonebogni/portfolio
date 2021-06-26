@@ -19,7 +19,14 @@
             </div>
             <div class="col col-md-8 d-inline-flex align-items-center">
                 <div>
-                    <h4 class="h4 text-center text-md-left">{{$skill->name}}</h4>
+                    @if($skill->familiarity)
+                    <div>
+                        <h4 class="h4 text-center text-md-left d-inline">{{$skill->name}}</h4>
+                        <h5 class="h6 AboutBreifExperience d-inline"> (Brief experience)</h5>
+                    </div>
+                    @else
+                        <h4 class="h4 text-center text-md-left">{{$skill->name}}</h4>
+                    @endif
                     <p class="AboutDetailsParagraph">{{$skill->description}}</p>
                 </div>
             </div>
