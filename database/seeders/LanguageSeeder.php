@@ -35,7 +35,7 @@ class LanguageSeeder extends Seeder
                 'writing' => "Fluent",
                 'listening' => "Fluent",
                 'certificate_level' => "FCE B2",
-                'certificate_img_path' => null,
+                'certificate_img_path' => 'https://bit.ly/BogniSimoneFCEB2',
             ],
             [
                 'name' => "French",
@@ -45,7 +45,7 @@ class LanguageSeeder extends Seeder
                 'writing' => "Limited working proficiency",
                 'listening' => "Intermediate",
                 'certificate_level' => "DELF B1",
-                'certificate_img_path' => null,
+                'certificate_img_path' => 'https://bit.ly/BogniSimoneDELFB1',
             ],
             [
                 'name' => "Hebrew",
