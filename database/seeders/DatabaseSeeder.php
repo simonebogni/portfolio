@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             LanguageSeeder::class,
             SkillCategorySeeder::class,
-            CompanySeeder::class
+            CompanySeeder::class,
+            WorkPositionSeeder::class
         ]);
     }
 }

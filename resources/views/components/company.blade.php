@@ -15,5 +15,14 @@
             </div>
         </div>
         @endif
+        @if (isset($company->workPositions))
+        <div class="row">
+            @foreach ($company->workPositions as $position)
+            <div class="col-12">
+                <x-work-position :position="$position"></x-work-position>
+            </div>
+            @endforeach 
+        </div>
+        @endif
     </div>
 </div>

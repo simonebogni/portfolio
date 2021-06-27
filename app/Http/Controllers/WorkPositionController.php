@@ -2,20 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Company;
+use App\Models\WorkPosition;
 use Illuminate\Http\Request;
 
-class CompanyController extends Controller
+class WorkPositionController extends Controller
 {
-
-    /**
-     * Return a collection of all the languages
-     */
-    public static function getCompanies(){
-        return Company::with('workPositions')->orderByDesc('last-work-date')
-            ->get();
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -50,10 +41,10 @@ class CompanyController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Company  $company
+     * @param  \App\Models\WorkPosition  $workPosition
      * @return \Illuminate\Http\Response
      */
-    public function show(Company $company)
+    public function show(WorkPosition $workPosition)
     {
         //
     }
@@ -61,10 +52,10 @@ class CompanyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Company  $company
+     * @param  \App\Models\WorkPosition  $workPosition
      * @return \Illuminate\Http\Response
      */
-    public function edit(Company $company)
+    public function edit(WorkPosition $workPosition)
     {
         //
     }
@@ -73,10 +64,10 @@ class CompanyController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Company  $company
+     * @param  \App\Models\WorkPosition  $workPosition
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Company $company)
+    public function update(Request $request, WorkPosition $workPosition)
     {
         //
     }
@@ -84,10 +75,10 @@ class CompanyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Company  $company
+     * @param  \App\Models\WorkPosition  $workPosition
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Company $company)
+    public function destroy(WorkPosition $workPosition)
     {
         //
     }

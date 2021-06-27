@@ -12,4 +12,11 @@ class Company extends Model
     use SoftDeletes;
 
     protected $dates = ['created_at', 'updated_at', 'deleted_at', 'last-work-date'];
+
+    /**
+     * Get the work positions in this company
+     */
+    public function workPositions(){
+        return $this->hasMany(WorkPosition::class);
+    }
 }
