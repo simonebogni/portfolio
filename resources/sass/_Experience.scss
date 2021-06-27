@@ -7,6 +7,8 @@
         .card-header-company{
             color: $secondaryOrange;
             background-color: $darkPurple;
+            margin-left: -1px !important;
+            margin-right: -1px !important;
             .company-location{
                 color: rgb(198,186,216);
             }
@@ -16,6 +18,8 @@
             color: $darkPurple;
             border-bottom-right-radius: 0.3rem;
             border-bottom-left-radius: 0.3rem;
+            margin-left: -1px !important;
+            margin-right: -1px !important;
             .company-website{
                 padding-top: 0.75rem;
                 padding-bottom: 0.75rem;
