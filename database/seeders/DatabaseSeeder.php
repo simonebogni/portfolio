@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             LanguageSeeder::class,
             SkillCategorySeeder::class,
             CompanySeeder::class,
+            TagSeeder::class,
             WorkPositionSeeder::class
         ]);
     }
