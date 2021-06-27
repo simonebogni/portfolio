@@ -1,4 +1,4 @@
-<div class="card card-company">
+<div class="card card-company mb-3">
     <div class="card-header card-header-company">
         <span class="company-name h4">{{$company->name}}</span><span class="company-location h5">, {{$company->city}} ({{$company->country}})</span>
     </div>
