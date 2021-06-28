@@ -29,6 +29,16 @@ class ProgramSeeder extends Seeder
                 'description' => null
             ],
             [
+                'name'=> 'Several courses about Laravel',
+                'institute' => null,
+                'online_platform' => 'Laracasts',
+                'start_date' => null,
+                'end_date' => null,
+                'period' => null,
+                'current' => true,
+                'description' => 'These include Laravel 6 and 8, Socialite, Redis, Queues and Horizon, Jetstream and Blade (template engine) components.'
+            ],
+            [
                 'name'=> 'Front End Development Libraries',
                 'institute' => null,
                 'online_platform' => 'FreeCodeCamp',
