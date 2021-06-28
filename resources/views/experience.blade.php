@@ -31,6 +31,13 @@
             <h1 class="h1 text-center">Certifications</h1>
         </div>
     </div>
+    <div class="row justify-content-center">
+        @foreach ($certifications as $certificate)
+            <div class="col-12 col-lg-6 d-flex align-items-stretch">
+                <x-certificate :certificate="$certificate"></x-certificate>
+            </div>
+        @endforeach
+        </div>
     @endif
     @if (isset($awards))
     <!-- Awards -->

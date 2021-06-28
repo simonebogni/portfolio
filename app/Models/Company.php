@@ -11,7 +11,7 @@ class Company extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $dates = ['created_at', 'updated_at', 'deleted_at', 'last-work-date'];
+    protected $dates = ['created_at', 'updated_at', 'deleted_at', 'last_work_date'];
 
     /**
      * Get the work positions in this company

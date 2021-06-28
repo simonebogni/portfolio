@@ -9,10 +9,10 @@ class CompanyController extends Controller
 {
 
     /**
-     * Return a collection of all the languages
+     * Return a collection of all the Companies with the relative WorkPositions and their Tags
      */
     public static function getCompanies(){
-        return Company::with('workPositions.tags')->orderByDesc('last-work-date')
+        return Company::with('workPositions.tags')->orderByDesc('last_work_date')
             ->get();
     }
 

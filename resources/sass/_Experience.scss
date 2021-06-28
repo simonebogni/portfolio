@@ -1,45 +1,61 @@
 //Experience
 #experience{
-    .card-company{
+    .card-company, .card-certificate{
         border-color: $darkPurple;
         border-width: 3px;
         border-radius: .5rem;
-        .card-header-company{
+        .card-header-company, .card-header-certificate{
             color: $secondaryOrange;
             background-color: $darkPurple;
             margin-left: -1px !important;
             margin-right: -1px !important;
+            margin-top: -1px !important;
             .company-location{
                 color: rgb(198,186,216);
             }
         }
-        .card-body-company{
+        .card-body-company, .card-body-certificate{
             background-color: rgba(lighten($lightPurple, 20%), 0.72);
             color: $darkPurple;
             border-bottom-right-radius: 0.3rem;
             border-bottom-left-radius: 0.3rem;
             margin-left: -1px !important;
             margin-right: -1px !important;
-            .company-website{
+            .company-hr, .certificate-hr{
+                border-color: $darkPurple;
+            }
+            .company-website-div{
                 padding-top: 0.75rem;
                 padding-bottom: 0.75rem;
+                .company-website{
+                    font-weight: bold;
+                    color: $darkPurple;
+                    text-decoration: none;
+                    &:hover{
+                        color: $darkPurple;
+                        text-decoration: underline $darkPurple wavy !important;
+                        cursor: pointer !important;
+                    }
+                }
+            }
+            .certificate-url{
                 font-weight: bold;
+                color: $darkPurple;
+                text-decoration: none;
+                &:hover{
+                    color: $darkPurple;
+                    text-decoration: underline $darkPurple wavy !important;
+                    cursor: pointer !important;
+                }
+            }
+            .certificate-tags, .certificate-description{
+                margin-top: 0.5rem;
             }
         }
     }
     
     h5{
         padding-top: 0.5em;
-    }
-    .workPlaceLink, .educationPlaceLink{
-        color: $darkPurple;
-        text-decoration: none;
-    }
-    
-    .workPlaceLink:hover, .educationPlaceLink:hover{
-        color: $darkPurple;
-        text-decoration: underline $darkPurple wavy !important;
-        cursor: pointer !important;
     }
     
     .showCoursesButton{

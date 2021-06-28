@@ -14,12 +14,11 @@ class ExperienceController extends Controller
     public function index()
     {
         $workExperiece = CompanyController::getCompanies();
-        /*$languageRanksMeaning = LanguageController::getRatingsMeaning();
-        $skillCategories = SkillCategoryController::getCategoriesWithSkills();*/
+        $certifications = CertificateController::getCertificates();
         return view('experience', [
             'workExperience'=> $workExperiece,
             'education'=> [],
-            'certifications'=> [],
+            'certifications'=> $certifications,
             'awards'=> []
         ]);
     }

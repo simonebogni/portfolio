@@ -21,7 +21,7 @@ class CreateCompaniesTable extends Migration
             $table->string('country');
             $table->text('description')->nullable();
             $table->string('website')->nullable();
-            $table->date('last-work-date')->default(Carbon::now());
+            $table->date('last_work_date')->default(Carbon::now());
             $table->timestamps();
             $table->softDeletes();
         });

@@ -31,7 +31,7 @@ class TagSeeder extends Seeder
             [
                 'category' => 'Java',
                 'bg_color' => '#ee9516',
-                'color' => '#FFF',
+                'color' => '#000',
                 'tags' =>['Java', 'JavaFx', 'Apache Maven', 'Apache POI', 'Apache Ant']
             ],
             [
@@ -44,19 +44,19 @@ class TagSeeder extends Seeder
                 'category' => 'JavaScript',
                 'bg_color' => '#f3db17',
                 'color' => '#000',
-                'tags' =>['JavaScript', 'Node.js', 'jQuery', 'DataTables', 'D3.js', 'React', 'Redux']
+                'tags' =>['JavaScript', 'Node.js', 'Express', 'jQuery', 'DataTables', 'D3.js', 'React', 'Redux', 'AJAX']
             ],
             [
                 'category' => 'HTML+CSS',
                 'bg_color' => '#bc365f',
                 'color' => '#FFF',
-                'tags' =>['HTML5', 'CSS3', 'Bootstrap', 'Material UI', 'SASS', 'Responsive']
+                'tags' =>['HTML5', 'CSS3', 'Bootstrap', 'Material UI', 'SASS', 'Responsive Web Design']
             ],
             [
                 'category' => 'Other',
                 'bg_color' => '#0d6efd',
                 'color' => '#FFF',
-                'tags' =>['Single Page Application', 'Progressive Web Application', 'Geolocation', 'OpenStreetMaps', 'Fullstack', 'UML', 'Mail', 'Profile management', 'Task automation']
+                'tags' =>['Object Oriented Programming', 'Functional Programming', 'Accesibility', 'Single Page Application', 'Progressive Web Application', 'Geolocation', 'OpenStreetMaps', 'Fullstack', 'UML', 'Mail', 'Profile management', 'Task automation']
             ],
         ];
 

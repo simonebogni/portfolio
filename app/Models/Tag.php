@@ -20,4 +20,12 @@ class Tag extends Model
     {
         return $this->belongsToMany(WorkPosition::class);
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function certificates()
+    {
+        return $this->belongsToMany(Certificate::class);
+    }
 }

@@ -5,7 +5,7 @@
     <div class="card-body card-body-company @if (isset($company->website)) pt-0 @endif">
         @if (isset($company->website))
         <div class="row">
-            <div class="col company-website"><span class="workPlaceLink">{{$company->website}}</span></div>
+            <div class="col company-website-div"><span class="company-website">{{$company->website}}</span></div>
         </div>
         @endif
         @if (isset($company->description))
