@@ -2,6 +2,15 @@
 
 use Illuminate\Support\Str;
 
+if(env('DATABASE_URL') != null){
+    $url = parse_url(env('DATABASE_URL'));
+    $host = $url["host"];
+    $username = $url["user"];
+    $port = $url["port"];
+    $password = $url["pass"];
+    $database = ltrim($url["path"], "/");
+}
+
 return [
 
     /*
@@ -15,7 +24,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'pgsql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -66,11 +75,11 @@ return [
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'host' => isset($host) ? $host : env('DB_HOST'),
+            'port' => isset($port) ? $port : env('DB_PORT'),
+            'database' => isset($path) ? $path : env('DB_DATABASE'),
+            'username' => isset($username) ? $username : env('DB_USERNAME'),
+            'password' => isset($password) ? $password : env('DB_PASSWORD'),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
