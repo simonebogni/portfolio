@@ -10,7 +10,7 @@
     </div>
     <div class="row justify-content-center">
     @foreach ($workExperience as $company)
-        <div class="col col-lg-6">
+        <div class="col-12 col-lg-6 d-flex align-items-stretch">
             <x-company :company="$company"></x-company>
         </div>
     @endforeach
@@ -23,6 +23,15 @@
             <h1 class="h1 text-center">Education & Courses</h1>
         </div>
     </div>
+    @if (isset($education["priorityInstitutes"]))    
+    <div class="row justify-content-center">
+        @foreach ($education["priorityInstitutes"] as $institute)
+        <div class="col-12 col-lg-6 d-flex align-items-stretch">
+            <x-institute :institute="$institute"></x-institute>
+        </div>
+        @endforeach
+    </div>
+    @endif
     @endif
     @if (isset($certifications))
     <!-- Certifications -->
@@ -33,11 +42,11 @@
     </div>
     <div class="row justify-content-center">
         @foreach ($certifications as $certificate)
-            <div class="col-12 col-lg-6 d-flex align-items-stretch">
-                <x-certificate :certificate="$certificate"></x-certificate>
-            </div>
-        @endforeach
+        <div class="col-12 col-lg-6 d-flex align-items-stretch">
+            <x-certificate :certificate="$certificate"></x-certificate>
         </div>
+        @endforeach
+    </div>
     @endif
     @if (isset($awards))
     <!-- Awards -->

@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             TagSeeder::class,
             WorkPositionSeeder::class,
             CertificateSeeder::class,
+            InstituteSeeder::class,
         ]);
     }
 }

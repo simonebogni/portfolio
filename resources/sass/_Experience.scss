@@ -1,10 +1,10 @@
 //Experience
 #experience{
-    .card-company, .card-certificate{
+    .card-company, .card-certificate, .card-institute{
         border-color: $darkPurple;
         border-width: 3px;
         border-radius: .5rem;
-        .card-header-company, .card-header-certificate{
+        .card-header-company, .card-header-certificate, .card-header-institute{
             color: $secondaryOrange;
             background-color: $darkPurple;
             margin-left: -1px !important;
@@ -14,20 +14,20 @@
                 color: rgb(198,186,216);
             }
         }
-        .card-body-company, .card-body-certificate{
+        .card-body-company, .card-body-certificate, .card-body-institute{
             background-color: rgba(lighten($lightPurple, 20%), 0.72);
             color: $darkPurple;
             border-bottom-right-radius: 0.3rem;
             border-bottom-left-radius: 0.3rem;
             margin-left: -1px !important;
             margin-right: -1px !important;
-            .company-hr, .certificate-hr{
+            .company-hr, .certificate-hr, .institute-hr{
                 border-color: $darkPurple;
             }
-            .company-website-div{
+            .company-website-div, .institute-website-div{
                 padding-top: 0.75rem;
                 padding-bottom: 0.75rem;
-                .company-website{
+                .company-website, .institute-website{
                     font-weight: bold;
                     color: $darkPurple;
                     text-decoration: none;
