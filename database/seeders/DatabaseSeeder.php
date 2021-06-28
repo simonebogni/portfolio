@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             WorkPositionSeeder::class,
             CertificateSeeder::class,
             InstituteSeeder::class,
+            OnlinePlatformSeeder::class,
         ]);
     }
 }
