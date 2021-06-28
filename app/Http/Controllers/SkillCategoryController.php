@@ -11,8 +11,7 @@ class SkillCategoryController extends Controller
      * Return a collection of all the categories with the information about subcategories and their skills
      */
     public static function getCategoriesWithSkills(){
-        //return SkillCategory::with('skill_subcategories.skills')->get();
-        return SkillCategory::orderBy('order')->get();
+        return SkillCategory::with('subcategories.skills')->orderBy('order')->get();
     }
 
     /**
