@@ -14,10 +14,10 @@
         <h3 class="h3 AboutTitle text-center">{{$subcategory->name}}</h3>
         @foreach ( $subcategory->skills as $index => $skill)  
         <div class="row AboutDetailsRow verbosity-on">
-            <div class="col col-md-4 align-items-center justify-content-center d-inline-flex ">
+            <div class="col-12 col-md-4 align-items-center justify-content-center d-inline-flex skill-logo">
                 <img src="{{$skill->picture_source}}" class="svgLogo" alt="{{$skill->name}} logo"/>
             </div>
-            <div class="col col-md-8 d-inline-flex align-items-center">
+            <div class="col-12 col-md-8 d-inline-flex align-items-center">
                 <div>
                     @if($skill->familiarity)
                     <div>

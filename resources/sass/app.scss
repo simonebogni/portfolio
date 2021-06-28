@@ -51,6 +51,13 @@ main.content{
         font-weight: bold;
     }
 
+    .skill-logo{
+        margin-bottom: .5rem;
+        @media (min-width: 768px) { 
+            margin-bottom: 0px;
+        }
+    }
+
     .skill-category-button-container{
         @media (min-width: 576px) { min-width: 50%; }
         @media (min-width: 768px) { min-width: 33%; }
