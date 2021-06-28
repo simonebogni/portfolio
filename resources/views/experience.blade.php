@@ -23,15 +23,20 @@
             <h1 class="h1 text-center">Education & Courses</h1>
         </div>
     </div>
-    @if (isset($education["priorityInstitutes"]))    
     <div class="row justify-content-center">
+        @if (isset($education["priorityInstitutes"]))    
         @foreach ($education["priorityInstitutes"] as $institute)
         <div class="col-12 col-lg-6 d-flex align-items-stretch">
             <x-institute :institute="$institute"></x-institute>
         </div>
         @endforeach
+        @endif
+        @if (isset($education["programsLowInstitutePriority"]))
+        <div class="col-12 col-lg-6 d-flex align-items-stretch">
+            <x-program-aggregation :programs="$education['programsLowInstitutePriority']"></x-program-aggregation>
+        </div>
+        @endif
     </div>
-    @endif
     @endif
     @if (isset($certifications))
     <!-- Certifications -->

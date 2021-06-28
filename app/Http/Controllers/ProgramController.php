@@ -2,16 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Institute;
+use App\Models\Program;
 use Illuminate\Http\Request;
 
-class InstituteController extends Controller
+class ProgramController extends Controller
 {
+
     /**
-     * Return a collection of all the institutes
+     * Return a collection of all the Programs without Institutes or with Institute priority < 1
      */
-    public static function getPriorityInstitutes(){
-        return Institute::with('programs')->where('priority', '>', 0)->orderByDesc('priority')
+    public static function getProgramsLowInstitutePriority(){
+        return Program::with(['institute', 'onlinePlatform'])
+            ->whereNull('institute_id')
+            ->orWhereHas('institute', function ($query) {
+                return $query->where('priority', '<', 1);
+            })
+            ->orderBy('name')
             ->get();
     }
 
@@ -49,10 +55,10 @@ class InstituteController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Institute  $institute
+     * @param  \App\Models\Program  $program
      * @return \Illuminate\Http\Response
      */
-    public function show(Institute $institute)
+    public function show(Program $program)
     {
         //
     }
@@ -60,10 +66,10 @@ class InstituteController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Institute  $institute
+     * @param  \App\Models\Program  $program
      * @return \Illuminate\Http\Response
      */
-    public function edit(Institute $institute)
+    public function edit(Program $program)
     {
         //
     }
@@ -72,10 +78,10 @@ class InstituteController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Institute  $institute
+     * @param  \App\Models\Program  $program
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Institute $institute)
+    public function update(Request $request, Program $program)
     {
         //
     }
@@ -83,10 +89,10 @@ class InstituteController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Institute  $institute
+     * @param  \App\Models\Program  $program
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Institute $institute)
+    public function destroy(Program $program)
     {
         //
     }

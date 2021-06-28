@@ -8,5 +8,10 @@
             <div class="col institute-website-div"><a class="institute-website" href="{{$institute->website}}" target="_blank" rel="noopener noreferrer">{{$institute->website}}</a></div>
         </div>
         @endif
+        @if (isset($institute->programs))
+            @foreach ($institute->programs as $program)
+                <x-program :program="$program" :repeat-institute="false"></x-program>
+            @endforeach
+        @endif
     </div>
 </div>

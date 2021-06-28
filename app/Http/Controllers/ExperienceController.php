@@ -15,7 +15,8 @@ class ExperienceController extends Controller
     {
         $workExperiece = CompanyController::getCompanies();
         $education = [
-            'priorityInstitutes' => InstituteController::getPriorityInstitutes()
+            'priorityInstitutes' => InstituteController::getPriorityInstitutes(),
+            'programsLowInstitutePriority' => ProgramController::getProgramsLowInstitutePriority()
         ];
         $certifications = CertificateController::getCertificates();
         return view('experience', [

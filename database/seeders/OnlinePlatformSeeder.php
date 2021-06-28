@@ -25,7 +25,7 @@ class OnlinePlatformSeeder extends Seeder
             ],
             [
                 'name' => 'Coursera',
-                'website' => 'https://www.edx.org/'
+                'website' => 'https://www.coursera.org/'
             ],
             [
                 'name' => 'Udemy',
