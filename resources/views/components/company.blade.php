@@ -1,11 +1,11 @@
-<div class="card card-company mb-3">
+<div class="card card-company mb-3 w-100">
     <div class="card-header card-header-company">
         <span class="company-name h4">{{$company->name}}</span><span class="company-location h5">, {{$company->city}} ({{$company->country}})</span>
     </div>
     <div class="card-body card-body-company @if (isset($company->website)) pt-0 @endif">
         @if (isset($company->website))
         <div class="row">
-            <div class="col company-website-div"><span class="company-website">{{$company->website}}</span></div>
+            <div class="col company-website-div"><a class="company-website" href="{{$company->website}}" target="_blank" rel="noopener noreferrer">{{$company->website}}</a></div>
         </div>
         @endif
         @if (isset($company->description))
