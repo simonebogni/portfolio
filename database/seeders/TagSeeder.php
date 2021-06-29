@@ -17,16 +17,28 @@ class TagSeeder extends Seeder
     {
         $categories = [
             [
+                'category' => 'Software Design',
+                'bg_color' => '#CC2936',
+                'color' => '#000',
+                'tags' =>['Software Design', 'Database Design', 'UML', 'ERD', 'Design Patterns']
+            ],
+            [
                 'category' => 'PHP',
                 'bg_color' => '#31263e',
                 'color' => '#FFF',
-                'tags' =>['PHP', 'Laravel 8', 'CakePHP', 'Ripcord (XML RPC)']
+                'tags' =>['PHP', 'Laravel', 'CakePHP', 'Ripcord (XML RPC)']
             ],
             [
                 'category' => 'Database',
                 'bg_color' => '#68b145',
                 'color'=> '#000',
-                'tags' =>['MySQL', 'PostgreSQL', 'Firebase', 'MS SQLServer', 'MongoDB', 'Mongoose', 'SQLite']
+                'tags' =>['MySQL', 'PostgreSQL', 'Firebase', 'MS SQLServer', 'MongoDB', 'Mongoose', 'SQLite', 'Redis']
+            ],
+            [
+                'category' => 'GIS',
+                'bg_color' => '#EE964B',
+                'color'=> '#000',
+                'tags' =>['Geolocation', 'Google Maps', 'OpenStreetMaps']
             ],
             [
                 'category' => 'Java',
@@ -53,10 +65,16 @@ class TagSeeder extends Seeder
                 'tags' =>['HTML5', 'CSS3', 'Bootstrap', 'Material UI', 'SASS', 'Responsive Web Design']
             ],
             [
-                'category' => 'Other',
+                'category' => 'Programming methodologies',
+                'bg_color' => '#49392C',
+                'color' => '#FFF',
+                'tags' =>['Object Oriented Programming', 'Functional Programming', 'Concurrent Programming', 'Distributed Programming']
+            ],
+            [
+                'category' => '_Other',
                 'bg_color' => '#0d6efd',
                 'color' => '#FFF',
-                'tags' =>['Object Oriented Programming', 'Functional Programming', 'Accesibility', 'Single Page Application', 'Progressive Web Application', 'Geolocation', 'OpenStreetMaps', 'Fullstack', 'UML', 'Mail', 'Profile management', 'Task automation']
+                'tags' =>['Accesibility', 'Web development', 'Single Page Application', 'Progressive Web Application', 'Mail', 'Profile management', 'Task automation', 'Algorithms', 'Data Structures']
             ],
         ];
 

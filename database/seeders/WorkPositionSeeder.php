@@ -26,7 +26,7 @@ class WorkPositionSeeder extends Seeder
                 'end_date' => '2020-11',
                 'current' => false,
                 'description' => 'As a member of the development team, I designed and developed several modules for the Information System web application used by the employees, taking in consideration the business needs of the different organisational parts involved.',
-                'tags' => ['HTML5', 'CSS3', 'Bootstrap', 'Responsive Web Design', 'PHP', 'MySQL', 'JavaScript', 'jQuery', 'DataTables', 'D3.js', 'Ripcord (XML RPC)']
+                'tags' => ['HTML5', 'CSS3', 'Bootstrap', 'Responsive Web Design', 'PHP', 'MySQL', 'JavaScript', 'jQuery', 'DataTables', 'D3.js', 'Ripcord (XML RPC)', 'Software Design', 'Database Design', 'UML', 'ERD', 'Web development', 'Single Page Application']
             ],
             [
                 'title' => 'Clerk at Administration office and part-time Software Developer',

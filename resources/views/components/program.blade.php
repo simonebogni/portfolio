@@ -32,6 +32,15 @@
         @endif
     @endif
     @endif
+    @if ($program->tags != null)
+    <div class="row program-tags">
+        <div class="col">
+            @foreach ($program->tags->sortBy('category') as $tag)
+                <x-tag :tag="$tag"></x-tag>
+            @endforeach
+        </div>
+    </div>
+    @endif
     @if ($program->description != null)
     <p class="program-description">{{$program->description}}</p>
     @endif

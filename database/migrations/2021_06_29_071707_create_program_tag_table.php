@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTagsTable extends Migration
+class CreateProgramTagTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,11 @@ class CreateTagsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tags', function (Blueprint $table) {
+        Schema::create('program_tag', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('category')->default('_Other');
-            $table->string('bg_color')->default('#0d6efd');
-            $table->string('color')->default('#FFF');
+            $table->foreignId('tag_id');
+            $table->foreignId('program_id');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -31,6 +28,6 @@ class CreateTagsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tags');
+        Schema::dropIfExists('program_tag');
     }
 }

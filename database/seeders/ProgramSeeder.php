@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Institute;
 use App\Models\OnlinePlatform;
 use App\Models\Program;
+use App\Models\Tag;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
@@ -26,7 +27,8 @@ class ProgramSeeder extends Seeder
                 'end_date' => Carbon::createFromDate(2020, 12, 10),
                 'period' => 'October 2012 - December 2020',
                 'current' => false,
-                'description' => null
+                'description' => null,
+                'tags' => ['Java', 'Algorithms', 'Data Structures', 'Object Oriented Programming', 'Functional Programming', 'Concurrent Programming', 'Distributed Programming', 'Android', 'PostgreSQL', 'MySQL', 'UML', 'ERD', 'Software Design', 'Design Patterns', 'Image Processing', 'Web development']
             ],
             [
                 'name'=> 'Several courses about Laravel',
@@ -36,7 +38,8 @@ class ProgramSeeder extends Seeder
                 'end_date' => null,
                 'period' => null,
                 'current' => true,
-                'description' => 'These include Laravel 6 and 8, Socialite, Redis, Queues and Horizon, Jetstream and Blade (template engine) components.'
+                'description' => 'These include Laravel 6 and 8, Socialite, Redis, Queues and Horizon, Jetstream and Blade (template engine) components.',
+                'tags' => ['PHP', 'Laravel', 'Redis']
             ],
             [
                 'name'=> 'Front End Development Libraries',
@@ -46,7 +49,8 @@ class ProgramSeeder extends Seeder
                 'end_date' => null,
                 'period' => null,
                 'current' => true,
-                'description' => 'A course (approx. 300 hours) that covers Bootstrap, jQuery, SASS, React and Redux.'
+                'description' => 'A course (approx. 300 hours) that covers Bootstrap, jQuery, SASS, React and Redux.',
+                'tags' => ['Bootstrap', 'jQuery', 'SASS', 'React', 'Redux']
             ],
             [
                 'name'=> 'Front-End Web Development with React',
@@ -56,7 +60,8 @@ class ProgramSeeder extends Seeder
                 'end_date' => Carbon::createFromDate(2020, 06, 30),
                 'period' => null,
                 'current' => null,
-                'description' => 'An introductory course covering React, Reactstrap (Bootstrap 4 for React), SPAs with React router, Redux and REST APIs.'
+                'description' => 'An introductory course covering React, Reactstrap (Bootstrap 4 for React), SPAs with React router, Redux and REST APIs.',
+                'tags' => ['JavaScript','React', 'Redux']
             ],
             [
                 'name'=> 'The complete 2019 Web Development Course',
@@ -66,7 +71,8 @@ class ProgramSeeder extends Seeder
                 'end_date' => Carbon::createFromDate(2019, 12, 1),
                 'period' => null,
                 'current' => false,
-                'description' => 'A course covering HTML5, CSS3, Javascript, jQuery & jQuery UI, Bootstrap, NodeJS, PHP, AJAX, JSON and Google Maps APIs.'
+                'description' => 'A course covering HTML5, CSS3, Javascript, jQuery & jQuery UI, Bootstrap, Node.js, PHP, AJAX, JSON and Google Maps APIs.',
+                'tags' => ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'Bootstrap', 'Node.js', 'PHP', 'Google Maps']
             ]
         ];
         foreach($programs as $program){
@@ -95,6 +101,15 @@ class ProgramSeeder extends Seeder
             if(isset($program["online_platform"])){
                 $platform = OnlinePlatform::where('name', $program["online_platform"])->first();
                 $platform->programs()->save($prog);
+            }
+            foreach($program["tags"] as $tag){
+                $t = Tag::firstOrCreate([
+                    'name' => $tag
+                ],
+                [
+                    'name' => $tag
+                ]);
+                $prog->tags()->attach($t);
             }
         }
     }
