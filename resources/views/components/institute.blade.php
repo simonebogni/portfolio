@@ -10,7 +10,7 @@
         @endif
         @if (isset($institute->programs))
             @foreach ($institute->programs as $program)
-                <x-program :program="$program" :repeat-institute="false"></x-program>
+                <x-program :program="$program" :repeat-institute="false" :show-courses="true"></x-program>
             @endforeach
         @endif
     </div>

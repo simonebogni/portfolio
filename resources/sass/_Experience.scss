@@ -1,5 +1,69 @@
 //Experience
 #experience{
+    //Course modal
+    .program-courses-wrapper{
+        margin-top: 1rem;
+    }
+    .modal-courses-content{
+        border-width: 3px;
+        border-color: $darkPurple;
+        .modal-courses-header{
+            color: $secondaryOrange;
+            background-color: $darkPurple;
+            margin-left: -1px !important;
+            margin-right: -1px !important;
+            margin-top: -1px !important;
+            border-bottom-color: $darkPurple;
+
+            .close{
+                text-shadow: 0 1px 0 lighten($secondaryOrange, 25%);
+                color: $secondaryOrange;
+                &:hover{
+                    color: $mainOrange;
+                }
+            }
+        }
+        .modal-courses-body{
+            background-color: lighten($lightPurple, 20%);
+            color: $darkPurple;
+            margin-left: -1px !important;
+            margin-right: -1px !important;
+            .course-name{
+                font-weight: bold;
+            }
+            tr{
+                border-color: $darkPurple;
+            }
+            input[type='search']{
+                border-radius: .3rem;
+                border-color: $darkPurple;
+                background-color: lighten($lightPurple, 30%);
+            }
+        }
+        .modal-courses-footer{
+            background-color: lighten($lightPurple, 20%);
+            color: $darkPurple;
+            margin-left: -1px !important;
+            margin-right: -1px !important;
+            border-top-color: $darkPurple;
+        }
+    }
+    .page-item{
+        a.page-link{
+            color: $darkPurple; 
+            background-color: lighten($lightPurple, 15%);
+            border-color: $darkPurple;
+        }
+        &.disabled a.page-link{
+            background-color: lighten($lightPurple, 25%);
+            color: lighten($darkPurple, 10%);
+        }
+        &.active a.page-link{
+            background-color: $darkPurple;
+            color: $secondaryOrange;
+            border-color: $secondaryOrange;
+        }
+    }
     .card-company, .card-certificate, .card-institute, .card-program-aggregation, .card-award{
         .award-subtitle{
             margin-bottom: 0px;

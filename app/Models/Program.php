@@ -34,4 +34,11 @@ class Program extends Model
     {
         return $this->belongsToMany(Tag::class);
     }
+
+    /**
+     * Get the courses taught by this program
+     */
+    public function courses(){
+        return $this->hasMany(Course::class);
+    }
 }

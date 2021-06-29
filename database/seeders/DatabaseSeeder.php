@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             InstituteSeeder::class,
             ProgramSeeder::class,
             AwardSeeder::class,
+            CourseSeeder::class,
         ]);
     }
 }

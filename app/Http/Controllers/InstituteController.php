@@ -11,7 +11,7 @@ class InstituteController extends Controller
      * Return a collection of all the institutes
      */
     public static function getPriorityInstitutes(){
-        return Institute::with('programs.tags')->where('priority', '>', 0)->orderByDesc('priority')
+        return Institute::with(['programs.tags', 'programs.courses'])->where('priority', '>', 0)->orderByDesc('priority')
             ->get();
     }
 

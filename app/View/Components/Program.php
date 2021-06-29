@@ -8,15 +8,17 @@ class Program extends Component
 {
     public $program;
     public $repeatInstitute;
+    public $showCourses;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($program, $repeatInstitute)
+    public function __construct($program, $repeatInstitute, $showCourses)
     {
         $this->program = $program;
         $this->repeatInstitute = $repeatInstitute == "true";
+        $this->showCourses = $showCourses == "true";
     }
 
     /**

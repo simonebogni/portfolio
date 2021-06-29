@@ -1,4 +1,11 @@
 @extends('layouts.app')
+@section('styles-html-head')
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.25/r-2.2.9/datatables.min.css"/>
+@endsection
+
+@section('scripts-html-head')
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.25/r-2.2.9/datatables.min.js"></script>
+@endsection
 @section('content')
 <div id="experience">
     @if (isset($workExperience))
@@ -70,6 +77,7 @@
     @endif
 </div>
 @endsection
+
 @section('scripts')
     <script src="{{asset('js/experience.js')}}"></script>
 @endsection

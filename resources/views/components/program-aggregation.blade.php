@@ -7,7 +7,7 @@
             @foreach ($programs->sortByDesc(function($p){
                 return (($p->current != null && $p->current) ? "1-" : "0-").($p->end_date != null ? $p->end_date->format('Y-m-d') : "0");
             }) as $program)
-                <x-program :program="$program" :repeat-institute="true"></x-program>
+                <x-program :program="$program" :repeat-institute="true" :show-courses="false"></x-program>
             @endforeach
         @endif
     </div>
