@@ -21,7 +21,7 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
     <body>
-        <div id="app" verbosity="true">
+        <div id="app" verbosity="true" showTags="true">
             <x-custom-navbar/>
             <main class="container-fluid content">
                 @yield('content')

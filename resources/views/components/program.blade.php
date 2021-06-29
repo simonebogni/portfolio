@@ -33,7 +33,7 @@
     @endif
     @endif
     @if ($program->tags != null)
-    <div class="row program-tags">
+    <div class="row program-tags tags-container">
         <div class="col">
             @foreach ($program->tags->sortBy('category') as $tag)
                 <x-tag :tag="$tag"></x-tag>

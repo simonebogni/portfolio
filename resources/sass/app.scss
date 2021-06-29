@@ -28,6 +28,18 @@ $navbarGap: 16px;
             display:none;
         }
     }
+
+    &[showTags="true"]{
+        .tags-container{
+            display: block;
+        }
+    }
+
+    &[showTags="false"] {
+        .tags-container{
+            display: none;
+        }
+    }
 }
 
 main.content{

@@ -17,7 +17,7 @@
             </div>
         </div>
         @if (isset($certificate->tags))
-        <div class="row certificate-tags">
+        <div class="row certificate-tags tags-container">
             <div class="col">
                 @foreach ($certificate->tags->sortBy('category') as $tag)
                     <x-tag :tag="$tag"></x-tag>

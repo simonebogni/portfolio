@@ -13,7 +13,7 @@
         </div>
         @endif
         @if (isset($award->tags))
-        <div class="row award-tags">
+        <div class="row award-tags tags-container">
             <div class="col">
                 @foreach ($award->tags->sortBy('category') as $tag)
                     <x-tag :tag="$tag"></x-tag>
