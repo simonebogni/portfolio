@@ -1,10 +1,13 @@
 //Experience
 #experience{
-    .card-company, .card-certificate, .card-institute, .card-program-aggregation{
+    .card-company, .card-certificate, .card-institute, .card-program-aggregation, .card-award{
+        .award-subtitle{
+            margin-bottom: 0px;
+        }
         border-color: $darkPurple;
         border-width: 3px;
         border-radius: .5rem;
-        .card-header-company, .card-header-certificate, .card-header-institute, .card-header-program-aggregation{
+        .card-header-company, .card-header-certificate, .card-header-institute, .card-header-program-aggregation, .card-header-award{
             color: $secondaryOrange;
             background-color: $darkPurple;
             margin-left: -1px !important;
@@ -14,7 +17,7 @@
                 color: rgb(198,186,216);
             }
         }
-        .card-body-company, .card-body-certificate, .card-body-institute, .card-body-program-aggregation{
+        .card-body-company, .card-body-certificate, .card-body-institute, .card-body-program-aggregation, .card-body-award{
             background-color: rgba(lighten($lightPurple, 20%), 0.72);
             color: $darkPurple;
             border-bottom-right-radius: 0.3rem;
@@ -48,7 +51,7 @@
                     cursor: pointer !important;
                 }
             }
-            .certificate-tags, .certificate-description, .program-tags, .program-description{
+            .certificate-tags, .certificate-description, .program-tags, .program-description, .award-tags, .award-description{
                 margin-top: 0.5rem;
             }
         }

@@ -19,11 +19,12 @@ class ExperienceController extends Controller
             'programsLowInstitutePriority' => ProgramController::getProgramsLowInstitutePriority()
         ];
         $certifications = CertificateController::getCertificates();
+        $awards = AwardController::getAwards();
         return view('experience', [
             'workExperience'=> $workExperiece,
             'education'=> $education,
             'certifications'=> $certifications,
-            'awards'=> []
+            'awards'=> $awards
         ]);
     }
 }

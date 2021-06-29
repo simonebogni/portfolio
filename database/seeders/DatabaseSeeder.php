@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             OnlinePlatformSeeder::class,
             InstituteSeeder::class,
             ProgramSeeder::class,
+            AwardSeeder::class,
         ]);
     }
 }

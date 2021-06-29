@@ -74,7 +74,7 @@ class TagSeeder extends Seeder
                 'category' => '_Other',
                 'bg_color' => '#0d6efd',
                 'color' => '#FFF',
-                'tags' =>['Accesibility', 'Web development', 'Single Page Application', 'Progressive Web Application', 'Mail', 'Profile management', 'Task automation', 'Algorithms', 'Data Structures']
+                'tags' =>['Accesibility', 'Web development', 'Single Page Application', 'Progressive Web Application', 'Mail', 'Profile management', 'Task automation', 'Algorithms', 'Data Structures', 'Information System']
             ],
         ];
 

@@ -60,6 +60,13 @@
             <h1 class="h1 text-center">Awards</h1>
         </div>
     </div>
+    <div class="row justify-content-center">
+        @foreach ($awards as $award)
+        <div class="col-12 col-lg-6 d-flex align-items-stretch">
+            <x-award :award="$award"></x-award>
+        </div>
+        @endforeach
+    </div>
     @endif
 </div>
 @endsection

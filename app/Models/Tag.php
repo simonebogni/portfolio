@@ -36,4 +36,12 @@ class Tag extends Model
     {
         return $this->belongsToMany(Program::class);
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function awards()
+    {
+        return $this->belongsToMany(Award::class);
+    }
 }

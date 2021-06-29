@@ -69,13 +69,15 @@ class CertificateSeeder extends Seeder
             $tempCertificate->score_max = $certificate["score_max"];
             $tempCertificate->description = $certificate["description"];
             $tempCertificate->save();
-            foreach($certificate["tags"] as $tag){
-                $tag = Tag::firstWhere('name', $tag);
-                if(isset($tag)){
-                    $tempCertificate->tags()->attach($tag);
+            if(isset($certificate["tags"])){
+                foreach($certificate["tags"] as $tag){
+                    $t = Tag::firstWhere('name', $tag);
+                    if(isset($t)){
+                        $tempCertificate->tags()->attach($t);
+                    }
                 }
+                $tempCertificate->save();
             }
-            $tempCertificate->save();
         }
     }
 }
