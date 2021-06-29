@@ -50,7 +50,7 @@
     @endif
     @if ($showCourses && $program->courses != null)
     <div class="row program-courses-wrapper">
-        <div class="col-4">
+        <div class="col-12 col-sm-6 col-md-4">
             <button type="button" class="btn btn-block purpleButtonOutline" data-toggle="modal" data-target="#modal-courses-{{$program->id}}">
                 Show courses
             </button>
