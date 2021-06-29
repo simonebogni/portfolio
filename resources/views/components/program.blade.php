@@ -80,8 +80,8 @@
                                             <p class="course-name">
                                                 {{$course->name}}
                                             </p>
-                                            @if ($course->subtitle != null)
-                                            <p class="course-subtitle">{{$course->subtitle}}</p>
+                                            @if ($course->description != null)
+                                            <p class="course-description">{{$course->description}}</p>
                                             @endif
                                         </td>
                                         <td>
