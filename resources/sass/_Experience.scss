@@ -39,6 +39,11 @@
                 border-color: $darkPurple;
                 background-color: lighten($lightPurple, 30%);
             }
+            select{
+                background-color: lighten($lightPurple, 30%);;
+                border-color: $darkPurple;
+                color: $darkPurple;
+            }
         }
         .modal-courses-footer{
             background-color: lighten($lightPurple, 20%);
