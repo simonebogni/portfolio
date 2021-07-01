@@ -26,7 +26,8 @@ class DatabaseSeeder extends Seeder
             ProgramSeeder::class,
             AwardSeeder::class,
             CourseSeeder::class,
-            PortfolioItemSeeder::class
+            PortfolioCategorySeeder::class,
+            PortfolioItemSeeder::class,
         ]);
     }
 }

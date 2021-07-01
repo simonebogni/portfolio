@@ -7,17 +7,6 @@ use Illuminate\Http\Request;
 
 class PortfolioItemController extends Controller
 {
-
-    /**
-     * Return a collection of all the PortfolioItems
-     */
-    public static function getPortfolioItems(){
-        return PortfolioItem::with(['images', 'tags'])
-            ->orderBy('category', 'ASC')
-            ->orderBy('date', 'DESC')
-            ->get();
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -25,7 +14,7 @@ class PortfolioItemController extends Controller
      */
     public function index()
     {
-        return response()->json(PortfolioItemController::getPortfolioItems());
+        //
     }
 
     /**

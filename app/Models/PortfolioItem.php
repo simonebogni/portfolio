@@ -14,6 +14,14 @@ class PortfolioItem extends Model
     protected $dates = ['created_at', 'updated_at', 'deleted_at', 'date'];
 
     /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function portfolioCategory()
+    {
+        return $this->belongsTo(PortfolioCategory::class);
+    }
+
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function images()

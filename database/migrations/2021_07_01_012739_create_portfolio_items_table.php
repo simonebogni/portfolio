@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\PortfolioCategory;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,8 +16,7 @@ class CreatePortfolioItemsTable extends Migration
     {
         Schema::create('portfolio_items', function (Blueprint $table) {
             $table->id();
-            $table->string('category')->default('_Other');
-            $table->string('category_title')->default('Other projects');
+            $table->string('portfolio_category_id')->default('_other');
             $table->string('title');
             $table->string('subtitle')->nullable();
             $table->text('description')->nullable();

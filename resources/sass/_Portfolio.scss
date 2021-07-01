@@ -1,68 +1,39 @@
 //Portfolio
 #portfolio{
 
-    .ProjectCard{
-        background-color: lighten($lightPurple, 20%);
+    .card-portfolio-item{
         border-color: $darkPurple;
-        margin-bottom: 10px;
-        .ProjectTitle{
-            text-align: center;
+        border-width: 3px;
+        border-radius: .5rem;
+        .card-header-portfolio-item{
+            color: $secondaryOrange;
+            background-color: $darkPurple;
+            margin-left: -1px !important;
+            margin-right: -1px !important;
+            margin-top: -1px !important;
         }
-        .ProjectTagContainer{
-            min-height: 50px;
-            .ProjectTag{
-                background-color: $secondaryOrange;
-        
-                &.ltr{
-                    margin-left: 0px;
-                    margin-right: 3px;
-                }
-                &.rtl{
-                    margin-left: 3px;
-                    margin-right: 0px;
-                }
+        .card-img-top{
+            border-top-right-radius: 0px;
+            border-top-left-radius: 0px;
+        }
+        .card-body-portfolio-item{
+            background-color: rgba(lighten($lightPurple, 20%), 0.72);
+            color: $darkPurple;
+            border-bottom-right-radius: 0.3rem;
+            border-bottom-left-radius: 0.3rem;
+            margin-left: -1px !important;
+            margin-right: -1px !important;
+            .portfolio-item-hr{
+                border-color: $darkPurple;
             }
-    
-        }
-        
-        hr{
-            border-top: 1px solid $darkPurple;
-        }
-
-        .ProjectDescription{
-            height: 300px;
-            overflow: auto;
-            white-space: pre-line;
-
-            &.extended{
-                height: 340px;
-                margin-bottom: 1em;
-            }
-        }
-
-        .ProjectButtonContainer{
-            margin-top: 1em;
-            height: 40px;
-
-            .btn{
-                color: $secondaryOrange;
+            .portfolio-item-url{
                 font-weight: bold;
-                border-color: $secondaryOrange;
-                border-width: 2px;
-                background-color: rgba(255, 255, 255, 0.4);
+                color: $darkPurple;
+                text-decoration: none;
                 &:hover{
-                    background-color: $secondaryOrange;
                     color: $darkPurple;
-                    border-color: $secondaryOrange;
-                }
-                &:active{
-                    background-color: $secondaryOrange !important;
-                    color: $darkPurple !important;
-                    border-color: $secondaryOrange !important;
-                }
-                &:focus{
-                    outline-color: lighten($secondaryOrange, 20%);
-                    box-shadow: 0 0 0 0.2rem lighten($secondaryOrange, 20%);
+                    text-decoration: underline $darkPurple wavy !important;
+                    cursor: pointer !important;
                 }
             }
         }
