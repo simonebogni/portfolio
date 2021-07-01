@@ -44,7 +44,7 @@ class TagSeeder extends Seeder
                 'category' => 'Java',
                 'bg_color' => '#ee9516',
                 'color' => '#000',
-                'tags' =>['Java', 'JavaFx', 'Apache Maven', 'Apache POI', 'Apache Ant']
+                'tags' =>['Java', 'Swing', 'JavaFx', 'Apache Maven', 'Apache POI', 'Apache Ant']
             ],
             [
                 'category' => 'Mobile development',
