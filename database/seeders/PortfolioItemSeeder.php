@@ -185,14 +185,14 @@ class PortfolioItemSeeder extends Seeder
             if($item['date'] != null){
                 $pi->date = $item['date'];
             }
-            $pi->save();
+            $category = null;
             if($item['category_name'] != null){
                 $category = PortfolioCategory::firstWhere('name', $item['category_name']);
-                $category->portfolioItems()->save($pi);
             } else {
                 $category = PortfolioCategory::firstWhere('name', '_other');
-                $category->portfolioItems()->save($pi);
             }
+            $pi->portfolio_category_id = $category->id;
+            $pi->save();
             foreach($item["tags"] as $tag){
                 $tag = Tag::firstWhere('name', $tag);
                 if(isset($tag)){
