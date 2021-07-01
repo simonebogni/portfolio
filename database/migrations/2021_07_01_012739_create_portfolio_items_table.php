@@ -16,7 +16,7 @@ class CreatePortfolioItemsTable extends Migration
     {
         Schema::create('portfolio_items', function (Blueprint $table) {
             $table->id();
-            $table->string('portfolio_category_id')->default('_other');
+            $table->foreignId('portfolio_category_id')->default('_other');
             $table->string('title');
             $table->string('subtitle')->nullable();
             $table->text('description')->nullable();
