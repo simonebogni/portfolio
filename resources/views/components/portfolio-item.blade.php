@@ -27,7 +27,7 @@
         @if (isset($item->description))
         <div class="row pt-3">
             <div class="col portfolio-item-description">
-                
+                {!! nl2br(e($item->description)) !!}
             </div>
         </div>
         @endif
