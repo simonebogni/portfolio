@@ -1,1 +1,1 @@
-<span class="badge" style="color: {{$tag->color}}!important; background-color: {{$tag->bg_color}}!important">{{$tag->name}}</span>
+<span class="badge" style="color: {{$tag->color}}!important; background-color: {{$tag->bg_color}}!important; box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3)">{{$tag->name}}</span>
