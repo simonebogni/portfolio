@@ -7,6 +7,8 @@ $fa-font-path: "../webfonts";
 @import "./Colors";
 @import "./svgBackground";
 
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
 $navTextTransparent: rgba(255,255,255,.8);
 $navText: $mainOrange;
 $navbarGap: 16px;
@@ -39,6 +41,10 @@ $navbarGap: 16px;
         .tags-container{
             display: none;
         }
+    }
+
+    .header{
+        font-family: 'Ubuntu', sans-serif;
     }
 }
 

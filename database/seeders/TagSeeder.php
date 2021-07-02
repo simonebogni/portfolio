@@ -68,7 +68,7 @@ class TagSeeder extends Seeder
                 'category' => 'Programming methodologies',
                 'bg_color' => '#49392C',
                 'color' => '#FFF',
-                'tags' =>['Object Oriented Programming', 'Functional Programming', 'Concurrent Programming', 'Distributed Programming']
+                'tags' =>['Object Oriented Programming', 'Functional Programming', 'Concurrent Programming', 'Distributed Programming', 'RESTful API']
             ],
             [
                 'category' => '_Other',

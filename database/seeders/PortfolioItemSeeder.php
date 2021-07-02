@@ -58,19 +58,85 @@ class PortfolioItemSeeder extends Seeder
             [
                 'title' => 'Interactive CV and Portfolio',
                 'subtitle' => null,
-                'description' => 'A responsive web application built with Laravel 8, SASS, Bootstrap and Blade template engine. The data is stored on a PostgreSQL database and the website is available on Heroku',
+                'description' => 'A responsive RESTful web application built with Laravel 8, SASS, Bootstrap and Blade template engine. The data is stored on a PostgreSQL database and the website is available on Heroku',
                 'live_url' => env('APP_URL'),
                 'git_repo_url' => 'https://github.com/simonebogni/simonebogni-laravel/',
                 'cover_img_url' => url(secure_asset('assets/img/projectImages/header/interactiveCvPortfolio.JPG')),
                 'date' => Carbon::createFromDate(2021, 6, 1),
                 'category_name' => 'webapps',
-                'tags' => ['Recursion', 'PHP', 'Laravel', 'Bootstrap', 'SASS', 'HTML5', 'CSS3', 'JavaScript', 'jQuery', 'PostgreSQL'],
+                'tags' => ['Recursion', 'PHP', 'Laravel', 'Bootstrap', 'SASS', 'HTML5', 'CSS3', 'JavaScript', 'jQuery', 'DataTables', 'PostgreSQL', 'RESTful API'],
                 'images' => [
                     /*[
                         'url' => '',
                         'name' => '',
                         'alt' => ''
                     ]*/
+                ]
+            ],
+            [
+                'title' => 'ItalianPSQ',
+                'subtitle' => null,
+                'description' => "A responsive web platform providing Pediatric Sleep Questionnaires to patients and allowing a faster contact with the pediatricians. It has been built as a proof of concept in collaboration with a student of a Medical Bachelor course. \r\n It uses the Laravel 8 framework, SASS and Bootstrap. The data is presented in a tabular form through the use of DataTables and it’s stored in a PostgreSQL database on Heroku. The application has been developed following the RESTful architectural stle.\r\nTo try the application you can use the following credentials:\r\n
+                    Role: Patient | Username: a.manzoni@gmail.com | Password: 1234test\r\n
+                    Role: Pediatrician | Username: m.rossi@italianpsq.com | Password: 1234test",
+                'live_url' => 'http://italian-psq.herokuapp.com/',
+                'git_repo_url' => 'https://github.com/simonebogni/italian-psq',
+                'cover_img_url' => url(secure_asset('assets/img/projectImages/header/italianPSQ_cover.JPG')),
+                'date' => Carbon::createFromDate(2021, 6, 1),
+                'category_name' => 'webapps',
+                'tags' => ['PHP', 'Laravel', 'Bootstrap', 'SASS', 'HTML5', 'CSS3', 'JavaScript', 'jQuery', 'DataTables', 'PostgreSQL', 'RESTful API'],
+                'images' => [
+                    [
+                        'url' => url(secure_asset('assets/img/projectImages/gallery/italianPSQ_1.JPG')),
+                        'name' => 'Login form for ItalianPSQ',
+                        'alt' => 'Login form for ItalianPSQ'
+                    ],
+                    [
+                        'url' => url(secure_asset('assets/img/projectImages/gallery/italianPSQ_2.JPG')),
+                        'name' => 'Questionnaire form for an ItalianPSQ patient',
+                        'alt' => 'Questionnaire form for an ItalianPSQ patient'
+                    ],
+                    [
+                        'url' => url(secure_asset('assets/img/projectImages/gallery/italianPSQ_3.JPG')),
+                        'name' => 'Questionnaire dashboard for an ItalianPSQ patient',
+                        'alt' => 'Questionnaire dashboard for an ItalianPSQ patient'
+                    ],
+                    [
+                        'url' => url(secure_asset('assets/img/projectImages/gallery/italianPSQ_4.JPG')),
+                        'name' => 'User profile management for an ItalianPSQ patient',
+                        'alt' => 'User profile management for ItalianPSQ patient'
+                    ],
+                    [
+                        'url' => url(secure_asset('assets/img/projectImages/gallery/italianPSQ_5.JPG')),
+                        'name' => 'Questionnaire details - part 1',
+                        'alt' => 'Questionnaire details - part 1'
+                    ],
+                    [
+                        'url' => url(secure_asset('assets/img/projectImages/gallery/italianPSQ_6.JPG')),
+                        'name' => 'Questionnaire details - part 2',
+                        'alt' => 'Questionnaire details - part 2'
+                    ],
+                    [
+                        'url' => url(secure_asset('assets/img/projectImages/gallery/italianPSQ_7.JPG')),
+                        'name' => 'Pediatrician dashboard showing the number of patients and of questionnairs, highlighting the new ones.',
+                        'alt' => 'Pediatrician dashboard showing the number of patients and of questionnairs, highlighting the new ones.'
+                    ],
+                    [
+                        'url' => url(secure_asset('assets/img/projectImages/gallery/italianPSQ_8.JPG')),
+                        'name' => 'Patient list from the Pediatrician control panel',
+                        'alt' => 'Patient list from the Pediatrician control panel'
+                    ],
+                    [
+                        'url' => url(secure_asset('assets/img/projectImages/gallery/italianPSQ_9.JPG')),
+                        'name' => 'Patient questionnaires list from the Pediatrician control panel',
+                        'alt' => 'Patient questionnaires list from the Pediatrician control panel'
+                    ],
+                    [
+                        'url' => url(secure_asset('assets/img/projectImages/gallery/italianPSQ_10.JPG')),
+                        'name' => 'Patient account creation from the Pediatrician control panel',
+                        'alt' => 'Patient account creation from the Pediatrician control panel'
+                    ]
+                    
                 ]
             ],
             [

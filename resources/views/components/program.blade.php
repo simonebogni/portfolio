@@ -48,13 +48,13 @@
         </div>
     </div>
     @endif
-    @if ($showCourses && $program->courses != null)
+    @if ($showCourses && sizeOf($program->courses) > 0)
     <div class="row program-courses-wrapper">
         <div class="col-12 col-sm-6 col-md-4">
-            <button type="button" class="btn btn-block purpleButtonOutline" data-toggle="modal" data-target="#modal-courses-{{$program->id}}">
+            <button type="button" class="btn btn-block purpleButtonOutline mb-0" data-toggle="modal" data-target="#modal-courses-{{$program->id}}">
                 Show courses
             </button>
-            <div class="modal fade" id="modal-courses-{{$program->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="modal-courses-{{$program->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
                 <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
                     <div class="modal-content modal-courses-content">
                         <div class="modal-header modal-courses-header">
@@ -110,8 +110,12 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="modal-footer modal-courses-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <div class="modal-footer modal-courses-footer d-block">
+                            <div class="row">
+                                <div class="col-6 offset-6 col-md-5 offset-md-7 col-lg-3 offset-lg-9">
+                                    <button type="button" class="btn btn-block purpleButtonOutline mb-0" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
