@@ -4,6 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta name="title" property=”og:title” content="Interactive CV and Portfolio">
+        <meta name="image" property=”og:image” content="https://lh3.googleusercontent.com/pw/AM-JKLUWqC3ih7dLnmyK9421ReZh4JiDyfavRFAJTrCl_1HSaJddHTiNViHbLtX-Wkl-WggYBSAO1IFwJDDUY-56SgPB6AnbcZnLuWY5-k5G7GNXRt-Lk842KpwK2HS1QuDrt6ccjnsntRuArgJAbiXDwHI=w1341-h655-no?authuser=0">
+        <meta name="description" property=”og:description” content="A responsive RESTful web application built with Laravel 8, SASS, Bootstrap and Blade template engine. The data is stored on a PostgreSQL database and the website is available on Heroku.">
 
         <title>{{ config('app.name', 'Bogni Simone - Web developer') }}</title>
         <link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/favicon/apple-touch-icon.png')}}">
