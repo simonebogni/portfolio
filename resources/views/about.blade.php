@@ -21,7 +21,7 @@
     @if (isset($languages))
     <div class="row">
         <div class="col-12 mt-5 text-center">
-            <h1 class="h1">Spoken languages</h1>
+            <h1 class="h1 header">Spoken languages</h1>
         </div>
     </div>
     <div class="row justify-content-center">
