@@ -7,7 +7,7 @@ $fa-font-path: "../webfonts";
 @import "./Colors";
 @import "./svgBackground";
 
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap');
 
 $navTextTransparent: rgba(255,255,255,.8);
 $navText: $mainOrange;
@@ -45,6 +45,10 @@ $navbarGap: 16px;
 
     .header{
         font-family: 'Ubuntu', sans-serif;
+        font-weight: 400;
+        &.header-light{
+            font-weight: 300;
+        }
     }
 }
 
