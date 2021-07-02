@@ -61,7 +61,7 @@ class PortfolioItemSeeder extends Seeder
                 'description' => 'A responsive RESTful web application built with Laravel 8, SASS, Bootstrap and Blade template engine. The data is stored on a PostgreSQL database and the website is available on Heroku',
                 'live_url' => env('APP_URL'),
                 'git_repo_url' => 'https://github.com/simonebogni/simonebogni-laravel/',
-                'cover_img_url' => url(secure_asset('assets/img/projectImages/header/interactiveCvPortfolio.JPG')),
+                'cover_img_url' => url('https://lh3.googleusercontent.com/pw/AM-JKLUWqC3ih7dLnmyK9421ReZh4JiDyfavRFAJTrCl_1HSaJddHTiNViHbLtX-Wkl-WggYBSAO1IFwJDDUY-56SgPB6AnbcZnLuWY5-k5G7GNXRt-Lk842KpwK2HS1QuDrt6ccjnsntRuArgJAbiXDwHI=w1341-h655-no?authuser=0'),
                 'date' => Carbon::createFromDate(2021, 6, 1),
                 'category_name' => 'webapps',
                 'tags' => ['Recursion', 'PHP', 'Laravel', 'Bootstrap', 'SASS', 'HTML5', 'CSS3', 'JavaScript', 'jQuery', 'DataTables', 'PostgreSQL', 'RESTful API'],
@@ -81,58 +81,58 @@ class PortfolioItemSeeder extends Seeder
                     Role: Pediatrician | Username: m.rossi@italianpsq.com | Password: 1234test",
                 'live_url' => 'http://italian-psq.herokuapp.com/',
                 'git_repo_url' => 'https://github.com/simonebogni/italian-psq',
-                'cover_img_url' => url(secure_asset('assets/img/projectImages/header/italianPSQ_cover.JPG')),
+                'cover_img_url' => url('https://lh3.googleusercontent.com/pw/AM-JKLUWSsidjfjEC38shwerJXpu7aBARfSCuhbajHnDnL8yVA3wo-ljE0JbCq9WtHsiWfFkeHBkHA-NNMAcU1vSuFdyZDWhPEmATb7PjWaNPQOfvKWbnMIUvj8_z_xlFyLNdYA6YxEJ1ruRc1NduTCi8HE=w1342-h655-no?authuser=0'),
                 'date' => Carbon::createFromDate(2021, 6, 1),
                 'category_name' => 'webapps',
                 'tags' => ['PHP', 'Laravel', 'Bootstrap', 'SASS', 'HTML5', 'CSS3', 'JavaScript', 'jQuery', 'DataTables', 'PostgreSQL', 'RESTful API'],
                 'images' => [
                     [
-                        'url' => url(secure_asset('assets/img/projectImages/gallery/italianPSQ_1.JPG')),
+                        'url' => url('https://lh3.googleusercontent.com/pw/AM-JKLXtiTg0Kal4mtqiQ-gTUwCMty5rJ3ZZ3eNt6ne-QBKZsbXupwxQjPBlLg5l42_fKz7aVaIKkCFSIl8M5q5fYU1BMyycellF_uUQeRuGfp4G1ciufHOC-FRpDkefBB43AuXeVzUHFpKXt7LpSGHxt3g=w1010-h481-no?authuser=0'),
                         'name' => 'Login form for ItalianPSQ',
                         'alt' => 'Login form for ItalianPSQ'
                     ],
                     [
-                        'url' => url(secure_asset('assets/img/projectImages/gallery/italianPSQ_2.JPG')),
+                        'url' => url('https://lh3.googleusercontent.com/pw/AM-JKLUf1uOiGN-Aq4V6__9wKG_P_dr180nwGWEpiNezQaZ-oW3p-H3Nh4LgSlUmnL_qgxmMUeOChwWEssEVJ8s0o-9Fh7cxa7qGUXJOhcTBORAHNfiqcchYZFS245Y2ikIRg4zMmbikPzD5-FivMIY5UxQ=w1342-h640-no?authuser=0'),
                         'name' => 'Questionnaire form for an ItalianPSQ patient',
                         'alt' => 'Questionnaire form for an ItalianPSQ patient'
                     ],
                     [
-                        'url' => url(secure_asset('assets/img/projectImages/gallery/italianPSQ_3.JPG')),
+                        'url' => url('https://lh3.googleusercontent.com/pw/AM-JKLUbt3aDd4YWsE2oSHZ-VZbg2XMSFCm1v7YpZ7zC4zaWcpgV90Z2cBzvafCxboLBxeXB-yDeCVAE2XYn9dNHIokCM4DxQuuuFcyi2bP06yuUYTHZEnq_U2nUm4vm2JCxZsH6tk_rWKx8xaBiLew6m4s=w1360-h654-no?authuser=0'),
                         'name' => 'Questionnaire dashboard for an ItalianPSQ patient',
                         'alt' => 'Questionnaire dashboard for an ItalianPSQ patient'
                     ],
                     [
-                        'url' => url(secure_asset('assets/img/projectImages/gallery/italianPSQ_4.JPG')),
+                        'url' => url('https://lh3.googleusercontent.com/pw/AM-JKLXMloFXQlp2i5vbWSO1dTEM4uBWA9g5REXj1aeTDck1ED-PsPPWlScN6BztWQghOdqTfqprUD6DvNqfvA22XaapDXHMQBulYoPPFPpvNm01QxQ7E2F28GKHFkZ1UAoL_XrKWD5UxFfX6fLughn9SoU=w1342-h652-no?authuser=0'),
                         'name' => 'User profile management for an ItalianPSQ patient',
                         'alt' => 'User profile management for ItalianPSQ patient'
                     ],
                     [
-                        'url' => url(secure_asset('assets/img/projectImages/gallery/italianPSQ_5.JPG')),
+                        'url' => url('https://lh3.googleusercontent.com/pw/AM-JKLUZcw29W17WxxBN5Ikl017hFMPWZDMC0PyYuGYVehPh98KvEaiPM2iwkVo1gcifdX6r3GjpZL7YX76I_p7Dbxsd3tH72kXgrKv2m6iKJI72_vz6knV6fw9_F9vpI74gkJMomOssst4-6KOfYcwv_Ps=w1344-h655-no?authuser=0'),
                         'name' => 'Questionnaire details - part 1',
                         'alt' => 'Questionnaire details - part 1'
                     ],
                     [
-                        'url' => url(secure_asset('assets/img/projectImages/gallery/italianPSQ_6.JPG')),
+                        'url' => url('https://lh3.googleusercontent.com/pw/AM-JKLUIoSfKdIZPtYX0s75Af0P2jqKn2Ka6lAeTnX1SgApXAwwZPXHB-BduN-YXtpZUReHr4oDkUP48ExSRRgqSXUtgT2dljb35pdHG3bMl-FSYlJ-7b9tNTi4jKmk91hcOMbOKYBum_dBZ1hd1RZUt6zM=w1345-h656-no?authuser=0'),
                         'name' => 'Questionnaire details - part 2',
                         'alt' => 'Questionnaire details - part 2'
                     ],
                     [
-                        'url' => url(secure_asset('assets/img/projectImages/gallery/italianPSQ_7.JPG')),
+                        'url' => url('https://lh3.googleusercontent.com/pw/AM-JKLViKDRepdVDbtmFZgcs2STr6idktvuWpIGK9QlfnLHBJyOxYMFN1iPzb8mNWAFi4zbhUHq6Wd7RMDUQlctn4JJ4PodkpcCzinJ_24v2by9o0sVKr6_f-wqD-sDIEX8PdG1Nw0aHi2UdF3UCXNyRq-A=w1360-h656-no?authuser=0'),
                         'name' => 'Pediatrician dashboard showing the number of patients and of questionnairs, highlighting the new ones.',
                         'alt' => 'Pediatrician dashboard showing the number of patients and of questionnairs, highlighting the new ones.'
                     ],
                     [
-                        'url' => url(secure_asset('assets/img/projectImages/gallery/italianPSQ_8.JPG')),
+                        'url' => url('https://lh3.googleusercontent.com/pw/AM-JKLXCjMIwD4Ns7Qsu-w4Yq1NRc81eS5csNDqZ8pGb-K3x5zEr5y9wR8QMTBE1TItS6MHRaujKBdq9gI6Iqv775fc0rvF-FFzg8KV85mXAXQXD7Yn-AOf06s7XJIQbsRKfpt0Q9hkBtZLkmwtQuL4eBUc=w1341-h655-no?authuser=0'),
                         'name' => 'Patient list from the Pediatrician control panel',
                         'alt' => 'Patient list from the Pediatrician control panel'
                     ],
                     [
-                        'url' => url(secure_asset('assets/img/projectImages/gallery/italianPSQ_9.JPG')),
+                        'url' => url('https://lh3.googleusercontent.com/pw/AM-JKLUxdcstnlagK2HCa163dwmPxi0rQvF2SZPN4VbY3gx4g1tHfBAJby95w-BAkqHFnfarmVPD2udeKlvEVkd1o_8X1JqdgMZFD38cKbt8y8W8ZRLn3xCuAkR0bgHujU79VYJ2y-f-1dbcyICfysKBkTI=w1360-h655-no?authuser=0'),
                         'name' => 'Patient questionnaires list from the Pediatrician control panel',
                         'alt' => 'Patient questionnaires list from the Pediatrician control panel'
                     ],
                     [
-                        'url' => url(secure_asset('assets/img/projectImages/gallery/italianPSQ_10.JPG')),
+                        'url' => url('https://lh3.googleusercontent.com/pw/AM-JKLWm4knjLE3LGoTGzQVRpxtzO4wdZDw_2hTd56DtS0GiJCuClaZkN8HU5KpG2YTLUWQX5n1wKdcA8A4u0GS3RLlBvwRxzuL2HTIyn4ROEzwWoXFmZJMV2hj6tGC8F0GvZQBgEt3eVO33zG_j4VRtsps=w1342-h654-no?authuser=0'),
                         'name' => 'Patient account creation from the Pediatrician control panel',
                         'alt' => 'Patient account creation from the Pediatrician control panel'
                     ]
@@ -145,7 +145,7 @@ class PortfolioItemSeeder extends Seeder
                 'description' => null,
                 'live_url' => 'https://codepen.io/simonebogni/full/KKKdrmq',
                 'git_repo_url' => null,
-                'cover_img_url' => url(secure_asset('assets/img/projectImages/header/kiskstarter.png')),
+                'cover_img_url' => url('https://lh3.googleusercontent.com/pw/AM-JKLUU78zI0XIw9WyUKVYpwCibnIfpLMx2JQSebvEDXkJpdtUM7PU1arzlYTKGypuDUEKOy38GxFJjp_8x_9uBjBSz1_AI4gNX3sQETMP30KbzkpfFIcu-uS1-tA3-Bg5e4Xt97GAQKDlOPwZOHLVItHk=w640-h360-no?authuser=0'),
                 'date' => Carbon::createFromDate(2019, 10, 11),
                 'category_name' => 'd3.js',
                 'tags' => ['JavaScript', 'D3.js'],
@@ -163,7 +163,7 @@ class PortfolioItemSeeder extends Seeder
                 'description' => null,
                 'live_url' => 'https://codepen.io/simonebogni/full/yLLYQoP',
                 'git_repo_url' => null,
-                'cover_img_url' => url(secure_asset('assets/img/projectImages/header/education.png')),
+                'cover_img_url' => url('https://lh3.googleusercontent.com/pw/AM-JKLXSPRMAYefYLebVWo3ZvX8cdNM0WxGTB9R7QSWoLfC3TzqF7ULwRivqPwLjNM8mRxVS3uvBHxPSb64jiSnYvGdX2tThjqKilxZ2YjgOMqV1k6ZeZN9-2baAMsB2OwRporz9mYpTFQRWWT7mnre5URo=w640-h360-no?authuser=0'),
                 'date' => Carbon::createFromDate(2019, 10, 11),
                 'category_name' => 'd3.js',
                 'tags' => ['JavaScript', 'D3.js'],
@@ -181,7 +181,7 @@ class PortfolioItemSeeder extends Seeder
                 'description' => null,
                 'live_url' => 'https://codepen.io/simonebogni/full/poojQWW',
                 'git_repo_url' => null,
-                'cover_img_url' => url(secure_asset('assets/img/projectImages/header/temperature.png')),
+                'cover_img_url' => url('https://lh3.googleusercontent.com/pw/AM-JKLXl23BiujVs_i9X-fldxqaN9ocuk7nnj9DkVijnvKipIWfWMV4ploGaYyn0lQVPs6rgmDjVPjasd0Br3ELh4gmufyUtWEQgW04lzX18D_Ibp5a3ZlR6yveP9FFp604ekD-G3vbJWckJVF0JQqpeKWo=w640-h360-no?authuser=0'),
                 'date' => Carbon::createFromDate(2019, 10, 11),
                 'category_name' => 'd3.js',
                 'tags' => ['JavaScript', 'D3.js'],
@@ -199,7 +199,7 @@ class PortfolioItemSeeder extends Seeder
                 'description' => null,
                 'live_url' => 'https://codepen.io/simonebogni/full/BaavXmo',
                 'git_repo_url' => null,
-                'cover_img_url' => url(secure_asset('assets/img/projectImages/header/doping.png')),
+                'cover_img_url' => url('https://lh3.googleusercontent.com/pw/AM-JKLWObEOnN-r_RuqEUA9_eBU8xdFO5HOWp6AoaFm_U6EjQdPRpnMwM_7tc13GJSwhQTNyD2FAYYCrzhAZsq3OLtlusR6BMvNvrVoxGJz641ERVkzGLhgEPQKDx4U_48yZgd5mwiYVrzYGDtvquOa2Ou4=w640-h360-no?authuser=0'),
                 'date' => Carbon::createFromDate(2019, 11, 19),
                 'category_name' => 'd3.js',
                 'tags' => ['JavaScript', 'D3.js'],
@@ -217,7 +217,7 @@ class PortfolioItemSeeder extends Seeder
                 'description' => null,
                 'live_url' => 'https://codepen.io/simonebogni/full/XWWovwP',
                 'git_repo_url' => null,
-                'cover_img_url' => url(secure_asset('assets/img/projectImages/header/gdp.png')),
+                'cover_img_url' => url('https://lh3.googleusercontent.com/pw/AM-JKLVcvZzyp9dKuQ66WSFP_-pbjS6f_w-G9hiUX_KRiF59ysacKrftQVBEkjFwWgCJ0om5HvSpgnqaQv7tcth_Ht-56X9lG_hrIJ_WmQ5nwGG4QXS1pbkvpSmwTqy_Y2NDRdfUMvbRCLV3ljISOSm3diE=w640-h360-no?authuser=0'),
                 'date' => Carbon::createFromDate(2019, 11, 19),
                 'category_name' => 'd3.js',
                 'tags' => ['JavaScript', 'D3.js'],
