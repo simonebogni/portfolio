@@ -71,7 +71,7 @@
                 </button>
             </div>
             <div class="modal-body modal-gallery-body">
-                <div id="modal-gallery-{{$item->id}}-carousel" class="carousel slide" data-ride="carousel">
+                <div id="modal-gallery-{{$item->id}}-carousel" class="carousel slide">
                     <ol class="carousel-indicators">
                         @foreach ($item->images as $image)
                         @if ($loop->index == 0)
