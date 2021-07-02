@@ -96,7 +96,7 @@ class PortfolioItemSeeder extends Seeder
                         'name' => 'Questionnaire form for an ItalianPSQ patient',
                         'alt' => 'Questionnaire form for an ItalianPSQ patient'
                     ],
-                    /*[
+                    [
                         'url' => url(secure_asset('assets/img/projectImages/gallery/italianPSQ_3.JPG')),
                         'name' => 'Questionnaire dashboard for an ItalianPSQ patient',
                         'alt' => 'Questionnaire dashboard for an ItalianPSQ patient'
@@ -136,7 +136,6 @@ class PortfolioItemSeeder extends Seeder
                         'name' => 'Patient account creation from the Pediatrician control panel',
                         'alt' => 'Patient account creation from the Pediatrician control panel'
                     ]
-                    */
                     
                 ]
             ],
