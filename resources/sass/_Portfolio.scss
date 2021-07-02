@@ -40,6 +40,11 @@
     }
 
     //Gallery
+    .gallery-image-name{
+        font-family: 'Ubuntu', sans-serif;
+        font-weight: bold;
+    }
+
     .carousel-control-prev-icon, .carousel-control-next-icon{
         background-color: $darkPurple;
         color: $darkPurple;

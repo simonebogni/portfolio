@@ -12,7 +12,7 @@
     <!-- Work Experience -->
     <div class="row mt-4 mb-3 justify-content-center">
         <div class="col-xs-10">
-            <h1 class="h1 text-center">Work experience</h1>
+            <h1 class="h1 text-center header">Work experience</h1>
         </div>
     </div>
     <div class="row justify-content-center">
@@ -27,7 +27,7 @@
     <!-- Education -->
     <div class="row mt-3 mb-3 justify-content-center">
         <div class="col-xs-10">
-            <h1 class="h1 text-center">Education & Courses</h1>
+            <h1 class="h1 text-center header">Education & Courses</h1>
         </div>
     </div>
     <div class="row justify-content-center">
@@ -49,7 +49,7 @@
     <!-- Certifications -->
     <div class="row mt-3 mb-3 justify-content-center">
         <div class="col-xs-10">
-            <h1 class="h1 text-center">Certifications</h1>
+            <h1 class="h1 text-center header">Certifications</h1>
         </div>
     </div>
     <div class="row justify-content-center">
@@ -64,7 +64,7 @@
     <!-- Awards -->
     <div class="row mt-3 mb-3 justify-content-center">
         <div class="col-xs-10">
-            <h1 class="h1 text-center">Awards</h1>
+            <h1 class="h1 text-center header">Awards</h1>
         </div>
     </div>
     <div class="row justify-content-center">

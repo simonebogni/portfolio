@@ -7,7 +7,7 @@
     @if (sizeOf($category->portfolioItems) > 0)
     <div class="row mt-4 mb-3 justify-content-center">
         <div class="col-xs-10">
-            <h1 class="h1 text-center">{{$category->display_title}}</h1>
+            <h1 class="h1 text-center header">{{$category->display_title}}</h1>
         </div>
     </div>
     <div class="row justify-content-center">

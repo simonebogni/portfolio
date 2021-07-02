@@ -33,7 +33,7 @@
     @if (isset($skillCategories))
         <div class="row">
             <div class="col-12 mt-5 text-center">
-                <h1 class="h1">Programming knowledge</h1>
+                <h1 class="h1 header">Programming knowledge</h1>
             </div>
         </div>
         <div class="row mt-5 justify-content-center">
