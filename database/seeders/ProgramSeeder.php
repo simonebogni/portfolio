@@ -31,10 +31,21 @@ class ProgramSeeder extends Seeder
                 'tags' => ['Java', 'Algorithms', 'Data Structures', 'Object Oriented Programming', 'Functional Programming', 'Concurrent Programming', 'Distributed Programming', 'Android', 'PostgreSQL', 'MySQL', 'UML', 'ERD', 'Software Design', 'Design Patterns', 'Image Processing', 'Web development']
             ],
             [
+                'name'=> 'Web Security',
+                'institute' => null,
+                'online_platform' => 'LinkedIn Learning',
+                'start_date' => Carbon::createFromDate(2021, 7, 3),
+                'end_date' => null,
+                'period' => null,
+                'current' => true,
+                'description' => 'A course taught by Kevin Skoglund on the best practices to secure web applications.',
+                'tags' => ['Security']
+            ],
+            [
                 'name'=> 'Several courses about Laravel',
                 'institute' => null,
                 'online_platform' => 'Laracasts',
-                'start_date' => null,
+                'start_date' => Carbon::createFromDate(2020, 10, 1),
                 'end_date' => null,
                 'period' => null,
                 'current' => true,

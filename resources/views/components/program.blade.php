@@ -1,16 +1,22 @@
 <div>
-    <h5 class="h5">{{$program->name}}</h5>
-    @if ($repeatInstitute && $program->institute_id != null)
-    <h6 class="h6">From <span class="program-institute-name">{{$program->institute->name}}</span>
-        @if ($program->online_platform_id != null)
-            on <span class="program-online-platform-name">{{$program->onlinePlatform->name}}</span>
-        @endif
-    </h6>
-    @else
-    @if ($program->online_platform_id != null)
-    <h6 class="h6">On <span class="program-online-platform-name">{{$program->onlinePlatform->name}}</span></h6>
-    @endif
-    @endif
+    <div class="row mt-3">
+        <div class="col">
+            <span><h5 class="h5 d-inline">{{$program->name}}</h5></span>
+            <span>
+                @if ($repeatInstitute && $program->institute_id != null)
+                <h6 class="h6 d-inline"> from <span class="program-institute-name">{{$program->institute->name}}</span>
+                    @if ($program->online_platform_id != null)
+                        on <span class="program-online-platform-name">{{$program->onlinePlatform->name}}</span>
+                    @endif
+                </h6>
+                @else
+                    @if ($program->online_platform_id != null)
+                    <h6 class="h6 d-inline"> on <span class="program-online-platform-name">{{$program->onlinePlatform->name}}</span></h6>
+                    @endif
+                @endif
+            </span>
+        </div>
+    </div>
     @if ($program->period != null)
     <p class="program-period">{{$program->period}}</p>
     @else

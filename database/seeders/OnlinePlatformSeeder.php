@@ -20,6 +20,10 @@ class OnlinePlatformSeeder extends Seeder
                 'website' => 'https://www.freecodecamp.org/'
             ],
             [
+                'name' => 'LinkedIn Learning',
+                'website' => 'https://www.linkedin.com/learning/'
+            ],
+            [
                 'name' => 'EdX',
                 'website' => 'https://www.edx.org/'
             ],
