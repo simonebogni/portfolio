@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarContent">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item"><a href="{{url("/about")}}" class="nav-link customNavbarLink 
-                @if (\Request::is('about'))  
+                @if (\Request::is('about') || \Request::is('/'))  
                 active customNavbarActiveLink
                 @endif
                 ">About me</a></li>
