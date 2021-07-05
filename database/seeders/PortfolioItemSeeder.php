@@ -140,6 +140,19 @@ class PortfolioItemSeeder extends Seeder
                 ]
             ],
             [
+                'title' => 'CerealGreen',
+                'subtitle' => null,
+                'description' => "A web platform built as a Minimum Viable Product for the Hackathon hosted by the company SocialLibreria in 2019, built through the cooperation of 2 students from the Computer Science Bachelor course and 2 students from the Business and Economics Master course from University of Insubria (Varese, Italy). The platform has been built using the CakePHP framework and MySQL. It is an information system, used internally by a fictional multinational company to address the sale cycle across different departments. It was developed rapidly through prototypes over the course of 2 weeks. (More info in the Github repo)",
+                'live_url' => null,
+                'git_repo_url' => 'https://github.com/simonebogni/Hackathon-2019-Cereali',
+                'cover_img_url' => url('https://lh3.googleusercontent.com/pw/AM-JKLWDNesMAEo6zquPAG5BuCNxEaLH5_sTTqFjyo76-Hjx3h2rwyA6MQvOCCy3Awy6Rh3ftap2JR-v_cIz-w_iJIa0dWOK-63NCb1v2f2erDWfa0DSITvWEvsOGcKQlZZC6BuFjsiwoa2lDIQi8uYz64w=w874-h489-no?authuser=0'),
+                'date' => Carbon::createFromDate(2019, 11, 10),
+                'category_name' => 'webapps',
+                'tags' => ['PHP', 'CakePHP', 'Bootstrap', 'SASS', 'HTML5', 'CSS3', 'JavaScript', 'jQuery', 'DataTables', 'MySQL', 'RESTful API'],
+                'images' => [
+                ]
+            ],
+            [
                 'title' => 'Treemap',
                 'subtitle' => 'Kickstarter pledges',
                 'description' => null,
