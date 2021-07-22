@@ -284,6 +284,12 @@ class SkillCategorySeeder extends Seeder
                                 'picture_source' => asset('assets/img/logos/python/pandas.svg'),
                                 'familiarity' => true,
                             ],
+                            [
+                                'name' => "Matplotlib",
+                                'description' => "Matplotlib is a plotting library that provides an object-oriented API for embedding plots into applications using general-purpose GUI toolkits.",
+                                'picture_source' => asset('assets/img/logos/python/Matplotlib.svg'),
+                                'familiarity' => true,
+                            ],
                         ]
                     ]
                 ]
