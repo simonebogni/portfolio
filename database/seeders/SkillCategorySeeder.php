@@ -253,6 +253,41 @@ class SkillCategorySeeder extends Seeder
                     ],
                 ]
             ],[
+                'name' => "Python",
+                'icon_class' => "fab fa-python",
+                'subcategories' => [
+                    [
+                        'name' => "Version",
+                        'skills' => [
+                            [
+                                'name' => "Python 3",
+                                'description' => "Python consistently ranks as one of the most popular programming languages. It is interpreted, dynamically-typed, high-level and general-purpose. Its design philosophy emphasizes code readability. It supports multiple programming paradigms, including procedural, object-oriented and functional programming.",
+                                'picture_source' => asset('assets/img/logos/python/Python.svg')
+                            ]
+                        ]
+                    ],[
+                        'name' => "Frameworks",
+                        'skills' => [
+                            [
+                                'name' => "Django",
+                                'description' => "Django is a Python-based free and open-source web framework that follows the model–template–views (MTV) architectural pattern. Django's primary goal is to ease the creation of complex, database-driven websites. The framework emphasizes reusability and \"pluggability\" of components, less code, low coupling, rapid development, and the DRY principle. Django also provides an optional administrative CRUD interface that is generated dynamically through introspection and configured via admin models.",
+                                'picture_source' => asset('assets/img/logos/python/django.svg'),
+                                'familiarity' => true,
+                            ]
+                        ]
+                    ],[
+                        'name' => "Other tools",
+                        'skills' => [
+                            [
+                                'name' => "Pandas",
+                                'description' => "Pandas is a software library written for the Python programming language for data manipulation and analysis. In particular, it offers data structures and operations for manipulating numerical tables and time series.",
+                                'picture_source' => asset('assets/img/logos/python/pandas.svg'),
+                                'familiarity' => true,
+                            ],
+                        ]
+                    ]
+                ]
+            ],[
                 'name' => "More",
                 'icon_class' => "fas fa-tools",
                 'subcategories' => [
