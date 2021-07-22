@@ -10,5 +10,5 @@
         </div>
     </div>
     @endif
-    <p class="position-description">{{$position->description}}</p>
+    <p class="position-description mt-2">{!! $position->description !!}</p>
 </div>
