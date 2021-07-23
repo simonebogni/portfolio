@@ -46,7 +46,7 @@ class PortfolioItemSeeder extends Seeder
                 'cover_img_url' => null,
                 'date' => Carbon::createFromDate(2017, 6, 28),
                 'category_name' => 'java',
-                'tags' => ['Java', 'JavaFx', 'Geolocation', 'PostgreSQL', 'Mail', 'Profile management', 'UML', 'ERD'],
+                'tags' => ['Java', 'JavaFx', 'Geolocation', 'PostgreSQL', 'Mail', 'Profile management', 'UML', 'ERD', 'Distributed Programming'],
                 'images' => [
                     /*[
                         'url' => '',
