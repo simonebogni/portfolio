@@ -21,6 +21,7 @@ class PortfolioItemSeeder extends Seeder
         $portfolioItems = [
             [
                 'title' => 'FaceDoor',
+                'slug' => 'facedoor',
                 'subtitle' => null,
                 'description' => "Project at the first year of university.\r\nIt was requested to make the UI for a social network.\r\nIt doesn't provide a connection to the server but there are advanced features like: registration and login, profile search (with additional information provided to logged-in users) and profile editing/deletion.\r\nThe project uses advanced data-structure (like the red and black tree) to make the profile lookup faster.",
                 'live_url' => null,
@@ -39,6 +40,7 @@ class PortfolioItemSeeder extends Seeder
             ],
             [
                 'title' => 'WatchNeighbors',
+                'slug' => 'watchneighbors',
                 'subtitle' => null,
                 'description' => "Project at the second year of university.\r\nIt is an application to help neighborhood watch groups.\r\nUser that are not logged in can only see reported activities on the map, while logged in users can see and insert an activity in their neighborhood on the map, as well as mark themselves as taking charge of it.\r\nWhen a user registers to the platform, they receive an automated mail from the system, from which they have to click on a link in order to validate their profile.\r\nThe formal documentation was made in UML, the database used was PostgreSQL and OpenStreetMap was used for the map functionality. All the data is sanitized and preconfigured SQL statements were used to prevent SQL Injection attacks.\r\nThe Skeleton & Stub design pattern was used for the client-server interaction.",
                 'live_url' => null,
@@ -57,6 +59,7 @@ class PortfolioItemSeeder extends Seeder
             ],
             [
                 'title' => 'Interactive CV and Portfolio',
+                'slug' => 'interactivecv',
                 'subtitle' => null,
                 'description' => 'A responsive RESTful web application built with Laravel 8, SASS, Bootstrap and Blade template engine. The data is stored on a PostgreSQL database and the website is available on Heroku',
                 'live_url' => env('APP_URL'),
@@ -75,6 +78,7 @@ class PortfolioItemSeeder extends Seeder
             ],
             [
                 'title' => 'ItalianPSQ',
+                'slug' => 'italianpsq',
                 'subtitle' => null,
                 'description' => "A responsive web platform providing Pediatric Sleep Questionnaires to patients and allowing a faster contact with the pediatricians. It has been built as a proof of concept in collaboration with a student of a Medical Bachelor course. \r\n It uses the Laravel 8 framework, SASS and Bootstrap. The data is presented in a tabular form through the use of DataTables and it’s stored in a PostgreSQL database on Heroku. The application has been developed following the RESTful architectural stle.\r\nTo try the application you can use the following credentials:\r\n
                     Role: Patient | Username: a.manzoni@gmail.com | Password: 1234test\r\n
@@ -141,6 +145,7 @@ class PortfolioItemSeeder extends Seeder
             ],
             [
                 'title' => 'CerealGreen',
+                'slug' => 'cerealgreen',
                 'subtitle' => null,
                 'description' => "A web platform built as a Minimum Viable Product for the Hackathon hosted by the company SocialLibreria in 2019, built through the cooperation of 2 students from the Computer Science Bachelor course and 2 students from the Business and Economics Master course from University of Insubria (Varese, Italy). The platform has been built using the CakePHP framework and MySQL. It is an information system, used internally by a fictional multinational company to address the sale cycle across different departments. It was developed rapidly through prototypes over the course of 2 weeks. (More info in the Github repo)",
                 'live_url' => null,
@@ -154,13 +159,14 @@ class PortfolioItemSeeder extends Seeder
             ],
             [
                 'title' => 'Treemap',
+                'slug' => 'd3js-treemap',
                 'subtitle' => 'Kickstarter pledges',
                 'description' => null,
                 'live_url' => 'https://codepen.io/simonebogni/full/KKKdrmq',
                 'git_repo_url' => null,
                 'cover_img_url' => url('https://lh3.googleusercontent.com/pw/AM-JKLUU78zI0XIw9WyUKVYpwCibnIfpLMx2JQSebvEDXkJpdtUM7PU1arzlYTKGypuDUEKOy38GxFJjp_8x_9uBjBSz1_AI4gNX3sQETMP30KbzkpfFIcu-uS1-tA3-Bg5e4Xt97GAQKDlOPwZOHLVItHk=w640-h360-no?authuser=0'),
                 'date' => Carbon::createFromDate(2019, 10, 11),
-                'category_name' => 'd3.js',
+                'category_name' => 'd3js',
                 'tags' => ['JavaScript', 'D3.js'],
                 'images' => [
                     /*[
@@ -172,13 +178,14 @@ class PortfolioItemSeeder extends Seeder
             ],
             [
                 'title' => 'Choropleth Map',
+                'slug' => 'd3js-choropleth',
                 'subtitle' => 'US Education Attainment',
                 'description' => null,
                 'live_url' => 'https://codepen.io/simonebogni/full/yLLYQoP',
                 'git_repo_url' => null,
                 'cover_img_url' => url('https://lh3.googleusercontent.com/pw/AM-JKLXSPRMAYefYLebVWo3ZvX8cdNM0WxGTB9R7QSWoLfC3TzqF7ULwRivqPwLjNM8mRxVS3uvBHxPSb64jiSnYvGdX2tThjqKilxZ2YjgOMqV1k6ZeZN9-2baAMsB2OwRporz9mYpTFQRWWT7mnre5URo=w640-h360-no?authuser=0'),
                 'date' => Carbon::createFromDate(2019, 10, 11),
-                'category_name' => 'd3.js',
+                'category_name' => 'd3js',
                 'tags' => ['JavaScript', 'D3.js'],
                 'images' => [
                     /*[
@@ -190,13 +197,14 @@ class PortfolioItemSeeder extends Seeder
             ],
             [
                 'title' => 'Heatmap',
+                'slug' => 'd3js-heatmap',
                 'subtitle' => 'Monthly global land-surface temperature',
                 'description' => null,
                 'live_url' => 'https://codepen.io/simonebogni/full/poojQWW',
                 'git_repo_url' => null,
                 'cover_img_url' => url('https://lh3.googleusercontent.com/pw/AM-JKLXl23BiujVs_i9X-fldxqaN9ocuk7nnj9DkVijnvKipIWfWMV4ploGaYyn0lQVPs6rgmDjVPjasd0Br3ELh4gmufyUtWEQgW04lzX18D_Ibp5a3ZlR6yveP9FFp604ekD-G3vbJWckJVF0JQqpeKWo=w640-h360-no?authuser=0'),
                 'date' => Carbon::createFromDate(2019, 10, 11),
-                'category_name' => 'd3.js',
+                'category_name' => 'd3js',
                 'tags' => ['JavaScript', 'D3.js'],
                 'images' => [
                     /*[
@@ -208,13 +216,14 @@ class PortfolioItemSeeder extends Seeder
             ],
             [
                 'title' => 'Scatterplot chart',
+                'slug' => 'd3js-scatterplot',
                 'subtitle' => 'Doping in professional bycicle racing',
                 'description' => null,
                 'live_url' => 'https://codepen.io/simonebogni/full/BaavXmo',
                 'git_repo_url' => null,
                 'cover_img_url' => url('https://lh3.googleusercontent.com/pw/AM-JKLWObEOnN-r_RuqEUA9_eBU8xdFO5HOWp6AoaFm_U6EjQdPRpnMwM_7tc13GJSwhQTNyD2FAYYCrzhAZsq3OLtlusR6BMvNvrVoxGJz641ERVkzGLhgEPQKDx4U_48yZgd5mwiYVrzYGDtvquOa2Ou4=w640-h360-no?authuser=0'),
                 'date' => Carbon::createFromDate(2019, 11, 19),
-                'category_name' => 'd3.js',
+                'category_name' => 'd3js',
                 'tags' => ['JavaScript', 'D3.js'],
                 'images' => [
                     /*[
@@ -226,13 +235,14 @@ class PortfolioItemSeeder extends Seeder
             ],
             [
                 'title' => 'Bar chart',
+                'slug' => 'd3js-bar',
                 'subtitle' => 'Gross Domestic Product',
                 'description' => null,
                 'live_url' => 'https://codepen.io/simonebogni/full/XWWovwP',
                 'git_repo_url' => null,
                 'cover_img_url' => url('https://lh3.googleusercontent.com/pw/AM-JKLVcvZzyp9dKuQ66WSFP_-pbjS6f_w-G9hiUX_KRiF59ysacKrftQVBEkjFwWgCJ0om5HvSpgnqaQv7tcth_Ht-56X9lG_hrIJ_WmQ5nwGG4QXS1pbkvpSmwTqy_Y2NDRdfUMvbRCLV3ljISOSm3diE=w640-h360-no?authuser=0'),
                 'date' => Carbon::createFromDate(2019, 11, 19),
-                'category_name' => 'd3.js',
+                'category_name' => 'd3js',
                 'tags' => ['JavaScript', 'D3.js'],
                 'images' => [
                     /*[
@@ -246,6 +256,9 @@ class PortfolioItemSeeder extends Seeder
         foreach($portfolioItems as $item){
             $pi = new PortfolioItem();
             $pi->title = $item['title'];
+            if($item['slug'] != null){
+                $pi->slug = $item['slug'];
+            }
             if($item['subtitle'] != null){
                 $pi->subtitle = $item['subtitle'];
             }

@@ -26,7 +26,7 @@ class PortfolioCategorySeeder extends Seeder
                 'display_priority' => 2
             ],
             [
-                'name' => 'd3.js',
+                'name' => 'd3js',
                 'display_title' => 'Data visualization with D3.js',
                 'display_priority' => 1
             ],

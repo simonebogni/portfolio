@@ -18,6 +18,7 @@ class CreatePortfolioItemsTable extends Migration
             $table->id();
             $table->foreignId('portfolio_category_id');
             $table->string('title');
+            $table->string('slug');
             $table->string('subtitle')->nullable();
             $table->text('description')->nullable();
             $table->string('live_url')->nullable();
