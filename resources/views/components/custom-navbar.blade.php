@@ -22,7 +22,7 @@
                 active customNavbarActiveLink
                 @endif
                 ">Portfolio</a></li>
-            <li class="nav-item"><a href="{{url("/softskills")}}" class="nav-link customNavbarLink disabled
+            <li class="nav-item"><a href="{{url("/softskills")}}" class="nav-link customNavbarLink
                 @if (\Request::is('softskills'))  
                 active customNavbarActiveLink
                 @endif

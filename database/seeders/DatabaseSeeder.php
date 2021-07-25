@@ -28,6 +28,7 @@ class DatabaseSeeder extends Seeder
             CourseSeeder::class,
             PortfolioCategorySeeder::class,
             PortfolioItemSeeder::class,
+            SoftSkillSeeder::class,
         ]);
     }
 }
