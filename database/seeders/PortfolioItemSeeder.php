@@ -48,6 +48,7 @@ class PortfolioItemSeeder extends Seeder
                 'cover_img_url' => null,
                 'date' => Carbon::createFromDate(2017, 6, 28),
                 'category_name' => 'java',
+                'git_repo_url' => 'https://github.com/simonebogni/WatchNeighbors',
                 'tags' => ['Java', 'JavaFx', 'Geolocation', 'PostgreSQL', 'Mail', 'Profile management', 'UML', 'ERD', 'Distributed Programming'],
                 'images' => [
                     /*[
