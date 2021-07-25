@@ -35,7 +35,7 @@ class ProgramSeeder extends Seeder
                 'institute' => null,
                 'online_platform' => 'LinkedIn Learning',
                 'start_date' => Carbon::createFromDate(2021, 7, 3),
-                'end_date' => null,
+                'end_date' => Carbon::createFromDate(2021, 7, 5),
                 'period' => null,
                 'current' => true,
                 'description' => 'A course taught by Kevin Skoglund on the best practices to secure web applications.',
