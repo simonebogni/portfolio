@@ -7,13 +7,12 @@
         </div>
         <div class="col-xs-12 col-md-8 align-self-center">
             <div id="description">
-                <p><span role="img" aria-label="Waving hand">👋🏼</span> Hello, I am Simone, a <strong>full stack webdeveloper</strong> with a good competence in various stages of development, including the design of the system and database.</p>
-                <p><span role="img" aria-label="Strong">💪🏼</span> I'm proficient in various programming languages, methodologies and products and I have good <strong>problem solving skills</strong>.<br>
-                I have good proficiency in both <strong>back-end</strong> and <strong>front-end development</strong>, including with <strong>REST</strong> and <strong>MVC-based frameworks</strong>.</p>
-                <p>I am <strong>responsible</strong> and <strong>independent</strong> and I can  effectively self-manage during projects, as well as collaborate in a team environment.</p>
-                <p><span role="img" aria-label="Books">📚</span> I'm <strong>open-minded</strong> and <strong>flexible</strong>, committed to the process of life-long learning, with an autodidact approach. I'm <strong>looking forward for more opportunities to learn</strong> and I have completed several courses on platforms such as EdX, Coursera, Udacity, Udemy and FreeCodeCamp.</p>
-                <p><span role="img" aria-label="University hat">🎓</span> I have attained the <strong>Bachelor diploma in Computer Science</strong> with a score of 95% and I have a business and economics background too.</p>
-                <p><span role="img" aria-label="Developer">👨🏻‍💻</span> So far I have built various projects including <strong>fully responsive websites</strong>, <strong>Progressive Web Applications</strong> and <strong>Java desktop apps</strong>.<br/>
+                <p><span role="img" aria-label="Waving hand">👋🏼</span> Hello, my name is Simone, a <strong>full stack webdeveloper</strong>.</p>
+                <p><span role="img" aria-label="Strong">💪🏼</span> Proficiency in both <strong>back-end</strong> and <strong>front-end development</strong>, including with <strong>REST</strong> and <strong>MVC-based frameworks</strong>.</p>
+                <p><strong>Responsible</strong> and <strong>independent</strong> and can effectively self-manage during projects, as well as collaborate in a team environment.</p>
+                <p><span role="img" aria-label="Books">📚</span> <strong>Open-minded</strong> and <strong>flexible</strong>, committed to the process of life-long learning, with an autodidact approach. Always happy for <strong>more opportunities to learn</strong>.<br/>Completed several courses on platforms such as EdX, Coursera, Udacity, Udemy and FreeCodeCamp. Check my background <a href="{{url('/experience#education')}}">here</a>!</p>
+                <p><span role="img" aria-label="University hat">🎓</span> <strong>Bachelor degree in Computer Science</strong> with a score of 95%.</p>
+                <p><span role="img" aria-label="Developer">👨🏻‍💻</span> You can see my projects like <strong><a href="{{url('/portfolio#webapps')}}">fully responsive Progressive Web Applications <i class="fas fa-external-link-alt certificate-link-icon"></i></a></strong> and <strong><a href="{{url('/portfolio#java')}}">Java desktop apps <i class="fas fa-external-link-alt certificate-link-icon"></i></a></strong> in the <strong><a href="{{url("/portfolio/")}}">Portfolio section <i class="fas fa-external-link-alt certificate-link-icon"></i></a></strong>.<br/>
                 I really love the <strong>feeling of accomplishment</strong> that comes from bringing a product from an idea to reality.</p>
                 <p><span role="img" aria-label="Office building">🏢</span> I'm looking forward to work with you to help your company grow as best as I can.</p>
             </div>
