@@ -27,7 +27,7 @@ class WorkPositionSeeder extends Seeder
                 'current' => false,
                 'description' => [
                     'type' => 'html',
-                    'value' => "<p>I refactored legacy code into new services and I designed and developed web modules to:</p>
+                    'value' => "<p>I refactored legacy code into new services and I designed and developed web services to:</p>
                         <ul style='list-style-type: disc; list-style-position: inside;'>
                         <li>automate the creation of a testing environment and database backup;</li>
                         <li>analyse, validate and import data from Excel files to the CRM database. The validation step removed the possibility for human-made errors, prevented data inconsistency and avoided future unpleasant situations between the customers and the company due to aforementioned mistakes;</li>
