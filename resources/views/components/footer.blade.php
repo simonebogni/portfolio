@@ -6,7 +6,7 @@
         </span>
         <!--medium and more-->
         <span class="h5 d-none d-md-inline-block">Bogni Simone - Fullstack Developer</span>
-        <span class="d-none d-md-inline-block float-right text-right">Emek HaEla 5 - 714784 Modi'in - Israel
+        <span class="d-none d-md-inline-block float-right text-right">Emek HaEla 5 - 7174784 Modi'in - Israel
         </span>
     </div>
 </footer>
