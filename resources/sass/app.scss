@@ -50,6 +50,11 @@ $navbarGap: 16px;
             font-weight: 300;
         }
     }
+
+    .anchor{
+        padding-top: 80px;
+        margin-top: -80px;
+    }
 }
 
 main.content{
@@ -75,6 +80,17 @@ main.content{
 #about{
     #description{
         font-size: 1.2rem;
+
+        a{
+            font-weight: bold;
+                color: $darkPurple;
+                text-decoration: underline $darkPurple solid;
+                transition: text-decoration-style 1s ease-in-out;
+                &:hover{
+                    text-decoration-style: wavy;
+                    cursor: pointer !important;
+                }
+        }
     }
     .languageRatingMeaning {
         font-weight: bold;

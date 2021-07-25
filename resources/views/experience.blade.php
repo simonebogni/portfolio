@@ -25,9 +25,11 @@
     @endif
     @if (isset($education))
     <!-- Education -->
-    <div class="row mt-3 mb-3 justify-content-center">
-        <div class="col-xs-10">
-            <h1 class="h1 text-center header">Education & Courses</h1>
+    <div class="anchor" id="education">
+        <div class="row mt-3 mb-3 justify-content-center">
+            <div class="col-xs-10">
+                <h1 class="h1 text-center header">Education & Courses</h1>
+            </div>
         </div>
     </div>
     <div class="row justify-content-center">
