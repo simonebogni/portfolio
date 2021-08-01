@@ -12,22 +12,22 @@
                 active customNavbarActiveLink
                 @endif
                 ">About me</a></li>
-            <li class="nav-item"><a href="{{url("/experience")}}" class="nav-link customNavbarLink
+            <li class="nav-item"><a href="{{url("/experience")}}" class="nav-link customNavbarLink 
                 @if (\Request::is('experience'))  
                 active customNavbarActiveLink
                 @endif
                 ">Experience</a></li>
-            <li class="nav-item"><a href="{{url("/portfolio")}}" class="nav-link customNavbarLink
+            <li class="nav-item"><a href="{{url("/portfolio")}}" class="nav-link customNavbarLink 
                 @if (\Request::is('portfolio'))  
                 active customNavbarActiveLink
                 @endif
                 ">Portfolio</a></li>
-            <li class="nav-item"><a href="{{url("/softskills")}}" class="nav-link customNavbarLink
+            <li class="nav-item"><a href="{{url("/softskills")}}" class="nav-link customNavbarLink 
                 @if (\Request::is('softskills'))  
                 active customNavbarActiveLink
                 @endif
                 ">Soft skills</a></li>
-            <li class="nav-item"><a href="{{url("/hobbies")}}" class="nav-link customNavbarLink disabled
+            <li class="nav-item"><a href="{{url("/hobbies")}}" class="nav-link customNavbarLink 
                 @if (\Request::is('hobbies'))  
                 active customNavbarActiveLink
                 @endif

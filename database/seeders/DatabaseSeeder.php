@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
             PortfolioCategorySeeder::class,
             PortfolioItemSeeder::class,
             SoftSkillSeeder::class,
+            HobbySeeder::class,
         ]);
     }
 }

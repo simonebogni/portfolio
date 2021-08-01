@@ -1,100 +1,55 @@
-//Hobbies
+//Softskills
 #hobbies{
-    a.iconWrapper{
-        color: $darkPurple;
-        text-decoration: none;
-        vertical-align: middle;
-        font-size: 48px;
-        transition: font-size 0.5s ease-in-out;
-    }
-    
-    a.iconWrapper:hover{
-        font-size: 2rem;
-        vertical-align: middle;
-    }
-    
-    #hobbies{
-        padding-top: 100px;
-        padding-bottom: 5rem;
-        color: $darkPurple;
-        .react-card-flip{
-            margin-bottom: 20px;
-        }
-        .card {
-            height: 350px;
-            background-color: $darkPurple;
-            color: $secondaryOrange;
-            border: $darkPurple solid 2px;
-        
-            &.cardFront {
-                background-color: $lightPurple;
-            }
-        }
-        
-        .card-body{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-content: center;
-        
-            h1 {
-                text-align: center;
-            }
-        }
-        
-        .card-footer{
-            border: none !important;
-            background-color: transparent;
-        }
-        
-        #cookingBack{
-            background: url("/assets/img/cooking.jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-        
-        #travellingBack{
-            background: url("/assets/img/travelling.jpeg");
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-        
-        .card-img-overlay{
-            padding: 0px;
-            display: flex;
-            flex-direction: column;
-            align-content: center;
-            justify-content: center;
-        }
-        
-        .card-text {
-            padding: 20px;
-            border-radius: 10px;
-            background-color: rgba(255, 255, 255, 0.7);
-            font-size: 1.2rem;
-            color: $darkPurple;
-            border: $darkPurple solid 2px;
-        }
-        
-        .purpleButtonOutline{
-            color: $darkPurple;
-            font-weight: bold;
-            border-color: $darkPurple;
-            border-width: 2px;
-            background-color: rgba(255, 255, 255, 0.7);
-            &:hover{
-                background-color: $darkPurple;
-                color: $secondaryOrange;
+    .hobby-row{
+        .hobby-col{
+            margin-top: 15px;
+            margin-bottom: 15px;
+            .card-hobby{
                 border-color: $darkPurple;
-            }
-            &:active{
-                background-color: $darkPurple !important;
-                color: $secondaryOrange !important;
-                border-color: $darkPurple !important;
-            }
-            &:focus{
-                outline-color: $lightPurple;
-                box-shadow: 0 0 0 0.2rem rgba(123, 95, 165,.50);
+                border-width: 3px;
+                border-radius: .5rem;
+                .card-header-hobby{
+                    color: $secondaryOrange;
+                    background-color: $darkPurple;
+                    margin-left: -1px !important;
+                    margin-right: -1px !important;
+                    margin-top: -1px !important;
+                }
+                .card-body-hobby{
+                    background-color: rgba(lighten($lightPurple, 20%), 0.72);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                    border-bottom-right-radius: 0.3rem;
+                    border-bottom-left-radius: 0.3rem;
+                    margin-left: -1px !important;
+                    margin-right: -1px !important;
+                    min-height: 240px;
+
+                    display: flex;
+                    flex-direction: column;
+                    
+                    .hobby-description-container{
+                        margin: 10px;
+                        padding: 5px;
+                        border-radius: 0.3rem;
+                        background-color: rgba(lighten($lightPurple, 30%), 0.70);
+                        color: $darkPurple;
+
+                        flex-grow: 1;
+                        display: flex;
+                        flex-direction: column;
+                        .row {
+                            flex-grow: 1;
+                            .col{
+                                flex-grow: 1;
+                                display: flex;
+                                flex-direction: column;
+                            }
+                        }
+                    }
+
+                }
             }
         }
     }
