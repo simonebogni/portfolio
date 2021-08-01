@@ -3,7 +3,6 @@
 @section('content')
 <div id="softskills">
     @if (isset($softskills))
-    <!-- Work Experience -->
     <div class="row mt-4 mb-3 justify-content-center">
         <div class="col-xs-10">
             <h1 class="h1 text-center header">My soft skills</h1>
