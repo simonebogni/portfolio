@@ -279,6 +279,12 @@ class SkillCategorySeeder extends Seeder
                         'name' => "Other tools",
                         'skills' => [
                             [
+                                'name' => "Numpy",
+                                'description' => "Numpy is a library that was originally designed for numerical computing. It allows the programmer to control the amount of memory used to represent number, in order to save as many bits as possible - a desired, if not vital, feature in for large scale datasets. Numpu also gives access to more supports for large, multi-dimensional arrays and matrices, along with a large collection of high-level mathematical functions to operate on these arrays.",
+                                'picture_source' => asset('assets/img/logos/python/numpy.svg'),
+                                'familiarity' => true,
+                            ],
+                            [
                                 'name' => "Pandas",
                                 'description' => "Pandas is a software library written for the Python programming language for data manipulation and analysis. In particular, it offers data structures and operations for manipulating numerical tables and time series.",
                                 'picture_source' => asset('assets/img/logos/python/pandas.svg'),
