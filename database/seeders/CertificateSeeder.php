@@ -35,7 +35,7 @@ class CertificateSeeder extends Seeder
                 'score' => null,
                 'score_max' => null,
                 'description' => 'Topics included: JavaScript, ES6, Regular Expressions, Debugging, Data Structures, Algorithm Scripting, Object Oriented Programming, Functional Programming',
-                'tags' => ['JavaScript', 'Object Oriented Programming', 'Functional Programming']
+                'tags' => ['JavaScript', 'ES6', 'Object Oriented Programming', 'Functional Programming']
             ],
             [
                 'title' => 'Data Visualization',
@@ -45,7 +45,7 @@ class CertificateSeeder extends Seeder
                 'score' => null,
                 'score_max' => null,
                 'description' => 'Topics included: Data Visualization with D3, JSON APIs and AJAX',
-                'tags' => ['D3.js', 'AJAX']
+                'tags' => ['D3.js', 'AJAX', 'JSON', 'Data visualisation']
             ],
             [
                 'title' => 'APIs and Microservices',
@@ -55,7 +55,17 @@ class CertificateSeeder extends Seeder
                 'score' => null,
                 'score_max' => null,
                 'description' => 'Topics included: NPM Package Manager, Basic Node.js and Express, MongoDB and Mongoose',
-                'tags' => ['Node.js', 'Express', 'MongoDB', 'Mongoose']
+                'tags' => ['Node.js', 'Express', 'MongoDB', 'Mongoose', 'NPM']
+            ],
+            [
+                'title' => 'Data Analysis with Python',
+                'issued_by' => 'FreeCodeCamp.org',
+                'issue_date' => Carbon::createFromDate(2021, 8, 9),
+                'url' => 'https://bit.ly/BogniFCCDAPython',
+                'score' => null,
+                'score_max' => null,
+                'description' => 'Topics included: Python, Numpy, Pandas, Matplotlib and Seaborn',
+                'tags' => ['Python', 'Numpy', 'Pandas', 'Matplotlib', 'Seaborn', 'Performance optimisation', 'Data analysis', 'Data visualisation']
             ]
         ];
 
