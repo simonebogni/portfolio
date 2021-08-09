@@ -18,6 +18,11 @@ class PortfolioCategorySeeder extends Seeder
             [
                 'name' => 'webapps',
                 'display_title' => 'Web applications',
+                'display_priority' => 4
+            ],
+            [
+                'name' => 'data-analysis-python',
+                'display_title' => 'Data Analysis with Python',
                 'display_priority' => 3
             ],
             [
