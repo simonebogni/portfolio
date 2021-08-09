@@ -28,7 +28,7 @@ class ProgramSeeder extends Seeder
                 'period' => 'October 2012 - December 2020',
                 'current' => false,
                 'description' => null,
-                'tags' => ['Java', 'Algorithms', 'Data Structures', 'Object Oriented Programming', 'Functional Programming', 'Concurrent Programming', 'Distributed Programming', 'Android', 'PostgreSQL', 'MySQL', 'UML', 'ERD', 'Software Design', 'Design Patterns', 'Image Processing', 'Web development']
+                'tags' => ['Java', 'Algorithms', 'Data Structures', 'Object Oriented Programming', 'Functional Programming', 'Concurrent Programming', 'Distributed Programming', 'Android', 'PostgreSQL', 'MySQL', 'UML', 'ERD', 'Software Design', 'Design Patterns', 'Image Processing', 'Web development', 'Security', 'Agile methodologies']
             ],
             [
                 'name'=> 'Web Security',
@@ -50,7 +50,7 @@ class ProgramSeeder extends Seeder
                 'period' => null,
                 'current' => true,
                 'description' => 'These include Laravel 6 and 8, Socialite, Redis, Queues and Horizon, Jetstream and Blade (template engine) components.',
-                'tags' => ['PHP', 'Laravel', 'Redis']
+                'tags' => ['PHP', 'Laravel', 'Redis', 'Performance optimisation']
             ],
             [
                 'name'=> 'Front End Development Libraries',
@@ -61,7 +61,7 @@ class ProgramSeeder extends Seeder
                 'period' => null,
                 'current' => true,
                 'description' => 'A course (approx. 300 hours) that covers Bootstrap, jQuery, SASS, React and Redux.',
-                'tags' => ['Bootstrap', 'jQuery', 'SASS', 'React', 'Redux']
+                'tags' => ['Bootstrap', 'jQuery', 'SASS', 'React', 'Redux', 'Responsive Web Design']
             ],
             [
                 'name'=> 'Front-End Web Development with React',
@@ -83,7 +83,7 @@ class ProgramSeeder extends Seeder
                 'period' => null,
                 'current' => false,
                 'description' => 'A course covering HTML5, CSS3, Javascript, jQuery & jQuery UI, Bootstrap, Node.js, PHP, AJAX, JSON and Google Maps APIs.',
-                'tags' => ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'Bootstrap', 'Node.js', 'PHP', 'Google Maps']
+                'tags' => ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'Bootstrap', 'Responsive Web Design', 'Node.js', 'PHP', 'Google Maps']
             ]
         ];
         foreach($programs as $program){
