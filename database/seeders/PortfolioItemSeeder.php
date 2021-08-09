@@ -159,6 +159,58 @@ class PortfolioItemSeeder extends Seeder
                 ]
             ],
             [
+                'title' => 'Mean-Variance-Standard Deviation Calculator',
+                'slug' => 'da-python-mean-var-std-calc',
+                'subtitle' => 'Freecodecamp certification project',
+                'description' => "A function that uses Numpy to output the mean, variance, and standard deviation of the rows, columns, and elements in a 3 x 3 matrix.",
+                'live_url' => 'https://replit.com/@simonebogni/boilerplate-mean-variance-standard-deviation-calculator-1',
+                'git_repo_url' => null,
+                'cover_img_url' => url('https://lh3.googleusercontent.com/pw/AM-JKLVMiIVRKApFkVcgzDh9Kl3nbmHLh6BLrj-AvEruJrM5-5yt9aUkP8LcmowFVie6IzbjP98dkcxCh6vMCdCeyCB7H7UXMjz7q4jqaP3foN5yXHovOcTrpSIi4GIfzDqy0vxwFGrxUOdN63exypbFbl6m=w623-h344-no?authuser=0'),
+                'date' => Carbon::createFromDate(2021, 8, 3),
+                'category_name' => 'data-analysis-python',
+                'tags' => ['Python', 'Numpy'],
+                'images' => [
+                ]
+            ],
+            [
+                'title' => 'Demographic Data Analyzer',
+                'slug' => 'da-python-demographic-data-analyzer',
+                'subtitle' => 'Freecodecamp certification project',
+                'description' => "An analysis of a dataset of demographic data that was extracted from the 1994 Census database.",
+                'live_url' => 'https://replit.com/@simonebogni/boilerplate-demographic-data-analyzer-1',
+                'git_repo_url' => null,
+                'cover_img_url' => url('https://lh3.googleusercontent.com/pw/AM-JKLUIx4HUTlmI5pOkiUlcpIJcdS7vDQSLXav147LCxMIbLeOz35UlJyI2tKV8tNBWQuJmffBwGT1zJELez9eeRJGeCOZFm28oIz9nlFva8vrIcm3FjEsa6fzU0aIQML8-ptgQ1JVTTa8yNYbRZ5-Hen9C=w642-h347-no?authuser=0'),
+                'date' => Carbon::createFromDate(2021, 8, 4),
+                'category_name' => 'data-analysis-python',
+                'tags' => ['Python', 'Numpy', 'Pandas'],
+                'images' => [
+                ]
+            ],
+            [
+                'title' => 'Medical Data Visualizer',
+                'slug' => 'da-python-medical-data-visualizer',
+                'subtitle' => 'Freecodecamp certification project',
+                'description' => "This project involves the visualisation and to make calculations from medical examination data using matplotlib, seaborn, and pandas.",
+                'live_url' => 'https://replit.com/@simonebogni/boilerplate-medical-data-visualizer-1',
+                'git_repo_url' => null,
+                'cover_img_url' => url('https://lh3.googleusercontent.com/pw/AM-JKLUrpZCQuIpgnfUFltV1Ff8f4Pu3OOcGJHz4n6AqjIaLd2JzOrnyTyAGOIusihwlCFWAKocofIJXBjAgMikRGA9FTMt3l-vrkHtNm6Le5S58qi1LN9AYByPMH3_fZkAn6Fi22ZYk-E7mrU8gr4egsVNy=w1058-h500-no?authuser=0'),
+                'date' => Carbon::createFromDate(2021, 8, 6),
+                'category_name' => 'data-analysis-python',
+                'tags' => ['Python', 'Numpy', 'Pandas', 'Matplotlib', 'Seaborn'],
+                'images' => [
+                    [
+                        'url' => url('https://lh3.googleusercontent.com/pw/AM-JKLUrpZCQuIpgnfUFltV1Ff8f4Pu3OOcGJHz4n6AqjIaLd2JzOrnyTyAGOIusihwlCFWAKocofIJXBjAgMikRGA9FTMt3l-vrkHtNm6Le5S58qi1LN9AYByPMH3_fZkAn6Fi22ZYk-E7mrU8gr4egsVNy=w1058-h500-no?authuser=0'),
+                        'name' => 'A chart showing the value counts of the categorical features, split by the presence or absence of cardiovascular disease',
+                        'alt' => 'A chart showing the value counts of the categorical features (Physical activity, Alcohol intake, Cholesterol level, Glucose level, Overweight, Smoking), split by the presence or absence of cardiovascular disease.'
+                    ],
+                    [
+                        'url' => url('https://lh3.googleusercontent.com/pw/AM-JKLWyMwg72tj7tEFcBHXEXYxInX6SeVCrE_5Rx-L2N7TMUNQ0Y_899zB-guxKEqUl1StsWdo4D3kx8wBjr3yPnuYr5qlybux8c4_7UjTsDM3Dr5W2Fxy3OwpYHdZRikNJtSGvfyotH5k71i1lb59WVTkS=s657-no?authuser=0'),
+                        'name' => 'A heatmap showing the correlation matrix between the categorical features',
+                        'alt' => 'A heatmap showing the correlation matrix between the categorical features'
+                    ]
+                ]
+            ],
+            [
                 'title' => 'Treemap',
                 'slug' => 'd3js-treemap',
                 'subtitle' => 'Kickstarter pledges',
