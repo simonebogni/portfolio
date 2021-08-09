@@ -23,6 +23,12 @@ class TagSeeder extends Seeder
                 'tags' =>['Software Design', 'Database Design', 'UML', 'ERD', 'Design Patterns']
             ],
             [
+                'category' => 'Python',
+                'bg_color' => '#366c99',
+                'color' => '#FFF',
+                'tags' =>['Python', 'Numpy', 'Pandas', 'Matplotlib', 'Seaborn']
+            ],
+            [
                 'category' => 'PHP',
                 'bg_color' => '#31263e',
                 'color' => '#FFF',
@@ -56,7 +62,7 @@ class TagSeeder extends Seeder
                 'category' => 'JavaScript',
                 'bg_color' => '#f3db17',
                 'color' => '#000',
-                'tags' =>['JavaScript', 'Node.js', 'Express', 'jQuery', 'DataTables', 'D3.js', 'React', 'Redux', 'AJAX']
+                'tags' =>['JavaScript', 'ES6', 'Node.js', 'Express', 'jQuery', 'DataTables', 'D3.js', 'React', 'Redux', 'AJAX', 'NPM', 'JSON']
             ],
             [
                 'category' => 'HTML+CSS',
@@ -74,7 +80,7 @@ class TagSeeder extends Seeder
                 'category' => '_Other',
                 'bg_color' => '#0d6efd',
                 'color' => '#FFF',
-                'tags' =>['Accesibility', 'Security', 'Web development', 'Single Page Application', 'Progressive Web Application', 'Mail', 'Profile management', 'Task automation', 'Algorithms', 'Data Structures', 'Information System', 'Recursion']
+                'tags' =>['Accesibility', 'Security', 'Web development', 'Single Page Application', 'Progressive Web Application', 'Mail', 'Profile management', 'Task automation', 'Algorithms', 'Data Structures', 'Information System', 'Recursion', 'Performance optimisation', 'Data analysis', 'Data visualisation', 'Sockets']
             ],
         ];
 
