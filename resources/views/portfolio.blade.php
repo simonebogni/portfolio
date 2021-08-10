@@ -12,7 +12,7 @@
             </div>
         </div>
         <div class="row justify-content-center">
-        @foreach ($category->portfolioItems as $portfolioItem)
+        @foreach ($category->portfolioItems->sortBy([['display_priority', 'desc']]) as $portfolioItem)
             <div class="col-12 col-lg-6 d-flex align-items-stretch">
                 <x-portfolio-item :item="$portfolioItem"></x-portfolio-item>
             </div>

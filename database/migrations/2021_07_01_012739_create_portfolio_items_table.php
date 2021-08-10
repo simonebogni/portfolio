@@ -25,6 +25,7 @@ class CreatePortfolioItemsTable extends Migration
             $table->string('git_repo_url')->nullable();
             $table->string('cover_img_url')->nullable();
             $table->date('date')->nullable();
+            $table->smallInteger('display_priority')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });

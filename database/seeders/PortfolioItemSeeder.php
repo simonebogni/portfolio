@@ -29,6 +29,7 @@ class PortfolioItemSeeder extends Seeder
                 'cover_img_url' => null,
                 'date' => Carbon::createFromDate(2015, 1, 15),
                 'category_name' => 'java',
+                'display_priority' => 0,
                 'tags' => ['Java', 'Swing', 'Profile management', 'Data Structures'],
                 'images' => [
                     /*[
@@ -49,6 +50,7 @@ class PortfolioItemSeeder extends Seeder
                 'date' => Carbon::createFromDate(2017, 6, 28),
                 'category_name' => 'java',
                 'git_repo_url' => 'https://github.com/simonebogni/WatchNeighbors',
+                'display_priority' => 1,
                 'tags' => ['Java', 'JavaFx', 'Geolocation', 'PostgreSQL', 'Mail', 'Profile management', 'UML', 'ERD', 'Distributed Programming', 'Sockets'],
                 'images' => [
                     /*[
@@ -68,6 +70,7 @@ class PortfolioItemSeeder extends Seeder
                 'cover_img_url' => url('https://lh3.googleusercontent.com/pw/AM-JKLUWqC3ih7dLnmyK9421ReZh4JiDyfavRFAJTrCl_1HSaJddHTiNViHbLtX-Wkl-WggYBSAO1IFwJDDUY-56SgPB6AnbcZnLuWY5-k5G7GNXRt-Lk842KpwK2HS1QuDrt6ccjnsntRuArgJAbiXDwHI=w1341-h655-no?authuser=0'),
                 'date' => Carbon::createFromDate(2021, 6, 1),
                 'category_name' => 'webapps',
+                'display_priority' => 2,
                 'tags' => ['Recursion', 'PHP', 'Laravel', 'Bootstrap', 'SASS', 'HTML5', 'CSS3', 'JavaScript', 'jQuery', 'DataTables', 'PostgreSQL', 'RESTful API'],
                 'images' => [
                     /*[
@@ -89,6 +92,7 @@ class PortfolioItemSeeder extends Seeder
                 'cover_img_url' => url('https://lh3.googleusercontent.com/pw/AM-JKLUWSsidjfjEC38shwerJXpu7aBARfSCuhbajHnDnL8yVA3wo-ljE0JbCq9WtHsiWfFkeHBkHA-NNMAcU1vSuFdyZDWhPEmATb7PjWaNPQOfvKWbnMIUvj8_z_xlFyLNdYA6YxEJ1ruRc1NduTCi8HE=w1342-h655-no?authuser=0'),
                 'date' => Carbon::createFromDate(2021, 6, 1),
                 'category_name' => 'webapps',
+                'display_priority' => 0,
                 'tags' => ['PHP', 'Laravel', 'Bootstrap', 'SASS', 'HTML5', 'CSS3', 'JavaScript', 'jQuery', 'DataTables', 'PostgreSQL', 'RESTful API'],
                 'images' => [
                     [
@@ -154,6 +158,7 @@ class PortfolioItemSeeder extends Seeder
                 'cover_img_url' => url('https://lh3.googleusercontent.com/pw/AM-JKLWDNesMAEo6zquPAG5BuCNxEaLH5_sTTqFjyo76-Hjx3h2rwyA6MQvOCCy3Awy6Rh3ftap2JR-v_cIz-w_iJIa0dWOK-63NCb1v2f2erDWfa0DSITvWEvsOGcKQlZZC6BuFjsiwoa2lDIQi8uYz64w=w874-h489-no?authuser=0'),
                 'date' => Carbon::createFromDate(2019, 11, 10),
                 'category_name' => 'webapps',
+                'display_priority' => 0,
                 'tags' => ['PHP', 'CakePHP', 'Bootstrap', 'SASS', 'HTML5', 'CSS3', 'JavaScript', 'jQuery', 'DataTables', 'MySQL', 'RESTful API'],
                 'images' => [
                 ]
@@ -168,6 +173,7 @@ class PortfolioItemSeeder extends Seeder
                 'cover_img_url' => url('https://lh3.googleusercontent.com/pw/AM-JKLVMiIVRKApFkVcgzDh9Kl3nbmHLh6BLrj-AvEruJrM5-5yt9aUkP8LcmowFVie6IzbjP98dkcxCh6vMCdCeyCB7H7UXMjz7q4jqaP3foN5yXHovOcTrpSIi4GIfzDqy0vxwFGrxUOdN63exypbFbl6m=w623-h344-no?authuser=0'),
                 'date' => Carbon::createFromDate(2021, 8, 3),
                 'category_name' => 'data-analysis-python',
+                'display_priority' => 0,
                 'tags' => ['Python', 'Numpy'],
                 'images' => [
                 ]
@@ -182,6 +188,7 @@ class PortfolioItemSeeder extends Seeder
                 'cover_img_url' => url('https://lh3.googleusercontent.com/pw/AM-JKLUIx4HUTlmI5pOkiUlcpIJcdS7vDQSLXav147LCxMIbLeOz35UlJyI2tKV8tNBWQuJmffBwGT1zJELez9eeRJGeCOZFm28oIz9nlFva8vrIcm3FjEsa6fzU0aIQML8-ptgQ1JVTTa8yNYbRZ5-Hen9C=w642-h347-no?authuser=0'),
                 'date' => Carbon::createFromDate(2021, 8, 4),
                 'category_name' => 'data-analysis-python',
+                'display_priority' => 0,
                 'tags' => ['Python', 'Numpy', 'Pandas'],
                 'images' => [
                 ]
@@ -196,6 +203,7 @@ class PortfolioItemSeeder extends Seeder
                 'cover_img_url' => url('https://lh3.googleusercontent.com/pw/AM-JKLUrpZCQuIpgnfUFltV1Ff8f4Pu3OOcGJHz4n6AqjIaLd2JzOrnyTyAGOIusihwlCFWAKocofIJXBjAgMikRGA9FTMt3l-vrkHtNm6Le5S58qi1LN9AYByPMH3_fZkAn6Fi22ZYk-E7mrU8gr4egsVNy=w1058-h500-no?authuser=0'),
                 'date' => Carbon::createFromDate(2021, 8, 6),
                 'category_name' => 'data-analysis-python',
+                'display_priority' => 1,
                 'tags' => ['Python', 'Numpy', 'Pandas', 'Matplotlib', 'Seaborn'],
                 'images' => [
                     [
@@ -220,6 +228,7 @@ class PortfolioItemSeeder extends Seeder
                 'cover_img_url' => url('https://lh3.googleusercontent.com/pw/AM-JKLU_-ypr_0iTb1fO0iO-Dq6HNoErgQv-_uoJN8U3hbrTRoQDqRFN6JlG1CJQn5sVnOOAir79p8-alyGbkV3LlHW9K7s9moQDp6_8eMy84gNBPYW9Mysg3a648IzYKZZB7IhZlZXmKJ7FaaJ395ZVxSls=w1200-h600-no?authuser=0'),
                 'date' => Carbon::createFromDate(2021, 8, 8),
                 'category_name' => 'data-analysis-python',
+                'display_priority' => 1,
                 'tags' => ['Python', 'Numpy', 'Pandas', 'Matplotlib', 'Seaborn'],
                 'images' => [
                     [
@@ -249,6 +258,7 @@ class PortfolioItemSeeder extends Seeder
                 'cover_img_url' => url('https://lh3.googleusercontent.com/pw/AM-JKLVDI_XrZfKwqPBpcCChEwotJ-c_Bu1KDXF7Qy8SPeBjjCGJprNcO7CZ5_YxyYO9dH9IcHclQhCSFc9Q_Xu6NzyiLWKqJ3iA5wCjX6OM8o5wT8zqvbTiIwsqs6FVjM4VBn6F2l29IRVmzn5PGWHY9up6=w640-h480-no?authuser=0'),
                 'date' => Carbon::createFromDate(2021, 8, 9),
                 'category_name' => 'data-analysis-python',
+                'display_priority' => 2,
                 'tags' => ['Python', 'Pandas', 'Matplotlib'],
                 'images' => [
                     [
@@ -268,6 +278,7 @@ class PortfolioItemSeeder extends Seeder
                 'cover_img_url' => url('https://lh3.googleusercontent.com/pw/AM-JKLUU78zI0XIw9WyUKVYpwCibnIfpLMx2JQSebvEDXkJpdtUM7PU1arzlYTKGypuDUEKOy38GxFJjp_8x_9uBjBSz1_AI4gNX3sQETMP30KbzkpfFIcu-uS1-tA3-Bg5e4Xt97GAQKDlOPwZOHLVItHk=w640-h360-no?authuser=0'),
                 'date' => Carbon::createFromDate(2019, 10, 11),
                 'category_name' => 'd3js',
+                'display_priority' => 0,
                 'tags' => ['JavaScript', 'D3.js'],
                 'images' => [
                     /*[
@@ -287,6 +298,7 @@ class PortfolioItemSeeder extends Seeder
                 'cover_img_url' => url('https://lh3.googleusercontent.com/pw/AM-JKLXSPRMAYefYLebVWo3ZvX8cdNM0WxGTB9R7QSWoLfC3TzqF7ULwRivqPwLjNM8mRxVS3uvBHxPSb64jiSnYvGdX2tThjqKilxZ2YjgOMqV1k6ZeZN9-2baAMsB2OwRporz9mYpTFQRWWT7mnre5URo=w640-h360-no?authuser=0'),
                 'date' => Carbon::createFromDate(2019, 10, 11),
                 'category_name' => 'd3js',
+                'display_priority' => 1,
                 'tags' => ['JavaScript', 'D3.js'],
                 'images' => [
                     /*[
@@ -306,6 +318,7 @@ class PortfolioItemSeeder extends Seeder
                 'cover_img_url' => url('https://lh3.googleusercontent.com/pw/AM-JKLXl23BiujVs_i9X-fldxqaN9ocuk7nnj9DkVijnvKipIWfWMV4ploGaYyn0lQVPs6rgmDjVPjasd0Br3ELh4gmufyUtWEQgW04lzX18D_Ibp5a3ZlR6yveP9FFp604ekD-G3vbJWckJVF0JQqpeKWo=w640-h360-no?authuser=0'),
                 'date' => Carbon::createFromDate(2019, 10, 11),
                 'category_name' => 'd3js',
+                'display_priority' => 0,
                 'tags' => ['JavaScript', 'D3.js'],
                 'images' => [
                     /*[
@@ -325,6 +338,7 @@ class PortfolioItemSeeder extends Seeder
                 'cover_img_url' => url('https://lh3.googleusercontent.com/pw/AM-JKLWObEOnN-r_RuqEUA9_eBU8xdFO5HOWp6AoaFm_U6EjQdPRpnMwM_7tc13GJSwhQTNyD2FAYYCrzhAZsq3OLtlusR6BMvNvrVoxGJz641ERVkzGLhgEPQKDx4U_48yZgd5mwiYVrzYGDtvquOa2Ou4=w640-h360-no?authuser=0'),
                 'date' => Carbon::createFromDate(2019, 11, 19),
                 'category_name' => 'd3js',
+                'display_priority' => 0,
                 'tags' => ['JavaScript', 'D3.js'],
                 'images' => [
                     /*[
@@ -344,6 +358,7 @@ class PortfolioItemSeeder extends Seeder
                 'cover_img_url' => url('https://lh3.googleusercontent.com/pw/AM-JKLVcvZzyp9dKuQ66WSFP_-pbjS6f_w-G9hiUX_KRiF59ysacKrftQVBEkjFwWgCJ0om5HvSpgnqaQv7tcth_Ht-56X9lG_hrIJ_WmQ5nwGG4QXS1pbkvpSmwTqy_Y2NDRdfUMvbRCLV3ljISOSm3diE=w640-h360-no?authuser=0'),
                 'date' => Carbon::createFromDate(2019, 11, 19),
                 'category_name' => 'd3js',
+                'display_priority' => 0,
                 'tags' => ['JavaScript', 'D3.js'],
                 'images' => [
                     /*[
@@ -377,6 +392,9 @@ class PortfolioItemSeeder extends Seeder
             }
             if($item['date'] != null){
                 $pi->date = $item['date'];
+            }
+            if($item['display_priority'] != null){
+                $pi->display_priority = $item['display_priority'];
             }
             $category = null;
             if($item['category_name'] != null){
