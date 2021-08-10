@@ -243,7 +243,7 @@ class PortfolioItemSeeder extends Seeder
                 'title' => 'Sea Level Predictor',
                 'slug' => 'da-python-sea-level-predictor',
                 'subtitle' => 'Freecodecamp certification project',
-                'description' => "I analysed a dataset of the global average sea level change from 1880 to 2020 and visualised it through the use of a scatterplot. I've used the data to predict the sea level change through year 2050 with linear regression. The red line considers the data from 1880 to 2020, while the green pictures a more updated situation, considering the data from 2000 to 2020.",
+                'description' => "I analysed a dataset of the global average sea level change from 1880 to 2020 and visualised it through the use of a scatterplot. I've used the data to predict the sea level change up to the year 2050 with linear regression. The red line considers the data from 1880 to 2020, while the green one pictures a more updated (and grim) situation, considering only the data from 2000 to 2020.",
                 'live_url' => 'https://replit.com/@simonebogni/boilerplate-sea-level-predictor-1',
                 'git_repo_url' => null,
                 'cover_img_url' => url('https://lh3.googleusercontent.com/pw/AM-JKLVDI_XrZfKwqPBpcCChEwotJ-c_Bu1KDXF7Qy8SPeBjjCGJprNcO7CZ5_YxyYO9dH9IcHclQhCSFc9Q_Xu6NzyiLWKqJ3iA5wCjX6OM8o5wT8zqvbTiIwsqs6FVjM4VBn6F2l29IRVmzn5PGWHY9up6=w640-h480-no?authuser=0'),
