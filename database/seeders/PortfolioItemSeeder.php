@@ -211,6 +211,54 @@ class PortfolioItemSeeder extends Seeder
                 ]
             ],
             [
+                'title' => 'Page View Time Series Visualizer',
+                'slug' => 'da-python-page-view-time-series-visualizer',
+                'subtitle' => 'Freecodecamp certification project',
+                'description' => "This project involves visualising a dataset read from a csv file, which contains the number of page views each day on the freeCodeCamp.org forum from 2016-05-09 to 2019-12-03. A line chart, a bar chart and box plots have been used in order to understand the patterns in visits and identify yearly and monthly growth. The outliers below the 2.5th and above the 97.5th quantile are removed to clean the data.",
+                'live_url' => 'https://replit.com/@simonebogni/boilerplate-page-view-time-series-visualizer-2',
+                'git_repo_url' => null,
+                'cover_img_url' => url('https://lh3.googleusercontent.com/pw/AM-JKLU_-ypr_0iTb1fO0iO-Dq6HNoErgQv-_uoJN8U3hbrTRoQDqRFN6JlG1CJQn5sVnOOAir79p8-alyGbkV3LlHW9K7s9moQDp6_8eMy84gNBPYW9Mysg3a648IzYKZZB7IhZlZXmKJ7FaaJ395ZVxSls=w1200-h600-no?authuser=0'),
+                'date' => Carbon::createFromDate(2021, 8, 8),
+                'category_name' => 'data-analysis-python',
+                'tags' => ['Python', 'Numpy', 'Pandas', 'Matplotlib', 'Seaborn'],
+                'images' => [
+                    [
+                        'url' => url('https://lh3.googleusercontent.com/pw/AM-JKLUGhRPUiEYXWQT52qMWBLGphRj2Pda70kFia3ykb4qyFDfSynQF8j3lpdc2QI8k3-SNa1wDhtAkYf3D2nrmcqhr21Q3ABmbauum49Kyg4t0XMWwyB9zQj4vB95qAyb65sBZxjwtEp8JLiRo5ZS3KMl8=w1200-h600-no?authuser=0'),
+                        'name' => 'A line chart displaying the daily views of the FCC forum over the course of 4 years',
+                        'alt' => 'A line chart displaying the daily views of the FCC forum over the course of 4 years'
+                    ],
+                    [
+                        'url' => url('https://lh3.googleusercontent.com/pw/AM-JKLU73IEcM0pHLZSZOwAnHhB3ycz7fx0YaDNkfktdyvMRcvQ6ljk_6vHHYt9TLUtalEa1zE4YqWqanShdpnNohiG0KnD9Ms9qobS9AspmG3FPRdvujHwK8pacWzpgkee_71P_PT4t_NR2d-aCVW7GDrKf=s500-no?authuser=0'),
+                        'name' => 'A bar chart showing the average daily page views for each month grouped by year',
+                        'alt' => 'A bar chart showing the average daily page views for each month grouped by year'
+                    ],
+                    [
+                        'url' => url('https://lh3.googleusercontent.com/pw/AM-JKLU_-ypr_0iTb1fO0iO-Dq6HNoErgQv-_uoJN8U3hbrTRoQDqRFN6JlG1CJQn5sVnOOAir79p8-alyGbkV3LlHW9K7s9moQDp6_8eMy84gNBPYW9Mysg3a648IzYKZZB7IhZlZXmKJ7FaaJ395ZVxSls=w1200-h600-no?authuser=0'),
+                        'name' => 'Box plots with whiskers showing the trend (from 2016 to 2019) and the seasonality (per month) of the daily views of FCC forum pages',
+                        'alt' => 'Box plots with whiskers showing the trend (from 2016 to 2019) and the seasonality (per month) of the daily views of FCC forum pages'
+                    ]
+                ]
+            ],
+            [
+                'title' => 'Sea Level Predictor',
+                'slug' => 'da-python-sea-level-predictor',
+                'subtitle' => 'Freecodecamp certification project',
+                'description' => "I analysed a dataset of the global average sea level change from 1880 to 2020 and visualised it through the use of a scatterplot. I've used the data to predict the sea level change through year 2050 with linear regression. The red line considers the data from 1880 to 2020, while the green pictures a more updated situation, considering the data from 2000 to 2020.",
+                'live_url' => 'https://replit.com/@simonebogni/boilerplate-sea-level-predictor-1',
+                'git_repo_url' => null,
+                'cover_img_url' => url('https://lh3.googleusercontent.com/pw/AM-JKLVDI_XrZfKwqPBpcCChEwotJ-c_Bu1KDXF7Qy8SPeBjjCGJprNcO7CZ5_YxyYO9dH9IcHclQhCSFc9Q_Xu6NzyiLWKqJ3iA5wCjX6OM8o5wT8zqvbTiIwsqs6FVjM4VBn6F2l29IRVmzn5PGWHY9up6=w640-h480-no?authuser=0'),
+                'date' => Carbon::createFromDate(2021, 8, 9),
+                'category_name' => 'data-analysis-python',
+                'tags' => ['Python', 'Pandas', 'Matplotlib'],
+                'images' => [
+                    [
+                        'url' => url('https://lh3.googleusercontent.com/pw/AM-JKLVDI_XrZfKwqPBpcCChEwotJ-c_Bu1KDXF7Qy8SPeBjjCGJprNcO7CZ5_YxyYO9dH9IcHclQhCSFc9Q_Xu6NzyiLWKqJ3iA5wCjX6OM8o5wT8zqvbTiIwsqs6FVjM4VBn6F2l29IRVmzn5PGWHY9up6=w640-h480-no?authuser=0'),
+                        'name' => 'A scatterplot showing the correlation between the years and the level of the sea in inches. Through linear regression, we can find the expected level in 2050 (~10 considering the trend from 1880, or ~15.5 considering only the last 20 years)',
+                        'alt' => 'A scatterplot showing the correlation between the years and the level of the sea in inches. Through linear regression, we can find the expected level in 2050 (~10 considering the trend from 1880, or ~15.5 considering only the last 20 years)'
+                    ]
+                ]
+            ],
+            [
                 'title' => 'Treemap',
                 'slug' => 'd3js-treemap',
                 'subtitle' => 'Kickstarter pledges',
