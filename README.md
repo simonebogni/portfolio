@@ -10,7 +10,7 @@ The RDBMS used is PostgreSQL, but it can also be efforlessly used with MySQL.
 
 When instanciating the project locally, make sure to properly set the ENV variables.
 I've provided seeders for the major database entities.
-After the app has been built, remember to create and fill the database with the folling commands:
+After the app has been built, remember to create and fill the database with the following commands:
 
 ```
 php artisan migrate:fresh
