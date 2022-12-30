@@ -14,9 +14,11 @@
         <h3 class="h3 AboutTitle text-center">{{$subcategory->name}}</h3>
         @foreach ( $subcategory->skills as $index => $skill)  
         <div class="row AboutDetailsRow verbosity-on">
+            @if (isset($skill->picture_source))
             <div class="col-12 col-md-4 align-items-center justify-content-center d-inline-flex skill-logo">
-                <img src="{{$skill->picture_source}}" class="svgLogo" alt="{{$skill->name}} logo"/>
+                <img src="{{asset($skill->picture_source)}}" class="svgLogo" alt="{{$skill->name}} logo"/>
             </div>
+            @endif
             <div class="col-12 col-md-8 d-inline-flex align-items-center">
                 <div>
                     @if($skill->familiarity)
@@ -33,7 +35,9 @@
         </div>
         <div class="row AboutDetailsRow verbosity-off" aria-hidden="true">
             <div class="col col-md-6 align-items-center justify-content-center d-inline-flex ">
-                <img src="{{$skill->picture_source}}" class="svgLogo" alt="{{$skill->name}} logo"/>
+                @if (isset($skill->picture_source))
+                <img src="{{asset($skill->picture_source)}}" class="svgLogo" alt="{{$skill->name}} logo"/>
+                @endif
             </div>
             <div class="col col-md-6 d-inline-flex align-items-center">
                 <div>
