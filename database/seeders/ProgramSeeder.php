@@ -116,9 +116,6 @@ class ProgramSeeder extends Seeder
             foreach($program["tags"] as $tag){
                 $t = Tag::firstOrCreate([
                     'name' => $tag
-                ],
-                [
-                    'name' => $tag
                 ]);
                 $prog->tags()->attach($t);
             }
