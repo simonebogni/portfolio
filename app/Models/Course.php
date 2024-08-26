@@ -11,7 +11,12 @@ class Course extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $dates = ['created_at', 'updated_at', 'deleted_at', 'exam_date'];
+    protected $casts = [
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+        'deleted_at' => 'datetime',
+        'exam_date' => 'datetime',
+    ];
 
     /**
      * Get the program that taught this course

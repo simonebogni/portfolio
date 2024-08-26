@@ -8,10 +8,8 @@ class CreateCertificatesTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('certificates', function (Blueprint $table) {
             $table->id();
@@ -29,10 +27,8 @@ class CreateCertificatesTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('certificates');
     }

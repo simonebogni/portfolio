@@ -9,10 +9,8 @@ class CreatePortfolioItemsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('portfolio_items', function (Blueprint $table) {
             $table->id();
@@ -33,10 +31,8 @@ class CreatePortfolioItemsTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('portfolio_items');
     }

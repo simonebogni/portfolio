@@ -11,7 +11,11 @@ class SkillSubcategory extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $dates = ['created_at', 'updated_at', 'deleted_at'];
+    protected $casts = [
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+        'deleted_at' => 'datetime',
+    ];
 
     /**
      * Get the category of this subcatory

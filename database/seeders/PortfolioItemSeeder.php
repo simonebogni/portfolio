@@ -13,10 +13,8 @@ class PortfolioItemSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
-     * @return void
      */
-    public function run()
+    public function run(): void
     {
         $portfolioItems = [
             [
@@ -145,7 +143,7 @@ class PortfolioItemSeeder extends Seeder
                         'name' => 'Patient account creation from the Pediatrician control panel',
                         'alt' => 'Patient account creation from the Pediatrician control panel'
                     ]
-                    
+
                 ]
             ],
             [
