@@ -8,10 +8,8 @@ class CreatePortfolioItemTagTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('portfolio_item_tag', function (Blueprint $table) {
             $table->id();
@@ -24,10 +22,8 @@ class CreatePortfolioItemTagTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('portfolio_item_tag');
     }

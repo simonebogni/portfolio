@@ -9,10 +9,8 @@ class CreateCompaniesTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('companies', function (Blueprint $table) {
             $table->id();
@@ -29,10 +27,8 @@ class CreateCompaniesTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('companies');
     }

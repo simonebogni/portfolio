@@ -8,10 +8,8 @@ class CreateProgramTagTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('program_tag', function (Blueprint $table) {
             $table->id();
@@ -23,10 +21,8 @@ class CreateProgramTagTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('program_tag');
     }

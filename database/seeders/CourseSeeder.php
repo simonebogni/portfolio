@@ -11,10 +11,8 @@ class CourseSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
-     * @return void
      */
-    public function run()
+    public function run(): void
     {
         $programs = [
             [
@@ -205,19 +203,19 @@ class CourseSeeder extends Seeder
                 $c = new Course();
                 $c->name = $course["name"];
                 if($course["score"] != null){
-                    $c->score = $course["score"]; 
+                    $c->score = $course["score"];
                 }
                 if($course["score_max"] != null){
-                    $c->score_max = $course["score_max"]; 
+                    $c->score_max = $course["score_max"];
                 }
                 if($course["cum_laude"] != null){
-                    $c->cum_laude = $course["cum_laude"]; 
+                    $c->cum_laude = $course["cum_laude"];
                 }
                 if($course["exam_date"] != null){
-                    $c->exam_date = $course["exam_date"]; 
+                    $c->exam_date = $course["exam_date"];
                 }
                 if($course["description"] != null){
-                    $c->description = $course["description"]; 
+                    $c->description = $course["description"];
                 }
                 $program->courses()->save($c);
             }

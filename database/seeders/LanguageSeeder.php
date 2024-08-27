@@ -11,10 +11,8 @@ class LanguageSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
-     * @return void
      */
-    public function run()
+    public function run(): void
     {
         $languages = [
             [
@@ -74,6 +72,6 @@ class LanguageSeeder extends Seeder
             ]);
             $order++;
         }
-        
+
     }
 }
