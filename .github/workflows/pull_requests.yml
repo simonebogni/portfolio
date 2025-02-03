@@ -1,0 +1,10 @@
+name: PR
+
+on:
+  pull_request:
+
+jobs:
+  pint:
+    name: "Pint"
+    uses: ./.github/workflows/pint.yml
+    secrets: inherit
