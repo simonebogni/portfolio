@@ -10,7 +10,8 @@ class SkillCategoryController extends Controller
     /**
      * Return a collection of all the categories with the information about subcategories and their skills
      */
-    public static function getCategoriesWithSkills(){
+    public static function getCategoriesWithSkills()
+    {
         return SkillCategory::with('subcategories.skills')->orderBy('order')->get();
     }
 
@@ -37,7 +38,6 @@ class SkillCategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -48,7 +48,6 @@ class SkillCategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\SkillCategory  $skillCategory
      * @return \Illuminate\Http\Response
      */
     public function show(SkillCategory $skillCategory)
@@ -59,7 +58,6 @@ class SkillCategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\SkillCategory  $skillCategory
      * @return \Illuminate\Http\Response
      */
     public function edit(SkillCategory $skillCategory)
@@ -70,8 +68,6 @@ class SkillCategoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\SkillCategory  $skillCategory
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, SkillCategory $skillCategory)
@@ -82,7 +78,6 @@ class SkillCategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\SkillCategory  $skillCategory
      * @return \Illuminate\Http\Response
      */
     public function destroy(SkillCategory $skillCategory)

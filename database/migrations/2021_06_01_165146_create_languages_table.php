@@ -15,10 +15,10 @@ class CreateLanguagesTable extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->float('rating')->default(0.0);
-            $table->enum('speaking', [ "Beginner", "Limited working proficiency", "Intermediate", "Proficient", "Fluent", "Native"])->default("Beginner");
-            $table->enum('reading', [ "Beginner", "Limited working proficiency", "Intermediate", "Proficient", "Fluent", "Native"])->default("Beginner");
-            $table->enum('writing', [ "Beginner", "Limited working proficiency", "Intermediate", "Proficient", "Fluent", "Native"])->default("Beginner");
-            $table->enum('listening', [ "Beginner", "Limited working proficiency", "Intermediate", "Proficient", "Fluent", "Native"])->default("Beginner");
+            $table->enum('speaking', ['Beginner', 'Limited working proficiency', 'Intermediate', 'Proficient', 'Fluent', 'Native'])->default('Beginner');
+            $table->enum('reading', ['Beginner', 'Limited working proficiency', 'Intermediate', 'Proficient', 'Fluent', 'Native'])->default('Beginner');
+            $table->enum('writing', ['Beginner', 'Limited working proficiency', 'Intermediate', 'Proficient', 'Fluent', 'Native'])->default('Beginner');
+            $table->enum('listening', ['Beginner', 'Limited working proficiency', 'Intermediate', 'Proficient', 'Fluent', 'Native'])->default('Beginner');
             $table->string('certificate_level')->nullable();
             $table->string('certificate_img_path')->nullable();
             $table->softDeletes();

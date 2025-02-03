@@ -8,30 +8,31 @@ class Ranker extends Component
 {
     /**
      * The value of the component
-     * 
+     *
      * @var float
      */
     public $currentValue;
 
     /**
      * The max value of the component
-     * 
+     *
      * @var float
      */
     public $maxValue;
 
     /**
      * The size in pixel of each individual icon
-     * 
+     *
      * @var int
      */
     public $pixelSize;
 
     /**
      * Create a new component instance.
-     * @param float $currentValue
-     * @param float $maxValue
-     * @param int  $pixelSize
+     *
+     * @param  float  $currentValue
+     * @param  float  $maxValue
+     * @param  int  $pixelSize
      * @return void
      */
     public function __construct($currentValue = 1.0, $maxValue = 5.0, $pixelSize = 48)

@@ -20,7 +20,8 @@ class OnlinePlatform extends Model
     /**
      * Get the list of the Programs taught on this OnlinePlatform
      */
-    public function programs(){
+    public function programs()
+    {
         return $this->hasMany(Program::class);
     }
 }

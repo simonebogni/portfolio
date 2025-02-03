@@ -7,8 +7,11 @@ use Illuminate\View\Component;
 class Program extends Component
 {
     public $program;
+
     public $repeatInstitute;
+
     public $showCourses;
+
     /**
      * Create a new component instance.
      *
@@ -17,8 +20,8 @@ class Program extends Component
     public function __construct($program, $repeatInstitute, $showCourses)
     {
         $this->program = $program;
-        $this->repeatInstitute = $repeatInstitute == "true";
-        $this->showCourses = $showCourses == "true";
+        $this->repeatInstitute = $repeatInstitute == 'true';
+        $this->showCourses = $showCourses == 'true';
     }
 
     /**

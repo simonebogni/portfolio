@@ -16,33 +16,33 @@ class PortfolioCategorySeeder extends Seeder
             [
                 'name' => 'webapps',
                 'display_title' => 'Web applications',
-                'display_priority' => 4
+                'display_priority' => 4,
             ],
             [
                 'name' => 'data-analysis-python',
                 'display_title' => 'Data Analysis with Python',
-                'display_priority' => 3
+                'display_priority' => 3,
             ],
             [
                 'name' => 'java',
                 'display_title' => 'Projects in Java',
-                'display_priority' => 2
+                'display_priority' => 2,
             ],
             [
                 'name' => 'd3js',
                 'display_title' => 'Data visualization with D3.js',
-                'display_priority' => 1
+                'display_priority' => 1,
             ],
             [
                 'name' => 'microcontrollers',
-                'display_title' => 'Tinkering with Microcontrollers'
-            ]
+                'display_title' => 'Tinkering with Microcontrollers',
+            ],
         ];
-        foreach($categories as $category){
-            $cat = new PortfolioCategory();
+        foreach ($categories as $category) {
+            $cat = new PortfolioCategory;
             $cat->name = $category['name'];
             $cat->display_title = $category['display_title'];
-            if(isset($category['display_priority'])){
+            if (isset($category['display_priority'])) {
                 $cat->display_priority = $category['display_priority'];
             }
             $cat->save();

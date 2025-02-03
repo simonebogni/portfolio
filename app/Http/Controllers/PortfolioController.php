@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class PortfolioController extends Controller
 {
     /**
@@ -14,8 +12,9 @@ class PortfolioController extends Controller
     public function index()
     {
         $categories = PortfolioCategoryController::getPortfolioCategoriesWithItems();
+
         return view('portfolio', [
-            'categories'=> $categories
+            'categories' => $categories,
         ]);
     }
 }

@@ -7,6 +7,7 @@ use Illuminate\View\Component;
 class Award extends Component
 {
     public $award;
+
     /**
      * Create a new component instance.
      *

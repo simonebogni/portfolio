@@ -15,38 +15,38 @@ class OnlinePlatformSeeder extends Seeder
         $platforms = [
             [
                 'name' => 'FreeCodeCamp',
-                'website' => 'https://www.freecodecamp.org/'
+                'website' => 'https://www.freecodecamp.org/',
             ],
             [
                 'name' => 'LinkedIn Learning',
-                'website' => 'https://www.linkedin.com/learning/'
+                'website' => 'https://www.linkedin.com/learning/',
             ],
             [
                 'name' => 'EdX',
-                'website' => 'https://www.edx.org/'
+                'website' => 'https://www.edx.org/',
             ],
             [
                 'name' => 'Coursera',
-                'website' => 'https://www.coursera.org/'
+                'website' => 'https://www.coursera.org/',
             ],
             [
                 'name' => 'Udemy',
-                'website' => 'https://www.udemy.com/'
+                'website' => 'https://www.udemy.com/',
             ],
             [
                 'name' => 'Laracasts',
-                'website' => 'https://laracasts.com/'
+                'website' => 'https://laracasts.com/',
             ],
             [
                 'name' => 'Stanford Online',
-                'website' => 'https://online.stanford.edu/'
+                'website' => 'https://online.stanford.edu/',
             ],
         ];
 
-        foreach($platforms as $platform){
-            $op = new OnlinePlatform();
-            $op->name = $platform["name"];
-            $op->website = $platform["website"];
+        foreach ($platforms as $platform) {
+            $op = new OnlinePlatform;
+            $op->name = $platform['name'];
+            $op->website = $platform['website'];
             $op->save();
         }
     }

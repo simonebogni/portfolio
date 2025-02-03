@@ -23,7 +23,7 @@ class CertificateSeeder extends Seeder
                 'score' => null,
                 'score_max' => null,
                 'description' => 'Topics included: HTML and HTML5, CSS, Applied Visual Design, Applied Accessibility, Responsive Web Design Principles, CSS Flexbox and Grid.',
-                'tags' => ['HTML5', 'CSS3', 'Accesibility', 'Responsive Web Design']
+                'tags' => ['HTML5', 'CSS3', 'Accesibility', 'Responsive Web Design'],
             ],
             [
                 'title' => 'JavaScript Algorithms and Data Structures',
@@ -33,7 +33,7 @@ class CertificateSeeder extends Seeder
                 'score' => null,
                 'score_max' => null,
                 'description' => 'Topics included: JavaScript, ES6, Regular Expressions, Debugging, Data Structures, Algorithm Scripting, Object Oriented Programming, Functional Programming',
-                'tags' => ['JavaScript', 'ES6', 'Object Oriented Programming', 'Functional Programming']
+                'tags' => ['JavaScript', 'ES6', 'Object Oriented Programming', 'Functional Programming'],
             ],
             [
                 'title' => 'Data Visualization',
@@ -43,7 +43,7 @@ class CertificateSeeder extends Seeder
                 'score' => null,
                 'score_max' => null,
                 'description' => 'Topics included: Data Visualization with D3, JSON APIs and AJAX',
-                'tags' => ['D3.js', 'AJAX', 'JSON', 'Data visualisation']
+                'tags' => ['D3.js', 'AJAX', 'JSON', 'Data visualisation'],
             ],
             [
                 'title' => 'APIs and Microservices',
@@ -53,7 +53,7 @@ class CertificateSeeder extends Seeder
                 'score' => null,
                 'score_max' => null,
                 'description' => 'Topics included: NPM Package Manager, Basic Node.js and Express, MongoDB and Mongoose',
-                'tags' => ['Node.js', 'Express', 'MongoDB', 'Mongoose', 'NPM']
+                'tags' => ['Node.js', 'Express', 'MongoDB', 'Mongoose', 'NPM'],
             ],
             [
                 'title' => 'Data Analysis with Python',
@@ -63,24 +63,24 @@ class CertificateSeeder extends Seeder
                 'score' => null,
                 'score_max' => null,
                 'description' => 'Topics included: Python, Numpy, Pandas, Matplotlib and Seaborn',
-                'tags' => ['Python', 'Numpy', 'Pandas', 'Matplotlib', 'Seaborn', 'Performance optimisation', 'Data analysis', 'Data visualisation']
-            ]
+                'tags' => ['Python', 'Numpy', 'Pandas', 'Matplotlib', 'Seaborn', 'Performance optimisation', 'Data analysis', 'Data visualisation'],
+            ],
         ];
 
         foreach ($certificates as $certificate) {
-            $tempCertificate = new Certificate();
-            $tempCertificate->title = $certificate["title"];
-            $tempCertificate->issued_by = $certificate["issued_by"];
-            $tempCertificate->issue_date = $certificate["issue_date"];
-            $tempCertificate->url = $certificate["url"];
-            $tempCertificate->score = $certificate["score"];
-            $tempCertificate->score_max = $certificate["score_max"];
-            $tempCertificate->description = $certificate["description"];
+            $tempCertificate = new Certificate;
+            $tempCertificate->title = $certificate['title'];
+            $tempCertificate->issued_by = $certificate['issued_by'];
+            $tempCertificate->issue_date = $certificate['issue_date'];
+            $tempCertificate->url = $certificate['url'];
+            $tempCertificate->score = $certificate['score'];
+            $tempCertificate->score_max = $certificate['score_max'];
+            $tempCertificate->description = $certificate['description'];
             $tempCertificate->save();
-            if(isset($certificate["tags"])){
-                foreach($certificate["tags"] as $tag){
+            if (isset($certificate['tags'])) {
+                foreach ($certificate['tags'] as $tag) {
                     $t = Tag::firstWhere('name', $tag);
-                    if(isset($t)){
+                    if (isset($t)) {
                         $tempCertificate->tags()->attach($t);
                     }
                 }

@@ -18,10 +18,10 @@ class Language extends Model
      */
     protected $attributes = [
         'rating' => 1,
-        'speaking' => "Beginner",
-        'reading' => "Beginner",
-        'writing' => "Beginner",
-        'listening' => "Beginner",
+        'speaking' => 'Beginner',
+        'reading' => 'Beginner',
+        'writing' => 'Beginner',
+        'listening' => 'Beginner',
     ];
 
     protected $casts = [

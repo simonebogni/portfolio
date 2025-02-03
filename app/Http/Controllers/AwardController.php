@@ -10,7 +10,8 @@ class AwardController extends Controller
     /**
      * Return a collection of all the certificates
      */
-    public static function getAwards(){
+    public static function getAwards()
+    {
         return Award::with('tags')->orderByDesc('issue_date')
             ->get();
     }
@@ -38,7 +39,6 @@ class AwardController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -49,7 +49,6 @@ class AwardController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Award  $award
      * @return \Illuminate\Http\Response
      */
     public function show(Award $award)
@@ -60,7 +59,6 @@ class AwardController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Award  $award
      * @return \Illuminate\Http\Response
      */
     public function edit(Award $award)
@@ -71,8 +69,6 @@ class AwardController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Award  $award
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Award $award)
@@ -83,7 +79,6 @@ class AwardController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Award  $award
      * @return \Illuminate\Http\Response
      */
     public function destroy(Award $award)

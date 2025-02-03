@@ -21,7 +21,8 @@ class Course extends Model
     /**
      * Get the program that taught this course
      */
-    public function program(){
+    public function program()
+    {
         return $this->belongsTo(Program::class);
     }
 }

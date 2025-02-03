@@ -20,7 +20,8 @@ class SkillCategory extends Model
     /**
      * Get the subcategories of the category
      */
-    public function subcategories(){
+    public function subcategories()
+    {
         return $this->hasMany(SkillSubcategory::class);
     }
 }

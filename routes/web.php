@@ -1,11 +1,11 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\HobbyController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\SoftSkillController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +17,6 @@ use App\Http\Controllers\SoftSkillController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 
 Route::get('/about', [AboutController::class, 'index']);
 Route::get('/experience', [ExperienceController::class, 'index']);

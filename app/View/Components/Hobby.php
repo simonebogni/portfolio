@@ -6,7 +6,6 @@ use Illuminate\View\Component;
 
 class Hobby extends Component
 {
-
     public $hobby;
 
     /**

@@ -10,7 +10,8 @@ class InstituteController extends Controller
     /**
      * Return a collection of all the institutes
      */
-    public static function getPriorityInstitutes(){
+    public static function getPriorityInstitutes()
+    {
         return Institute::with(['programs.tags', 'programs.courses'])->where('priority', '>', 0)->orderByDesc('priority')
             ->get();
     }
@@ -38,7 +39,6 @@ class InstituteController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -49,7 +49,6 @@ class InstituteController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Institute  $institute
      * @return \Illuminate\Http\Response
      */
     public function show(Institute $institute)
@@ -60,7 +59,6 @@ class InstituteController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Institute  $institute
      * @return \Illuminate\Http\Response
      */
     public function edit(Institute $institute)
@@ -71,8 +69,6 @@ class InstituteController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Institute  $institute
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Institute $institute)
@@ -83,7 +79,6 @@ class InstituteController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Institute  $institute
      * @return \Illuminate\Http\Response
      */
     public function destroy(Institute $institute)

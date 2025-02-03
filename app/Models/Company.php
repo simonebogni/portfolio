@@ -21,7 +21,8 @@ class Company extends Model
     /**
      * Get the work positions in this company
      */
-    public function workPositions(){
+    public function workPositions()
+    {
         return $this->hasMany(WorkPosition::class);
     }
 }

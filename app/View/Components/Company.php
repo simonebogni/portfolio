@@ -6,10 +6,9 @@ use Illuminate\View\Component;
 
 class Company extends Component
 {
-
     /**
      * The company to display
-     * 
+     *
      * @var \App\Models\Company
      */
     public $company;

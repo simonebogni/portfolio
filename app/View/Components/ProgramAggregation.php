@@ -7,6 +7,7 @@ use Illuminate\View\Component;
 class ProgramAggregation extends Component
 {
     public $programs;
+
     /**
      * Create a new component instance.
      *

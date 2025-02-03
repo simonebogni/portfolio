@@ -24,7 +24,7 @@ class CourseSeeder extends Seeder
                         'score_max' => 30,
                         'cum_laude' => false,
                         'exam_date' => Carbon::createFromDate(2013, 2, 21),
-                        'description' => null
+                        'description' => null,
                     ],
                     [
                         'name' => 'Algorithms and Data Structures',
@@ -32,7 +32,7 @@ class CourseSeeder extends Seeder
                         'score_max' => 30,
                         'cum_laude' => false,
                         'exam_date' => Carbon::createFromDate(2015, 7, 7),
-                        'description' => null
+                        'description' => null,
                     ],
                     [
                         'name' => 'Calculus',
@@ -40,7 +40,7 @@ class CourseSeeder extends Seeder
                         'score_max' => 30,
                         'cum_laude' => false,
                         'exam_date' => Carbon::createFromDate(2019, 7, 23),
-                        'description' => null
+                        'description' => null,
                     ],
                     [
                         'name' => 'Computer architecture  and Assembly',
@@ -48,7 +48,7 @@ class CourseSeeder extends Seeder
                         'score_max' => 30,
                         'cum_laude' => false,
                         'exam_date' => Carbon::createFromDate(2015, 2, 27),
-                        'description' => null
+                        'description' => null,
                     ],
                     [
                         'name' => 'English',
@@ -56,7 +56,7 @@ class CourseSeeder extends Seeder
                         'score_max' => 30,
                         'cum_laude' => true,
                         'exam_date' => Carbon::createFromDate(2012, 8, 22),
-                        'description' => null
+                        'description' => null,
                     ],
                     [
                         'name' => 'Object Oriented Programming in Java',
@@ -64,7 +64,7 @@ class CourseSeeder extends Seeder
                         'score_max' => 30,
                         'cum_laude' => false,
                         'exam_date' => Carbon::createFromDate(2013, 6, 18),
-                        'description' => null
+                        'description' => null,
                     ],
                     [
                         'name' => 'Relational Database Systems (MySQL and PostgreSQL) and SQL',
@@ -72,7 +72,7 @@ class CourseSeeder extends Seeder
                         'score_max' => 30,
                         'cum_laude' => false,
                         'exam_date' => Carbon::createFromDate(2014, 6, 27),
-                        'description' => null
+                        'description' => null,
                     ],
                     [
                         'name' => 'Fundamentals of Data Security',
@@ -80,7 +80,7 @@ class CourseSeeder extends Seeder
                         'score_max' => 30,
                         'cum_laude' => true,
                         'exam_date' => Carbon::createFromDate(2016, 9, 9),
-                        'description' => null
+                        'description' => null,
                     ],
                     [
                         'name' => 'Information and coding theory',
@@ -88,7 +88,7 @@ class CourseSeeder extends Seeder
                         'score_max' => 30,
                         'cum_laude' => false,
                         'exam_date' => Carbon::createFromDate(2020, 7, 6),
-                        'description' => null
+                        'description' => null,
                     ],
                     [
                         'name' => 'Capstone project - 1st year',
@@ -96,7 +96,7 @@ class CourseSeeder extends Seeder
                         'score_max' => 30,
                         'cum_laude' => false,
                         'exam_date' => Carbon::createFromDate(2015, 1, 15),
-                        'description' => 'Development of a standalone app to manage and search social network profiles.'
+                        'description' => 'Development of a standalone app to manage and search social network profiles.',
                     ],
                     [
                         'name' => 'Capstone project - 2nd year',
@@ -104,7 +104,7 @@ class CourseSeeder extends Seeder
                         'score_max' => 30,
                         'cum_laude' => false,
                         'exam_date' => Carbon::createFromDate(2017, 6, 28),
-                        'description' => 'Development of neighbourhood patrol app with OpenStreetMaps geolocation.'
+                        'description' => 'Development of neighbourhood patrol app with OpenStreetMaps geolocation.',
                     ],
                     [
                         'name' => 'Software design',
@@ -112,7 +112,7 @@ class CourseSeeder extends Seeder
                         'score_max' => 30,
                         'cum_laude' => false,
                         'exam_date' => Carbon::createFromDate(2015, 2, 23),
-                        'description' => null
+                        'description' => null,
                     ],
                     [
                         'name' => 'Concurrent and Distributed programming',
@@ -120,7 +120,7 @@ class CourseSeeder extends Seeder
                         'score_max' => 30,
                         'cum_laude' => false,
                         'exam_date' => Carbon::createFromDate(2016, 1, 19),
-                        'description' => null
+                        'description' => null,
                     ],
                     [
                         'name' => 'Mobile app development (Android)',
@@ -128,7 +128,7 @@ class CourseSeeder extends Seeder
                         'score_max' => 30,
                         'cum_laude' => false,
                         'exam_date' => Carbon::createFromDate(2017, 1, 25),
-                        'description' => null
+                        'description' => null,
                     ],
                     [
                         'name' => 'Operating Systems',
@@ -136,7 +136,7 @@ class CourseSeeder extends Seeder
                         'score_max' => 30,
                         'cum_laude' => false,
                         'exam_date' => Carbon::createFromDate(2015, 4, 30),
-                        'description' => null
+                        'description' => null,
                     ],
                     [
                         'name' => 'Web development',
@@ -144,7 +144,7 @@ class CourseSeeder extends Seeder
                         'score_max' => 30,
                         'cum_laude' => true,
                         'exam_date' => Carbon::createFromDate(2016, 7, 18),
-                        'description' => null
+                        'description' => null,
                     ],
                     [
                         'name' => 'Fundamentals of Digital Image Processing',
@@ -152,7 +152,7 @@ class CourseSeeder extends Seeder
                         'score_max' => 30,
                         'cum_laude' => true,
                         'exam_date' => Carbon::createFromDate(2020, 2, 14),
-                        'description' => null
+                        'description' => null,
                     ],
                     [
                         'name' => 'Software Project Management',
@@ -160,7 +160,7 @@ class CourseSeeder extends Seeder
                         'score_max' => 30,
                         'cum_laude' => true,
                         'exam_date' => Carbon::createFromDate(2020, 1, 7),
-                        'description' => null
+                        'description' => null,
                     ],
                     [
                         'name' => 'Automata and calcolability theory',
@@ -168,7 +168,7 @@ class CourseSeeder extends Seeder
                         'score_max' => 30,
                         'cum_laude' => false,
                         'exam_date' => Carbon::createFromDate(2020, 9, 9),
-                        'description' => null
+                        'description' => null,
                     ],
                     [
                         'name' => 'Mathematical logic',
@@ -176,7 +176,7 @@ class CourseSeeder extends Seeder
                         'score_max' => 30,
                         'cum_laude' => false,
                         'exam_date' => Carbon::createFromDate(2016, 7, 27),
-                        'description' => null
+                        'description' => null,
                     ],
                     [
                         'name' => 'Microcontroller',
@@ -184,7 +184,7 @@ class CourseSeeder extends Seeder
                         'score_max' => 30,
                         'cum_laude' => false,
                         'exam_date' => Carbon::createFromDate(2017, 2, 14),
-                        'description' => null
+                        'description' => null,
                     ],
                     [
                         'name' => 'Telecommunication networks',
@@ -192,30 +192,30 @@ class CourseSeeder extends Seeder
                         'score_max' => 30,
                         'cum_laude' => false,
                         'exam_date' => Carbon::createFromDate(2018, 2, 8),
-                        'description' => null
+                        'description' => null,
                     ],
-                ]
-            ]
+                ],
+            ],
         ];
-        foreach($programs as $prog){
+        foreach ($programs as $prog) {
             $program = Program::find($prog['program_id']);
-            foreach($prog["courses"] as $course){
-                $c = new Course();
-                $c->name = $course["name"];
-                if($course["score"] != null){
-                    $c->score = $course["score"];
+            foreach ($prog['courses'] as $course) {
+                $c = new Course;
+                $c->name = $course['name'];
+                if ($course['score'] != null) {
+                    $c->score = $course['score'];
                 }
-                if($course["score_max"] != null){
-                    $c->score_max = $course["score_max"];
+                if ($course['score_max'] != null) {
+                    $c->score_max = $course['score_max'];
                 }
-                if($course["cum_laude"] != null){
-                    $c->cum_laude = $course["cum_laude"];
+                if ($course['cum_laude'] != null) {
+                    $c->cum_laude = $course['cum_laude'];
                 }
-                if($course["exam_date"] != null){
-                    $c->exam_date = $course["exam_date"];
+                if ($course['exam_date'] != null) {
+                    $c->exam_date = $course['exam_date'];
                 }
-                if($course["description"] != null){
-                    $c->description = $course["description"];
+                if ($course['description'] != null) {
+                    $c->description = $course['description'];
                 }
                 $program->courses()->save($c);
             }

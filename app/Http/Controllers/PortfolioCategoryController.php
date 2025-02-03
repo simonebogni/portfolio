@@ -10,13 +10,13 @@ class PortfolioCategoryController extends Controller
     /**
      * Return a collection of all the PortfolioCategories with the portfolioItems. PortfolioItems eager load images and tags
      */
-    public static function getPortfolioCategoriesWithItems(){
+    public static function getPortfolioCategoriesWithItems()
+    {
         return PortfolioCategory::with(['portfolioItems.images', 'portfolioItems.tags'])
             ->orderBy('display_priority', 'DESC')
             ->orderBy('name', 'ASC')
             ->get();
     }
-
 
     /**
      * Display a listing of the resource.
@@ -41,7 +41,6 @@ class PortfolioCategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -52,7 +51,6 @@ class PortfolioCategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\PortfolioCategory  $portfolioCategory
      * @return \Illuminate\Http\Response
      */
     public function show(PortfolioCategory $portfolioCategory)
@@ -63,7 +61,6 @@ class PortfolioCategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\PortfolioCategory  $portfolioCategory
      * @return \Illuminate\Http\Response
      */
     public function edit(PortfolioCategory $portfolioCategory)
@@ -74,8 +71,6 @@ class PortfolioCategoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\PortfolioCategory  $portfolioCategory
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, PortfolioCategory $portfolioCategory)
@@ -86,7 +81,6 @@ class PortfolioCategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\PortfolioCategory  $portfolioCategory
      * @return \Illuminate\Http\Response
      */
     public function destroy(PortfolioCategory $portfolioCategory)

@@ -20,7 +20,8 @@ class Skill extends Model
     /**
      * Get the subcategory of this skill
      */
-    public function subcategory(){
+    public function subcategory()
+    {
         return $this->belongsTo(SkillSubcategory::class);
     }
 }

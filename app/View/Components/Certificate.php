@@ -6,9 +6,8 @@ use Illuminate\View\Component;
 
 class Certificate extends Component
 {
-
     public $certificate;
-    
+
     /**
      * Create a new component instance.
      *
