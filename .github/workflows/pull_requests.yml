@@ -4,7 +4,7 @@ on:
   pull_request:
 
 jobs:
-  pint:
+  lint:
     name: "Pint"
-    uses: ./.github/workflows/pint.yml
+    uses: ./.github/workflows/pint_larastan.yml
     secrets: inherit
