@@ -15,8 +15,9 @@ class SoftSkillController extends Controller
     public function index()
     {
         $softskills = SoftSkill::all();
+
         return view('softskills', [
-            'softskills'=>$softskills
+            'softskills' => $softskills,
         ]);
     }
 
@@ -33,7 +34,6 @@ class SoftSkillController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -44,7 +44,6 @@ class SoftSkillController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\SoftSkill  $softSkill
      * @return \Illuminate\Http\Response
      */
     public function show(SoftSkill $softSkill)
@@ -55,7 +54,6 @@ class SoftSkillController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\SoftSkill  $softSkill
      * @return \Illuminate\Http\Response
      */
     public function edit(SoftSkill $softSkill)
@@ -66,8 +64,6 @@ class SoftSkillController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\SoftSkill  $softSkill
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, SoftSkill $softSkill)
@@ -78,7 +74,6 @@ class SoftSkillController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\SoftSkill  $softSkill
      * @return \Illuminate\Http\Response
      */
     public function destroy(SoftSkill $softSkill)

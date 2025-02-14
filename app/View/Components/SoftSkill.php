@@ -8,7 +8,7 @@ class SoftSkill extends Component
 {
     /**
      * The soft skill to display
-     * 
+     *
      * @var \App\Models\SoftSkill
      */
     public $softskill;

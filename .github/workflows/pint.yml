@@ -1,0 +1,21 @@
+name: Run code formatters
+
+on:
+  workflow_call:
+
+jobs:
+  pint:
+    name: "Pint"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          coverage: none
+      - name: Install Pint
+        run: composer global require laravel/pint:1.20
+      - name: Run Pint
+        run: pint --test

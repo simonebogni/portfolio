@@ -8,7 +8,7 @@ class SkillCategory extends Component
 {
     /**
      * The skill category to display
-     * 
+     *
      * @var \App\Models\SkillCategory
      */
     public $skillCategory;

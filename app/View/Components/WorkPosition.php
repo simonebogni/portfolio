@@ -6,7 +6,6 @@ use Illuminate\View\Component;
 
 class WorkPosition extends Component
 {
-
     public $position;
 
     /**

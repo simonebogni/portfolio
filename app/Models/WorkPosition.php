@@ -20,7 +20,8 @@ class WorkPosition extends Model
     /**
      * Get the company for this work position
      */
-    public function company(){
+    public function company()
+    {
         return $this->belongsTo(Company::class);
     }
 

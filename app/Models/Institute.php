@@ -20,7 +20,8 @@ class Institute extends Model
     /**
      * Get the list of the Programs taught by this Institute
      */
-    public function programs(){
+    public function programs()
+    {
         return $this->hasMany(Program::class);
     }
 }

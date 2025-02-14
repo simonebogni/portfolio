@@ -22,14 +22,16 @@ class Program extends Model
     /**
      * Get the Institute of this Program
      */
-    public function institute(){
+    public function institute()
+    {
         return $this->belongsTo(Institute::class);
     }
 
     /**
      * Get the OnlinePlatform of this Program
      */
-    public function onlinePlatform(){
+    public function onlinePlatform()
+    {
         return $this->belongsTo(OnlinePlatform::class);
     }
 
@@ -44,7 +46,8 @@ class Program extends Model
     /**
      * Get the courses taught by this program
      */
-    public function courses(){
+    public function courses()
+    {
         return $this->hasMany(Course::class);
     }
 }

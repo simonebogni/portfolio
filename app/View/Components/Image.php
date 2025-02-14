@@ -7,7 +7,9 @@ use Illuminate\View\Component;
 class Image extends Component
 {
     public $image;
+
     public $classes;
+
     /**
      * Create a new component instance.
      *

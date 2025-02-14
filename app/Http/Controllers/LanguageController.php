@@ -7,29 +7,30 @@ use Illuminate\Http\Request;
 
 class LanguageController extends Controller
 {
-
     /**
      * Return a collection of all the languages
      */
-    public static function getLanguages(){
+    public static function getLanguages()
+    {
         return Language::orderByDesc('rating')
             ->get();
     }
 
-    /** 
+    /**
      * Return an array with the association between a rating value and its relative meaning
      */
-    public static function getRatingsMeaning(){
+    public static function getRatingsMeaning()
+    {
         return [
-            "1.0" => "Beginner",
-            "1.5" => "Beginner",
-            "2.0" => "Limited working proficiency",
-            "2.5" => "Limited working proficiency",
-            "3.0" => "Intermediate",
-            "3.5" => "Intermediate",
-            "4.0" => "Proficient",
-            "4.5" => "Proficient",
-            "5.0" => "Fluent"
+            '1.0' => 'Beginner',
+            '1.5' => 'Beginner',
+            '2.0' => 'Limited working proficiency',
+            '2.5' => 'Limited working proficiency',
+            '3.0' => 'Intermediate',
+            '3.5' => 'Intermediate',
+            '4.0' => 'Proficient',
+            '4.5' => 'Proficient',
+            '5.0' => 'Fluent',
         ];
     }
 
@@ -56,7 +57,6 @@ class LanguageController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -67,7 +67,6 @@ class LanguageController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Language  $language
      * @return \Illuminate\Http\Response
      */
     public function show(Language $language)
@@ -78,7 +77,6 @@ class LanguageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Language  $language
      * @return \Illuminate\Http\Response
      */
     public function edit(Language $language)
@@ -89,8 +87,6 @@ class LanguageController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Language  $language
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Language $language)
@@ -101,7 +97,6 @@ class LanguageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Language  $language
      * @return \Illuminate\Http\Response
      */
     public function destroy(Language $language)

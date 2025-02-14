@@ -6,8 +6,8 @@ use Illuminate\View\Component;
 
 class PortfolioItem extends Component
 {
-
     public $item;
+
     /**
      * Create a new component instance.
      *

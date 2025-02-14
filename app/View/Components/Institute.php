@@ -7,6 +7,7 @@ use Illuminate\View\Component;
 class Institute extends Component
 {
     public $institute;
+
     /**
      * Create a new component instance.
      *
