@@ -14,7 +14,7 @@ class Language extends Model
     /**
      * The model's default values for attributes.
      *
-     * @var array
+     * @var array<string, mixed>
      */
     protected $attributes = [
         'rating' => 1,
@@ -24,6 +24,11 @@ class Language extends Model
         'listening' => 'Beginner',
     ];
 
+    /**
+     * The model's casts.
+     *
+     * @var array<string, string>
+     */
     protected $casts = [
         'created_at' => 'datetime',
         'updated_at' => 'datetime',

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class SkillCategory extends Model
@@ -20,7 +21,7 @@ class SkillCategory extends Model
     /**
      * Get the subcategories of the category
      */
-    public function subcategories()
+    public function subcategories(): HasMany
     {
         return $this->hasMany(SkillSubcategory::class);
     }

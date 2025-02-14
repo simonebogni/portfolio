@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Company extends Model
@@ -21,7 +22,7 @@ class Company extends Model
     /**
      * Get the work positions in this company
      */
-    public function workPositions()
+    public function workPositions(): HasMany
     {
         return $this->hasMany(WorkPosition::class);
     }
