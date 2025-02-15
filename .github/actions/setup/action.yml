@@ -29,7 +29,7 @@ runs:
     - name: Setup cache environment
       id: extcache
       uses: shivammathur/cache-extensions@v1
-      if: inputs.php-extensions == true
+      if: ${{ inputs.php-extensions != '' }}
       with:
         php-version: ${{ inputs.php-version }}
         extensions: ${{ inputs.php-extensions }}
@@ -37,7 +37,7 @@ runs:
 
     - name: Cache extensions
       uses: actions/cache@v4
-      if: inputs.php-extensions == true
+      if: ${{ inputs.php-extensions != '' }}
       with:
         path: ${{ steps.extcache.outputs.dir }}
         key: ${{ steps.extcache.outputs.key }}
