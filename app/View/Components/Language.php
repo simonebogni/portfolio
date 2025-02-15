@@ -66,8 +66,8 @@ class Language extends Component
         $this->name = $language->name;
         $this->isNative = $language->speaking === 'Native';
         $roundedRating = round($language->rating, 2);
-        if ($roundedRating % 1.0 !== 0) {
-            $whole = floor($roundedRating);
+        $whole = floor($roundedRating);
+        if (($roundedRating - $whole) > 0.0) {
             $decimal = $roundedRating - $whole;
             if ($decimal >= 0.5) {
                 $this->rating = $whole + 0.5;

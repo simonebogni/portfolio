@@ -3,88 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\PortfolioCategory;
-use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 
 class PortfolioCategoryController extends Controller
 {
     /**
      * Return a collection of all the PortfolioCategories with the portfolioItems. PortfolioItems eager load images and tags
      */
-    public static function getPortfolioCategoriesWithItems()
+    public static function getPortfolioCategoriesWithItems(): Collection
     {
         return PortfolioCategory::with(['portfolioItems.images', 'portfolioItems.tags'])
             ->orderBy('display_priority', 'DESC')
             ->orderBy('name', 'ASC')
             ->get();
-    }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function show(PortfolioCategory $portfolioCategory)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(PortfolioCategory $portfolioCategory)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, PortfolioCategory $portfolioCategory)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(PortfolioCategory $portfolioCategory)
-    {
-        //
     }
 }

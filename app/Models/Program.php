@@ -4,6 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Program extends Model
@@ -22,7 +25,7 @@ class Program extends Model
     /**
      * Get the Institute of this Program
      */
-    public function institute()
+    public function institute(): BelongsTo
     {
         return $this->belongsTo(Institute::class);
     }
@@ -30,15 +33,12 @@ class Program extends Model
     /**
      * Get the OnlinePlatform of this Program
      */
-    public function onlinePlatform()
+    public function onlinePlatform(): BelongsTo
     {
         return $this->belongsTo(OnlinePlatform::class);
     }
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-     */
-    public function tags()
+    public function tags(): BelongsToMany
     {
         return $this->belongsToMany(Tag::class);
     }
@@ -46,7 +46,7 @@ class Program extends Model
     /**
      * Get the courses taught by this program
      */
-    public function courses()
+    public function courses(): HasMany
     {
         return $this->hasMany(Course::class);
     }
