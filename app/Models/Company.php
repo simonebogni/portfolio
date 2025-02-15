@@ -19,7 +19,7 @@ class Company extends Model
      */
     protected function casts(): array
     {
-        return[
+        return [
             'created_at' => 'datetime',
             'updated_at' => 'datetime',
             'deleted_at' => 'datetime',
