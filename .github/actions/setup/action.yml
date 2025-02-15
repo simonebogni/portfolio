@@ -14,21 +14,16 @@ inputs:
     description: The coverage driver to use.
     required: false
     default: none
-#  nova-email:
-#    description: The email used to authenticate Nova.
-#    required: true
-#  nova-password:
-#    description: The password used to authenticate Nova.
-#    required: true
 
 runs:
   using: composite
   steps:
     - name: Get PHP extension cache hash
       id: get-cache-hash
-      with:
+      env:
         PHP_EXTENSIONS: ${{ inputs.php-extensions }}
-      run: echo hash=$(echo "$PHP_EXTENSIONS" | md5sum | awk '{print $1}') >> $GITHUB_OUTPUT
+      run: |
+        echo hash=$(echo "$PHP_EXTENSIONS" | md5sum | awk '{print $1}') >> $GITHUB_OUTPUT
       shell: bash
 
     - name: Setup cache environment
