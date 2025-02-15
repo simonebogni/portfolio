@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Certificate;
-use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 
 class CertificateController extends Controller

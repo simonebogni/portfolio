@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\SoftSkill;
-use Illuminate\Http\Request;
 
 class SoftSkillController extends Controller
 {

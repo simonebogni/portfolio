@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Hobby;
-use Illuminate\Http\Request;
-use Illuminate\Support\Collection;
 
 class HobbyController extends Controller
 {

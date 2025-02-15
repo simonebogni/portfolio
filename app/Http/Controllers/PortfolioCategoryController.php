@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\PortfolioCategory;
-use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 
 class PortfolioCategoryController extends Controller
