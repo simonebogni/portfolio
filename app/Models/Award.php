@@ -11,12 +11,20 @@ class Award extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $casts = [
-        'created_at' => 'datetime',
-        'updated_at' => 'datetime',
-        'deleted_at' => 'datetime',
-        'issue_date' => 'datetime',
-    ];
+    /**
+     * Get the attributes that should be cast.
+     *
+     * @return array<string, string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'created_at' => 'datetime',
+            'updated_at' => 'datetime',
+            'deleted_at' => 'datetime',
+            'issue_date' => 'datetime',
+        ];
+    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany

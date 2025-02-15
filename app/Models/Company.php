@@ -12,12 +12,20 @@ class Company extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $casts = [
-        'created_at' => 'datetime',
-        'updated_at' => 'datetime',
-        'deleted_at' => 'datetime',
-        'last_work_date' => 'datetime',
-    ];
+    /**
+     * Get the attributes that should be cast.
+     *
+     * @return array<string, string>
+     */
+    protected function casts(): array
+    {
+        return[
+            'created_at' => 'datetime',
+            'updated_at' => 'datetime',
+            'deleted_at' => 'datetime',
+            'last_work_date' => 'datetime',
+        ];
+    }
 
     /**
      * Get the work positions in this company
