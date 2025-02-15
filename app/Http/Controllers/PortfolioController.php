@@ -6,10 +6,8 @@ class PortfolioController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response|\Illuminate\View\View
      */
-    public function index()
+    public function index(): \Illuminate\Http\Response|\Illuminate\View\View
     {
         $categories = PortfolioCategoryController::getPortfolioCategoriesWithItems();
 

@@ -8,10 +8,8 @@ class HobbyController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response|\Illuminate\View\View
      */
-    public function index()
+    public function index(): \Illuminate\Http\Response|\Illuminate\View\View
     {
         $hobbies = Hobby::all();
 

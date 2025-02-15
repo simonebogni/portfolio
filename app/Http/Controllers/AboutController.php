@@ -6,10 +6,8 @@ class AboutController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response|\Illuminate\View\View
      */
-    public function index()
+    public function index(): \Illuminate\Http\Response|\Illuminate\View\View
     {
         $languages = LanguageController::getLanguages();
         $languageRanksMeaning = LanguageController::getRatingsMeaning();

@@ -8,10 +8,8 @@ class SoftSkillController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response|\Illuminate\View\View
      */
-    public function index()
+    public function index(): \Illuminate\Http\Response|\Illuminate\View\View
     {
         return view('softskills', [
             'softskills' => SoftSkill::all(),
