@@ -126,6 +126,7 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+    // list of comma-separated keys previously used by the encrypter service
     'previous_keys' => [
         ...array_filter(
             explode(',', env('APP_PREVIOUS_KEYS', ''))
