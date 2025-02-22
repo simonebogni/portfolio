@@ -42,15 +42,16 @@ class UserFactory extends Factory
         ]);
     }
 
-    public function admin($name = "Admin", $email = "admin@example.com", $plainTextPassword = null): static
+    public function admin($name = 'Admin', $email = 'admin@example.com', $plainTextPassword = null): static
     {
         $userDetails = [
-          'name' => $name,
-          'email' => $email,
+            'name' => $name,
+            'email' => $email,
         ];
-        if($plainTextPassword) {
+        if ($plainTextPassword) {
             $userDetails['password'] = Hash::make($plainTextPassword);
         }
+
         return $this->state(fn (array $attributes) => $userDetails);
     }
 }
