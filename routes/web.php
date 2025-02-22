@@ -13,7 +13,3 @@ Route::get('/portfolio', [PortfolioController::class, 'index']);
 Route::get('/softskills', [SoftSkillController::class, 'index']);
 Route::get('/hobbies', [HobbyController::class, 'index']);
 Route::get('/', [AboutController::class, 'index']);
-
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
