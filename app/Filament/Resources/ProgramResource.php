@@ -47,10 +47,8 @@ class ProgramResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('institute.name')
-                    ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('onlinePlatform.name')
-                    ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),

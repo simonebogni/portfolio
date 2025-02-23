@@ -33,17 +33,24 @@ class PortfolioItemResource extends Resource
                     ->maxLength(255),
                 Forms\Components\TextInput::make('slug')
                     ->required()
-                    ->maxLength(255),
+                    ->maxLength(255)
+                    ->unique(ignoreRecord: true),
                 Forms\Components\TextInput::make('subtitle')
                     ->maxLength(255),
                 Forms\Components\Textarea::make('description')
                     ->columnSpanFull(),
                 Forms\Components\TextInput::make('live_url')
-                    ->maxLength(255),
+                    ->maxLength(255)
+                    ->url()
+                    ->suffixIcon('heroicon-m-globe-alt'),
                 Forms\Components\TextInput::make('git_repo_url')
-                    ->maxLength(255),
+                    ->maxLength(255)
+                    ->url()
+                    ->suffixIcon('heroicon-m-globe-alt'),
                 Forms\Components\TextInput::make('cover_img_url')
-                    ->maxLength(255),
+                    ->maxLength(255)
+                    ->url()
+                    ->suffixIcon('heroicon-m-globe-alt'),
                 Forms\Components\DatePicker::make('date'),
                 Forms\Components\TextInput::make('display_priority')
                     ->required()

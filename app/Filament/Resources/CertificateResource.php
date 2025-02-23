@@ -37,7 +37,9 @@ class CertificateResource extends Resource
                     ->required(),
                 Forms\Components\TextInput::make('url')
                     ->required()
-                    ->maxLength(255),
+                    ->maxLength(255)
+                    ->url()
+                    ->suffixIcon('heroicon-m-globe-alt'),
                 Forms\Components\TextInput::make('score')
                     ->numeric(),
                 Forms\Components\TextInput::make('score_max')

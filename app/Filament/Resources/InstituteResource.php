@@ -29,7 +29,10 @@ class InstituteResource extends Resource
                     ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('website')
-                    ->maxLength(255),
+                    ->maxLength(255)
+                    ->url()
+                    ->suffixIcon('heroicon-m-globe-alt')
+                    ->nullable(),
                 Forms\Components\TextInput::make('priority')
                     ->required()
                     ->numeric()

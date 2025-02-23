@@ -37,6 +37,8 @@ class CompanyResource extends Resource
                 Forms\Components\Textarea::make('description')
                     ->columnSpanFull(),
                 Forms\Components\TextInput::make('website')
+                    ->url()
+                    ->suffixIcon('heroicon-m-globe-alt')
                     ->maxLength(255),
                 Forms\Components\DatePicker::make('last_work_date')
                     ->required(),

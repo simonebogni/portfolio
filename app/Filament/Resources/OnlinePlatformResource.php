@@ -30,7 +30,9 @@ class OnlinePlatformResource extends Resource
                     ->maxLength(255),
                 Forms\Components\TextInput::make('website')
                     ->required()
-                    ->maxLength(255),
+                    ->maxLength(255)
+                    ->url()
+                    ->suffixIcon('heroicon-m-globe-alt'),
             ]);
     }
 

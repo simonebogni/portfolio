@@ -28,7 +28,9 @@ class PortfolioCategoryResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255)
-                    ->default('_other'),
+                    ->default('_other')
+                    ->unique(ignoreRecord: true)
+                    ->helperText('Special value "_other" is used for the default category.'),
                 Forms\Components\TextInput::make('display_title')
                     ->required()
                     ->maxLength(255)

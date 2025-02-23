@@ -2,11 +2,11 @@
 
 namespace App\Filament\Resources;
 
-use Closure;
 use App\Actions\Support\Color\VerifyColorContrastAccessibilityAction;
 use App\Filament\ResourceGroup;
 use App\Filament\Resources\TagResource\Pages;
 use App\Models\Tag;
+use Closure;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -45,9 +45,9 @@ class TagResource extends Resource
                             $textColor = $get('color');
                             $ratioIsAccessible = $verifyColorAction->execute($backgroundColor, $textColor);
                             if (! $ratioIsAccessible) {
-                                $fail("Low contrast - The contrast ratio between background and text color is below WCAG AA standard (4.5:1).");
+                                $fail('Low contrast - The contrast ratio between background and text color is below WCAG AA standard (4.5:1).');
                             }
-                        }
+                        },
                     ]),
                 Forms\Components\ColorPicker::make('color')
                     ->required()

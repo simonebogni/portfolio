@@ -51,7 +51,9 @@ class LanguageResource extends Resource
                 Forms\Components\TextInput::make('certificate_level')
                     ->maxLength(255),
                 Forms\Components\TextInput::make('certificate_img_path')
-                    ->maxLength(255),
+                    ->maxLength(255)
+                    ->url()
+                    ->suffixIcon('heroicon-m-globe-alt'),
             ]);
     }
 
