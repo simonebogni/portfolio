@@ -2,6 +2,8 @@
 
 namespace App\Filament\Resources;
 
+use Closure;
+use App\Actions\Support\Color\VerifyColorContrastAccessibilityAction;
 use App\Filament\ResourceGroup;
 use App\Filament\Resources\TagResource\Pages;
 use App\Models\Tag;
@@ -32,13 +34,25 @@ class TagResource extends Resource
                     ->required()
                     ->maxLength(255)
                     ->default('_Other'),
-                Forms\Components\TextInput::make('bg_color')
+                Forms\Components\ColorPicker::make('bg_color')
                     ->required()
-                    ->maxLength(255)
-                    ->default('#0d6efd'),
-                Forms\Components\TextInput::make('color')
+                    ->regex('/^#([A-Fa-f0-9]{3}|[A-Fa-f0-9]{6})$/')
+                    ->helperText('Enter a valid hex color (e.g., #000 or #000000)')
+                    ->default('#0d6efd')
+                    ->rules([
+                        fn (Forms\Get $get, VerifyColorContrastAccessibilityAction $verifyColorAction): Closure => function (string $attribute, string $value, Closure $fail) use ($get, $verifyColorAction) {
+                            $backgroundColor = $value;
+                            $textColor = $get('color');
+                            $ratioIsAccessible = $verifyColorAction->execute($backgroundColor, $textColor);
+                            if (! $ratioIsAccessible) {
+                                $fail("Low contrast - The contrast ratio between background and text color is below WCAG AA standard (4.5:1).");
+                            }
+                        }
+                    ]),
+                Forms\Components\ColorPicker::make('color')
                     ->required()
-                    ->maxLength(255)
+                    ->regex('/^#([A-Fa-f0-9]{3}|[A-Fa-f0-9]{6})$/')
+                    ->helperText('Enter a valid hex color (e.g., #FFF or #FFFFFF)')
                     ->default('#FFF'),
             ]);
     }
