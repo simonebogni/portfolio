@@ -41,4 +41,17 @@ class UserFactory extends Factory
             'email_verified_at' => null,
         ]);
     }
+
+    public function admin($name = 'Admin', $email = 'admin@example.com', $plainTextPassword = null): static
+    {
+        $userDetails = [
+            'name' => $name,
+            'email' => $email,
+        ];
+        if ($plainTextPassword) {
+            $userDetails['password'] = Hash::make($plainTextPassword);
+        }
+
+        return $this->state(fn (array $attributes) => $userDetails);
+    }
 }

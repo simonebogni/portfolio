@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -12,7 +13,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
         $this->call([
             LanguageSeeder::class,
             SkillCategorySeeder::class,
@@ -30,5 +30,14 @@ class DatabaseSeeder extends Seeder
             SoftSkillSeeder::class,
             HobbySeeder::class,
         ]);
+
+        // Add admin user
+        User::factory(1)
+            ->admin(
+                name: config('admin_user.name'),
+                email: config('admin_user.email'),
+                plainTextPassword: config('admin_user.password')
+            )
+            ->create();
     }
 }

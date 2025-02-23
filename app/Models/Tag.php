@@ -11,6 +11,10 @@ class Tag extends Model
     use HasFactory;
     use SoftDeletes;
 
+    protected $fillable = [
+        'name', 'category', 'bg_color', 'color',
+    ];
+
     /**
      * Get the attributes that should be cast.
      *
