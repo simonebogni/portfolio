@@ -1,9 +1,6 @@
 import './bootstrap';
 import {
-    Livewire,
-    Alpine,
+    Livewire
 } from '../../vendor/livewire/livewire/dist/livewire.esm'
-
-Alpine.plugin(Tooltip)
 
 Livewire.start()
