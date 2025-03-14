@@ -18,18 +18,6 @@
             </div>
         </div>
     </div>
-    @if (isset($languages))
-    <div class="row">
-        <div class="col-12 mt-5 text-center">
-            <h1 class="h1 header">Spoken languages</h1>
-        </div>
-    </div>
-    <div class="row justify-content-center">
-        @foreach ($languages as $language)
-        <x-language :language="$language"></x-language>
-        @endforeach
-    </div>
-    @endif
     @if (isset($skillCategories))
         <div class="row">
             <div class="col-12 mt-5 text-center">
@@ -39,6 +27,18 @@
         <div class="row mt-5 justify-content-center">
             @foreach ($skillCategories as $skillCategory)
             <x-skill-category :skillCategory="$skillCategory"></x-skill-category>
+            @endforeach
+        </div>
+    @endif
+    @if (isset($languages))
+        <div class="row">
+            <div class="col-12 mt-5 text-center">
+                <h1 class="h1 header">Spoken languages</h1>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            @foreach ($languages as $language)
+                <x-language :language="$language"></x-language>
             @endforeach
         </div>
     @endif
