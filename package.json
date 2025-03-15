@@ -13,7 +13,7 @@
         "postcss": "^8.4.47",
         "postcss-import": "^14.0.1",
         "resolve-url-loader": "^5.0.0",
-        "sass": "^1.32.13",
+        "sass": "^1.85.1",
         "sass-loader": "^11.0.1",
         "vite": "^6.2.2"
     },
