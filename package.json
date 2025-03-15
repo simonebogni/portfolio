@@ -11,7 +11,7 @@
         "axios": "^1.8.3",
         "laravel-vite-plugin": "^1.2.0",
         "postcss": "^8.4.47",
-        "postcss-import": "^14.0.1",
+        "postcss-import": "^16.1.0",
         "resolve-url-loader": "^5.0.0",
         "sass": "^1.32.13",
         "sass-loader": "^11.0.1",
