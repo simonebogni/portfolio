@@ -9,7 +9,7 @@
         "fakerphp/faker": "^1.24.1",
         "filament/filament": "^3.3.4",
         "guzzlehttp/guzzle": "^7.9.2",
-        "laravel/framework": "^11.44.2",
+        "laravel/framework": "^12.4.1",
         "laravel/sanctum": "^4.0.8",
         "laravel/tinker": "^2.10.1",
         "livewire/livewire": "^3.6.2"
