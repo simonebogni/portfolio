@@ -7,7 +7,7 @@
     "require": {
         "php": "^8.2",
         "fakerphp/faker": "^1.24.1",
-        "filament/filament": "^3.3.4",
+        "filament/filament": "^4.0.10",
         "guzzlehttp/guzzle": "^7.9.2",
         "laravel/framework": "^11.44.2",
         "laravel/nightwatch": "^1.8",
