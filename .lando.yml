@@ -1,15 +1,18 @@
 name: portfolio
-recipe: laravel
+recipe: lamp
 config:
-  php: 8.2
+  php: '8.4'
   via: apache
   webroot: ./public
   database: postgres
-proxy:
-  appserver:
-    - portfolio.lando.site
+  cache: redis
+  xdebug: true
 services:
   appserver:
+    scanner:
+      okCodes:
+        - 401
+      path: /admin/login
     build_as_root:
       # Note that you will want to use the script for the major version of node you want to install
       # See: https://github.com/nodesource/distributions/blob/master/README.md#installation-instructions
@@ -18,3 +21,30 @@ services:
       - npm i
   database:
     portforward: 23507
+tooling:
+  npm:
+    service: appserver
+    cmd:
+      - npm
+  test:
+    service: appserver
+    cmd:
+      - ./vendor/bin/phpunit --testdox
+  test-coverage-html:
+    service: appserver
+    cmd:
+      - XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-html=storage/app/coverage
+  php:
+    service: appserver
+  phpunit:
+    service: appserver
+    cmd:
+      - XDEBUG_MODE=coverage ./vendor/bin/phpunit
+  pint:
+    service: appserver
+    cmd:
+      - ./vendor/bin/pint
+  larastan:
+    service: appserver
+    cmd:
+      - ./vendor/bin/phpstan analyze --memory-limit=2G
