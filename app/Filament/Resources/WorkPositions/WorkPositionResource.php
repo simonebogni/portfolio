@@ -67,8 +67,7 @@ class WorkPositionResource extends Resource
                     ->hidden(fn (Get $get): bool => $get('current'))
                     ->required(fn (Get $get): bool => ! $get('current')),
                 Toggle::make('current')
-                    ->live()
-                    ->required(),
+                    ->live(),
                 Textarea::make('description')
                     ->required()
                     ->columnSpanFull(),
