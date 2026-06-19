@@ -14,7 +14,7 @@ class PortfolioCategoryController extends Controller
     {
         return PortfolioCategory::with(['portfolioItems.images', 'portfolioItems.tags'])
             ->orderBy('display_priority', 'desc')
-            ->orderBy('name' )
+            ->orderBy('name')
             ->get();
     }
 }
