@@ -36,6 +36,11 @@ class WorkPositionResource extends Resource
 
     protected static string|\UnitEnum|null $navigationGroup = ResourceGroup::WORK_EXPERIENCE->value;
 
+    /**
+     * Defines the form schema for work position creation and editing.
+     *
+     * @return Schema The configured form schema.
+     */
     public static function form(Schema $schema): Schema
     {
         return $schema
