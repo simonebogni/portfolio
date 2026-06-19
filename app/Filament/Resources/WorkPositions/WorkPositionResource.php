@@ -14,9 +14,11 @@ use Filament\Actions\EditAction;
 use Filament\Actions\ForceDeleteBulkAction;
 use Filament\Actions\RestoreBulkAction;
 use Filament\Actions\ViewAction;
+use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
+use Filament\Schemas\Components\Utilities\Get;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Tables\Columns\IconColumn;
@@ -47,12 +49,18 @@ class WorkPositionResource extends Resource
                 TextInput::make('period')
                     ->required()
                     ->maxLength(255),
-                TextInput::make('start_date')
+                DatePicker::make('start_date')
                     ->required()
-                    ->maxLength(255),
-                TextInput::make('end_date')
-                    ->maxLength(255),
+                    ->displayFormat('Y-m-d')
+                    ->maxDate(now()),
+                DatePicker::make('end_date')
+                    ->displayFormat('Y-m-d')
+                    ->maxDate(now())
+                    ->afterOrEqual('start_date')
+                    ->hidden(fn (Get $get): bool => $get('current'))
+                    ->required(fn (Get $get): bool => ! $get('current')),
                 Toggle::make('current')
+                    ->live()
                     ->required(),
                 Textarea::make('description')
                     ->required()
