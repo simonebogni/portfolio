@@ -31,6 +31,6 @@ class PortfolioCategory extends Model
      */
     public function portfolioItems()
     {
-        return $this->hasMany(PortfolioItem::class)->orderBy('date', 'DESC');
+        return $this->hasMany(PortfolioItem::class)->orderBy('date', 'desc');
     }
 }
