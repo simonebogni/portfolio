@@ -57,9 +57,11 @@ class WorkPositionResource extends Resource
                 DatePicker::make('start_date')
                     ->required()
                     ->displayFormat('Y-m-d')
+                    ->format('Y-m-d')
                     ->maxDate(now()),
                 DatePicker::make('end_date')
                     ->displayFormat('Y-m-d')
+                    ->format('Y-m-d')
                     ->maxDate(now())
                     ->afterOrEqual(fn (Get $get) => $get('current') ? null : 'start_date')
                     ->hidden(fn (Get $get): bool => $get('current'))
