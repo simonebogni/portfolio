@@ -14,10 +14,12 @@ use Filament\Actions\EditAction;
 use Filament\Actions\ForceDeleteBulkAction;
 use Filament\Actions\RestoreBulkAction;
 use Filament\Actions\ViewAction;
+use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Resources\Resource;
+use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Schema;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
@@ -34,6 +36,11 @@ class WorkPositionResource extends Resource
 
     protected static string|\UnitEnum|null $navigationGroup = ResourceGroup::WORK_EXPERIENCE->value;
 
+    /**
+     * Defines the form schema for work position creation and editing.
+     *
+     * @return Schema The configured form schema.
+     */
     public static function form(Schema $schema): Schema
     {
         return $schema
@@ -47,13 +54,20 @@ class WorkPositionResource extends Resource
                 TextInput::make('period')
                     ->required()
                     ->maxLength(255),
-                TextInput::make('start_date')
+                DatePicker::make('start_date')
                     ->required()
-                    ->maxLength(255),
-                TextInput::make('end_date')
-                    ->maxLength(255),
+                    ->displayFormat('Y-m-d')
+                    ->format('Y-m-d')
+                    ->maxDate(now()),
+                DatePicker::make('end_date')
+                    ->displayFormat('Y-m-d')
+                    ->format('Y-m-d')
+                    ->maxDate(now())
+                    ->afterOrEqual(fn (Get $get) => $get('current') ? null : 'start_date')
+                    ->hidden(fn (Get $get): bool => $get('current'))
+                    ->required(fn (Get $get): bool => ! $get('current')),
                 Toggle::make('current')
-                    ->required(),
+                    ->live(),
                 Textarea::make('description')
                     ->required()
                     ->columnSpanFull(),

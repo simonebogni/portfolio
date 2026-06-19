@@ -26,6 +26,8 @@ class WorkPosition extends Model
         ];
     }
 
+    protected $guarded = [];
+
     /**
      * Get the company for this work position
      */
