@@ -1,0 +1,81 @@
+name: Scheduled dependencies update
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-dependencies:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Create or checkout dependencies-update branch
+        run: |
+          git fetch origin
+          if git show-ref --verify --quiet refs/remotes/origin/dependencies-update; then
+            git checkout dependencies-update
+          else
+            git checkout -b dependencies-update
+          fi
+
+      - name: Setup PHP and Composer
+        uses: ./.github/actions/setup
+        with:
+          php-version: '8.4'
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Update npm dependencies
+        run: npm update
+
+      - name: Update Composer dependencies
+        run: composer update --no-interaction --no-progress
+
+      - name: Commit and push changes
+        id: commit
+        run: |
+          git add package.json package-lock.json composer.json composer.lock
+
+          if git diff --staged --quiet; then
+            echo "changes=false" >> $GITHUB_OUTPUT
+            echo "No dependency updates found."
+          else
+            git commit -m "chore: update npm and composer dependencies"
+            git push origin HEAD:dependencies-update
+            echo "changes=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create pull request
+        if: steps.commit.outputs.changes == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          existing_pr=$(gh pr list --head dependencies-update --base main --state open --json number --jq '.[0].number')
+
+          if [ -z "$existing_pr" ]; then
+            gh pr create \
+              --base main \
+              --head dependencies-update \
+              --title "chore: update npm and composer dependencies" \
+              --body "Automated weekly dependency updates."
+          else
+            echo "Pull request #$existing_pr already exists."
+          fi
