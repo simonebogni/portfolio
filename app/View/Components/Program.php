@@ -2,28 +2,27 @@
 
 namespace App\View\Components;
 
+use App\Models\Program as ProgramModel;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
 class Program extends Component
 {
-    public $program;
+    public ProgramModel $program;
 
-    public $repeatInstitute;
+    public bool $repeatInstitute;
 
-    public $showCourses;
+    public bool $showCourses;
 
     /**
      * Create a new component instance.
-     *
-     * @return void
      */
-    public function __construct($program, $repeatInstitute, $showCourses)
+    public function __construct(ProgramModel $program, ?bool $repeatInstitute = false, ?bool $showCourses = false)
     {
         $this->program = $program;
-        $this->repeatInstitute = $repeatInstitute == 'true';
-        $this->showCourses = $showCourses == 'true';
+        $this->repeatInstitute = $repeatInstitute ?? false;
+        $this->showCourses = $showCourses ?? false;
     }
 
     /**
