@@ -25,6 +25,8 @@ class OnlinePlatform extends Model
         ];
     }
 
+    protected $guarded = [];
+
     /**
      * Get the list of the Programs taught on this OnlinePlatform
      */

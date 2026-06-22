@@ -24,4 +24,6 @@ class Hobby extends Model
             'deleted_at' => 'datetime',
         ];
     }
+
+    protected $guarded = [];
 }

@@ -27,6 +27,8 @@ class Award extends Model
         ];
     }
 
+    protected $guarded = [];
+
     /**
      * @return BelongsToMany
      */

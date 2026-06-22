@@ -28,6 +28,8 @@ class PortfolioItem extends Model
         ];
     }
 
+    protected $guarded = [];
+
     /**
      * @return BelongsTo
      */

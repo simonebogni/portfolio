@@ -24,6 +24,8 @@ class Language extends Model
         'listening' => 'Beginner',
     ];
 
+    protected $guarded = [];
+
     /**
      * Get the attributes that should be cast.
      *
