@@ -26,6 +26,8 @@ class Course extends Model
         ];
     }
 
+    protected $guarded = [];
+
     /**
      * Get the program that taught this course
      */

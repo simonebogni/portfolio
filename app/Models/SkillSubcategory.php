@@ -27,6 +27,8 @@ class SkillSubcategory extends Model
         ];
     }
 
+    protected $guarded = [];
+
     /**
      * Get the category of this subcatory
      */

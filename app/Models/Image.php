@@ -26,6 +26,8 @@ class Image extends Model
         ];
     }
 
+    protected $guarded = [];
+
     /**
      * @return BelongsToMany
      */

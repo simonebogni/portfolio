@@ -26,6 +26,8 @@ class Institute extends Model
         ];
     }
 
+    protected $guarded = [];
+
     /**
      * Get the list of the Programs taught by this Institute
      */

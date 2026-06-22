@@ -30,6 +30,8 @@ class Program extends Model
         ];
     }
 
+    protected $guarded = [];
+
     /**
      * Get the Institute of this Program
      */

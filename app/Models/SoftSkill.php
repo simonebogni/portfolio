@@ -24,4 +24,6 @@ class SoftSkill extends Model
             'deleted_at' => 'datetime',
         ];
     }
+
+    protected $guarded = [];
 }

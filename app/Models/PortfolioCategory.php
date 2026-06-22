@@ -26,6 +26,8 @@ class PortfolioCategory extends Model
         ];
     }
 
+    protected $guarded = [];
+
     /**
      * @return HasMany
      */
