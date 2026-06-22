@@ -414,4 +414,36 @@ class WorkPositionResourceTest extends TestCase
             ->call('save')
             ->assertHasFormErrors(['end_date']);
     }
+
+    public function test_edit_work_position_with_valid_data_persists_record(): void
+    {
+        $this->actingAs($this->adminUser);
+
+        $workPosition = WorkPosition::create([
+            'company_id' => $this->company->id,
+            'title' => 'Work Position Create',
+            'period' => '2024',
+            'start_date' => '2024-01-01',
+            'end_date' => '2024-02-01',
+            'current' => false,
+            'description' => 'Created work position.',
+        ]);
+
+        Livewire::test(EditWorkPosition::class, ['record' => $workPosition->getRouteKey()])
+            ->fillForm([
+                'company_id' => $this->company->id,
+                'title' => 'Work Position Updated',
+                'period' => '2024 updated',
+                'start_date' => '2024-03-01',
+                'end_date' => null,
+                'current' => true,
+                'description' => 'Updated work position.',
+            ])
+            ->call('save')
+            ->assertHasNoFormErrors();
+
+        $this->assertDatabaseHas('work_positions', [
+            'title' => 'Work Position Updated',
+        ]);
+    }
 }
