@@ -2,11 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Attributes\Unguarded;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+#[Unguarded]
 class Company extends Model
 {
     use HasFactory;
@@ -26,8 +28,6 @@ class Company extends Model
             'last_work_date' => 'datetime',
         ];
     }
-
-    protected $guarded = [];
 
     /**
      * Get the work positions in this company

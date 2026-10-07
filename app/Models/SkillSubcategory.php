@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Attributes\Unguarded;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+#[Unguarded]
 class SkillSubcategory extends Model
 {
     use HasFactory;
@@ -26,8 +28,6 @@ class SkillSubcategory extends Model
             'deleted_at' => 'datetime',
         ];
     }
-
-    protected $guarded = [];
 
     /**
      * Get the category of this subcatory

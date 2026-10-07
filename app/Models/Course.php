@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Attributes\Unguarded;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+#[Unguarded]
 class Course extends Model
 {
     use HasFactory;
@@ -25,8 +27,6 @@ class Course extends Model
             'exam_date' => 'datetime',
         ];
     }
-
-    protected $guarded = [];
 
     /**
      * Get the program that taught this course

@@ -1,37 +1,28 @@
 <?php
 
-namespace Tests\Unit\View\Components;
-
 use App\Models\Program as ProgramModel;
 use App\View\Components\Program as ProgramComponent;
-use PHPUnit\Framework\TestCase;
 
-class ProgramTest extends TestCase
-{
-    public function test_program_component_accepts_boolean_options(): void
-    {
-        $program = new ProgramModel;
+test('program component accepts boolean options', function () {
+    $program = new ProgramModel;
 
-        $component = new ProgramComponent($program, true, false);
+    $component = new ProgramComponent($program, true, false);
 
-        $this->assertSame($program, $component->program);
-        $this->assertTrue($component->repeatInstitute);
-        $this->assertFalse($component->showCourses);
-    }
+    expect($component->program)->toBe($program)
+        ->and($component->repeatInstitute)->toBeTrue()
+        ->and($component->showCourses)->toBeFalse();
+});
 
-    public function test_program_component_defaults_options_to_false(): void
-    {
-        $component = new ProgramComponent(new ProgramModel);
+test('program component defaults options to false', function () {
+    $component = new ProgramComponent(new ProgramModel);
 
-        $this->assertFalse($component->repeatInstitute);
-        $this->assertFalse($component->showCourses);
-    }
+    expect($component->repeatInstitute)->toBeFalse()
+        ->and($component->showCourses)->toBeFalse();
+});
 
-    public function test_program_component_treats_null_options_as_false(): void
-    {
-        $component = new ProgramComponent(new ProgramModel, null, null);
+test('program component treats null options as false', function () {
+    $component = new ProgramComponent(new ProgramModel, null, null);
 
-        $this->assertFalse($component->repeatInstitute);
-        $this->assertFalse($component->showCourses);
-    }
-}
+    expect($component->repeatInstitute)->toBeFalse()
+        ->and($component->showCourses)->toBeFalse();
+});

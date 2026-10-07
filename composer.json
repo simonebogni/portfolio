@@ -6,23 +6,25 @@
     "keywords": ["laravel", "framework"],
     "license": "MIT",
     "require": {
-        "php": "^8.4",
-        "filament/filament": "^5.6.7",
-        "laravel/framework": "^13.16.1",
-        "laravel/nightwatch": "^1.28.0",
+        "php": "^8.5",
+        "filament/filament": "^5.10.1",
+        "laravel/framework": "^13.35.0",
+        "laravel/nightwatch": "^1.30.2",
         "laravel/tinker": "^3.0.2",
-        "livewire/livewire": "^4.3.1"
+        "livewire/livewire": "^4.4.7"
     },
     "require-dev": {
+        "driftingly/rector-laravel": "^2.6.2",
         "fakerphp/faker": "^1.24.1",
-        "larastan/larastan": "^3.10.0",
+        "larastan/larastan": "^3.13.0",
         "laravel/pail": "^1.2.7",
-        "laravel/pao": "^1.1.1",
-        "laravel/pint": "^1.29.3",
-        "mockery/mockery": "^1.6.12",
-        "nunomaduro/collision": "^8.9.4",
-        "pestphp/pest": "^4.7.3",
-        "phpunit/phpunit": "^12.5.29"
+        "laravel/pao": "^1.1.5",
+        "laravel/pint": "^1.32.1",
+        "mockery/mockery": "^1.6.15",
+        "nunomaduro/collision": "^8.9.5",
+        "pestphp/pest": "^5.3.1",
+        "pestphp/pest-plugin-laravel": "^5.0.1",
+        "rector/rector": "^2.7.0"
     },
     "autoload": {
         "psr-4": {
@@ -38,20 +40,20 @@
     },
     "scripts": {
         "setup": [
-          "composer install",
-          "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
-          "@php artisan key:generate",
-          "@php artisan migrate --force",
-          "npm install --ignore-scripts",
-          "npm run build"
+            "composer install",
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
+            "@php artisan key:generate",
+            "@php artisan migrate --force",
+            "npm install --ignore-scripts",
+            "npm run build"
         ],
         "dev": [
-          "Composer\\Config::disableProcessTimeout",
-          "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1 --timeout=0\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite --kill-others"
+            "Composer\\Config::disableProcessTimeout",
+            "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1 --timeout=0\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite --kill-others"
         ],
         "test": [
-          "@php artisan config:clear --ansi @no_additional_args",
-          "@php artisan test"
+            "@php artisan config:clear --ansi @no_additional_args",
+            "@php vendor/bin/pest --parallel"
         ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
@@ -67,7 +69,16 @@
             "@php artisan migrate --graceful --ansi"
         ],
         "pre-package-uninstall": [
-          "Illuminate\\Foundation\\ComposerScripts::prePackageUninstall"
+            "Illuminate\\Foundation\\ComposerScripts::prePackageUninstall"
+        ],
+        "lint": [
+            "@php vendor/bin/pint"
+        ],
+        "analyse": [
+            "@php vendor/bin/phpstan analyse --memory-limit=2G"
+        ],
+        "refactor": [
+            "@php vendor/bin/rector process"
         ]
     },
     "extra": {
