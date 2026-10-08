@@ -63,7 +63,7 @@ class PortfolioItemSeeder extends Seeder
                 'slug' => 'interactivecv',
                 'subtitle' => null,
                 'description' => 'A responsive RESTful web application built with Laravel 8, SASS, Bootstrap and Blade template engine. The data is stored on a PostgreSQL database and the website is available on Heroku',
-                'live_url' => env('APP_URL'),
+                'live_url' => config('app.url'),
                 'git_repo_url' => 'https://github.com/simonebogni/simonebogni-laravel/',
                 'cover_img_url' => url('https://lh3.googleusercontent.com/pw/AM-JKLUWqC3ih7dLnmyK9421ReZh4JiDyfavRFAJTrCl_1HSaJddHTiNViHbLtX-Wkl-WggYBSAO1IFwJDDUY-56SgPB6AnbcZnLuWY5-k5G7GNXRt-Lk842KpwK2HS1QuDrt6ccjnsntRuArgJAbiXDwHI=w1341-h655-no?authuser=0'),
                 'date' => Carbon::createFromDate(2021, 6, 1),

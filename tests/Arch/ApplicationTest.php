@@ -66,24 +66,40 @@ arch('service providers are suffixed and extend the base provider')
     ->toHaveSuffix('Provider')
     ->toExtend(ServiceProvider::class);
 
+/**
+ * Lists the Filament resource classes whose file path, relative to
+ * app/Filament/Resources, matches the given glob pattern.
+ *
+ * @return list<class-string>
+ */
+function filamentResourceClasses(string $pattern): array
+{
+    $files = glob(dirname(__DIR__, 2).'/app/Filament/Resources/'.$pattern.'.php') ?: [];
+
+    return array_map(
+        fn (string $file): string => 'App\\Filament\\Resources\\'.str_replace('/', '\\', substr($file, strlen(dirname(__DIR__, 2).'/app/Filament/Resources/'), -4)),
+        $files,
+    );
+}
+
 arch('filament resources extend the base resource')
-    ->expect('App\Filament\Resources\*\*Resource')
+    ->expect(filamentResourceClasses('*/*Resource'))
     ->toExtend(Resource::class);
 
 arch('filament create pages extend CreateRecord')
-    ->expect('App\Filament\Resources\*\Pages\Create*')
+    ->expect(filamentResourceClasses('*/Pages/Create*'))
     ->toExtend(CreateRecord::class);
 
 arch('filament edit pages extend EditRecord')
-    ->expect('App\Filament\Resources\*\Pages\Edit*')
+    ->expect(filamentResourceClasses('*/Pages/Edit*'))
     ->toExtend(EditRecord::class);
 
 arch('filament list pages extend ListRecords')
-    ->expect('App\Filament\Resources\*\Pages\List*')
+    ->expect(filamentResourceClasses('*/Pages/List*'))
     ->toExtend(ListRecords::class);
 
 arch('filament view pages extend ViewRecord')
-    ->expect('App\Filament\Resources\*\Pages\View*')
+    ->expect(filamentResourceClasses('*/Pages/View*'))
     ->toExtend(ViewRecord::class);
 
 arch('filament navigation groups are a backed enum')
