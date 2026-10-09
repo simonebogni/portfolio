@@ -1,0 +1,66 @@
+/* PortfolioFilter: toggle buttons (aria-pressed) with a count. */
+.filter {
+    margin: 0 0 var(--space-10);
+}
+
+.filter__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.filter__button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    min-height: var(--target-primary);
+    padding: 0 var(--space-4);
+    border: var(--border-width) solid var(--color-border-control);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    color: var(--color-text);
+    font-family: var(--font-mono);
+    font-size: var(--text-mono-label);
+    font-weight: var(--weight-medium);
+    line-height: var(--leading-snug);
+    text-align: left;
+    cursor: pointer;
+    transition:
+        background-color var(--duration-fast) var(--ease-standard),
+        color var(--duration-fast) var(--ease-standard);
+}
+
+.filter__button:hover {
+    background: var(--color-surface-sunken);
+}
+
+.filter__button[aria-pressed='true'] {
+    border-color: var(--color-accent);
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+}
+
+/* Shape cue besides colour: a check mark on the selected filter. */
+.filter__check {
+    display: none;
+}
+
+.filter__button[aria-pressed='true'] .filter__check {
+    display: inline;
+}
+
+.filter__count {
+    padding: var(--space-0-5) var(--space-1-5);
+    border-radius: var(--radius-sm);
+    background: var(--color-surface-sunken);
+    color: var(--color-text);
+    font-size: var(--text-overline);
+}
+
+.filter__button[aria-pressed='true'] .filter__count {
+    background: var(--color-on-accent);
+    color: var(--color-accent);
+}

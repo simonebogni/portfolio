@@ -1,0 +1,24 @@
+/* IconButton: square 44px control with a single icon (theme, menu, social links). */
+.icon-btn {
+    display: inline-grid;
+    place-items: center;
+    flex: none;
+    width: var(--target-primary);
+    height: var(--target-primary);
+    padding: 0;
+    border: var(--border-width) solid var(--color-border-control);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    color: var(--color-text);
+    cursor: pointer;
+    transition: background-color var(--duration-fast) var(--ease-standard);
+}
+
+.icon-btn:hover {
+    background: var(--color-surface-sunken);
+}
+
+.icon-btn[aria-pressed='true'],
+.icon-btn[aria-expanded='true'] {
+    background: var(--color-accent-soft);
+}

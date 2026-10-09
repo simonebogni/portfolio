@@ -1,0 +1,61 @@
+/* AppButton: primary (filled accent) and ghost (outlined surface). */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2-5);
+    min-height: var(--target-button);
+    padding: 0 var(--space-5-5);
+    border: var(--border-width) solid transparent;
+    border-radius: var(--radius-md);
+    font-family: var(--font-sans);
+    font-size: var(--text-body-sm);
+    font-weight: var(--weight-semibold);
+    line-height: var(--leading-none);
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+        background-color var(--duration-fast) var(--ease-standard),
+        border-color var(--duration-fast) var(--ease-standard),
+        box-shadow var(--duration-fast) var(--ease-standard);
+}
+
+.btn--primary {
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+}
+
+.btn--primary:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.btn--ghost {
+    border-color: var(--color-border-control);
+    background: var(--color-surface);
+    color: var(--color-text);
+}
+
+.btn--ghost:hover {
+    background: var(--color-surface-sunken);
+}
+
+.btn__icon {
+    flex: none;
+    transition: transform var(--duration-base) var(--ease-standard);
+}
+
+.btn:hover .btn__icon--trailing {
+    transform: translateX(var(--space-0-5));
+}
+
+.btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+}
+
+@media (max-width: 700px) {
+    .btn-row--stack .btn {
+        flex: 1 1 100%;
+    }
+}

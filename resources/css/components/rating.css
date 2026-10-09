@@ -1,0 +1,15 @@
+/* RatingBar: a level shown as a bar, always next to a text label. */
+.rating-bar {
+    height: var(--size-bar);
+    overflow: hidden;
+    border-radius: var(--radius-full);
+    background: var(--color-surface-sunken);
+    box-shadow: inset 0 0 0 var(--border-width) var(--color-border);
+}
+
+.rating-bar__fill {
+    display: block;
+    height: 100%;
+    border-radius: var(--radius-full);
+    background: var(--color-accent);
+}

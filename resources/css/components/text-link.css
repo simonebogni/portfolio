@@ -1,0 +1,25 @@
+/* TextLink: mono accent link used for secondary actions in cards. */
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1-5);
+    min-height: var(--target-min);
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-size: var(--text-mono-label);
+    font-weight: var(--weight-semibold);
+    line-height: var(--leading-snug);
+    text-decoration: underline;
+    text-decoration-thickness: var(--border-width);
+    text-underline-offset: var(--underline-offset);
+}
+
+.text-link:hover {
+    text-decoration-thickness: var(--border-width-strong);
+}
+
+.text-link-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-5);
+}

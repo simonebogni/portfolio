@@ -29,4 +29,16 @@ return [
     ],
 
     'availability' => env('PROFILE_AVAILABILITY'),
+
+    // Short texts for the home page hero. Defaults are taken from the owner's original About page.
+    'bio' => env('PROFILE_BIO', 'Proficient in both back-end and front-end development, including REST and MVC-based frameworks. I love the feeling of accomplishment that comes from bringing a product from an idea to reality.'),
+    'tagline' => env('PROFILE_TAGLINE', 'Always happy for more opportunities to learn'),
+
+    // One-sentence introductions under each page title. Leave empty to hide them.
+    'intros' => [
+        'experience' => env('PROFILE_INTRO_EXPERIENCE', 'Work history, education, certifications and awards, most recent first.'),
+        'portfolio' => env('PROFILE_INTRO_PORTFOLIO', 'A selection of projects, grouped by category.'),
+        'soft_skills' => env('PROFILE_INTRO_SOFT_SKILLS', 'How I approach work, teams and projects.'),
+        'hobbies' => env('PROFILE_INTRO_HOBBIES', 'What I do when the laptop is closed.'),
+    ],
 ];

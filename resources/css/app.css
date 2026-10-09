@@ -1,176 +1,29 @@
 /*
- * Foundation styles: accessible defaults shared by every design.
- * Each design branch adds its own tokens and component styles on top.
+ * Entry stylesheet · "Source" design.
+ * Order matters: fonts, then tokens, then element defaults, then layout and components.
+ * Components only use the semantic tokens from tokens.css (see docs/design-system.md).
  */
-:root {
-    color-scheme: light;
-    --color-bg: #ffffff;
-    --color-text: #16181d;
-    --color-muted: #50545e;
-    --color-line: #e2e2de;
-    --color-accent: #0b57d0;
-    --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
-}
+@import '@fontsource/ibm-plex-sans/400.css';
+@import '@fontsource/ibm-plex-sans/500.css';
+@import '@fontsource/ibm-plex-sans/600.css';
+@import '@fontsource/ibm-plex-sans/700.css';
+@import '@fontsource-variable/jetbrains-mono/wght.css';
 
-:root[data-theme='dark'] {
-    color-scheme: dark;
-    --color-bg: #0e0f12;
-    --color-text: #ecedf0;
-    --color-muted: #a3a7b1;
-    --color-line: #2a2d35;
-    --color-accent: #7ab7ff;
-}
+@import './tokens.css';
+@import './base.css';
+@import './layout.css';
 
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme='light']) {
-        color-scheme: dark;
-        --color-bg: #0e0f12;
-        --color-text: #ecedf0;
-        --color-muted: #a3a7b1;
-        --color-line: #2a2d35;
-        --color-accent: #7ab7ff;
-    }
-}
+@import './components/button.css';
+@import './components/icon-button.css';
+@import './components/text-link.css';
+@import './components/chip.css';
+@import './components/card.css';
+@import './components/headings.css';
+@import './components/code-window.css';
+@import './components/stat.css';
+@import './components/rating.css';
+@import './components/timeline.css';
+@import './components/filter.css';
+@import './components/project.css';
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    background: var(--color-bg);
-    color: var(--color-text);
-    font: 17px/1.6 var(--font-body);
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-a {
-    color: var(--color-accent);
-}
-
-:focus-visible {
-    outline: 3px solid var(--color-accent);
-    outline-offset: 3px;
-}
-
-.container {
-    max-width: 1120px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.skip-link {
-    position: absolute;
-    left: 16px;
-    top: -100px;
-    z-index: 100;
-    padding: 12px 16px;
-    background: var(--color-text);
-    color: var(--color-bg);
-}
-
-.skip-link:focus {
-    top: 16px;
-}
-
-.visually-hidden {
-    position: absolute !important;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    white-space: nowrap;
-}
-
-.inline-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px 16px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.site-header {
-    border-bottom: 1px solid var(--color-line);
-}
-
-.site-header__inner {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 16px;
-    min-height: 64px;
-}
-
-.brand {
-    font-weight: 700;
-    color: inherit;
-    text-decoration: none;
-}
-
-.site-nav ul {
-    display: flex;
-    gap: 16px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.site-nav a[aria-current='page'] {
-    font-weight: 700;
-}
-
-.menu-button,
-.theme-button {
-    min-height: 44px;
-    min-width: 44px;
-}
-
-.menu-button {
-    display: none;
-    margin-left: auto;
-}
-
-.site-footer {
-    margin-top: 64px;
-    padding: 24px 0;
-    border-top: 1px solid var(--color-line);
-    color: var(--color-muted);
-}
-
-@media (max-width: 720px) {
-    .menu-button {
-        display: inline-block;
-    }
-
-    .site-nav {
-        display: none;
-        width: 100%;
-    }
-
-    .site-nav.is-open {
-        display: block;
-    }
-
-    .site-nav ul {
-        flex-direction: column;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-}
+@import './pages.css';
