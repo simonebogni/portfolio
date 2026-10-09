@@ -29,9 +29,9 @@ class PortfolioCategory extends Model
     }
 
     /**
-     * @return HasMany
+     * @return HasMany<PortfolioItem, $this>
      */
-    public function portfolioItems()
+    public function portfolioItems(): HasMany
     {
         return $this->hasMany(PortfolioItem::class)->orderBy('date', 'desc');
     }

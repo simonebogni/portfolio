@@ -3,20 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\Hobby;
-use Illuminate\Http\Response;
-use Illuminate\View\View;
+use Inertia\Inertia;
+use Inertia\Response;
 
 class HobbyController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index(): Response|View
+    public function index(): Response
     {
-        $hobbies = Hobby::all();
-
-        return view('hobbies', [
-            'hobbies' => $hobbies,
+        return Inertia::render('Hobbies', [
+            'hobbies' => Hobby::query()->orderBy('id')->get()->map(fn (Hobby $hobby): array => [
+                'id' => $hobby->id,
+                'title' => $hobby->title,
+                'description' => $hobby->description,
+                'coverImgUrl' => $hobby->cover_img_url,
+            ]),
         ]);
     }
 }

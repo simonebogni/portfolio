@@ -26,6 +26,16 @@ tooling:
     service: appserver
     cmd:
       - npm
+  build:
+    service: appserver
+    description: Builds the client and SSR bundles (npm run build)
+    cmd:
+      - npm run build
+  ssr:
+    service: appserver
+    description: Starts the Inertia SSR server (run "lando build" first)
+    cmd:
+      - php artisan inertia:start-ssr
   test:
     service: appserver
     description: Runs the Pest test suite in parallel
