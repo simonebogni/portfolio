@@ -25,10 +25,13 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class InstituteResource extends Resource
 {
+    #[\Override]
     protected static ?string $model = Institute::class;
 
+    #[\Override]
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-building-library';
 
+    #[\Override]
     protected static string|\UnitEnum|null $navigationGroup = ResourceGroup::EDUCATION->value;
 
     public static function form(Schema $schema): Schema

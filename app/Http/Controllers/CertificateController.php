@@ -12,7 +12,7 @@ class CertificateController extends Controller
      */
     public static function getCertificates(): Collection
     {
-        return Certificate::with('tags')->orderByDesc('issue_date')
+        return Certificate::with('tags')->latest('issue_date')
             ->get();
     }
 }

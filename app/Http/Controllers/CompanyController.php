@@ -12,7 +12,7 @@ class CompanyController extends Controller
      */
     public static function getCompanies(): Collection
     {
-        return Company::with('workPositions.tags')->orderByDesc('last_work_date')
+        return Company::with('workPositions.tags')->latest('last_work_date')
             ->get();
     }
 }

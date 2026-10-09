@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\View\Components;
 
 use Closure;
@@ -8,17 +10,10 @@ use Illuminate\View\Component;
 
 class ProgramAggregation extends Component
 {
-    public $programs;
-
     /**
      * Create a new component instance.
-     *
-     * @return void
      */
-    public function __construct($programs)
-    {
-        $this->programs = $programs;
-    }
+    public function __construct(public $programs) {}
 
     /**
      * Get the view / contents that represent the component.

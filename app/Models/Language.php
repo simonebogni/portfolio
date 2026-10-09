@@ -18,6 +18,7 @@ class Language extends Model
      *
      * @var array<string, mixed>
      */
+    #[\Override]
     protected $attributes = [
         'rating' => 1,
         'speaking' => 'Beginner',

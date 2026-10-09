@@ -4,7 +4,7 @@ use App\Filament\Resources\Hobbies\Pages\CreateHobby;
 use App\Filament\Resources\Hobbies\Pages\EditHobby;
 use App\Models\Hobby;
 
-test('can create hobby with mass assignment', function () {
+test('can create hobby with mass assignment', function (): void {
     $this->assertResourceCanCreateRecord(Hobby::class, CreateHobby::class, [
         'title' => 'Hobby Create',
         'description' => 'Created hobby.',
@@ -12,7 +12,7 @@ test('can create hobby with mass assignment', function () {
     ]);
 });
 
-test('can edit hobby with mass assignment', function () {
+test('can edit hobby with mass assignment', function (): void {
     $this->assertResourceCanEditRecord(Hobby::class, EditHobby::class, [
         'title' => 'Hobby Create',
         'description' => 'Created hobby.',

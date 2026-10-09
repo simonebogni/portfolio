@@ -7,7 +7,7 @@ use App\Models\User;
 use App\Models\WorkPosition;
 use Livewire\Livewire;
 
-beforeEach(function () {
+beforeEach(function (): void {
     // Configure the admin email so canAccessPanel() returns true for the test user.
     config(['admin_user.email' => 'admin@example.com']);
 
@@ -26,7 +26,7 @@ beforeEach(function () {
     $this->company = $company;
 });
 
-test('start date is required', function () {
+test('start date is required', function (): void {
     $this->actingAs($this->adminUser);
 
     Livewire::test(CreateWorkPosition::class)
@@ -43,7 +43,7 @@ test('start date is required', function () {
         ->assertHasFormErrors(['start_date']);
 });
 
-test('start date cannot be in the future', function () {
+test('start date cannot be in the future', function (): void {
     $this->actingAs($this->adminUser);
 
     Livewire::test(CreateWorkPosition::class)
@@ -60,7 +60,7 @@ test('start date cannot be in the future', function () {
         ->assertHasFormErrors(['start_date']);
 });
 
-test('start date today is valid', function () {
+test('start date today is valid', function (): void {
     $this->actingAs($this->adminUser);
 
     Livewire::test(CreateWorkPosition::class)
@@ -77,7 +77,7 @@ test('start date today is valid', function () {
         ->assertHasNoFormErrors(['start_date']);
 });
 
-test('end date is required when current is false', function () {
+test('end date is required when current is false', function (): void {
     $this->actingAs($this->adminUser);
 
     Livewire::test(CreateWorkPosition::class)
@@ -94,7 +94,7 @@ test('end date is required when current is false', function () {
         ->assertHasFormErrors(['end_date']);
 });
 
-test('end date is not required when current is true', function () {
+test('end date is not required when current is true', function (): void {
     $this->actingAs($this->adminUser);
 
     Livewire::test(CreateWorkPosition::class)
@@ -111,7 +111,7 @@ test('end date is not required when current is true', function () {
         ->assertHasNoFormErrors(['end_date']);
 });
 
-test('end date cannot be in the future', function () {
+test('end date cannot be in the future', function (): void {
     $this->actingAs($this->adminUser);
 
     Livewire::test(CreateWorkPosition::class)
@@ -128,7 +128,7 @@ test('end date cannot be in the future', function () {
         ->assertHasFormErrors(['end_date']);
 });
 
-test('end date must be after or equal to start date', function () {
+test('end date must be after or equal to start date', function (): void {
     $this->actingAs($this->adminUser);
 
     Livewire::test(CreateWorkPosition::class)
@@ -145,7 +145,7 @@ test('end date must be after or equal to start date', function () {
         ->assertHasFormErrors(['end_date']);
 });
 
-test('end date equal to start date is valid', function () {
+test('end date equal to start date is valid', function (): void {
     $this->actingAs($this->adminUser);
 
     Livewire::test(CreateWorkPosition::class)
@@ -162,7 +162,7 @@ test('end date equal to start date is valid', function () {
         ->assertHasNoFormErrors(['end_date']);
 });
 
-test('end date after or equal constraint not applied when current is true', function () {
+test('end date after or equal constraint not applied when current is true', function (): void {
     $this->actingAs($this->adminUser);
 
     Livewire::test(CreateWorkPosition::class)
@@ -179,7 +179,7 @@ test('end date after or equal constraint not applied when current is true', func
         ->assertHasNoFormErrors(['end_date']);
 });
 
-test('current toggle is not required', function () {
+test('current toggle is not required', function (): void {
     $this->actingAs($this->adminUser);
 
     // When current is not provided (defaults to false in a boolean toggle),
@@ -198,7 +198,7 @@ test('current toggle is not required', function () {
         ->assertHasNoFormErrors(['current']);
 });
 
-test('create work position with end date persists record', function () {
+test('create work position with end date persists record', function (): void {
     $this->actingAs($this->adminUser);
 
     Livewire::test(CreateWorkPosition::class)
@@ -222,7 +222,7 @@ test('create work position with end date persists record', function () {
     ]);
 });
 
-test('create work position without end date when current persists record', function () {
+test('create work position without end date when current persists record', function (): void {
     $this->actingAs($this->adminUser);
 
     Livewire::test(CreateWorkPosition::class)
@@ -246,7 +246,7 @@ test('create work position without end date when current persists record', funct
     ]);
 });
 
-test('edit allows no end date after toggling current to true', function () {
+test('edit allows no end date after toggling current to true', function (): void {
     $this->actingAs($this->adminUser);
 
     $workPosition = new WorkPosition;
@@ -273,7 +273,7 @@ test('edit allows no end date after toggling current to true', function () {
         ->assertHasNoFormErrors(['end_date']);
 });
 
-test('edit requires end date after toggling current to false', function () {
+test('edit requires end date after toggling current to false', function (): void {
     $this->actingAs($this->adminUser);
 
     $workPosition = new WorkPosition;
@@ -300,7 +300,7 @@ test('edit requires end date after toggling current to false', function () {
         ->assertHasFormErrors(['end_date']);
 });
 
-test('edit work position with valid data persists record', function () {
+test('edit work position with valid data persists record', function (): void {
     $this->actingAs($this->adminUser);
 
     $workPosition = WorkPosition::create([

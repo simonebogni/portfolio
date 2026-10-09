@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\View\Components;
 
 use Closure;
@@ -9,21 +11,16 @@ use Illuminate\View\Component;
 class Company extends Component
 {
     /**
-     * The company to display
-     *
-     * @var \App\Models\Company
-     */
-    public $company;
-
-    /**
      * Create a new component instance.
      *
-     * @return void
+     * @param  \App\Models\Company  $company
      */
-    public function __construct($company)
-    {
-        $this->company = $company;
-    }
+    public function __construct(
+        /**
+         * The company to display
+         */
+        public $company
+    ) {}
 
     /**
      * Get the view / contents that represent the component.

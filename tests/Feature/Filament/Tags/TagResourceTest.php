@@ -4,7 +4,7 @@ use App\Filament\Resources\Tags\Pages\CreateTag;
 use App\Filament\Resources\Tags\Pages\EditTag;
 use App\Models\Tag;
 
-test('can create tag with mass assignment', function () {
+test('can create tag with mass assignment', function (): void {
     $this->assertResourceCanCreateRecord(Tag::class, CreateTag::class, [
         'name' => 'Tag Create',
         'category' => 'Category',
@@ -13,7 +13,7 @@ test('can create tag with mass assignment', function () {
     ]);
 });
 
-test('can edit tag with mass assignment', function () {
+test('can edit tag with mass assignment', function (): void {
     $this->assertResourceCanEditRecord(Tag::class, EditTag::class, [
         'name' => 'Tag Create',
         'category' => 'Category',

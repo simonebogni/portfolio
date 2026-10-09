@@ -30,6 +30,8 @@ class Institute extends Model
 
     /**
      * Get the list of the Programs taught by this Institute
+     *
+     * @return HasMany<Program, $this>
      */
     public function programs(): HasMany
     {

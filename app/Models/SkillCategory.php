@@ -30,6 +30,8 @@ class SkillCategory extends Model
 
     /**
      * Get the subcategories of the category
+     *
+     * @return HasMany<SkillSubcategory, $this>
      */
     public function subcategories(): HasMany
     {

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Resources\Programs\Pages;
 
 use App\Filament\Resources\Programs\ProgramResource;
@@ -8,6 +10,7 @@ use Filament\Resources\Pages\ViewRecord;
 
 class ViewProgram extends ViewRecord
 {
+    #[\Override]
     protected static string $resource = ProgramResource::class;
 
     protected function getHeaderActions(): array

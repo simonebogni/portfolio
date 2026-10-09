@@ -25,10 +25,13 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class ImageResource extends Resource
 {
+    #[\Override]
     protected static ?string $model = Image::class;
 
+    #[\Override]
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-photo';
 
+    #[\Override]
     protected static string|\UnitEnum|null $navigationGroup = ResourceGroup::APP_MANAGEMENT->value;
 
     public static function form(Schema $schema): Schema

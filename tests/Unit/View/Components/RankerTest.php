@@ -2,7 +2,7 @@
 
 use App\View\Components\Ranker;
 
-test('ranker has sensible defaults', function () {
+test('ranker has sensible defaults', function (): void {
     $component = new Ranker;
 
     expect($component->currentValue)->toBe(1.0)
@@ -10,7 +10,7 @@ test('ranker has sensible defaults', function () {
         ->and($component->pixelSize)->toBe(48);
 });
 
-test('ranker accepts custom values', function () {
+test('ranker accepts custom values', function (): void {
     $component = new Ranker(3.5, 10.0, 24);
 
     expect($component->currentValue)->toBe(3.5)

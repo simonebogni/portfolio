@@ -4,8 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\Certificate;
 use App\Models\Tag;
-use Carbon\Carbon;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Date;
 
 class CertificateSeeder extends Seeder
 {
@@ -18,7 +18,7 @@ class CertificateSeeder extends Seeder
             [
                 'title' => 'Responsive Web Design',
                 'issued_by' => 'FreeCodeCamp.org',
-                'issue_date' => Carbon::createFromDate(2018, 9, 7),
+                'issue_date' => Date::createFromDate(2018, 9, 7),
                 'url' => 'https://bit.ly/BogniFCCRespCert',
                 'score' => null,
                 'score_max' => null,
@@ -28,7 +28,7 @@ class CertificateSeeder extends Seeder
             [
                 'title' => 'JavaScript Algorithms and Data Structures',
                 'issued_by' => 'FreeCodeCamp.org',
-                'issue_date' => Carbon::createFromDate(2018, 9, 18),
+                'issue_date' => Date::createFromDate(2018, 9, 18),
                 'url' => 'https://bit.ly/BogniFCCDsCert',
                 'score' => null,
                 'score_max' => null,
@@ -38,7 +38,7 @@ class CertificateSeeder extends Seeder
             [
                 'title' => 'Data Visualization',
                 'issued_by' => 'FreeCodeCamp.org',
-                'issue_date' => Carbon::createFromDate(2018, 10, 9),
+                'issue_date' => Date::createFromDate(2018, 10, 9),
                 'url' => 'https://bit.ly/BogniFCCDataVisCert',
                 'score' => null,
                 'score_max' => null,
@@ -48,7 +48,7 @@ class CertificateSeeder extends Seeder
             [
                 'title' => 'APIs and Microservices',
                 'issued_by' => 'FreeCodeCamp.org',
-                'issue_date' => Carbon::createFromDate(2021, 6, 21),
+                'issue_date' => Date::createFromDate(2021, 6, 21),
                 'url' => 'https://bit.ly/BogniFCCAPIMicro',
                 'score' => null,
                 'score_max' => null,
@@ -58,7 +58,7 @@ class CertificateSeeder extends Seeder
             [
                 'title' => 'Data Analysis with Python',
                 'issued_by' => 'FreeCodeCamp.org',
-                'issue_date' => Carbon::createFromDate(2021, 8, 9),
+                'issue_date' => Date::createFromDate(2021, 8, 9),
                 'url' => 'https://bit.ly/BogniFCCDAPython',
                 'score' => null,
                 'score_max' => null,

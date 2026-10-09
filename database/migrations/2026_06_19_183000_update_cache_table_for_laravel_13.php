@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('cache', function (Blueprint $table) {
+        Schema::table('cache', function (Blueprint $table): void {
             $table->bigInteger('expiration')->change()->index();
         });
 
-        Schema::table('cache_locks', function (Blueprint $table) {
+        Schema::table('cache_locks', function (Blueprint $table): void {
             $table->bigInteger('expiration')->change()->index();
         });
     }
@@ -25,12 +25,12 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('cache', function (Blueprint $table) {
+        Schema::table('cache', function (Blueprint $table): void {
             $table->dropIndex(['expiration']);
             $table->integer('expiration')->change();
         });
 
-        Schema::table('cache_locks', function (Blueprint $table) {
+        Schema::table('cache_locks', function (Blueprint $table): void {
             $table->dropIndex(['expiration']);
             $table->integer('expiration')->change();
         });

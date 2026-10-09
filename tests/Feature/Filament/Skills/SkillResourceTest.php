@@ -4,7 +4,7 @@ use App\Filament\Resources\Skills\Pages\CreateSkill;
 use App\Filament\Resources\Skills\Pages\EditSkill;
 use App\Models\Skill;
 
-test('can create skill with mass assignment', function () {
+test('can create skill with mass assignment', function (): void {
     $this->assertResourceCanCreateRecord(Skill::class, CreateSkill::class, [
         'name' => 'Skill Create',
         'description' => 'Created skill.',
@@ -15,7 +15,7 @@ test('can create skill with mass assignment', function () {
     ]);
 });
 
-test('can edit skill with mass assignment', function () {
+test('can edit skill with mass assignment', function (): void {
     $this->assertResourceCanEditRecord(Skill::class, EditSkill::class, [
         'name' => 'Skill Create',
         'description' => 'Created skill.',

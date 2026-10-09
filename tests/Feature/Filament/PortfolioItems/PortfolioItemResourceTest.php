@@ -4,7 +4,7 @@ use App\Filament\Resources\PortfolioItems\Pages\CreatePortfolioItem;
 use App\Filament\Resources\PortfolioItems\Pages\EditPortfolioItem;
 use App\Models\PortfolioItem;
 
-test('can create portfolio item with mass assignment', function () {
+test('can create portfolio item with mass assignment', function (): void {
     $this->assertResourceCanCreateRecord(PortfolioItem::class, CreatePortfolioItem::class, [
         'portfolio_category_id' => 1,
         'title' => 'Portfolio Item Create',
@@ -19,7 +19,7 @@ test('can create portfolio item with mass assignment', function () {
     ]);
 });
 
-test('can edit portfolio item with mass assignment', function () {
+test('can edit portfolio item with mass assignment', function (): void {
     $this->assertResourceCanEditRecord(PortfolioItem::class, EditPortfolioItem::class, [
         'portfolio_category_id' => 1,
         'title' => 'Portfolio Item Create',

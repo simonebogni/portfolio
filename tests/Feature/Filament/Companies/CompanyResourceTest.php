@@ -4,7 +4,7 @@ use App\Filament\Resources\Companies\Pages\CreateCompany;
 use App\Filament\Resources\Companies\Pages\EditCompany;
 use App\Models\Company;
 
-test('can create company with mass assignment', function () {
+test('can create company with mass assignment', function (): void {
     $this->assertResourceCanCreateRecord(Company::class, CreateCompany::class, [
         'name' => 'Company Create',
         'city' => 'City',
@@ -15,7 +15,7 @@ test('can create company with mass assignment', function () {
     ]);
 });
 
-test('can edit company with mass assignment', function () {
+test('can edit company with mass assignment', function (): void {
     $this->assertResourceCanEditRecord(Company::class, EditCompany::class, [
         'name' => 'Company Create',
         'city' => 'City',

@@ -4,7 +4,7 @@ use App\Filament\Resources\Certificates\Pages\CreateCertificate;
 use App\Filament\Resources\Certificates\Pages\EditCertificate;
 use App\Models\Certificate;
 
-test('can create certificate with mass assignment', function () {
+test('can create certificate with mass assignment', function (): void {
     $this->assertResourceCanCreateRecord(Certificate::class, CreateCertificate::class, [
         'title' => 'Certificate Create',
         'description' => 'Created certificate.',
@@ -16,7 +16,7 @@ test('can create certificate with mass assignment', function () {
     ]);
 });
 
-test('can edit certificate with mass assignment', function () {
+test('can edit certificate with mass assignment', function (): void {
     $this->assertResourceCanEditRecord(Certificate::class, EditCertificate::class, [
         'title' => 'Certificate Create',
         'description' => 'Created certificate.',

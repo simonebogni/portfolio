@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\View\Components;
 
 use Closure;
@@ -8,17 +10,10 @@ use Illuminate\View\Component;
 
 class PortfolioItem extends Component
 {
-    public $item;
-
     /**
      * Create a new component instance.
-     *
-     * @return void
      */
-    public function __construct($item)
-    {
-        $this->item = $item;
-    }
+    public function __construct(public $item) {}
 
     /**
      * Get the view / contents that represent the component.

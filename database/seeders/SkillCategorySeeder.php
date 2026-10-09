@@ -5,8 +5,8 @@ namespace Database\Seeders;
 use App\Models\Skill;
 use App\Models\SkillCategory;
 use App\Models\SkillSubcategory;
-use Carbon\Carbon;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Date;
 
 class SkillCategorySeeder extends Seeder
 {
@@ -373,14 +373,13 @@ class SkillCategorySeeder extends Seeder
                 ],
             ],
         ];
-        $order = 1;
         foreach ($categories as $categoryOrder => $category) {
             $tempCategory = new SkillCategory;
             $tempCategory->name = $category['name'];
             $tempCategory->order = $categoryOrder + 1;
-            $tempCategory->icon_class = isset($category['icon_class']) ? $category['icon_class'] : null;
-            $tempCategory->created_at = Carbon::now();
-            $tempCategory->updated_at = Carbon::now();
+            $tempCategory->icon_class = $category['icon_class'] ?? null;
+            $tempCategory->created_at = Date::now();
+            $tempCategory->updated_at = Date::now();
             $tempCategory->save();
             if (isset($category['subcategories'])) {
                 foreach ($category['subcategories'] as $subcategoryOrder => $subcategory) {

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\View\Components;
 
 use Closure;
@@ -8,17 +10,10 @@ use Illuminate\View\Component;
 
 class WorkPosition extends Component
 {
-    public $position;
-
     /**
      * Create a new component instance.
-     *
-     * @return void
      */
-    public function __construct($position)
-    {
-        $this->position = $position;
-    }
+    public function __construct(public $position) {}
 
     /**
      * Get the view / contents that represent the component.

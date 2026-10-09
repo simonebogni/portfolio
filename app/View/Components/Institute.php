@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\View\Components;
 
 use Closure;
@@ -8,17 +10,10 @@ use Illuminate\View\Component;
 
 class Institute extends Component
 {
-    public $institute;
-
     /**
      * Create a new component instance.
-     *
-     * @return void
      */
-    public function __construct($institute)
-    {
-        $this->institute = $institute;
-    }
+    public function __construct(public $institute) {}
 
     /**
      * Get the view / contents that represent the component.

@@ -31,6 +31,8 @@ class SkillSubcategory extends Model
 
     /**
      * Get the category of this subcatory
+     *
+     * @return BelongsTo<SkillCategory, $this>
      */
     public function category(): BelongsTo
     {
@@ -39,6 +41,8 @@ class SkillSubcategory extends Model
 
     /**
      * Get the skills of this subcategory
+     *
+     * @return HasMany<Skill, $this>
      */
     public function skills(): HasMany
     {

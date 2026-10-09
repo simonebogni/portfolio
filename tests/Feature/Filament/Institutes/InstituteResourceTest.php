@@ -4,7 +4,7 @@ use App\Filament\Resources\Institutes\Pages\CreateInstitute;
 use App\Filament\Resources\Institutes\Pages\EditInstitute;
 use App\Models\Institute;
 
-test('can create institute with mass assignment', function () {
+test('can create institute with mass assignment', function (): void {
     $this->assertResourceCanCreateRecord(Institute::class, CreateInstitute::class, [
         'name' => 'Institute Create',
         'website' => 'https://institute.example.com',
@@ -12,7 +12,7 @@ test('can create institute with mass assignment', function () {
     ]);
 });
 
-test('can edit institute with mass assignment', function () {
+test('can edit institute with mass assignment', function (): void {
     $this->assertResourceCanEditRecord(Institute::class, EditInstitute::class, [
         'name' => 'Institute Create',
         'website' => 'https://institute.example.com',

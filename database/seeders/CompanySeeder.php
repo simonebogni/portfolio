@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Seeders;
 
-use Carbon\Carbon;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
 
 class CompanySeeder extends Seeder
@@ -30,8 +32,8 @@ class CompanySeeder extends Seeder
                 'country' => $company['country'],
                 'description' => $company['description'],
                 'website' => $company['website'],
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
+                'created_at' => Date::now(),
+                'updated_at' => Date::now(),
             ]);
         }
     }

@@ -27,10 +27,13 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class CompanyResource extends Resource
 {
+    #[\Override]
     protected static ?string $model = Company::class;
 
+    #[\Override]
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-building-office-2';
 
+    #[\Override]
     protected static string|\UnitEnum|null $navigationGroup = ResourceGroup::WORK_EXPERIENCE->value;
 
     public static function form(Schema $schema): Schema

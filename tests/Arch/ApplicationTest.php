@@ -1,5 +1,6 @@
 <?php
 
+use App\Filament\ResourceGroup;
 use App\Http\Controllers\Controller;
 use Filament\Resources\Pages\CreateRecord;
 use Filament\Resources\Pages\EditRecord;
@@ -103,5 +104,5 @@ arch('filament view pages extend ViewRecord')
     ->toExtend(ViewRecord::class);
 
 arch('filament navigation groups are a backed enum')
-    ->expect('App\Filament\ResourceGroup')
+    ->expect(ResourceGroup::class)
     ->toBeStringBackedEnum();

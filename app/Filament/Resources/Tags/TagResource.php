@@ -29,10 +29,13 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class TagResource extends Resource
 {
+    #[\Override]
     protected static ?string $model = Tag::class;
 
+    #[\Override]
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-tag';
 
+    #[\Override]
     protected static string|\UnitEnum|null $navigationGroup = ResourceGroup::APP_MANAGEMENT->value;
 
     public static function form(Schema $schema): Schema
@@ -52,7 +55,7 @@ class TagResource extends Resource
                     ->helperText('Enter a valid hex color (e.g., #000 or #000000)')
                     ->default('#0d6efd')
                     ->rules([
-                        fn (Get $get, VerifyColorContrastAccessibilityAction $verifyColorAction): Closure => function (string $attribute, string $value, Closure $fail) use ($get, $verifyColorAction) {
+                        fn (Get $get, VerifyColorContrastAccessibilityAction $verifyColorAction): Closure => function (string $attribute, string $value, Closure $fail) use ($get, $verifyColorAction): void {
                             $backgroundColor = $value;
                             $textColor = $get('color');
                             $ratioIsAccessible = $verifyColorAction->execute($backgroundColor, $textColor);

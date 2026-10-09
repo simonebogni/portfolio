@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Resources\Tags\Pages;
 
 use App\Filament\Resources\Tags\TagResource;
@@ -11,6 +13,7 @@ use Filament\Resources\Pages\EditRecord;
 
 class EditTag extends EditRecord
 {
+    #[\Override]
     protected static string $resource = TagResource::class;
 
     protected function getHeaderActions(): array

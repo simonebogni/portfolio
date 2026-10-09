@@ -26,10 +26,13 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class HobbyResource extends Resource
 {
+    #[\Override]
     protected static ?string $model = Hobby::class;
 
+    #[\Override]
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-rocket-launch';
 
+    #[\Override]
     protected static string|\UnitEnum|null $navigationGroup = ResourceGroup::PERSONAL->value;
 
     public static function form(Schema $schema): Schema

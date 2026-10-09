@@ -4,7 +4,7 @@ use App\Filament\Resources\Languages\Pages\CreateLanguage;
 use App\Filament\Resources\Languages\Pages\EditLanguage;
 use App\Models\Language;
 
-test('can create language with mass assignment', function () {
+test('can create language with mass assignment', function (): void {
     $this->assertResourceCanCreateRecord(Language::class, CreateLanguage::class, [
         'name' => 'Language Create',
         'rating' => 3,
@@ -17,7 +17,7 @@ test('can create language with mass assignment', function () {
     ]);
 });
 
-test('can edit language with mass assignment', function () {
+test('can edit language with mass assignment', function (): void {
     $this->assertResourceCanEditRecord(Language::class, EditLanguage::class, [
         'name' => 'Language Create',
         'rating' => 3,

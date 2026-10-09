@@ -6,8 +6,8 @@ use App\Models\Institute;
 use App\Models\OnlinePlatform;
 use App\Models\Program;
 use App\Models\Tag;
-use Carbon\Carbon;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Date;
 
 class ProgramSeeder extends Seeder
 {
@@ -21,8 +21,8 @@ class ProgramSeeder extends Seeder
                 'name' => 'Bachelor degree in Computer Science',
                 'institute' => "Università degli Studi dell'Insubria",
                 'online_platform' => null,
-                'start_date' => Carbon::createFromDate(2012, 10, 1),
-                'end_date' => Carbon::createFromDate(2020, 12, 10),
+                'start_date' => Date::createFromDate(2012, 10, 1),
+                'end_date' => Date::createFromDate(2020, 12, 10),
                 'period' => 'October 2012 - December 2020',
                 'current' => false,
                 'description' => null,
@@ -32,8 +32,8 @@ class ProgramSeeder extends Seeder
                 'name' => 'Web Security',
                 'institute' => null,
                 'online_platform' => 'LinkedIn Learning',
-                'start_date' => Carbon::createFromDate(2021, 7, 3),
-                'end_date' => Carbon::createFromDate(2021, 7, 5),
+                'start_date' => Date::createFromDate(2021, 7, 3),
+                'end_date' => Date::createFromDate(2021, 7, 5),
                 'period' => null,
                 'current' => true,
                 'description' => 'A course taught by Kevin Skoglund on the best practices to secure web applications.',
@@ -43,7 +43,7 @@ class ProgramSeeder extends Seeder
                 'name' => 'Several courses about Laravel',
                 'institute' => null,
                 'online_platform' => 'Laracasts',
-                'start_date' => Carbon::createFromDate(2020, 10, 1),
+                'start_date' => Date::createFromDate(2020, 10, 1),
                 'end_date' => null,
                 'period' => null,
                 'current' => true,
@@ -66,7 +66,7 @@ class ProgramSeeder extends Seeder
                 'institute' => 'Hong Kong University of Science and Technology',
                 'online_platform' => 'Coursera',
                 'start_date' => null,
-                'end_date' => Carbon::createFromDate(2020, 06, 30),
+                'end_date' => Date::createFromDate(2020, 06, 30),
                 'period' => null,
                 'current' => null,
                 'description' => 'An introductory course covering React, Reactstrap (Bootstrap 4 for React), SPAs with React router, Redux and REST APIs.',
@@ -77,7 +77,7 @@ class ProgramSeeder extends Seeder
                 'institute' => null,
                 'online_platform' => 'Udemy',
                 'start_date' => null,
-                'end_date' => Carbon::createFromDate(2019, 12, 1),
+                'end_date' => Date::createFromDate(2019, 12, 1),
                 'period' => null,
                 'current' => false,
                 'description' => 'A course covering HTML5, CSS3, Javascript, jQuery & jQuery UI, Bootstrap, Node.js, PHP, AJAX, JSON and Google Maps APIs.',

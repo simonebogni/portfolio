@@ -2,7 +2,7 @@
 
 use App\Actions\Support\Color\VerifyColorContrastAccessibilityAction;
 
-test('it accepts color pairs meeting the WCAG AA contrast ratio', function (string $background, string $text) {
+test('it accepts color pairs meeting the WCAG AA contrast ratio', function (string $background, string $text): void {
     expect((new VerifyColorContrastAccessibilityAction)->execute($background, $text))->toBeTrue();
 })->with([
     'black on white' => ['#ffffff', '#000000'],
@@ -10,7 +10,7 @@ test('it accepts color pairs meeting the WCAG AA contrast ratio', function (stri
     'white on dark blue' => ['#003366', '#ffffff'],
 ]);
 
-test('it rejects color pairs below the WCAG AA contrast ratio', function (string $background, string $text) {
+test('it rejects color pairs below the WCAG AA contrast ratio', function (string $background, string $text): void {
     expect((new VerifyColorContrastAccessibilityAction)->execute($background, $text))->toBeFalse();
 })->with([
     'same color' => ['#777777', '#777777'],
@@ -18,7 +18,7 @@ test('it rejects color pairs below the WCAG AA contrast ratio', function (string
     'yellow on white' => ['#ffffff', '#ffff00'],
 ]);
 
-test('it rejects missing colors', function (?string $background, ?string $text) {
+test('it rejects missing colors', function (?string $background, ?string $text): void {
     expect((new VerifyColorContrastAccessibilityAction)->execute($background, $text))->toBeFalse();
 })->with([
     'no colors' => [null, null],

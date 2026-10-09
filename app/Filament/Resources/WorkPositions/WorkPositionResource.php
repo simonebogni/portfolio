@@ -30,10 +30,13 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class WorkPositionResource extends Resource
 {
+    #[\Override]
     protected static ?string $model = WorkPosition::class;
 
+    #[\Override]
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-briefcase';
 
+    #[\Override]
     protected static string|\UnitEnum|null $navigationGroup = ResourceGroup::WORK_EXPERIENCE->value;
 
     /**
@@ -63,7 +66,7 @@ class WorkPositionResource extends Resource
                     ->displayFormat('Y-m-d')
                     ->format('Y-m-d')
                     ->maxDate(now())
-                    ->afterOrEqual(fn (Get $get) => $get('current') ? null : 'start_date')
+                    ->afterOrEqual(fn (Get $get): ?string => $get('current') ? null : 'start_date')
                     ->hidden(fn (Get $get): bool => $get('current'))
                     ->required(fn (Get $get): bool => ! $get('current')),
                 Toggle::make('current')

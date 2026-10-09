@@ -28,7 +28,7 @@ pest()->use(TestsResourceMassAssignment::class)
 |--------------------------------------------------------------------------
 */
 
-expect()->extend('toAllowMassAssignmentOf', function (array $columns) {
+expect()->extend('toAllowMassAssignmentOf', function (array $columns): object {
     /** @var class-string<Model> $modelClass */
     $modelClass = $this->value;
     $model = new $modelClass;

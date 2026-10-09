@@ -4,7 +4,7 @@ use App\Filament\Resources\SkillSubcategories\Pages\CreateSkillSubcategory;
 use App\Filament\Resources\SkillSubcategories\Pages\EditSkillSubcategory;
 use App\Models\SkillSubcategory;
 
-test('can create skill subcategory with mass assignment', function () {
+test('can create skill subcategory with mass assignment', function (): void {
     $this->assertResourceCanCreateRecord(SkillSubcategory::class, CreateSkillSubcategory::class, [
         'name' => 'Skill Subcategory Create',
         'order' => 2,
@@ -12,7 +12,7 @@ test('can create skill subcategory with mass assignment', function () {
     ]);
 });
 
-test('can edit skill subcategory with mass assignment', function () {
+test('can edit skill subcategory with mass assignment', function (): void {
     $this->assertResourceCanEditRecord(SkillSubcategory::class, EditSkillSubcategory::class, [
         'name' => 'Skill Subcategory Create',
         'order' => 2,

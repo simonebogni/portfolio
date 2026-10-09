@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Seeders;
 
-use Carbon\Carbon;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
 
 class LanguageSeeder extends Seeder
@@ -64,10 +66,10 @@ class LanguageSeeder extends Seeder
                 'reading' => $language['reading'],
                 'writing' => $language['writing'],
                 'listening' => $language['listening'],
-                'certificate_level' => isset($language['certificate_level']) ? $language['certificate_level'] : null,
-                'certificate_img_path' => isset($language['certificate_img_path']) ? $language['certificate_img_path'] : null,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
+                'certificate_level' => $language['certificate_level'] ?? null,
+                'certificate_img_path' => $language['certificate_img_path'] ?? null,
+                'created_at' => Date::now(),
+                'updated_at' => Date::now(),
             ]);
             $order++;
         }

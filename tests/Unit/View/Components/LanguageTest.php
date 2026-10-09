@@ -15,7 +15,7 @@ function makeLanguage(array $attributes = []): LanguageModel
     ]);
 }
 
-test('it rounds the rating down to the nearest half point', function (float $rating, float $expected) {
+test('it rounds the rating down to the nearest half point', function (float $rating, float $expected): void {
     $component = new LanguageComponent(makeLanguage(['rating' => $rating]));
 
     expect($component->rating)->toEqual($expected);
@@ -26,7 +26,7 @@ test('it rounds the rating down to the nearest half point', function (float $rat
     'just below the next whole number' => [4.9, 4.5],
 ]);
 
-test('it maps the rating to its meaning', function (float $rating, string $meaning) {
+test('it maps the rating to its meaning', function (float $rating, string $meaning): void {
     $component = new LanguageComponent(makeLanguage(['rating' => $rating]));
 
     expect($component->ratingMeaning)->toBe($meaning);
@@ -42,7 +42,7 @@ test('it maps the rating to its meaning', function (float $rating, string $meani
     [1.0, 'Beginner'],
 ]);
 
-test('it flags native languages', function (string $speaking, bool $isNative) {
+test('it flags native languages', function (string $speaking, bool $isNative): void {
     $component = new LanguageComponent(makeLanguage(['speaking' => $speaking]));
 
     expect($component->isNative)->toBe($isNative);
@@ -51,7 +51,7 @@ test('it flags native languages', function (string $speaking, bool $isNative) {
     'not native' => ['C1', false],
 ]);
 
-test('it exposes the language details', function () {
+test('it exposes the language details', function (): void {
     $language = makeLanguage();
 
     $component = new LanguageComponent($language);

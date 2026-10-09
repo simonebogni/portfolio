@@ -4,7 +4,7 @@ use App\Filament\Resources\Courses\Pages\CreateCourse;
 use App\Filament\Resources\Courses\Pages\EditCourse;
 use App\Models\Course;
 
-test('can create course with mass assignment', function () {
+test('can create course with mass assignment', function (): void {
     $this->assertResourceCanCreateRecord(Course::class, CreateCourse::class, [
         'program_id' => 1,
         'name' => 'Course Create',
@@ -16,7 +16,7 @@ test('can create course with mass assignment', function () {
     ]);
 });
 
-test('can edit course with mass assignment', function () {
+test('can edit course with mass assignment', function (): void {
     $this->assertResourceCanEditRecord(Course::class, EditCourse::class, [
         'program_id' => 1,
         'name' => 'Course Create',

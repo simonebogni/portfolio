@@ -4,7 +4,7 @@ use App\Filament\Resources\Programs\Pages\CreateProgram;
 use App\Filament\Resources\Programs\Pages\EditProgram;
 use App\Models\Program;
 
-test('can create program with mass assignment', function () {
+test('can create program with mass assignment', function (): void {
     $this->assertResourceCanCreateRecord(Program::class, CreateProgram::class, [
         'institute_id' => 1,
         'online_platform_id' => 1,
@@ -17,7 +17,7 @@ test('can create program with mass assignment', function () {
     ]);
 });
 
-test('can edit program with mass assignment', function () {
+test('can edit program with mass assignment', function (): void {
     $this->assertResourceCanEditRecord(Program::class, EditProgram::class, [
         'institute_id' => 1,
         'online_platform_id' => 1,

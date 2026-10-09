@@ -12,7 +12,7 @@ class AwardController extends Controller
      */
     public static function getAwards(): Collection
     {
-        return Award::with('tags')->orderByDesc('issue_date')
+        return Award::with('tags')->latest('issue_date')
             ->get();
     }
 }

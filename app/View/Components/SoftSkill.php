@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\View\Components;
 
 use Closure;
@@ -9,21 +11,16 @@ use Illuminate\View\Component;
 class SoftSkill extends Component
 {
     /**
-     * The soft skill to display
-     *
-     * @var \App\Models\SoftSkill
-     */
-    public $softskill;
-
-    /**
      * Create a new component instance.
      *
-     * @return void
+     * @param  \App\Models\SoftSkill  $softskill
      */
-    public function __construct($softskill)
-    {
-        $this->softskill = $softskill;
-    }
+    public function __construct(
+        /**
+         * The soft skill to display
+         */
+        public $softskill
+    ) {}
 
     /**
      * Get the view / contents that represent the component.

@@ -31,6 +31,8 @@ class Company extends Model
 
     /**
      * Get the work positions in this company
+     *
+     * @return HasMany<WorkPosition, $this>
      */
     public function workPositions(): HasMany
     {

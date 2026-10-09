@@ -9,13 +9,6 @@ use Illuminate\View\Component;
 class Language extends Component
 {
     /**
-     * The language to display
-     *
-     * @var \App\Models\Language
-     */
-    public $language;
-
-    /**
      * The name of the language to display
      *
      * @var string
@@ -60,14 +53,16 @@ class Language extends Component
     /**
      * Create a new component instance.
      *
-     * @return void
+     * @param  \App\Models\Language  $language
      */
-    public function __construct($language)
+    public function __construct(/**
+     * The language to display
+     */
+        public $language)
     {
-        $this->language = $language;
-        $this->name = $language->name;
-        $this->isNative = $language->speaking === 'Native';
-        $roundedRating = round($language->rating, 2);
+        $this->name = $this->language->name;
+        $this->isNative = $this->language->speaking === 'Native';
+        $roundedRating = round($this->language->rating, 2);
         $whole = floor($roundedRating);
         if (($roundedRating - $whole) > 0.0) {
             $decimal = $roundedRating - $whole;
@@ -77,7 +72,7 @@ class Language extends Component
                 $this->rating = $whole;
             }
         } else {
-            $this->rating = $language->rating;
+            $this->rating = $this->language->rating;
         }
         switch ($this->rating) {
             case 5.0:
@@ -100,8 +95,8 @@ class Language extends Component
                 $this->ratingMeaning = 'Beginner';
                 break;
         }
-        $this->certificate_level = $language->certificate_level;
-        $this->certificate_img_path = $language->certificate_img_path;
+        $this->certificate_level = $this->language->certificate_level;
+        $this->certificate_img_path = $this->language->certificate_img_path;
     }
 
     /**

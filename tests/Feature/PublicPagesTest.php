@@ -1,6 +1,6 @@
 <?php
 
-test('public pages return a successful response', function (string $uri) {
+test('public pages return a successful response', function (string $uri): void {
     $this->get($uri)->assertOk();
 })->with([
     'home' => '/',
@@ -11,6 +11,6 @@ test('public pages return a successful response', function (string $uri) {
     'hobbies' => '/hobbies',
 ]);
 
-test('health check endpoint is available', function () {
+test('health check endpoint is available', function (): void {
     $this->get('/up')->assertOk();
 });

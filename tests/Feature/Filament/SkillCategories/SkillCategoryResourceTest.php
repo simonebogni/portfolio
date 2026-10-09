@@ -4,7 +4,7 @@ use App\Filament\Resources\SkillCategories\Pages\CreateSkillCategory;
 use App\Filament\Resources\SkillCategories\Pages\EditSkillCategory;
 use App\Models\SkillCategory;
 
-test('can create skill category with mass assignment', function () {
+test('can create skill category with mass assignment', function (): void {
     $this->assertResourceCanCreateRecord(SkillCategory::class, CreateSkillCategory::class, [
         'name' => 'Skill Category Create',
         'order' => 2,
@@ -12,7 +12,7 @@ test('can create skill category with mass assignment', function () {
     ]);
 });
 
-test('can edit skill category with mass assignment', function () {
+test('can edit skill category with mass assignment', function (): void {
     $this->assertResourceCanEditRecord(SkillCategory::class, EditSkillCategory::class, [
         'name' => 'Skill Category Create',
         'order' => 2,

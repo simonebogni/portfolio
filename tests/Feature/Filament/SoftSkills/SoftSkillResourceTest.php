@@ -4,14 +4,14 @@ use App\Filament\Resources\SoftSkills\Pages\CreateSoftSkill;
 use App\Filament\Resources\SoftSkills\Pages\EditSoftSkill;
 use App\Models\SoftSkill;
 
-test('can create soft skill with mass assignment', function () {
+test('can create soft skill with mass assignment', function (): void {
     $this->assertResourceCanCreateRecord(SoftSkill::class, CreateSoftSkill::class, [
         'name' => 'Soft Skill Create',
         'description' => 'Created soft skill.',
     ]);
 });
 
-test('can edit soft skill with mass assignment', function () {
+test('can edit soft skill with mass assignment', function (): void {
     $this->assertResourceCanEditRecord(SoftSkill::class, EditSoftSkill::class, [
         'name' => 'Soft Skill Create',
         'description' => 'Created soft skill.',

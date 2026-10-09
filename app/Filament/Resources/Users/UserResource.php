@@ -26,10 +26,13 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class UserResource extends Resource
 {
+    #[\Override]
     protected static ?string $model = User::class;
 
+    #[\Override]
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-user';
 
+    #[\Override]
     protected static string|\UnitEnum|null $navigationGroup = ResourceGroup::APP_MANAGEMENT->value;
 
     public static function form(Schema $schema): Schema
@@ -46,17 +49,17 @@ class UserResource extends Resource
                 DateTimePicker::make('email_verified_at')
                     ->disabled()
                     ->dehydrated(false)
-                    ->visible(fn ($record) => $record !== null),
+                    ->visible(fn ($record): bool => $record !== null),
                 TextInput::make('password')
                     ->password()
-                    ->required(fn ($record) => $record === null)
+                    ->required(fn ($record): bool => $record === null)
                     ->confirmed()
                     ->maxLength(255),
                 TextInput::make('password_confirmation')
                     ->password()
-                    ->required(fn ($record) => $record === null)
+                    ->required(fn ($record): bool => $record === null)
                     ->maxLength(255)
-                    ->visible(fn ($record) => $record === null),
+                    ->visible(fn ($record): bool => $record === null),
             ]);
     }
 
