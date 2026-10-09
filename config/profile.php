@@ -17,6 +17,14 @@ return [
     'roles' => ['Tech Lead', 'Full-stack developer', 'Shopify expert'],
     'location' => env('PROFILE_LOCATION', 'Tel Aviv, Israel'),
 
+    // Home page introduction. The defaults are taken from the copy of the previous About page.
+    'headline' => env('PROFILE_HEADLINE', 'Full-stack developer who loves taking ideas to reality.'),
+    'bio' => env('PROFILE_BIO', 'Proficient in both back-end and front-end development, including REST and MVC-based frameworks. Responsible, independent, and committed to lifelong learning.'),
+
+    // Final grade of the main degree, shown as the big figure of the education card (e.g. "95%").
+    // Empty: the card shows the graduation year instead.
+    'education_score' => env('PROFILE_EDUCATION_SCORE'),
+
     'email' => env('PROFILE_EMAIL'),
     'github_url' => env('PROFILE_GITHUB_URL', 'https://github.com/simonebogni'),
     'linkedin_url' => env('PROFILE_LINKEDIN_URL'),

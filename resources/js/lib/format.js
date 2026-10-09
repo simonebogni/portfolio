@@ -44,3 +44,10 @@ export function slugify(value) {
         .replace(/[^a-z0-9]+/g, '-')
         .replace(/(^-|-$)/g, '');
 }
+
+/** "Hackathon 2019 - 2nd place" → "2nd"; null when the text has no ordinal. */
+export function findOrdinal(value) {
+    const match = String(value ?? '').match(/\b(\d+(?:st|nd|rd|th))\b/i);
+
+    return match ? match[1] : null;
+}

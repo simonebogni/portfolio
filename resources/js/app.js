@@ -7,6 +7,6 @@ createInertiaApp({
     pages: './pages',
     ...options,
     progress: {
-        color: 'var(--color-accent, #0b57d0)',
+        color: 'var(--color-accent)',
     },
 });
