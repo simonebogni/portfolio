@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Language;
+use App\Models\PortfolioItem;
 use App\Models\Skill;
 use App\Models\SkillCategory;
 use App\Models\SkillSubcategory;
+use App\Models\WorkPosition;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -35,6 +37,18 @@ class AboutController extends Controller
                     ]),
                 ]),
             ]),
+            'highlights' => [
+                // Year of the earliest work position, e.g. 2011.
+                'firstWorkYear' => $this->firstWorkYear(),
+                'portfolioProjects' => PortfolioItem::query()->count(),
+            ],
         ]);
+    }
+
+    private function firstWorkYear(): ?int
+    {
+        $first = WorkPosition::query()->whereNotNull('start_date')->min('start_date');
+
+        return is_string($first) && preg_match('/^\d{4}/', $first) === 1 ? (int) substr($first, 0, 4) : null;
     }
 }

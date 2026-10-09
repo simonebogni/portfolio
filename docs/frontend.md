@@ -8,7 +8,8 @@ unchanged and keep using Blade.
 
 1. A controller in `app/Http/Controllers` loads the models and returns `Inertia::render('<Page>', $props)`.
    Props are plain arrays with camelCase keys: the Vue code never sees Eloquent models.
-2. `HandleInertiaRequests` adds the shared props: `profile` (from `config/profile.php`).
+2. `HandleInertiaRequests` adds the shared props: `profile` (from `config/profile.php`). The About page also
+   gets `highlights` (`firstWorkYear`, `portfolioProjects`).
 3. `resources/views/app.blade.php` is the only Blade view for the public site. It sets the meta tags, applies
    the saved theme before the first paint, and outputs `@inertiaHead` / `@inertia`.
 4. With SSR on, Laravel posts the page to the Node SSR server (`bootstrap/ssr/ssr.js`), which returns the
@@ -24,15 +25,18 @@ unchanged and keep using Blade.
 | `resources/js/layouts/` | Site layout: skip link, header and navigation, theme switch, footer. |
 | `resources/js/pages/` | One component per Inertia page. Each must have a single root element. |
 | `resources/js/components/` | Reusable design-system components. |
-| `resources/js/composables/` | `useTheme` (light/dark), `useNavigation` (menu state, current page). |
+| `resources/js/composables/` | `useTheme` (light/dark), `useNavigation` (menu state, current page), `useProfile` (shared profile helpers). |
 | `resources/js/lib/format.js` | Date and string helpers. |
-| `resources/css/app.css` | Design tokens and global styles. |
-| `config/profile.php` | Name, roles, location, links and current role, overridable with `PROFILE_*` env variables. |
+| `resources/css/app.css` | Entry stylesheet: fonts, then `tokens.css`, `base.css`, `layout.css`, `components.css`, `pages.css`. |
+| `config/profile.php` | Name, roles, location, links, current role and the copy with no database source (intro, ways of working, placeholders), overridable with `PROFILE_*` env variables. |
 
 ## Design tokens
 
+The current design is **Blueprint**: see [design-system.md](design-system.md) for its tokens, components,
+content sources and the placeholders to fill in.
+
 All colours, fonts, spacing, radii and shadows are CSS custom properties defined in `:root` in
-`resources/css/app.css`. Components use the tokens, never raw values, so a theme or a redesign only changes the
+`resources/css/tokens.css`. Components use the tokens, never raw values, so a theme or a redesign only changes the
 token values.
 
 - **Light and dark:** dark values are set under `[data-theme="dark"]`, and under
