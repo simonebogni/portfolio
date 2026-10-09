@@ -1,20 +1,32 @@
 <script setup>
-import { Head } from '@inertiajs/vue3';
+import { Head, usePage } from '@inertiajs/vue3';
+import { computed } from 'vue';
+import PageHeader from '../components/PageHeader.vue';
+import StoryBlock from '../components/StoryBlock.vue';
+import { pageKicker } from '../composables/useNavigation';
+import { toRoman } from '../lib/format';
 
 defineProps({
     hobbies: { type: Array, required: true },
 });
+
+const profile = computed(() => usePage().props.profile);
 </script>
 
 <template>
-    <div class="page">
+    <div class="page page--hobbies">
         <Head title="Hobbies" />
-        <h1>Hobbies</h1>
-        <ul>
-            <li v-for="hobby in hobbies" :key="hobby.id">
-                <img v-if="hobby.coverImgUrl" :src="hobby.coverImgUrl" alt="" width="320" height="200" loading="lazy">
-                <h2>{{ hobby.title }}</h2>
-                <p>{{ hobby.description }}</p>
+        <PageHeader :kicker="pageKicker('Hobbies')" :lede="profile.intros?.hobbies">Off the clock</PageHeader>
+        <ul v-if="hobbies.length" class="story-list">
+            <li v-for="(hobby, index) in hobbies" :key="hobby.id">
+                <!-- The photos illustrate the title next to them, so they are decorative (empty alt). -->
+                <StoryBlock
+                    :numeral="toRoman(index + 1)"
+                    :title="hobby.title"
+                    :text="hobby.description"
+                    :image-url="hobby.coverImgUrl || ''"
+                    :flip="index % 2 === 1"
+                />
             </li>
         </ul>
     </div>

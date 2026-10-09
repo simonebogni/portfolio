@@ -21,6 +21,22 @@ test('public pages render their Inertia page with the shared profile', function 
     'hobbies' => ['/hobbies', 'Hobbies'],
 ]);
 
+test('the shared profile carries the editorial copy of the design', function (): void {
+    config([
+        'profile.headline' => 'From an *idea* to *reality*.',
+        'profile.intros.portfolio' => 'Selected projects.',
+    ]);
+
+    $this->get('/portfolio')->assertInertia(fn (Assert $page): Assert => $page
+        ->where('profile.headline', 'From an *idea* to *reality*.')
+        ->where('profile.intros.portfolio', 'Selected projects.')
+        ->has('profile.intros.experience')
+        ->has('profile.intros.soft_skills')
+        ->has('profile.intros.hobbies')
+        ->has('profile.bio.0')
+        ->has('profile.current_role.summary'));
+});
+
 test('the about page lists languages with their rounded rating', function (): void {
     Language::create(['name' => 'English', 'rating' => 4.7, 'speaking' => 'Fluent', 'certificate_level' => 'FCE B2']);
 

@@ -1,0 +1,117 @@
+/*
+ * Base: element defaults and utilities. Semantic tokens only.
+ */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: var(--fs-body);
+    font-weight: var(--weight-regular);
+    line-height: var(--lh-body);
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: var(--weight-regular);
+    line-height: var(--lh-heading);
+    text-wrap: balance;
+}
+
+p {
+    margin: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration-color: var(--color-accent);
+    text-underline-offset: var(--underline-offset-sm);
+}
+
+a:hover {
+    text-decoration-thickness: var(--underline-thickness);
+}
+
+em {
+    font-style: italic;
+}
+
+b,
+strong {
+    font-weight: var(--weight-semibold);
+}
+
+button {
+    font: inherit;
+    color: inherit;
+}
+
+:focus-visible {
+    outline: var(--focus-ring);
+    outline-offset: var(--focus-offset);
+}
+
+main:focus {
+    outline: none;
+}
+
+::selection {
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+}
+
+.visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.wrap {
+    width: 100%;
+    max-width: var(--size-content);
+    margin: 0 auto;
+    padding: 0 var(--space-gutter);
+}
+
+.accent-em {
+    color: var(--color-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

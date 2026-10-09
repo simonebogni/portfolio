@@ -4,6 +4,9 @@ The public site (About, Experience, Portfolio, Soft skills, Hobbies) is a Vue 3 
 [Inertia](https://inertiajs.com) with server-side rendering. The Filament admin panel and the auth pages are
 unchanged and keep using Blade.
 
+The current look is the **Editorial** design: see [design-system.md](design-system.md) for its tokens, fonts,
+components and accessibility notes.
+
 ## How a page is rendered
 
 1. A controller in `app/Http/Controllers` loads the models and returns `Inertia::render('<Page>', $props)`.
@@ -26,13 +29,14 @@ unchanged and keep using Blade.
 | `resources/js/components/` | Reusable design-system components. |
 | `resources/js/composables/` | `useTheme` (light/dark), `useNavigation` (menu state, current page). |
 | `resources/js/lib/format.js` | Date and string helpers. |
-| `resources/css/app.css` | Design tokens and global styles. |
-| `config/profile.php` | Name, roles, location, links and current role, overridable with `PROFILE_*` env variables. |
+| `resources/css/tokens.css` | Design tokens (primitive and semantic, light and dark). |
+| `resources/css/app.css` | Imports the fonts, the tokens and the base, layout, component and page styles. |
+| `config/profile.php` | Name, roles, location, links, current role, headline, bio and page intros, overridable with `PROFILE_*` env variables. |
 
 ## Design tokens
 
-All colours, fonts, spacing, radii and shadows are CSS custom properties defined in `:root` in
-`resources/css/app.css`. Components use the tokens, never raw values, so a theme or a redesign only changes the
+All colours, fonts, spacing, radii and shadows are CSS custom properties defined in
+`resources/css/tokens.css`. Components use the tokens, never raw values, so a theme or a redesign only changes the
 token values.
 
 - **Light and dark:** dark values are set under `[data-theme="dark"]`, and under

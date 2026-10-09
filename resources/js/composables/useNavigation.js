@@ -45,3 +45,10 @@ export function useNavigation(labels = {}) {
 
     return { items, menuOpen, toggleMenu, closeMenu, onMenuKeydown };
 }
+
+/** Numbered overline for a page, matching the navigation: "02 — Experience". */
+export function pageKicker(component) {
+    const index = navigationItems.findIndex((item) => item.component === component);
+
+    return index === -1 ? '' : `${String(index + 1).padStart(2, '0')} — ${navigationItems[index].label}`;
+}
