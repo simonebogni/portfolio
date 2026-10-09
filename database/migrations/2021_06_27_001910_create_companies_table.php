@@ -1,25 +1,27 @@
 <?php
 
-use Carbon\Carbon;
+declare(strict_types=1);
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCompaniesTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
      */
     public function up(): void
     {
-        Schema::create('companies', function (Blueprint $table) {
+        Schema::create('companies', function (Blueprint $table): void {
             $table->id();
             $table->string('name');
             $table->string('city');
             $table->string('country');
             $table->text('description')->nullable();
             $table->string('website')->nullable();
-            $table->date('last_work_date')->default(Carbon::now());
+            $table->date('last_work_date')->default(Date::now());
             $table->timestamps();
             $table->softDeletes();
         });
@@ -32,4 +34,4 @@ class CreateCompaniesTable extends Migration
     {
         Schema::dropIfExists('companies');
     }
-}
+};

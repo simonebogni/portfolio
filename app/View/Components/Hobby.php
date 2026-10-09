@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\View\Components;
 
 use Closure;
@@ -8,17 +10,10 @@ use Illuminate\View\Component;
 
 class Hobby extends Component
 {
-    public $hobby;
-
     /**
      * Create a new component instance.
-     *
-     * @return void
      */
-    public function __construct($hobby = null)
-    {
-        $this->hobby = $hobby;
-    }
+    public function __construct(public $hobby = null) {}
 
     /**
      * Get the view / contents that represent the component.

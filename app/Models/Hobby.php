@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Attributes\Unguarded;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+#[Unguarded]
 class Hobby extends Model
 {
     use HasFactory;
@@ -24,6 +26,4 @@ class Hobby extends Model
             'deleted_at' => 'datetime',
         ];
     }
-
-    protected $guarded = [];
 }

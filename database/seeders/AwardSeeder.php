@@ -4,8 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\Award;
 use App\Models\Tag;
-use Carbon\Carbon;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Date;
 
 class AwardSeeder extends Seeder
 {
@@ -19,7 +19,7 @@ class AwardSeeder extends Seeder
                 'title' => 'Hackathon 2019 - 2nd place',
                 'subtitle' => 'Hosted by SocialLibreria srl - Varese (Italy)',
                 'description' => 'Designed and developed a MVP with CakePHP, in collaboration with two students from the Business & Economy master class and another student from the Computer Science Bachelor class',
-                'issue_date' => Carbon::createFromDate(2019, 12, 12),
+                'issue_date' => Date::createFromDate(2019, 12, 12),
                 'tags' => ['PHP', 'CakePHP', 'Bootstrap', 'SASS', 'Information System', 'Web development'],
             ],
         ];

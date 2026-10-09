@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Attributes\Unguarded;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+#[Unguarded]
 class Language extends Model
 {
     use HasFactory;
@@ -16,6 +18,7 @@ class Language extends Model
      *
      * @var array<string, mixed>
      */
+    #[\Override]
     protected $attributes = [
         'rating' => 1,
         'speaking' => 'Beginner',
@@ -23,8 +26,6 @@ class Language extends Model
         'writing' => 'Beginner',
         'listening' => 'Beginner',
     ];
-
-    protected $guarded = [];
 
     /**
      * Get the attributes that should be cast.

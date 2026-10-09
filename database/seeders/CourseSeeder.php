@@ -4,8 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\Course;
 use App\Models\Program;
-use Carbon\Carbon;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Date;
 
 class CourseSeeder extends Seeder
 {
@@ -23,7 +23,7 @@ class CourseSeeder extends Seeder
                         'score' => 30,
                         'score_max' => 30,
                         'cum_laude' => false,
-                        'exam_date' => Carbon::createFromDate(2013, 2, 21),
+                        'exam_date' => Date::createFromDate(2013, 2, 21),
                         'description' => null,
                     ],
                     [
@@ -31,7 +31,7 @@ class CourseSeeder extends Seeder
                         'score' => 26,
                         'score_max' => 30,
                         'cum_laude' => false,
-                        'exam_date' => Carbon::createFromDate(2015, 7, 7),
+                        'exam_date' => Date::createFromDate(2015, 7, 7),
                         'description' => null,
                     ],
                     [
@@ -39,7 +39,7 @@ class CourseSeeder extends Seeder
                         'score' => 24,
                         'score_max' => 30,
                         'cum_laude' => false,
-                        'exam_date' => Carbon::createFromDate(2019, 7, 23),
+                        'exam_date' => Date::createFromDate(2019, 7, 23),
                         'description' => null,
                     ],
                     [
@@ -47,7 +47,7 @@ class CourseSeeder extends Seeder
                         'score' => 24,
                         'score_max' => 30,
                         'cum_laude' => false,
-                        'exam_date' => Carbon::createFromDate(2015, 2, 27),
+                        'exam_date' => Date::createFromDate(2015, 2, 27),
                         'description' => null,
                     ],
                     [
@@ -55,7 +55,7 @@ class CourseSeeder extends Seeder
                         'score' => 30,
                         'score_max' => 30,
                         'cum_laude' => true,
-                        'exam_date' => Carbon::createFromDate(2012, 8, 22),
+                        'exam_date' => Date::createFromDate(2012, 8, 22),
                         'description' => null,
                     ],
                     [
@@ -63,7 +63,7 @@ class CourseSeeder extends Seeder
                         'score' => 25,
                         'score_max' => 30,
                         'cum_laude' => false,
-                        'exam_date' => Carbon::createFromDate(2013, 6, 18),
+                        'exam_date' => Date::createFromDate(2013, 6, 18),
                         'description' => null,
                     ],
                     [
@@ -71,7 +71,7 @@ class CourseSeeder extends Seeder
                         'score' => 21,
                         'score_max' => 30,
                         'cum_laude' => false,
-                        'exam_date' => Carbon::createFromDate(2014, 6, 27),
+                        'exam_date' => Date::createFromDate(2014, 6, 27),
                         'description' => null,
                     ],
                     [
@@ -79,7 +79,7 @@ class CourseSeeder extends Seeder
                         'score' => 30,
                         'score_max' => 30,
                         'cum_laude' => true,
-                        'exam_date' => Carbon::createFromDate(2016, 9, 9),
+                        'exam_date' => Date::createFromDate(2016, 9, 9),
                         'description' => null,
                     ],
                     [
@@ -87,7 +87,7 @@ class CourseSeeder extends Seeder
                         'score' => 30,
                         'score_max' => 30,
                         'cum_laude' => false,
-                        'exam_date' => Carbon::createFromDate(2020, 7, 6),
+                        'exam_date' => Date::createFromDate(2020, 7, 6),
                         'description' => null,
                     ],
                     [
@@ -95,7 +95,7 @@ class CourseSeeder extends Seeder
                         'score' => 25,
                         'score_max' => 30,
                         'cum_laude' => false,
-                        'exam_date' => Carbon::createFromDate(2015, 1, 15),
+                        'exam_date' => Date::createFromDate(2015, 1, 15),
                         'description' => 'Development of a standalone app to manage and search social network profiles.',
                     ],
                     [
@@ -103,7 +103,7 @@ class CourseSeeder extends Seeder
                         'score' => 27,
                         'score_max' => 30,
                         'cum_laude' => false,
-                        'exam_date' => Carbon::createFromDate(2017, 6, 28),
+                        'exam_date' => Date::createFromDate(2017, 6, 28),
                         'description' => 'Development of neighbourhood patrol app with OpenStreetMaps geolocation.',
                     ],
                     [
@@ -111,7 +111,7 @@ class CourseSeeder extends Seeder
                         'score' => 28,
                         'score_max' => 30,
                         'cum_laude' => false,
-                        'exam_date' => Carbon::createFromDate(2015, 2, 23),
+                        'exam_date' => Date::createFromDate(2015, 2, 23),
                         'description' => null,
                     ],
                     [
@@ -119,7 +119,7 @@ class CourseSeeder extends Seeder
                         'score' => 18,
                         'score_max' => 30,
                         'cum_laude' => false,
-                        'exam_date' => Carbon::createFromDate(2016, 1, 19),
+                        'exam_date' => Date::createFromDate(2016, 1, 19),
                         'description' => null,
                     ],
                     [
@@ -127,7 +127,7 @@ class CourseSeeder extends Seeder
                         'score' => 30,
                         'score_max' => 30,
                         'cum_laude' => false,
-                        'exam_date' => Carbon::createFromDate(2017, 1, 25),
+                        'exam_date' => Date::createFromDate(2017, 1, 25),
                         'description' => null,
                     ],
                     [
@@ -135,7 +135,7 @@ class CourseSeeder extends Seeder
                         'score' => 28,
                         'score_max' => 30,
                         'cum_laude' => false,
-                        'exam_date' => Carbon::createFromDate(2015, 4, 30),
+                        'exam_date' => Date::createFromDate(2015, 4, 30),
                         'description' => null,
                     ],
                     [
@@ -143,7 +143,7 @@ class CourseSeeder extends Seeder
                         'score' => 30,
                         'score_max' => 30,
                         'cum_laude' => true,
-                        'exam_date' => Carbon::createFromDate(2016, 7, 18),
+                        'exam_date' => Date::createFromDate(2016, 7, 18),
                         'description' => null,
                     ],
                     [
@@ -151,7 +151,7 @@ class CourseSeeder extends Seeder
                         'score' => 30,
                         'score_max' => 30,
                         'cum_laude' => true,
-                        'exam_date' => Carbon::createFromDate(2020, 2, 14),
+                        'exam_date' => Date::createFromDate(2020, 2, 14),
                         'description' => null,
                     ],
                     [
@@ -159,7 +159,7 @@ class CourseSeeder extends Seeder
                         'score' => 30,
                         'score_max' => 30,
                         'cum_laude' => true,
-                        'exam_date' => Carbon::createFromDate(2020, 1, 7),
+                        'exam_date' => Date::createFromDate(2020, 1, 7),
                         'description' => null,
                     ],
                     [
@@ -167,7 +167,7 @@ class CourseSeeder extends Seeder
                         'score' => 30,
                         'score_max' => 30,
                         'cum_laude' => false,
-                        'exam_date' => Carbon::createFromDate(2020, 9, 9),
+                        'exam_date' => Date::createFromDate(2020, 9, 9),
                         'description' => null,
                     ],
                     [
@@ -175,7 +175,7 @@ class CourseSeeder extends Seeder
                         'score' => 26,
                         'score_max' => 30,
                         'cum_laude' => false,
-                        'exam_date' => Carbon::createFromDate(2016, 7, 27),
+                        'exam_date' => Date::createFromDate(2016, 7, 27),
                         'description' => null,
                     ],
                     [
@@ -183,7 +183,7 @@ class CourseSeeder extends Seeder
                         'score' => 26,
                         'score_max' => 30,
                         'cum_laude' => false,
-                        'exam_date' => Carbon::createFromDate(2017, 2, 14),
+                        'exam_date' => Date::createFromDate(2017, 2, 14),
                         'description' => null,
                     ],
                     [
@@ -191,7 +191,7 @@ class CourseSeeder extends Seeder
                         'score' => 24,
                         'score_max' => 30,
                         'cum_laude' => false,
-                        'exam_date' => Carbon::createFromDate(2018, 2, 8),
+                        'exam_date' => Date::createFromDate(2018, 2, 8),
                         'description' => null,
                     ],
                 ],

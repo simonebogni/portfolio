@@ -27,10 +27,13 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class CertificateResource extends Resource
 {
+    #[\Override]
     protected static ?string $model = Certificate::class;
 
+    #[\Override]
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    #[\Override]
     protected static string|\UnitEnum|null $navigationGroup = ResourceGroup::EDUCATION->value;
 
     public static function form(Schema $schema): Schema

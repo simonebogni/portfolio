@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\View\Components;
 
 use App\Models\Program as ProgramModel;
@@ -9,8 +11,6 @@ use Illuminate\View\Component;
 
 class Program extends Component
 {
-    public ProgramModel $program;
-
     public bool $repeatInstitute;
 
     public bool $showCourses;
@@ -18,9 +18,8 @@ class Program extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(ProgramModel $program, ?bool $repeatInstitute = false, ?bool $showCourses = false)
+    public function __construct(public ProgramModel $program, ?bool $repeatInstitute = false, ?bool $showCourses = false)
     {
-        $this->program = $program;
         $this->repeatInstitute = $repeatInstitute ?? false;
         $this->showCourses = $showCourses ?? false;
     }

@@ -8,3 +8,11 @@ jobs:
     name: "Pint and Larastan"
     uses: ./.github/workflows/pint_larastan.yml
     secrets: inherit
+  rector:
+    name: "Rector"
+    uses: ./.github/workflows/rector.yml
+    secrets: inherit
+  tests:
+    name: "Tests"
+    uses: ./.github/workflows/tests.yml
+    secrets: inherit

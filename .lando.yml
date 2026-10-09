@@ -1,7 +1,7 @@
 name: portfolio
 recipe: lamp
 config:
-  php: '8.4'
+  php: '8.5'
   via: apache
   webroot: ./public
   database: postgres
@@ -28,18 +28,21 @@ tooling:
       - npm
   test:
     service: appserver
+    description: Runs the Pest test suite in parallel
     cmd:
-      - ./vendor/bin/phpunit --testdox
+      - ./vendor/bin/pest --parallel
   test-coverage-html:
     service: appserver
+    description: Runs Pest in parallel and writes an HTML coverage report to storage/app/coverage
     cmd:
-      - XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-html=storage/app/coverage
+      - XDEBUG_MODE=coverage ./vendor/bin/pest --parallel --coverage-html=storage/app/coverage
   php:
     service: appserver
-  phpunit:
+  pest:
     service: appserver
+    description: Runs Pest with Xdebug coverage enabled (accepts any Pest option)
     cmd:
-      - XDEBUG_MODE=coverage ./vendor/bin/phpunit
+      - XDEBUG_MODE=coverage ./vendor/bin/pest
   pint:
     service: appserver
     cmd:
@@ -48,3 +51,8 @@ tooling:
     service: appserver
     cmd:
       - ./vendor/bin/phpstan analyze --memory-limit=2G
+  rector:
+    service: appserver
+    description: Applies Rector refactorings (use "lando rector --dry-run" to preview)
+    cmd:
+      - ./vendor/bin/rector process

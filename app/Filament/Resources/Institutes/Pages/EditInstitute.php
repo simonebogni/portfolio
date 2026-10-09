@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Resources\Institutes\Pages;
 
 use App\Filament\Resources\Institutes\InstituteResource;
@@ -11,6 +13,7 @@ use Filament\Resources\Pages\EditRecord;
 
 class EditInstitute extends EditRecord
 {
+    #[\Override]
     protected static string $resource = InstituteResource::class;
 
     protected function getHeaderActions(): array

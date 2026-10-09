@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\View\Components;
 
 use Closure;
@@ -9,21 +11,16 @@ use Illuminate\View\Component;
 class SkillCategory extends Component
 {
     /**
-     * The skill category to display
-     *
-     * @var \App\Models\SkillCategory
-     */
-    public $skillCategory;
-
-    /**
      * Create a new component instance.
      *
-     * @return void
+     * @param  \App\Models\SkillCategory  $skillCategory
      */
-    public function __construct($skillCategory)
-    {
-        $this->skillCategory = $skillCategory;
-    }
+    public function __construct(
+        /**
+         * The skill category to display
+         */
+        public $skillCategory
+    ) {}
 
     /**
      * Get the view / contents that represent the component.

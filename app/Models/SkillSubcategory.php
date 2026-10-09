@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Attributes\Unguarded;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+#[Unguarded]
 class SkillSubcategory extends Model
 {
     use HasFactory;
@@ -27,10 +29,10 @@ class SkillSubcategory extends Model
         ];
     }
 
-    protected $guarded = [];
-
     /**
      * Get the category of this subcatory
+     *
+     * @return BelongsTo<SkillCategory, $this>
      */
     public function category(): BelongsTo
     {
@@ -39,6 +41,8 @@ class SkillSubcategory extends Model
 
     /**
      * Get the skills of this subcategory
+     *
+     * @return HasMany<Skill, $this>
      */
     public function skills(): HasMany
     {

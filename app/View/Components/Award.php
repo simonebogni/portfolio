@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\View\Components;
 
 use Closure;
@@ -8,17 +10,10 @@ use Illuminate\View\Component;
 
 class Award extends Component
 {
-    public $award;
-
     /**
      * Create a new component instance.
-     *
-     * @return void
      */
-    public function __construct($award)
-    {
-        $this->award = $award;
-    }
+    public function __construct(public $award) {}
 
     /**
      * Get the view / contents that represent the component.

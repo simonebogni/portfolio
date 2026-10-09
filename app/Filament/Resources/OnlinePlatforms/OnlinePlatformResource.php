@@ -25,10 +25,13 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class OnlinePlatformResource extends Resource
 {
+    #[\Override]
     protected static ?string $model = OnlinePlatform::class;
 
+    #[\Override]
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-globe-alt';
 
+    #[\Override]
     protected static string|\UnitEnum|null $navigationGroup = ResourceGroup::EDUCATION->value;
 
     public static function form(Schema $schema): Schema

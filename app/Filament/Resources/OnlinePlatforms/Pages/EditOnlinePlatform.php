@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Resources\OnlinePlatforms\Pages;
 
 use App\Filament\Resources\OnlinePlatforms\OnlinePlatformResource;
@@ -11,6 +13,7 @@ use Filament\Resources\Pages\EditRecord;
 
 class EditOnlinePlatform extends EditRecord
 {
+    #[\Override]
     protected static string $resource = OnlinePlatformResource::class;
 
     protected function getHeaderActions(): array

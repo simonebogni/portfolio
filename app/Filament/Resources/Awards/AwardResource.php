@@ -27,12 +27,16 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class AwardResource extends Resource
 {
+    #[\Override]
     protected static ?string $model = Award::class;
 
+    #[\Override]
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-trophy';
 
+    #[\Override]
     protected static string|\UnitEnum|null $navigationGroup = ResourceGroup::PERSONAL->value;
 
+    #[\Override]
     protected static ?string $recordTitleAttribute = 'title';
 
     public static function form(Schema $schema): Schema

@@ -25,10 +25,13 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class SkillCategoryResource extends Resource
 {
+    #[\Override]
     protected static ?string $model = SkillCategory::class;
 
+    #[\Override]
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-clipboard-document-check';
 
+    #[\Override]
     protected static string|\UnitEnum|null $navigationGroup = ResourceGroup::SKILLS->value;
 
     public static function form(Schema $schema): Schema

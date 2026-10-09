@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Resources\Awards\Pages;
 
 use App\Filament\Resources\Awards\AwardResource;
@@ -11,6 +13,7 @@ use Filament\Resources\Pages\EditRecord;
 
 class EditAward extends EditRecord
 {
+    #[\Override]
     protected static string $resource = AwardResource::class;
 
     protected function getHeaderActions(): array

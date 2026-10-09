@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\View\Components;
 
 use Closure;
@@ -8,17 +10,10 @@ use Illuminate\View\Component;
 
 class Certificate extends Component
 {
-    public $certificate;
-
     /**
      * Create a new component instance.
-     *
-     * @return void
      */
-    public function __construct($certificate)
-    {
-        $this->certificate = $certificate;
-    }
+    public function __construct(public $certificate) {}
 
     /**
      * Get the view / contents that represent the component.

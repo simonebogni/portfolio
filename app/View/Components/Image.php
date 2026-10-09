@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\View\Components;
 
 use Closure;
@@ -8,20 +10,10 @@ use Illuminate\View\Component;
 
 class Image extends Component
 {
-    public $image;
-
-    public $classes;
-
     /**
      * Create a new component instance.
-     *
-     * @return void
      */
-    public function __construct($image, $classes)
-    {
-        $this->image = $image;
-        $this->classes = $classes;
-    }
+    public function __construct(public $image, public $classes) {}
 
     /**
      * Get the view / contents that represent the component.

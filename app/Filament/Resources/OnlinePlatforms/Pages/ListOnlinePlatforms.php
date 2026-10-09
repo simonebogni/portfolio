@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Resources\OnlinePlatforms\Pages;
 
 use App\Filament\Resources\OnlinePlatforms\OnlinePlatformResource;
@@ -8,6 +10,7 @@ use Filament\Resources\Pages\ListRecords;
 
 class ListOnlinePlatforms extends ListRecords
 {
+    #[\Override]
     protected static string $resource = OnlinePlatformResource::class;
 
     protected function getHeaderActions(): array

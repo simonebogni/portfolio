@@ -25,10 +25,13 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class PortfolioCategoryResource extends Resource
 {
+    #[\Override]
     protected static ?string $model = PortfolioCategory::class;
 
+    #[\Override]
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-rectangle-group';
 
+    #[\Override]
     protected static string|\UnitEnum|null $navigationGroup = ResourceGroup::PORTFOLIO->value;
 
     public static function form(Schema $schema): Schema

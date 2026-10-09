@@ -29,10 +29,13 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class CourseResource extends Resource
 {
+    #[\Override]
     protected static ?string $model = Course::class;
 
+    #[\Override]
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-book-open';
 
+    #[\Override]
     protected static string|\UnitEnum|null $navigationGroup = ResourceGroup::EDUCATION->value;
 
     public static function form(Schema $schema): Schema

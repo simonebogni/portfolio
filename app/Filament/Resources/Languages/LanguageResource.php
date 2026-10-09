@@ -25,10 +25,13 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class LanguageResource extends Resource
 {
+    #[\Override]
     protected static ?string $model = Language::class;
 
+    #[\Override]
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-language';
 
+    #[\Override]
     protected static string|\UnitEnum|null $navigationGroup = ResourceGroup::SKILLS->value;
 
     public static function form(Schema $schema): Schema

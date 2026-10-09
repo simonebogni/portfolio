@@ -1,17 +1,19 @@
 <?php
 
+declare(strict_types=1);
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOnlinePlatformsTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
      */
     public function up(): void
     {
-        Schema::create('online_platforms', function (Blueprint $table) {
+        Schema::create('online_platforms', function (Blueprint $table): void {
             $table->id();
             $table->string('name');
             $table->string('website');
@@ -27,4 +29,4 @@ class CreateOnlinePlatformsTable extends Migration
     {
         Schema::dropIfExists('online_platforms');
     }
-}
+};
