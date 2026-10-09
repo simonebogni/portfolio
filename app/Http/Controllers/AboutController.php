@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Award;
+use App\Models\Certificate;
 use App\Models\Language;
+use App\Models\PortfolioItem;
 use App\Models\Skill;
 use App\Models\SkillCategory;
 use App\Models\SkillSubcategory;
@@ -35,6 +38,12 @@ class AboutController extends Controller
                     ]),
                 ]),
             ]),
+            // Counts shown as highlights on the home page.
+            'stats' => [
+                'projects' => PortfolioItem::query()->count(),
+                'certificates' => Certificate::query()->count(),
+                'awards' => Award::query()->count(),
+            ],
         ]);
     }
 }
