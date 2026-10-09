@@ -4,11 +4,15 @@ The public site (About, Experience, Portfolio, Soft skills, Hobbies) is a Vue 3 
 [Inertia](https://inertiajs.com) with server-side rendering. The Filament admin panel and the auth pages are
 unchanged and keep using Blade.
 
+The visual design (Terrain) — tokens, fonts, components and accessibility notes — is documented in
+[design-system.md](design-system.md).
+
 ## How a page is rendered
 
 1. A controller in `app/Http/Controllers` loads the models and returns `Inertia::render('<Page>', $props)`.
    Props are plain arrays with camelCase keys: the Vue code never sees Eloquent models.
-2. `HandleInertiaRequests` adds the shared props: `profile` (from `config/profile.php`).
+2. `HandleInertiaRequests` adds the shared props: `profile` (from `config/profile.php`). The About page also
+   receives `highlights` (counts of portfolio items, certificates and awards).
 3. `resources/views/app.blade.php` is the only Blade view for the public site. It sets the meta tags, applies
    the saved theme before the first paint, and outputs `@inertiaHead` / `@inertia`.
 4. With SSR on, Laravel posts the page to the Node SSR server (`bootstrap/ssr/ssr.js`), which returns the
@@ -26,13 +30,13 @@ unchanged and keep using Blade.
 | `resources/js/components/` | Reusable design-system components. |
 | `resources/js/composables/` | `useTheme` (light/dark), `useNavigation` (menu state, current page). |
 | `resources/js/lib/format.js` | Date and string helpers. |
-| `resources/css/app.css` | Design tokens and global styles. |
-| `config/profile.php` | Name, roles, location, links and current role, overridable with `PROFILE_*` env variables. |
+| `resources/css/app.css` | Entry stylesheet: imports the fonts, `tokens.css`, `base.css`, `components.css`, `layout.css` and `pages.css`. |
+| `config/profile.php` | Name, roles, location, hero headline and bio, links and current role, overridable with `PROFILE_*` env variables. |
 
 ## Design tokens
 
-All colours, fonts, spacing, radii and shadows are CSS custom properties defined in `:root` in
-`resources/css/app.css`. Components use the tokens, never raw values, so a theme or a redesign only changes the
+All colours, fonts, spacing, radii and shadows are CSS custom properties defined in
+`resources/css/tokens.css` (see [design-system.md](design-system.md)). Components use the tokens, never raw values, so a theme or a redesign only changes the
 token values.
 
 - **Light and dark:** dark values are set under `[data-theme="dark"]`, and under

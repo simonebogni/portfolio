@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Award;
+use App\Models\Certificate;
 use App\Models\Language;
+use App\Models\PortfolioItem;
 use App\Models\Skill;
 use App\Models\SkillCategory;
 use App\Models\SkillSubcategory;
@@ -14,6 +17,12 @@ class AboutController extends Controller
     public function index(): Response
     {
         return Inertia::render('About', [
+            // Counts shown in the highlights strip of the home page.
+            'highlights' => [
+                'projects' => PortfolioItem::query()->count(),
+                'certificates' => Certificate::query()->count(),
+                'awards' => Award::query()->count(),
+            ],
             'languages' => LanguageController::getLanguages()->map(fn (Language $language): array => [
                 'id' => $language->id,
                 'name' => $language->name,
