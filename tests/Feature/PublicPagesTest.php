@@ -21,6 +21,32 @@ test('public pages render their Inertia page with the shared profile', function 
     'hobbies' => ['/hobbies', 'Hobbies'],
 ]);
 
+test('the shared profile exposes the leadership copy used by the design', function (): void {
+    config()->set('profile.current_role.team_size', 12);
+
+    $this->get('/')->assertInertia(fn (Assert $page): Assert => $page
+        ->where('profile.current_role.team_size', 12)
+        ->has('profile.current_role.title')
+        ->has('profile.current_role.summary')
+        ->has('profile.current_role.highlights')
+        ->has('profile.current_role.scope')
+        ->has('profile.copy.headline')
+        ->has('profile.copy.intro')
+        ->has('profile.copy.contact_headline')
+        ->has('profile.leadership_roles', 3)
+        ->has('profile.principles', 4)
+        ->has('profile.testimonials')
+        ->has('profile.featured_engagement.title')
+        ->has('profile.soft_skill_groups')
+        ->has('profile.soft_skill_quote'));
+});
+
+test('team size in the copy comes from a template, never a hard-coded number', function (): void {
+    expect(config('profile.copy.intro'))->toContain('{team_size}')
+        ->and(config('profile.current_role.summary'))->toContain('{team_size}')
+        ->and(config('profile.leadership_roles.1.text'))->toContain('{team_size}');
+});
+
 test('the about page lists languages with their rounded rating', function (): void {
     Language::create(['name' => 'English', 'rating' => 4.7, 'speaking' => 'Fluent', 'certificate_level' => 'FCE B2']);
 

@@ -24,15 +24,20 @@ unchanged and keep using Blade.
 | `resources/js/layouts/` | Site layout: skip link, header and navigation, theme switch, footer. |
 | `resources/js/pages/` | One component per Inertia page. Each must have a single root element. |
 | `resources/js/components/` | Reusable design-system components. |
-| `resources/js/composables/` | `useTheme` (light/dark), `useNavigation` (menu state, current page). |
+| `resources/js/composables/` | `useTheme` (light/dark), `useNavigation` (menu state, current page), `useProfile` (shared profile and copy templates). |
 | `resources/js/lib/format.js` | Date and string helpers. |
-| `resources/css/app.css` | Design tokens and global styles. |
-| `config/profile.php` | Name, roles, location, links and current role, overridable with `PROFILE_*` env variables. |
+| `resources/js/lib/copy.js` | Helpers for the editable copy: `{team_size}` templates, `*emphasis*`, `[PLACEHOLDER]` detection. |
+| `resources/css/tokens.css` | Design tokens (primitive and semantic, light and dark). |
+| `resources/css/app.css` | Imports fonts, tokens, base, layout, component and page styles. |
+| `config/profile.php` | Name, roles, location, links, current role (with team size) and the page copy that has no database source, overridable with `PROFILE_*` env variables. |
 
 ## Design tokens
 
+The current design, its tokens, components and placeholders are documented in
+[design-system.md](design-system.md).
+
 All colours, fonts, spacing, radii and shadows are CSS custom properties defined in `:root` in
-`resources/css/app.css`. Components use the tokens, never raw values, so a theme or a redesign only changes the
+`resources/css/tokens.css`. Components use the tokens, never raw values, so a theme or a redesign only changes the
 token values.
 
 - **Light and dark:** dark values are set under `[data-theme="dark"]`, and under

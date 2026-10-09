@@ -1,0 +1,225 @@
+/* PortraitFigure, TestimonialCard, RecognitionCard, FeaturedEngagement, HobbyCard. */
+
+/* ---------- PortraitFigure ---------- */
+
+.portrait {
+    position: relative;
+    margin: 0;
+}
+
+.portrait__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+}
+
+.portrait__caption {
+    position: absolute;
+    left: -40px;
+    bottom: var(--space-8);
+    max-width: 240px;
+    padding: var(--space-4-5) var(--space-5-5);
+    border: var(--border-width) solid var(--color-line);
+    border-radius: var(--radius-sm);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-raised);
+    line-height: 1.4;
+}
+
+.portrait__figure {
+    display: block;
+    margin-bottom: var(--space-1);
+    color: var(--color-accent);
+    font-family: var(--font-display);
+    font-size: 2.125rem;
+    font-weight: var(--weight-medium);
+    line-height: 1;
+}
+
+.portrait__caption span {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-caption);
+}
+
+@media (max-width: 860px) {
+    .portrait__caption {
+        left: var(--space-3);
+        bottom: var(--space-3);
+    }
+}
+
+/* ---------- TestimonialCard ---------- */
+
+.testimonial {
+    height: 100%;
+    margin: 0;
+    padding: var(--space-panel);
+    border: var(--border-width) solid var(--color-line);
+    border-radius: var(--radius-sm);
+    background: var(--color-surface);
+}
+
+.testimonial__quote {
+    margin: 0 0 var(--space-6);
+    font-family: var(--font-display);
+    font-size: var(--font-size-title);
+    font-style: italic;
+    line-height: 1.35;
+}
+
+.testimonial__author {
+    font-size: var(--font-size-caption);
+    font-weight: var(--weight-bold);
+}
+
+.testimonial__author span {
+    display: block;
+    color: var(--color-text-muted);
+    font-weight: var(--weight-medium);
+}
+
+.testimonial--placeholder {
+    border: var(--border-width) dashed var(--color-text-muted);
+}
+
+.testimonial--placeholder .testimonial__quote {
+    color: var(--color-text-muted);
+}
+
+/* ---------- RecognitionCard ---------- */
+
+.recognition-card__figure {
+    margin: 0;
+    color: var(--color-accent);
+    font-family: var(--font-display);
+    font-size: var(--font-size-numeral-lg);
+    line-height: 1;
+}
+
+.recognition-card__title {
+    margin: var(--space-2-5) 0 var(--space-2);
+    font-size: var(--font-size-title);
+    font-weight: var(--weight-medium);
+    line-height: 1.2;
+}
+
+.recognition-card__title:first-child {
+    margin-top: 0;
+}
+
+.recognition-card__text {
+    margin: 0;
+    color: var(--color-text-muted);
+}
+
+.recognition-card__subtitle {
+    margin: var(--space-6) 0 var(--space-2);
+    color: var(--color-text-muted);
+    font-family: var(--font-body);
+    font-size: var(--font-size-label);
+    font-weight: var(--weight-bold);
+    letter-spacing: var(--tracking-label);
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.recognition-card .plain-list li {
+    padding: var(--space-2) 0;
+    border-top: var(--border-width) solid var(--color-line);
+    font-size: var(--font-size-body-sm);
+    line-height: 1.45;
+}
+
+/* ---------- FeaturedEngagement ---------- */
+
+.featured {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: var(--space-18);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    background: var(--color-deep-bg);
+    color: var(--color-deep-text);
+}
+
+.featured__main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    padding: var(--space-panel);
+}
+
+.featured__main .eyebrow {
+    margin: 0;
+}
+
+.featured__title {
+    margin: 0;
+    font-size: var(--font-size-heading-xl);
+    line-height: 1.05;
+    letter-spacing: var(--tracking-heading);
+}
+
+.featured__summary {
+    margin: 0;
+    color: var(--color-deep-muted);
+}
+
+.featured__action {
+    align-self: flex-start;
+    margin-top: auto;
+}
+
+.featured__facts {
+    padding: var(--space-panel);
+    border-left: var(--border-width) solid var(--color-deep-muted);
+}
+
+@media (max-width: 860px) {
+    .featured {
+        grid-template-columns: 1fr;
+        margin-bottom: var(--space-12);
+    }
+
+    .featured__facts {
+        border-left: 0;
+        border-top: var(--border-width) solid var(--color-deep-muted);
+    }
+}
+
+/* ---------- HobbyCard ---------- */
+
+.hobby-card__figure {
+    margin: 0;
+}
+
+.hobby-card__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+}
+
+.hobby-card--featured .hobby-card__image {
+    aspect-ratio: 4 / 5;
+}
+
+.hobby-card__title {
+    margin: var(--space-4-5) 0 var(--space-2);
+    font-size: var(--font-size-heading-sm);
+    letter-spacing: var(--tracking-heading);
+}
+
+.hobby-card__text {
+    margin: 0;
+    color: var(--color-text-muted);
+}
+
+@media (max-width: 700px) {
+    .hobby-card--featured .hobby-card__image {
+        aspect-ratio: 4 / 3;
+    }
+}

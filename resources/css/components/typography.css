@@ -1,0 +1,160 @@
+/* Eyebrow, PageHeader, SectionHeading, pull quote, rich text. */
+
+.eyebrow {
+    margin: 0 0 var(--space-6);
+    font-family: var(--font-body);
+    font-size: var(--font-size-label);
+    font-weight: var(--weight-bold);
+    letter-spacing: var(--tracking-label);
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.eyebrow--accent {
+    color: var(--color-accent);
+}
+
+.eyebrow--muted {
+    color: var(--color-text-muted);
+}
+
+.eyebrow--deep {
+    color: var(--color-deep-muted);
+}
+
+/* ---------- PageHeader ---------- */
+
+.page-header {
+    max-width: 56rem;
+    padding: var(--space-page-top) 0 var(--space-16);
+}
+
+.page-header__title {
+    margin: 0;
+    font-size: var(--font-size-display-lg);
+    line-height: var(--line-height-tight);
+    letter-spacing: var(--tracking-display);
+}
+
+.page-header__lede {
+    margin: var(--space-6) 0 0;
+    color: var(--color-text-muted);
+    font-size: var(--font-size-lede);
+}
+
+.page-header--split {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: var(--space-14);
+    align-items: end;
+    max-width: none;
+    padding-bottom: var(--space-14);
+}
+
+.page-header--split .page-header__lede {
+    margin: 0;
+}
+
+@media (max-width: 860px) {
+    .page-header--split {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+        padding-bottom: var(--space-8);
+    }
+}
+
+/* ---------- SectionHeading ---------- */
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--space-6);
+    margin: 0 0 var(--space-10);
+    padding-top: var(--space-5);
+    border-top: var(--border-width) solid var(--color-line-strong);
+}
+
+.section-heading__title {
+    max-width: 45rem;
+    margin: 0;
+    font-size: var(--font-size-heading-xl);
+    line-height: 1.08;
+    letter-spacing: var(--tracking-heading);
+}
+
+.section-heading--md {
+    margin-bottom: var(--space-2);
+}
+
+.section-heading--md .section-heading__title {
+    font-size: var(--font-size-heading-lg);
+}
+
+.section-heading__kicker {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: var(--font-size-label);
+    font-weight: var(--weight-bold);
+    letter-spacing: var(--tracking-label);
+    line-height: 1.4;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+    .section-heading {
+        flex-direction: column;
+        gap: var(--space-3);
+        margin-bottom: var(--space-8);
+    }
+}
+
+/* ---------- Pull quote ---------- */
+
+.pull-quote {
+    margin: var(--space-8) 0 0;
+    padding-left: var(--space-7);
+    border-left: var(--border-width-accent) solid var(--color-accent);
+}
+
+.pull-quote p {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-family: var(--font-display);
+    font-size: var(--font-size-heading-sm);
+    font-style: italic;
+    line-height: var(--line-height-snug);
+}
+
+@media (max-width: 700px) {
+    .pull-quote {
+        padding-left: var(--space-4);
+    }
+
+    .pull-quote p {
+        font-size: var(--font-size-title-sm);
+    }
+}
+
+/* ---------- Rich text written in the admin panel ---------- */
+
+.rich-text > :first-child {
+    margin-top: 0;
+}
+
+.rich-text p,
+.rich-text ul,
+.rich-text ol {
+    margin: 0 0 var(--space-3);
+}
+
+.rich-text ul,
+.rich-text ol {
+    padding-left: var(--space-6);
+    list-style-position: outside !important; /* overrides inline styles from the stored HTML */
+}
+
+.rich-text li + li {
+    margin-top: var(--space-1);
+}

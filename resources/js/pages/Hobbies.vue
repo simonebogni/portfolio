@@ -1,5 +1,7 @@
 <script setup>
 import { Head } from '@inertiajs/vue3';
+import HobbyCard from '../components/HobbyCard.vue';
+import PageHeader from '../components/PageHeader.vue';
 
 defineProps({
     hobbies: { type: Array, required: true },
@@ -7,15 +9,11 @@ defineProps({
 </script>
 
 <template>
-    <div class="page">
+    <div class="page page-hobbies wrap">
         <Head title="Hobbies" />
-        <h1>Hobbies</h1>
-        <ul>
-            <li v-for="hobby in hobbies" :key="hobby.id">
-                <img v-if="hobby.coverImgUrl" :src="hobby.coverImgUrl" alt="" width="320" height="200" loading="lazy">
-                <h2>{{ hobby.title }}</h2>
-                <p>{{ hobby.description }}</p>
-            </li>
+        <PageHeader eyebrow="Hobbies" title="Away from the desk." lede="What I do when the laptop is closed." />
+        <ul class="hobby-grid">
+            <HobbyCard v-for="(hobby, index) in hobbies" :key="hobby.id" :hobby="hobby" :featured="index === 0" />
         </ul>
     </div>
 </template>
