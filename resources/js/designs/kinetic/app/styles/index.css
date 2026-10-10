@@ -1,2 +1,34 @@
-/* Entry stylesheet of the "kinetic" design, loaded by resources/views/app.blade.php. */
-@import '../../../../../css/designs/kinetic/app.css';
+/*
+ * E · Kinetic — entry stylesheet, loaded by resources/views/app.blade.php.
+ * Order: fonts, tokens, base elements, app layout, then the slice stylesheets in cascade order
+ * (header and footer, shared UI, entities and features, pages). See docs/designs/kinetic.md.
+ */
+
+/* Self-hosted variable fonts (one file per script subset, all weights in it). Normal style only. */
+@import '@fontsource-variable/unbounded/wght.css';
+@import '@fontsource-variable/public-sans/wght.css';
+
+@import './tokens.css';
+@import './base.css';
+@import './layout.css';
+
+@import '../../widgets/site-header/ui/site-header.css';
+@import '../../widgets/site-footer/ui/site-footer.css';
+
+@import '../../shared/ui/button.css';
+@import '../../shared/ui/tag-list.css';
+@import '../../shared/ui/headings.css';
+@import '../../shared/ui/rating.css';
+@import '../../shared/ui/ticker.css';
+@import '../../shared/ui/stats.css';
+@import '../../entities/work/ui/timeline-entry.css';
+@import '../../features/portfolio-filter/ui/filter-group.css';
+@import '../../entities/project/ui/project-feature.css';
+@import '../../entities/project/ui/project-row.css';
+
+@import '../../pages/about/ui/about.css';
+@import '../../entities/language/ui/language-list.css';
+@import '../../pages/experience/ui/experience.css';
+@import '../../pages/soft-skills/ui/soft-skills.css';
+@import '../../pages/hobbies/ui/hobbies.css';
+@import '../../widgets/project-showcase/ui/project-showcase.css';

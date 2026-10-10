@@ -1,0 +1,62 @@
+/*
+ * Soft skills page.
+ * Semantic tokens only.
+ */
+
+/* ---------- Soft skills ---------- */
+.numbered-rows__item {
+    display: grid;
+    grid-template-columns: 7.5rem minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--space-8);
+    align-items: baseline;
+    padding: var(--space-7) 0;
+    border-bottom: var(--border-thin) solid var(--color-hairline);
+}
+
+.numbered-rows__item--accent {
+    margin-inline: calc(-1 * var(--space-gutter));
+    padding-inline: var(--space-gutter);
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+    border-bottom: var(--border-strong) solid var(--color-line);
+}
+
+.numbered-rows__index {
+    color: var(--color-accent-text);
+    font-size: var(--text-display-index);
+    line-height: var(--leading-ui);
+}
+
+.numbered-rows__title {
+    font-size: var(--text-display-m);
+    font-weight: var(--weight-extrabold);
+    line-height: 1.05;
+    letter-spacing: var(--tracking-heading);
+}
+
+.numbered-rows__text {
+    margin: 0;
+    color: var(--color-text-muted);
+}
+
+.numbered-rows__item--accent .numbered-rows__index,
+.numbered-rows__item--accent .numbered-rows__text {
+    color: var(--color-on-accent);
+}
+
+@media (max-width: 45rem) {
+    .numbered-rows__item {
+        grid-template-columns: 2.75rem minmax(0, 1fr);
+        gap: var(--space-2) var(--space-3);
+        padding: var(--space-5) 0;
+    }
+
+    .numbered-rows__item--accent {
+        padding-inline: var(--space-gutter);
+    }
+
+    .numbered-rows__text {
+        grid-column: 2 / 3;
+        font-size: var(--text-body-s);
+    }
+}

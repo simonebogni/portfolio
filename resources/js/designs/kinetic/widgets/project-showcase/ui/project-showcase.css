@@ -1,0 +1,10 @@
+/*
+ * ProjectShowcase: the empty state.
+ * Semantic tokens only.
+ */
+
+/* ---------- Empty state ---------- */
+.empty-state {
+    margin-top: var(--space-9);
+    color: var(--color-text-muted);
+}

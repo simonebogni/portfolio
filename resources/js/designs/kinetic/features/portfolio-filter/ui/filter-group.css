@@ -1,0 +1,73 @@
+/*
+ * FilterGroup.
+ * Semantic tokens only.
+ */
+
+/* ---------- FilterGroup ---------- */
+.filter-group {
+    margin-top: var(--space-2);
+}
+
+.filter-group__list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: var(--border-strong) 0 0 var(--border-strong);
+}
+
+.filter-group__list li {
+    display: flex;
+    margin: calc(-1 * var(--border-strong)) 0 0 calc(-1 * var(--border-strong));
+}
+
+.filter-group__button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    min-height: 3.25rem;
+    padding: 0 var(--space-5);
+    background: var(--color-bg);
+    color: var(--color-text);
+    border: var(--border-strong) solid var(--color-line);
+    font-size: var(--text-label);
+    font-weight: var(--weight-extrabold);
+    letter-spacing: var(--tracking-label);
+    line-height: 1.2;
+    text-align: left;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color var(--duration-fast) var(--ease-out);
+}
+
+.filter-group__button:hover {
+    background: var(--color-surface);
+}
+
+.filter-group__button[aria-pressed='true'] {
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+}
+
+/* A filled square marks the selected filter, in addition to the colour. */
+.filter-group__button::before {
+    content: '';
+    width: 0.625rem;
+    height: 0.625rem;
+    flex-shrink: 0;
+    border: var(--border-strong) solid currentColor;
+}
+
+.filter-group__button[aria-pressed='true']::before {
+    background: currentColor;
+}
+
+.filter-group__button:focus-visible {
+    position: relative;
+    z-index: 1;
+}
+
+.filter-group__status {
+    margin: var(--space-4) 0 0;
+    color: var(--color-text-muted);
+    font-size: var(--text-small);
+    font-weight: var(--weight-semibold);
+}
