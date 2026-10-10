@@ -1,0 +1,17 @@
+/* Case studies: the "More projects" section. */
+
+.more {
+    margin-top: var(--space-18);
+}
+
+.more__title {
+    margin: 0 0 var(--space-5);
+    font-size: var(--text-h3-lg);
+    letter-spacing: var(--tracking-snug);
+}
+
+@media (max-width: 43.75em) {
+    .more {
+        margin-top: var(--space-12);
+    }
+}

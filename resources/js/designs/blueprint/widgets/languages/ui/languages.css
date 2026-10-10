@@ -1,0 +1,26 @@
+/* Languages */
+
+.languages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.languages__item {
+    padding: var(--space-3-5) var(--space-5);
+    border: var(--border-thin) solid var(--color-line);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+}
+
+.languages__item b {
+    margin-right: var(--space-2);
+}
+
+.languages__item span {
+    color: var(--color-text-muted);
+    font-size: var(--text-md);
+}

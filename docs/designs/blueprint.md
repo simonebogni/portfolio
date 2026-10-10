@@ -13,21 +13,72 @@ element. The mood is calm, precise and confident, with no decoration that does n
 The team size shown everywhere (diagram, stats, role scope, copy) comes from `profile.current_role.team_size`
 (`PROFILE_TEAM_SIZE`, default 15). Config copy can include `:team_size`, which the front end replaces.
 
+## Structure
+
+The design is its own Feature-Sliced Design tree in `resources/js/designs/blueprint/` (see `docs/frontend.md`). Each
+layer imports only from the layers below it and from `resources/js/core` (helpers, entity types, the profile, theme,
+site menu and portfolio filter models), and other slices only through their `index.ts`.
+
+```
+resources/js/designs/blueprint/
+  app/
+    index.ts                   exports the site Layout
+    layout/SiteLayout.vue      skip link, header, <main>, footer
+    styles/                    index.css (entry: fonts, then every stylesheet in cascade order), tokens.css, base.css, layout.css
+  pages/
+    about/                     About.vue; model: page props (with `highlights`), stats strip
+    experience/                Experience.vue; model: page props, page tag
+    portfolio/                 Portfolio.vue; portfolio.css (empty state)
+    soft-skills/               SoftSkills.vue
+    hobbies/                   Hobbies.vue
+  widgets/
+    site-header/               brand, primary nav, mobile menu, theme toggle
+    site-footer/               contact band, copyright, links elsewhere
+    hero/                      home hero and the "How I work" CollaborationMap
+    strengths/                 "What I bring" cards
+    toolbox/                   skill categories grid
+    languages/                 spoken languages
+    current-role/              current role and its scope sheet
+    company-timeline/          one earlier employer and its roles
+    foundations/               education, awards and certificates
+    case-studies/              case cards and the "More projects" list
+    working-model/             "From idea to release" steps
+    soft-skill-groups/         grouped soft skills
+  features/
+    theme-toggle/              ThemeToggle on core useTheme
+    portfolio-filter/          useCaseStudyFilter (core usePortfolioFilter + "Leadership"), PortfolioFilter, FilterStatus
+  entities/
+    profile/                   BlueprintProfile type, worded contact link, useBlueprintProfile, featured case study (card)
+    project/                   ProjectCard, ProjectLink and their helpers
+    work/                      PositionEntry (one timeline role)
+    skill/                     SkillCategoryItem, skillLine
+    language/                  LanguageItem, languageLevel
+    soft-skill/                SoftSkillGroupCard, groupSoftSkills
+    hobby/                     HobbyCard
+  shared/
+    ui/                        the components below (no business knowledge) and their stylesheets in ui/styles/
+```
+
 ## Files
 
 | Path | Holds |
 | --- | --- |
-| `resources/css/designs/blueprint/tokens.css` | Primitive and semantic tokens, light and dark. |
-| `resources/css/designs/blueprint/base.css` | Element defaults, focus ring, `.container`, `.visually-hidden`, `.skip-link`, `.is-placeholder`, `.blueprint-grid`, reduced motion. |
-| `resources/css/designs/blueprint/layout.css` | Header, navigation, mobile menu, footer. |
-| `resources/css/designs/blueprint/components.css` | Styles for the components below. |
-| `resources/css/designs/blueprint/pages.css` | Page-specific compositions (hero, toolbox grid, current role, working model, hobby cards). |
-| `resources/js/designs/blueprint/components/` | Vue components. |
-| `resources/js/designs/blueprint/lib/profile.js` | `fillProfile`, `isPlaceholder`, `initials`, `isExternal`, `contactLink`, `emphasisSegments`. |
-| `resources/js/designs/blueprint/composables/useProfile.js` | The shared `profile` prop, `teamSize`, `contact` link and `fill()`. |
+| `app/styles/index.css` | Entry stylesheet (loaded by `resources/views/app.blade.php`): fonts, tokens, base, then the slice stylesheets in the original cascade order. |
+| `app/styles/tokens.css` | Primitive and semantic tokens, light and dark. |
+| `app/styles/base.css` | Element defaults, focus ring, `.container`, `.visually-hidden`, `.skip-link`, `.is-placeholder`, `.blueprint-grid`, reduced motion. |
+| `app/styles/layout.css` | The site frame (`.site`). |
+| `widgets/site-header/ui/site-header.css`, `widgets/site-footer/ui/site-footer.css` | Header, navigation, mobile menu; footer. |
+| `shared/ui/styles/*.css` | One file per shared component family (icon, buttons, labels, page header, section heading, cards, stats, spec, filter, case card). |
+| `entities/*/ui/*.css`, `widgets/*/ui/*.css`, `pages/portfolio/ui/portfolio.css` | Styles of that slice (timeline, project links, hero and diagram, toolbox, languages, current role, more projects, working model, soft skill groups, hobby cards). Each keeps its responsive rules at its end. |
+| `entities/profile/model/types.ts` | `BlueprintProfile`: core's `Profile` plus the copy from `config/designs.php`. |
+| `entities/profile/model/contact.ts` | The contact link's wording on top of core's `contactLink()`: "Let's talk", "Let's talk on LinkedIn", "See my GitHub" (and the short labels). |
 
-All styles are global CSS imported by `app.css` (no scoped component styles), so the SSR-rendered HTML is fully
-styled before the page's JavaScript chunk loads. Components only use semantic tokens.
+Paths are relative to `resources/js/designs/blueprint/`. Shared helpers (`fillProfileCopy`, `isPlaceholder`,
+`initials`, `isExternal`, `emphasisSegments`, dates, `slugify`, `pad2`) and models (`useProfile`, `useTheme`,
+`useSiteMenu`, `usePortfolioFilter`) come from `resources/js/core`.
+
+All styles are global CSS imported by `app/styles/index.css` (no scoped component styles), so the SSR-rendered HTML
+is fully styled before the page's JavaScript chunk loads. Components only use semantic tokens.
 
 ## Tokens
 
@@ -76,7 +127,7 @@ Contrast (WCAG 2.2, computed):
 
 Fonts: **Schibsted Grotesk** (variable, 400–900; we use 400, 500, 600, 700, 800) for everything, **DM Mono** 400
 and 500 for labels, kickers, chips and metadata. Both are self-hosted with Fontsource
-(`@fontsource-variable/schibsted-grotesk`, `@fontsource/dm-mono`), imported at the top of `app.css`.
+(`@fontsource-variable/schibsted-grotesk`, `@fontsource/dm-mono`), imported at the top of `app/styles/index.css`.
 
 | Token | Desktop | ≤ 700px | Use |
 | --- | --- | --- | --- |
@@ -141,7 +192,7 @@ Sizes: `--size-mark` 36px, `--size-avatar` 52px, `--size-icon-tile` 48px, `--siz
 | `--duration-base` | 200ms |
 | `--ease-standard` | `cubic-bezier(0.2, 0, 0, 1)` |
 
-Every transition and animation is cut to ~0 under `prefers-reduced-motion: reduce` (`base.css`).
+Every transition and animation is cut to ~0 under `prefers-reduced-motion: reduce` (`app/styles/base.css`).
 
 ### Breakpoints
 
@@ -149,6 +200,8 @@ Every transition and animation is cut to ~0 under `prefers-reduced-motion: reduc
 the home hero stacks.
 
 ## Components
+
+Shared UI (`shared/ui`), unless a layer is named.
 
 | Component | Props | Notes |
 | --- | --- | --- |
@@ -163,15 +216,19 @@ the home hero stacks.
 | `SpecList` | `items` (`{ label, value }`), `variant` (`plain` \| `block`) | `<dl>` spec sheet; empty values are skipped. |
 | `StatStrip` | `items` (`{ value, label }`), `label` | Full-width stats row; empty values are skipped. |
 | `FeatureCard` | `icon`, `title`, `level`; default slot | Icon tile + title + text. |
-| `TimelineEntry` | `when`, `title`, `level`; default slot | One `<li>` of an `<ol class="timeline">`. |
+| `PositionEntry` (entities/work) | `position`, `level` | One role as an `<li>` of an `<ol class="timeline">`: period, title, rich-text description, technologies. |
 | `CaseCard` | `kind`, `title`, `summary`, `meta`, `draft`, `level`; `actions` slot | Case study `<li>` with a spec sheet. `draft` adds the dashed placeholder border. |
-| `FilterGroup` | `options` (`{ value, label }`), `label`; `v-model` | Toggle buttons with `aria-pressed` in a labelled group; the pressed one also shows a check icon. |
-| `CollaborationMap` | `partners`, `leadName`, `leadTitle`, `leadFocus`, `teamSize`, `portrait` | The "How I work" figure: partners → lead → team (one dot per developer). The drawing is `aria-hidden`; a visually hidden sentence describes it. |
-| `ThemeToggle` | – | Uses `useTheme`; `aria-pressed` = dark, label says what it does. |
+| `FilterGroup` | `options` (`{ value, label }`), `label`; `v-model` | Toggle buttons with `aria-pressed` in a labelled group; the pressed one also shows a check icon. `features/portfolio-filter` uses it for the case studies. |
+| `CollaborationMap` (widgets/hero) | `partners`, `leadName`, `leadTitle`, `leadFocus`, `teamSize`, `portrait` | The "How I work" figure: partners → lead → team (one dot per developer). The drawing is `aria-hidden`; a visually hidden sentence describes it. |
+| `ThemeToggle` (features/theme-toggle) | – | Uses core `useTheme`; `aria-pressed` = dark, label says what it does. |
 
-Layout (`SiteLayout.vue`): skip link, header with brand mark (initials), primary nav (relabelled "Case studies" and
-"How I work"), theme toggle and mobile menu button, and the footer with the contact band. The contact button uses
-`contactLink()`: email, else LinkedIn, else GitHub.
+Layout (`app/layout/SiteLayout.vue`): skip link, the `site-header` widget with brand mark (initials), primary nav
+(relabelled "Case studies" and "How I work"), theme toggle and mobile menu button, and the `site-footer` widget with the
+contact band. The contact button uses core's `contactLink()` (email, else LinkedIn, else GitHub), worded by
+`entities/profile` ("Let's talk", "Let's talk on LinkedIn", "See my GitHub").
+
+Business components (entities): `ProjectCard` and `ProjectLink` (project), `FeaturedCaseCard` (profile),
+`SkillCategoryItem`, `LanguageItem`, `SoftSkillGroupCard`, `HobbyCard`.
 
 Usage example:
 
@@ -193,7 +250,8 @@ Usage example:
 | Hobbies | Hobbies | `hobby_notes`, `page_intros.hobbies` |
 | Footer | – | `contact_prompt`, `email`, `linkedin_url`, `github_url` |
 
-Portfolio layout rule: with "All" selected, items of the first (highest priority) category are full case cards and
+Portfolio layout rule (`features/portfolio-filter`, on core's `usePortfolioFilter` keyed by category id, plus a
+"Leadership" option when there is a featured case study): with "All" selected, items of the first (highest priority) category are full case cards and
 the others are listed under "More projects"; selecting a category shows its items as cards.
 
 ### Placeholders to fill in

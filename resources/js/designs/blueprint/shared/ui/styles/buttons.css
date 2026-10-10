@@ -1,0 +1,79 @@
+/* AppButton, TextLink, icon buttons. */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    min-height: var(--button-height);
+    padding: 0 var(--space-5);
+    border: var(--border-thin) solid transparent;
+    border-radius: var(--radius-sm);
+    font-size: var(--text-base);
+    font-weight: var(--weight-bold);
+    text-decoration: none;
+    transition: background-color var(--duration-fast) var(--ease-standard), border-color var(--duration-fast) var(--ease-standard);
+}
+
+.btn--primary {
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+}
+
+.btn--primary:hover {
+    text-decoration: underline;
+}
+
+.btn--ghost {
+    background: var(--color-surface);
+    border-color: var(--color-line-strong);
+    color: var(--color-text);
+}
+
+.btn--ghost:hover {
+    border-color: var(--color-accent);
+}
+
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+}
+
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    min-height: var(--target-primary);
+    color: var(--color-accent);
+    font-weight: var(--weight-bold);
+    text-decoration: none;
+}
+
+.text-link:hover {
+    text-decoration: underline;
+}
+
+.icon-button {
+    display: inline-grid;
+    place-items: center;
+    width: var(--target-primary);
+    height: var(--target-primary);
+    padding: 0;
+    border: var(--border-thin) solid var(--color-line-strong);
+    border-radius: var(--radius-sm);
+    background: var(--color-surface);
+    color: var(--color-text);
+    cursor: pointer;
+}
+
+.icon-button:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+@media (max-width: 43.75em) {
+    .button-row .btn {
+        flex: 1 1 100%;
+    }
+}
