@@ -18,15 +18,6 @@ import tseslint from 'typescript-eslint';
  * public API (its index.ts). core never imports a design.
  */
 
-/**
- * Code not yet moved into the FSD layers. Each design leaves this list when it is migrated.
- * TODO(fsd): empty this list, then delete it.
- */
-const LEGACY = [
-    'resources/js/designs/*/{components,composables,lib,layouts}/**',
-    'resources/js/designs/*/pages/*.vue',
-];
-
 const LAYERS = ['shared', 'entities', 'features', 'widgets', 'pages', 'app'];
 
 /** Every layer below `layer` in a design, in FSD order. */
@@ -76,7 +67,7 @@ function designLayerPolicy(layer) {
 
 export default tseslint.config(
     {
-        ignores: ['public/**', 'vendor/**', 'bootstrap/ssr/**', 'node_modules/**', 'storage/**', ...LEGACY],
+        ignores: ['public/**', 'vendor/**', 'bootstrap/ssr/**', 'node_modules/**', 'storage/**'],
     },
     js.configs.recommended,
     ...tseslint.configs.recommended,

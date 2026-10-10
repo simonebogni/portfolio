@@ -9,8 +9,8 @@ import { createDesignTracker, type ModuleLoader, type PageLike, resolveLayout, r
  * active in the shared `design` prop; the page and the layout are picked from that design's folder.
  * Pages are loaded lazily, so a visitor only downloads the pages of the active design.
  */
-const pages = import.meta.glob<unknown>(['../../designs/*/pages/*/index.ts', '../../designs/*/pages/*.vue']) as Record<string, ModuleLoader>;
-const layouts = import.meta.glob<unknown>(['../../designs/*/app/index.ts', '../../designs/*/layouts/SiteLayout.vue'], { eager: true });
+const pages = import.meta.glob<unknown>('../../designs/*/pages/*/index.ts') as Record<string, ModuleLoader>;
+const layouts = import.meta.glob<unknown>('../../designs/*/app/index.ts', { eager: true });
 
 const designOf = createDesignTracker();
 

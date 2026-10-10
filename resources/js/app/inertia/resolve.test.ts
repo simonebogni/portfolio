@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'vitest';
 import { defineComponent } from 'vue';
-import { createDesignTracker, pageModuleKeys, resolveLayout, resolvePage, sliceName } from './resolve';
+import { createDesignTracker, pageModuleKey, resolveLayout, resolvePage, sliceName } from './resolve';
 
 const About = defineComponent({ name: 'About' });
-const Legacy = defineComponent({ name: 'Legacy' });
+const Other = defineComponent({ name: 'Other' });
 const Layout = defineComponent({ name: 'Layout' });
 
 describe('sliceName', () => {
@@ -25,20 +25,15 @@ describe('createDesignTracker', () => {
 });
 
 describe('resolvePage', () => {
-    it('prefers the FSD slice over the pre-FSD page file', async () => {
+    it("loads the default export of the design's page slice", async () => {
         const modules = {
             '../../designs/bento/pages/soft-skills/index.ts': async () => ({ default: About }),
-            '../../designs/bento/pages/SoftSkills.vue': async () => ({ default: Legacy }),
+            '../../designs/kinetic/pages/soft-skills/index.ts': async () => ({ default: Other }),
         };
 
-        expect(pageModuleKeys('bento', 'SoftSkills')[0]).toBe('../../designs/bento/pages/soft-skills/index.ts');
+        expect(pageModuleKey('bento', 'SoftSkills')).toBe('../../designs/bento/pages/soft-skills/index.ts');
         await expect(resolvePage(modules, 'bento', 'SoftSkills')).resolves.toBe(About);
-    });
-
-    it('falls back to the pre-FSD page file', async () => {
-        const modules = { '../../designs/kinetic/pages/About.vue': async () => ({ default: Legacy }) };
-
-        await expect(resolvePage(modules, 'kinetic', 'About')).resolves.toBe(Legacy);
+        await expect(resolvePage(modules, 'kinetic', 'SoftSkills')).resolves.toBe(Other);
     });
 
     it('fails clearly when the design has no such page', async () => {
@@ -47,9 +42,8 @@ describe('resolvePage', () => {
 });
 
 describe('resolveLayout', () => {
-    it('reads `Layout` from an FSD app index, or the default export of a pre-FSD layout', () => {
+    it("reads `Layout` from the design's app index", () => {
         expect(resolveLayout({ '../../designs/source/app/index.ts': { Layout } }, 'source')).toBe(Layout);
-        expect(resolveLayout({ '../../designs/source/layouts/SiteLayout.vue': { default: Legacy } }, 'source')).toBe(Legacy);
-        expect(resolveLayout({}, 'source')).toBeUndefined();
+        expect(resolveLayout({ '../../designs/source/app/index.ts': { Layout } }, 'bento')).toBeUndefined();
     });
 });

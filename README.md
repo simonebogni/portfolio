@@ -11,6 +11,6 @@ The RDBMS used is PostgreSQL, but it can also be efforlessly used with MySQL.
 
 ## Front end
 
-The public pages are Vue single-file components rendered through Inertia, with server-side rendering (SSR).
+The public pages are Vue single-file components in TypeScript, rendered through Inertia with server-side rendering (SSR) and organised with Feature-Sliced Design.
 The site has several designs that can be switched from the admin panel (**Appearance**), with a private preview mode for the admin.
 See [docs/frontend.md](docs/frontend.md) for the architecture, the designs, the design tokens and how to run it locally.

@@ -38,20 +38,17 @@ export function createDesignTracker(fallback = FALLBACK_DESIGN): (page?: PageLik
     };
 }
 
-/**
- * Where a design's page component may live, in order of preference:
- * the FSD slice (pages/<slice>/index.ts) or the pre-FSD file (pages/<Name>.vue).
- */
-export function pageModuleKeys(design: string, component: string): string[] {
-    return [`${DESIGNS_DIR}/${design}/pages/${sliceName(component)}/index.ts`, `${DESIGNS_DIR}/${design}/pages/${component}.vue`];
+/** The module of a design's page: its FSD slice's public API (pages/<slice>/index.ts). */
+export function pageModuleKey(design: string, component: string): string {
+    return `${DESIGNS_DIR}/${design}/pages/${sliceName(component)}/index.ts`;
 }
 
-/** Where a design's site layout may live: the FSD app layer, or the pre-FSD layouts folder. */
-export function layoutModuleKeys(design: string): string[] {
-    return [`${DESIGNS_DIR}/${design}/app/index.ts`, `${DESIGNS_DIR}/${design}/layouts/SiteLayout.vue`];
+/** The module of a design's site layout: its FSD app layer (app/index.ts). */
+export function layoutModuleKey(design: string): string {
+    return `${DESIGNS_DIR}/${design}/app/index.ts`;
 }
 
-/** The default export of a page module (an FSD slice's index.ts re-exports the page as default). */
+/** The default export of a page module (a page slice's index.ts re-exports the page as default). */
 export function defaultExport(module: unknown): DefineComponent {
     const value = (module as { default?: unknown }).default ?? module;
 
@@ -60,27 +57,18 @@ export function defaultExport(module: unknown): DefineComponent {
 
 /** Loads the page component of `component` for `design` from the globbed page modules. */
 export async function resolvePage(modules: Record<string, ModuleLoader>, design: string, component: string): Promise<DefineComponent> {
-    const key = pageModuleKeys(design, component).find((candidate) => candidate in modules);
+    const load = modules[pageModuleKey(design, component)];
 
-    if (key === undefined) {
+    if (load === undefined) {
         throw new Error(`Page not found: ${component} (design "${design}")`);
     }
 
-    return defaultExport(await modules[key]!());
+    return defaultExport(await load());
 }
 
-/**
- * The site layout of `design` from the eagerly globbed layout modules: an FSD app index exports it as
- * `Layout`, a pre-FSD SiteLayout.vue as its default export.
- */
+/** The site layout of `design` (exported as `Layout` by the design's app/index.ts) from the eagerly globbed modules. */
 export function resolveLayout(modules: Record<string, unknown>, design: string): Component | undefined {
-    for (const key of layoutModuleKeys(design)) {
-        const module = modules[key] as { Layout?: Component; default?: Component } | undefined;
+    const module = modules[layoutModuleKey(design)] as { Layout?: Component } | undefined;
 
-        if (module) {
-            return module.Layout ?? module.default;
-        }
-    }
-
-    return undefined;
+    return module?.Layout;
 }
