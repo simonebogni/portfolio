@@ -1,0 +1,35 @@
+/* ExpandableText: clamped paragraph with a "Show more" toggle. */
+.expandable {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1-5);
+}
+
+.expandable__text {
+    margin: 0;
+    color: var(--color-text-muted);
+    white-space: pre-line;
+}
+
+.expandable__text.is-clamped {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--clamp-lines);
+    line-clamp: var(--clamp-lines);
+}
+
+.more-toggle {
+    align-self: flex-start;
+    min-height: var(--target-min);
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--color-text);
+    font-family: var(--font-mono);
+    font-size: var(--text-chip);
+    font-weight: var(--weight-medium);
+    text-decoration: underline;
+    text-underline-offset: var(--underline-offset);
+    cursor: pointer;
+}

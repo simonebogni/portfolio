@@ -1,0 +1,1 @@
+export { isInternal } from './link';

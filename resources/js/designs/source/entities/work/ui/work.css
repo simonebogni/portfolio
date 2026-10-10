@@ -1,0 +1,31 @@
+/* CompanyCard and CurrentRoleCard: a company with its positions on a timeline. */
+.company {
+    margin-bottom: var(--space-5);
+}
+
+.company__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-3) var(--space-6);
+    margin-bottom: var(--space-2);
+}
+
+.company__name {
+    margin: 0;
+    font-size: var(--text-h3-lg);
+}
+
+.company__where {
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: var(--text-mono-label);
+    font-weight: var(--weight-medium);
+}
+
+.company__description {
+    max-width: var(--measure-text);
+    margin: 0 0 var(--space-6);
+    color: var(--color-text-muted);
+}

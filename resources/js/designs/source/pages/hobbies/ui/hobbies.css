@@ -1,0 +1,4 @@
+/* Hobbies page. */
+.page-hobbies .card-grid {
+    gap: var(--space-6);
+}

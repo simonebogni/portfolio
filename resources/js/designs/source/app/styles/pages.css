@@ -1,0 +1,51 @@
+/* Page compositions shared by every page: section spacing, card grids, card text. Tokens only. */
+
+.block {
+    margin-bottom: var(--section-gap);
+}
+
+.card-grid {
+    display: grid;
+    gap: var(--space-4);
+}
+
+.card-grid--2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.card-grid--3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.card-title {
+    margin: 0 0 var(--space-1-5);
+    font-size: var(--text-h4);
+    line-height: var(--leading-heading);
+}
+
+.card-text {
+    margin: 0;
+    color: var(--color-text-muted);
+}
+
+.card-text--small {
+    font-size: var(--text-small);
+}
+
+.empty {
+    color: var(--color-text-muted);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1040px) {
+    .card-grid--3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    .card-grid--2,
+    .card-grid--3 {
+        grid-template-columns: 1fr;
+    }
+}

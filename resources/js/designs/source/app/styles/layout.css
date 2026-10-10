@@ -1,0 +1,23 @@
+/* Site shell: page column, container and main landmark. */
+
+.site {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: calc(var(--container) + 2 * var(--gutter));
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+}
+
+.site-main {
+    flex: 1;
+    padding-bottom: var(--section-gap);
+}
+
+.site-main:focus {
+    outline: none;
+}

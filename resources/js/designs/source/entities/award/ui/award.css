@@ -1,0 +1,28 @@
+/* AwardCard: trophy icon next to the award. */
+.award {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-6);
+    align-items: start;
+}
+
+.award__icon {
+    display: grid;
+    place-items: center;
+    width: var(--size-trophy);
+    height: var(--size-trophy);
+    border-radius: var(--radius-xl);
+    background: var(--color-accent-soft);
+    color: var(--color-accent);
+}
+
+.award__description {
+    margin: var(--space-2-5) 0 var(--space-4);
+}
+
+@media (max-width: 700px) {
+    .award {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+}

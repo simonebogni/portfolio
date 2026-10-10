@@ -1,2 +1,44 @@
-/* Entry stylesheet of the "source" design, loaded by resources/views/app.blade.php. */
-@import '../../../../../css/designs/source/app.css';
+/*
+ * Entry stylesheet of the "Source" design, loaded by resources/views/app.blade.php.
+ * Order matters: fonts, then tokens, then element defaults, then the shell, the slices' stylesheets
+ * (shared UI, features, entities, widgets) and the page compositions, in the original cascade order.
+ * Components only use the semantic tokens from tokens.css (see docs/designs/source.md).
+ */
+@import '@fontsource/ibm-plex-sans/400.css';
+@import '@fontsource/ibm-plex-sans/500.css';
+@import '@fontsource/ibm-plex-sans/600.css';
+@import '@fontsource/ibm-plex-sans/700.css';
+@import '@fontsource-variable/jetbrains-mono/wght.css';
+
+@import './tokens.css';
+@import './base.css';
+@import './layout.css';
+@import '../../widgets/site-header/ui/site-header.css';
+@import '../../widgets/site-footer/ui/site-footer.css';
+
+@import '../../shared/ui/button/button.css';
+@import '../../shared/ui/icon-button/icon-button.css';
+@import '../../shared/ui/text-link/text-link.css';
+@import '../../shared/ui/chip/chip.css';
+@import '../../shared/ui/card/card.css';
+@import '../../shared/ui/heading/headings.css';
+@import '../../shared/ui/code-window/code-window.css';
+@import '../../shared/ui/stat/stat.css';
+@import '../../shared/ui/rating/rating.css';
+@import '../../shared/ui/timeline/timeline.css';
+@import '../../features/portfolio-filter/ui/filter.css';
+@import '../../shared/ui/expandable-text/expandable-text.css';
+@import '../../entities/project/ui/project.css';
+
+@import './pages.css';
+@import '../../widgets/about-hero/ui/about-hero.css';
+@import '../../entities/skill/ui/skill.css';
+@import '../../entities/language/ui/language.css';
+@import '../../entities/work/ui/work.css';
+@import '../../entities/education/ui/education.css';
+@import '../../entities/certificate/ui/certificate.css';
+@import '../../entities/award/ui/award.css';
+@import '../../entities/soft-skill/ui/soft-skill.css';
+@import '../../pages/soft-skills/ui/soft-skills.css';
+@import '../../pages/hobbies/ui/hobbies.css';
+@import '../../entities/hobby/ui/hobby.css';

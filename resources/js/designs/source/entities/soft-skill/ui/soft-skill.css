@@ -1,0 +1,32 @@
+/* SoftSkillCard: numbered badge next to the skill. */
+.soft-skill {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-5);
+    align-items: start;
+}
+
+.badge {
+    display: grid;
+    place-items: center;
+    width: var(--size-badge);
+    height: var(--size-badge);
+    border-radius: var(--radius-md);
+    background: var(--color-accent-soft);
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-size: var(--text-small);
+    font-weight: var(--weight-bold);
+    line-height: var(--leading-none);
+}
+
+.soft-skill__name {
+    margin: 0 0 var(--space-1-5);
+    font-size: var(--text-h4);
+}
+
+@media (max-width: 700px) {
+    .soft-skill {
+        gap: var(--space-4);
+    }
+}
