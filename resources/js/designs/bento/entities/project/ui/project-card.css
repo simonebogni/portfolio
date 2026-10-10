@@ -1,0 +1,191 @@
+/* ── Project cards (entities/project) ─────────────────────────────────── */
+.project {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    background: var(--color-surface);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-lg);
+    grid-column: span 4;
+    transition:
+        transform var(--duration-base) var(--ease-standard),
+        border-color var(--duration-base) var(--ease-standard);
+}
+
+.project:hover {
+    transform: translateY(var(--lift));
+    border-color: var(--color-accent);
+}
+
+.project--wide {
+    grid-column: span 8;
+    grid-row: span 2;
+}
+
+.project--half {
+    grid-column: span 6;
+}
+
+.project--full {
+    grid-column: 1 / -1;
+}
+
+.project__art {
+    display: grid;
+    place-items: center;
+    min-height: var(--size-art);
+    background: var(--color-accent-soft);
+    color: var(--color-accent);
+    font-size: var(--text-monogram);
+    font-weight: var(--weight-heavy);
+    letter-spacing: var(--tracking-display);
+    line-height: 1;
+}
+
+.project__art.tone-inverse {
+    background: var(--color-inverse);
+    color: var(--color-on-inverse);
+}
+
+.project--featured .project__art {
+    flex: 1 0 auto;
+    min-height: var(--size-art-lg);
+    font-size: var(--text-monogram-lg);
+    position: relative;
+}
+
+.project__art img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.project__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: var(--space-2-5);
+    padding: var(--space-6);
+}
+
+.project__kind {
+    font-family: var(--font-mono);
+    font-size: var(--text-2xs);
+    font-weight: var(--weight-mono);
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+}
+
+.project__title {
+    font-size: var(--text-xl);
+    letter-spacing: var(--tracking-title);
+}
+
+.project--featured .project__title {
+    font-size: var(--text-3xl);
+}
+
+.project__subtitle {
+    font-size: var(--text-md);
+    font-weight: var(--weight-semibold);
+}
+
+.project__desc {
+    color: var(--color-text-muted);
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+}
+
+.project__desc.is-clamped {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    overflow: hidden;
+}
+
+.text-toggle {
+    align-self: flex-start;
+    min-height: var(--target-min);
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--color-text);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    text-decoration: underline;
+    text-underline-offset: var(--underline-offset);
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+}
+
+.project__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1) var(--space-5);
+    margin-top: auto;
+    padding-top: var(--space-2);
+}
+
+.project--featured .project__desc.is-clamped {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    overflow: hidden;
+}
+
+.text-toggle {
+    align-self: flex-start;
+    min-height: var(--target-min);
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--color-text);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    text-decoration: underline;
+    text-underline-offset: var(--underline-offset);
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+}
+
+.project__links {
+    gap: var(--space-3);
+}
+
+@media (max-width: 860px) {
+    .project,
+    .project--wide,
+    .project--half {
+        grid-column: span 1;
+        grid-row: auto;
+    }
+
+    .project--wide,
+    .project--full {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 700px) {
+    .project,
+    .project--wide,
+    .project--half,
+    .project--full {
+        grid-column: 1 / -1;
+    }
+
+    .project--featured .project__art {
+        min-height: var(--size-art-lg);
+    }
+
+    .project--featured .project__links .btn {
+        flex: 1 1 100%;
+    }
+}

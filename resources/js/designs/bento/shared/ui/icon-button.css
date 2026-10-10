@@ -1,0 +1,22 @@
+/* ── Icon button (shared/ui/IconButton.vue) ───────────────────────────── */
+.icon-btn {
+    display: inline-grid;
+    place-items: center;
+    width: var(--target-primary);
+    height: var(--target-primary);
+    padding: 0;
+    border-radius: 50%;
+    border: var(--border-width) solid var(--color-border);
+    background: var(--color-surface);
+    color: var(--color-text);
+    cursor: pointer;
+    text-decoration: none;
+    transition:
+        background-color var(--duration-fast) var(--ease-standard),
+        border-color var(--duration-fast) var(--ease-standard);
+}
+
+.icon-btn:hover {
+    background: var(--color-accent-soft);
+    border-color: var(--color-accent);
+}

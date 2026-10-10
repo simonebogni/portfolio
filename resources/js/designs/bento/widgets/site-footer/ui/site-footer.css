@@ -1,0 +1,29 @@
+/* ── Footer (widgets/site-footer) ─────────────────────────────────────── */
+.site-footer {
+    padding: var(--space-6) 0 var(--space-8);
+}
+
+.site-footer__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-3);
+    color: var(--color-text-muted);
+    font-size: var(--text-md);
+}
+
+.site-footer__links {
+    display: flex;
+    gap: var(--space-2);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@media (max-width: 700px) {
+    .site-footer__inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

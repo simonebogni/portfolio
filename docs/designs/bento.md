@@ -12,15 +12,50 @@ cards lift slightly, and the violet becomes a light lavender.
 The header is a floating pill bar; the current page is a filled pill. On small screens the grid collapses to
 one column (two columns between 700 and 860 px), and the navigation moves into a panel behind a menu button.
 
-Files:
+Files: everything lives in `resources/js/designs/bento/`, organised by Feature-Sliced Design (see
+[docs/frontend.md](../frontend.md)). The logic shared by every design (dates, navigation, theme, portfolio filter,
+profile helpers and entity types) comes from `resources/js/core/`; this folder holds the Bento UI and its styles.
 
 | Path | Holds |
 | --- | --- |
-| `resources/css/designs/bento/tokens.css` | Primitive and semantic tokens, light and dark |
-| `resources/css/designs/bento/base.css` | Element defaults, `.wrap`, focus ring, skip link, `.visually-hidden`, reduced motion |
-| `resources/css/designs/bento/components.css` | One block per component and page pattern |
-| `resources/css/designs/bento/app.css` | Imports fonts, then the three files above |
-| `resources/js/designs/bento/components/` | Vue components (below) |
+| `app/styles/index.css` | The entry stylesheet: fonts, `tokens.css`, `base.css`, then each slice's stylesheet in cascade order |
+| `app/styles/tokens.css` | Primitive and semantic tokens, light and dark |
+| `app/styles/base.css` | Element defaults, `.wrap`, focus ring, skip link, `.visually-hidden`, reduced motion |
+| `*/ui/*.css` | Component styles, next to the slice that renders them (global CSS, no `<style>` blocks) |
+| `app/`, `pages/`, `widgets/`, `features/`, `entities/`, `shared/` | Vue components and their models (below) |
+
+## Structure
+
+```
+resources/js/designs/bento/
+  app/
+    index.ts                      exports the site Layout
+    layout/SiteLayout.vue         skip link, header, <main>, footer (+ site-layout.css)
+    styles/                       index.css (entry), tokens.css, base.css
+  pages/
+    about/                        About.vue; model: props type (education, award, stack), headline split, status lines
+    experience/                   Experience.vue; model: props type, course score label, certificate issuers
+    portfolio/                    Portfolio.vue: core usePortfolioFilter, live-region status, project grid
+    soft-skills/                  SoftSkills.vue; model: icon per skill, tile spans
+    hobbies/                      Hobbies.vue; model: lead photo and card layouts
+  widgets/
+    site-header/                  pill bar: brand, primary navigation, theme toggle, mobile menu
+    site-footer/                  copyright and profile links
+    contact-tile/                 violet call-to-action card
+    work-history/                 the Experience "Work" tile; model: current-role entry, positions newest first
+    project-grid/                 bento list of project cards; model: sizesFor (card sizes), card kinds
+  features/
+    theme-toggle/                 light/dark IconButton on core useTheme
+    portfolio-filter/             category toggle buttons; model: the live-region text
+  entities/
+    profile/                      BentoProfile type, useProfile (core's, with contact wording and icon)
+    project/                      ProjectCard; model: monogram
+    work/                         TimelineEntry
+    language/                     LanguageMeter; model: language level in words
+  shared/
+    ui/                           Icon (+ icon set), IconButton, BaseButton, BentoGrid, BentoTile, TileLabel,
+                                  TileHeading, PageIntro, ChipList, and the grid, text, chip and mini-card styles
+```
 
 ## Tokens
 
@@ -128,31 +163,36 @@ All transitions are switched off under `prefers-reduced-motion: reduce` (in `bas
 
 ## Components
 
-All live in `resources/js/designs/bento/components/`. None touches `window`, `document` or `localStorage` outside
+Each component lives in the slice named in the table (see Structure). None touches `window`, `document` or `localStorage` outside
 `onMounted` or event handlers, so they render on the server.
 
 | Component | Props | Notes |
 | --- | --- | --- |
-| `SiteHeader` | — | Pill bar: brand, `<nav aria-label="Primary">`, `ThemeToggle`, menu button (≤ 900px). Escape closes the menu and returns focus to the button. |
-| `SiteFooter` | — | Copyright and round links to the configured GitHub / LinkedIn / email. |
-| `ThemeToggle` | — | `IconButton` with `aria-pressed` (pressed = dark theme), uses `useTheme`. |
-| `IconButton` | `icon`, `label` (required), `href`, `pressed`, `expanded`, `controls` | 44×44 round button or link. External links add "(opens in a new tab)" to the label. |
-| `Icon` | `name`, `size` | Decorative inline SVG, always `aria-hidden`. |
-| `BaseButton` | `href`, `variant` (`primary` · `ghost` · `on-accent`), `type` | 52px pill. Internal paths → Inertia `<Link>`, external → `<a target="_blank">` with hidden "(opens in a new tab)", none → `<button>`. |
-| `BentoGrid` | `as` | 12-column grid; `as="ul"` for lists. |
-| `BentoTile` | `as`, `span` (4,5,6,7,8,12), `rows` (1,2), `tone` (`surface` · `inverse` · `accent` · `dashed`), `padding` (`none` · `md` · `lg`) | The card. Pass `aria-labelledby` for sections. |
-| `TileLabel` | `as` | Mono uppercase eyebrow; use `as="h2"` when it is the tile's heading. |
-| `TileHeading` | `id`, `level`, `meta` | Section title with right-aligned mono meta. |
-| `PageIntro` | `title`, `label`, `lead`, `span`, `as` | Header tile holding the page's only `<h1>`. |
-| `ChipList` | `items`, `label`, `size` (`sm` · `md`), `surface` (`sunken` · `raised`), `limit` | With `limit`, a "+n more" button (`aria-expanded`) reveals the rest. |
-| `LanguageMeter` | `name`, `level`, `rating`, `max` | List item; the bar is `role="img"` "x out of 5" and the level is also written out. |
-| `TimelineEntry` | `title`, `period`, `organisation`, `html`, `tags`, `current` | Work entry (`<li>` in an `<ol>`). `html` is the owner's rich text. "Current" is a text badge. |
-| `PortfolioFilter` | `options` (`{ value, label, count }`), `label`, `v-model` | `role="group"` of toggle buttons with `aria-pressed`; the pressed one also shows a check mark. |
-| `ProjectCard` | `project`, `kind`, `size` (`wide` · `half` · `third` · `full`), `featured`, `inverseArt` | Monogram panel (cover image on the featured card, falling back to the monogram if it fails). Long descriptions are clamped to 4 lines with a "Read more" toggle. |
-| `ContactTile` | `title`, `span`, `headingId` | Violet call to action; links to email, else LinkedIn, else GitHub; hidden when none is set. |
+| `SiteHeader` (widgets/site-header) | — | Pill bar: brand, `<nav aria-label="Primary">`, `ThemeToggle`, menu button (≤ 900px). Uses core `useSiteMenu`. Escape closes the menu and returns focus to the button. |
+| `SiteFooter` (widgets/site-footer) | — | Copyright and round links to the configured GitHub / LinkedIn / email. |
+| `ThemeToggle` (features/theme-toggle) | — | `IconButton` with `aria-pressed` (pressed = dark theme), uses core `useTheme`. |
+| `IconButton` (shared/ui) | `icon`, `label` (required), `href`, `pressed`, `expanded`, `controls` | 44×44 round button or link. External links add "(opens in a new tab)" to the label. |
+| `Icon` (shared/ui) | `name` (`IconName`, from `icons.ts`), `size` | Decorative inline SVG, always `aria-hidden`. |
+| `BaseButton` (shared/ui) | `href`, `variant` (`primary` · `ghost` · `on-accent`), `type` | 52px pill. Internal paths → Inertia `<Link>`, external → `<a target="_blank">` with hidden "(opens in a new tab)", none → `<button>`. |
+| `BentoGrid` (shared/ui) | `as` | 12-column grid; `as="ul"` for lists. |
+| `BentoTile` (shared/ui) | `as`, `span` (4,5,6,7,8,12), `rows` (1,2), `tone` (`surface` · `inverse` · `accent` · `dashed`), `padding` (`none` · `md` · `lg`) | The card. Pass `aria-labelledby` for sections. |
+| `TileLabel` (shared/ui) | `as` | Mono uppercase eyebrow; use `as="h2"` when it is the tile's heading. |
+| `TileHeading` (shared/ui) | `id`, `level`, `meta` | Section title with right-aligned mono meta. |
+| `PageIntro` (shared/ui) | `title`, `label`, `lead`, `span`, `as` | Header tile holding the page's only `<h1>`. |
+| `ChipList` (shared/ui) | `items`, `label`, `size` (`sm` · `md`), `surface` (`sunken` · `raised`), `limit` | With `limit`, a "+n more" button (`aria-expanded`) reveals the rest. |
+| `LanguageMeter` (entities/language) | `name`, `level`, `rating`, `max` | List item; the bar is `role="img"` "x out of 5" and the level is also written out. |
+| `TimelineEntry` (entities/work) | `title`, `period`, `organisation`, `html`, `tags`, `current` | Work entry (`<li>` in an `<ol>`). `html` is the owner's rich text. "Current" is a text badge. |
+| `PortfolioFilter` (features/portfolio-filter) | `options` (core `FilterOption[]`), `label`, `v-model` | `role="group"` of toggle buttons with `aria-pressed`; the pressed one also shows a check mark. The state comes from core `usePortfolioFilter`; `filterStatus` words the live region. |
+| `ProjectCard` (entities/project) | `project`, `kind`, `size` (`wide` · `half` · `third` · `full`), `featured`, `inverseArt` | Monogram panel (cover image on the featured card, falling back to the monogram if it fails). Long descriptions are clamped to 4 lines with a "Read more" toggle. |
+| `ContactTile` (widgets/contact-tile) | `title`, `span`, `headingId` | Violet call to action; links to email, else LinkedIn, else GitHub; hidden when none is set. |
+| `WorkHistory` (widgets/work-history) | `companies` | The Experience "Work" tile: the configured current role (when no position is current), then every position newest first. |
+| `ProjectGrid` (widgets/project-grid) | `projects` (core `ProjectInCategory[]`) | `<ul class="bento">` of `ProjectCard`s; `sizesFor` picks sizes so every row is full, the first of three or more is featured. |
 
-Composables: `useTheme`, `useNavigation` (from the foundation) and `useProfile` (shared `profile` prop, best
-contact link, city).
+Logic from core: `useTheme` (`@core/features/theme`), `useSiteMenu` (`@core/features/site-menu`),
+`usePortfolioFilter` (`@core/features/portfolio-filter`), `useProfile` and `contactLink`
+(`@core/entities/profile`, wrapped by `entities/profile` to add Bento's wording: "Get in touch", "Get in touch on
+LinkedIn", "Find me on GitHub", with a mail, LinkedIn or GitHub icon) and the date and text helpers of
+`@core/shared/lib` (`formatYear`, `formatPeriod`, `findOrdinal`, `pad2`).
 
 Usage:
 

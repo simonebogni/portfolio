@@ -1,0 +1,40 @@
+/* ── About page ───────────────────────────────────────────────────────── */
+.hero {
+    justify-content: space-between;
+    gap: var(--space-7);
+}
+
+.hero__top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.avatar {
+    width: var(--size-avatar);
+    height: var(--size-avatar);
+    border-radius: var(--radius-avatar);
+    object-fit: cover;
+}
+
+.status {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2-5) var(--space-3-5);
+    border-radius: var(--radius-pill);
+    background: var(--color-accent-soft);
+    color: var(--color-text);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-mono);
+    line-height: 1;
+}
+
+.status__dot {
+    width: var(--size-dot-sm);
+    height: var(--size-dot-sm);
+    border-radius: 50%;
+    background: var(--color-accent);
+}

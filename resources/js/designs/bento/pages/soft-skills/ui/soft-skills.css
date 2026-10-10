@@ -1,0 +1,28 @@
+/* ── Soft skills page ─────────────────────────────────────────────────── */
+.skill {
+    gap: var(--space-2-5);
+}
+
+.skill p {
+    color: var(--color-text-muted);
+}
+
+.skill.tone-inverse p {
+    color: var(--color-inverse-muted);
+}
+
+.skill__icon {
+    display: grid;
+    place-items: center;
+    width: var(--size-icon-tile);
+    height: var(--size-icon-tile);
+    margin-bottom: var(--space-1-5);
+    border-radius: var(--radius-icon);
+    background: var(--color-accent-soft);
+    color: var(--color-accent);
+}
+
+.skill.tone-inverse .skill__icon {
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+}
