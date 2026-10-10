@@ -1,0 +1,456 @@
+/*
+ * Page-specific compositions (resources/js/pages/*.vue). Semantic tokens only.
+ */
+
+/* ---------- About: hero ---------- */
+.hero {
+    padding-top: var(--space-page-top);
+}
+
+.hero__roles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-5);
+    margin-bottom: var(--space-6);
+    font-size: var(--text-label-l);
+    font-weight: var(--weight-extrabold);
+    letter-spacing: var(--tracking-kicker);
+    line-height: var(--leading-ui);
+    text-transform: uppercase;
+}
+
+.hero__roles li {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.hero__roles li::before {
+    content: '';
+    width: var(--space-2);
+    height: var(--space-2);
+    background: var(--color-accent);
+}
+
+.hero__name {
+    font-size: var(--text-display-hero);
+    line-height: 0.86;
+    letter-spacing: var(--tracking-giant);
+}
+
+.hero__name span {
+    display: block;
+}
+
+.hero__row {
+    display: grid;
+    grid-template-columns: 17.5rem minmax(0, 1fr) auto;
+    gap: var(--space-9);
+    align-items: end;
+    padding: var(--space-9) 0 var(--space-11);
+}
+
+.hero__photo {
+    width: 15rem;
+    aspect-ratio: 1;
+    box-shadow: var(--shadow-block);
+    margin: 0 var(--space-4) var(--space-4) 0;
+}
+
+.hero__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(1) contrast(1.05);
+}
+
+.hero__lede {
+    max-width: 35rem;
+    margin: 0;
+    font-size: var(--text-lead);
+}
+
+@media (max-width: 56rem) {
+    .hero__row {
+        grid-template-columns: auto minmax(0, 1fr);
+    }
+
+    .hero__cta {
+        grid-column: 1 / -1;
+        justify-self: start;
+    }
+}
+
+@media (max-width: 45rem) {
+    .hero__roles {
+        margin-bottom: var(--space-5);
+        font-size: var(--text-label-s);
+    }
+
+    .hero__row {
+        grid-template-columns: minmax(0, 1fr);
+        gap: var(--space-7);
+        padding: var(--space-8) 0 var(--space-9);
+    }
+
+    .hero__photo {
+        width: 11.25rem;
+    }
+
+    .hero__cta {
+        justify-self: stretch;
+    }
+}
+
+/* ---------- About: stack rows ---------- */
+.skill-rows__item {
+    display: grid;
+    grid-template-columns: 18.75rem minmax(0, 1fr);
+    gap: var(--space-8);
+    align-items: baseline;
+    padding: var(--space-6) 0;
+    border-bottom: var(--border-thin) solid var(--color-hairline);
+}
+
+.skill-rows__name {
+    font-size: var(--text-display-s);
+    font-weight: var(--weight-extrabold);
+    line-height: var(--leading-ui);
+    letter-spacing: var(--tracking-heading);
+}
+
+.skill-rows__skills {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: var(--text-body);
+}
+
+@media (max-width: 45rem) {
+    .skill-rows__item {
+        grid-template-columns: minmax(0, 1fr);
+        gap: var(--space-2);
+    }
+
+    .skill-rows__skills {
+        font-size: var(--text-body-s);
+    }
+}
+
+/* ---------- About: languages ---------- */
+.language-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: var(--space-4);
+}
+
+.language-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-6);
+    border: var(--border-strong) solid var(--color-line);
+}
+
+.language-card__name {
+    font-size: var(--text-display-xs);
+    font-weight: var(--weight-extrabold);
+    line-height: var(--leading-ui);
+    letter-spacing: var(--tracking-heading);
+}
+
+.language-card__level {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: var(--text-small);
+    font-weight: var(--weight-semibold);
+}
+
+.language-card .rating {
+    margin-top: auto;
+    padding-top: var(--space-2);
+}
+
+/* ---------- Experience: education and awards ---------- */
+.duo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+    border: var(--border-strong) solid var(--color-line);
+    margin-top: var(--space-8);
+}
+
+.duo__panel {
+    padding: var(--space-card);
+    box-shadow: calc(-1 * var(--border-strong)) 0 0 0 var(--color-line);
+}
+
+.duo__panel p {
+    margin: 0;
+}
+
+.duo__panel--accent {
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+}
+
+.duo__figure {
+    margin-bottom: var(--space-4) !important;
+    font-size: var(--text-display-figure);
+    line-height: 0.9;
+    letter-spacing: var(--tracking-giant);
+}
+
+.duo__title {
+    margin-bottom: var(--space-2);
+    font-size: var(--text-display-xs);
+    font-weight: var(--weight-extrabold);
+    line-height: 1.1;
+    letter-spacing: var(--tracking-heading);
+}
+
+.duo__text {
+    margin-top: var(--space-3) !important;
+}
+
+.subheading {
+    margin: var(--space-11) 0 var(--space-2);
+    padding-bottom: var(--space-3);
+    border-bottom: var(--border-strong) solid var(--color-line);
+}
+
+.course-rows__item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--space-2) var(--space-8);
+    align-items: baseline;
+    padding: var(--space-5) 0;
+    border-bottom: var(--border-thin) solid var(--color-hairline);
+}
+
+.course-rows__name {
+    margin: 0;
+    font-size: var(--text-body);
+    font-weight: var(--weight-extrabold);
+    line-height: 1.3;
+}
+
+.course-rows__place {
+    margin: 0;
+    font-size: var(--text-label-s);
+}
+
+.course-rows__item .tag-list {
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 45rem) {
+    .course-rows__item {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* ---------- Experience: certificates ---------- */
+.cert-rows__item {
+    display: grid;
+    grid-template-columns: 5rem minmax(0, 1fr) auto;
+    gap: var(--space-6);
+    align-items: center;
+    padding: var(--space-5) 0;
+    border-bottom: var(--border-thin) solid var(--color-hairline);
+}
+
+.cert-rows__index {
+    color: var(--color-accent-text);
+    font-size: var(--text-display-xs);
+}
+
+.cert-rows__title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: var(--text-display-xs);
+    font-weight: var(--weight-bold);
+    line-height: 1.1;
+    letter-spacing: var(--tracking-heading);
+}
+
+.cert-rows__meta {
+    margin: var(--space-1) 0 0;
+    color: var(--color-text-muted);
+    font-size: var(--text-small);
+    font-weight: var(--weight-semibold);
+}
+
+.cert-rows__link {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--size-target);
+    padding: 0 var(--space-4);
+    border: var(--border-strong) solid var(--color-line);
+    font-size: var(--text-label-s);
+    font-weight: var(--weight-extrabold);
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.cert-rows__link:hover {
+    background: var(--color-inverse-bg);
+    color: var(--color-inverse-text);
+}
+
+@media (max-width: 45rem) {
+    .cert-rows__item {
+        grid-template-columns: 2.75rem minmax(0, 1fr);
+        gap: var(--space-3);
+    }
+
+    .cert-rows__link {
+        grid-column: 2 / 3;
+        justify-self: start;
+    }
+}
+
+/* ---------- Soft skills ---------- */
+.numbered-rows__item {
+    display: grid;
+    grid-template-columns: 7.5rem minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--space-8);
+    align-items: baseline;
+    padding: var(--space-7) 0;
+    border-bottom: var(--border-thin) solid var(--color-hairline);
+}
+
+.numbered-rows__item--accent {
+    margin-inline: calc(-1 * var(--space-gutter));
+    padding-inline: var(--space-gutter);
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+    border-bottom: var(--border-strong) solid var(--color-line);
+}
+
+.numbered-rows__index {
+    color: var(--color-accent-text);
+    font-size: var(--text-display-index);
+    line-height: var(--leading-ui);
+}
+
+.numbered-rows__title {
+    font-size: var(--text-display-m);
+    font-weight: var(--weight-extrabold);
+    line-height: 1.05;
+    letter-spacing: var(--tracking-heading);
+}
+
+.numbered-rows__text {
+    margin: 0;
+    color: var(--color-text-muted);
+}
+
+.numbered-rows__item--accent .numbered-rows__index,
+.numbered-rows__item--accent .numbered-rows__text {
+    color: var(--color-on-accent);
+}
+
+@media (max-width: 45rem) {
+    .numbered-rows__item {
+        grid-template-columns: 2.75rem minmax(0, 1fr);
+        gap: var(--space-2) var(--space-3);
+        padding: var(--space-5) 0;
+    }
+
+    .numbered-rows__item--accent {
+        padding-inline: var(--space-gutter);
+    }
+
+    .numbered-rows__text {
+        grid-column: 2 / 3;
+        font-size: var(--text-body-s);
+    }
+}
+
+/* ---------- Hobbies ---------- */
+.hobby-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: var(--space-10);
+    border: var(--border-strong) solid var(--color-line);
+}
+
+.hobby-card {
+    display: flex;
+    flex-direction: column;
+    box-shadow: calc(-1 * var(--border-strong)) 0 0 0 var(--color-line);
+}
+
+.hobby-card__image {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-bottom: var(--border-strong) solid var(--color-line);
+    filter: grayscale(1) contrast(1.05);
+    transition: filter var(--duration-base) var(--ease-out);
+}
+
+.hobby-card--accent .hobby-card__image,
+.hobby-card:hover .hobby-card__image {
+    filter: none;
+}
+
+.hobby-card__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--space-7);
+}
+
+.hobby-card--accent .hobby-card__body {
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+}
+
+.hobby-card__index {
+    color: var(--color-accent-text);
+    font-size: var(--text-small);
+}
+
+.hobby-card__title {
+    font-size: var(--text-display-card);
+    font-weight: var(--weight-extrabold);
+    line-height: 1.05;
+    letter-spacing: var(--tracking-heading);
+}
+
+.hobby-card__text {
+    margin: 0;
+    color: var(--color-text-muted);
+}
+
+.hobby-card--accent .hobby-card__index,
+.hobby-card--accent .hobby-card__text {
+    color: var(--color-on-accent);
+}
+
+@media (max-width: 45rem) {
+    .hobby-grid {
+        grid-template-columns: minmax(0, 1fr);
+        margin-top: var(--space-8);
+    }
+
+    .hobby-card {
+        box-shadow: 0 calc(-1 * var(--border-strong)) 0 0 var(--color-line);
+    }
+
+    .hobby-card__image {
+        aspect-ratio: 4 / 3;
+    }
+
+    .hobby-card__body {
+        padding: var(--space-5);
+    }
+}
+
+/* ---------- Shared ---------- */
+.empty-state {
+    margin-top: var(--space-9);
+    color: var(--color-text-muted);
+}

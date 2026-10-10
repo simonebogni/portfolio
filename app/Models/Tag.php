@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Attributes\Unguarded;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\Pivot;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 #[Unguarded]
@@ -58,5 +59,13 @@ class Tag extends Model
     public function awards()
     {
         return $this->belongsToMany(Award::class);
+    }
+
+    /**
+     * @return BelongsToMany<PortfolioItem, $this, Pivot>
+     */
+    public function portfolioItems(): BelongsToMany
+    {
+        return $this->belongsToMany(PortfolioItem::class);
     }
 }

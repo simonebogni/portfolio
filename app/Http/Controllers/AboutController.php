@@ -6,14 +6,13 @@ use App\Models\Language;
 use App\Models\Skill;
 use App\Models\SkillCategory;
 use App\Models\SkillSubcategory;
-use Inertia\Inertia;
 use Inertia\Response;
 
 class AboutController extends Controller
 {
     public function index(): Response
     {
-        return Inertia::render('About', [
+        return self::render('About', [
             'languages' => LanguageController::getLanguages()->map(fn (Language $language): array => [
                 'id' => $language->id,
                 'name' => $language->name,

@@ -1,0 +1,15 @@
+/*
+ * E · Kinetic — entry stylesheet.
+ * Order: fonts, tokens, base elements, layout, components, pages.
+ * See docs/design-system.md.
+ */
+
+/* Self-hosted variable fonts (one file per script subset, all weights in it). Normal style only. */
+@import '@fontsource-variable/unbounded/wght.css';
+@import '@fontsource-variable/public-sans/wght.css';
+
+@import './tokens.css';
+@import './base.css';
+@import './layout.css';
+@import './components.css';
+@import './pages.css';

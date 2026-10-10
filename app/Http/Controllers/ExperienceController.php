@@ -11,14 +11,13 @@ use App\Models\Program;
 use App\Models\WorkPosition;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
-use Inertia\Inertia;
 use Inertia\Response;
 
 class ExperienceController extends Controller
 {
     public function index(): Response
     {
-        return Inertia::render('Experience', [
+        return self::render('Experience', [
             'companies' => CompanyController::getCompanies()->map(fn (Company $company): array => [
                 'id' => $company->id,
                 'name' => $company->name,

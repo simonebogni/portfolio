@@ -1,18 +1,25 @@
 <?php
 
+use App\Designs\DesignManager;
+use App\Designs\SiteDesign;
 use App\Models\Hobby;
 use App\Models\Language;
 use App\Models\SoftSkill;
 use Inertia\Testing\AssertableInertia as Assert;
 
-test('public pages render their Inertia page with the shared profile', function (string $uri, string $component): void {
+test('public pages render their Inertia page with the shared profile in every design', function (SiteDesign $design, string $uri, string $component): void {
+    resolve(DesignManager::class)->setLive($design);
+
     $this->get($uri)
         ->assertOk()
         ->assertInertia(fn (Assert $page): Assert => $page
             ->component($component)
+            ->where('design', $design->value)
+            ->where('designPreview', null)
             ->has('profile.name')
-            ->has('profile.roles'));
-})->with([
+            ->has('profile.roles')
+            ->has('profile.current_role.team_size'));
+})->with(SiteDesign::cases())->with([
     'home' => ['/', 'About'],
     'about' => ['/about', 'About'],
     'experience' => ['/experience', 'Experience'],

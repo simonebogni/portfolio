@@ -1,0 +1,175 @@
+/*
+ * E · Kinetic — design tokens.
+ *
+ * Two layers:
+ *   1. Primitives (--p-*): the raw palette and scales. Never used by components.
+ *   2. Semantic tokens (--color-*, --font-*, --text-*, --space-*, ...): what components use.
+ * A theme only remaps semantic tokens to other primitives.
+ * The contrast ratios in the comments are WCAG 2.2 ratios against the token's usual background.
+ */
+
+:root {
+    /* ---------- Primitives: colour ---------- */
+    --p-white: #ffffff;
+    --p-grey-50: #f5f5f5;
+    --p-grey-100: #f4f4f4;
+    --p-grey-200: #e3e3e3;
+    --p-grey-400: #b3b3b3;
+    --p-grey-700: #4b4b4b;
+    --p-grey-850: #262626;
+    --p-grey-900: #141414;
+    --p-grey-950: #0a0a0a;
+    --p-orange-300: #ff7a45;
+    --p-orange-400: #ff6a33;
+    --p-orange-500: #ff5a1f;
+    --p-orange-800: #b83a0a;
+
+    /* ---------- Primitives: type ---------- */
+    --p-font-unbounded: 'Unbounded Variable', 'Unbounded', 'Arial Black', system-ui, sans-serif;
+    --p-font-public-sans: 'Public Sans Variable', 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+    /* ---------- Semantic: colour (light) ---------- */
+    color-scheme: light;
+    --color-bg: var(--p-white);
+    --color-surface: var(--p-grey-100); /* highlighted rows */
+    --color-text: var(--p-grey-950); /* 19.8:1 on bg */
+    --color-text-muted: var(--p-grey-700); /* 8.7:1 on bg, 7.9:1 on surface */
+    --color-line: var(--p-grey-950); /* structural 2px rules */
+    --color-hairline: var(--p-grey-200); /* decorative row separators only */
+    --color-accent: var(--p-orange-500); /* fills and large display type only: 3.1:1 on bg */
+    --color-accent-text: var(--p-orange-800); /* orange text at any size: 5.8:1 on bg */
+    --color-on-accent: var(--p-grey-950); /* text on accent fills: 6.4:1 */
+    --color-inverse-bg: var(--p-grey-950);
+    --color-inverse-text: var(--p-white);
+    --color-focus: var(--p-grey-950);
+
+    /* ---------- Semantic: typography ---------- */
+    --font-display: var(--p-font-unbounded);
+    --font-body: var(--p-font-public-sans);
+
+    --weight-regular: 400;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+    --weight-extrabold: 800;
+    --weight-black: 900;
+
+    /* Body and UI sizes */
+    --text-label-s: 0.75rem; /* 12px: tags, small labels */
+    --text-label: 0.8125rem; /* 13px: nav, buttons */
+    --text-label-l: 0.875rem; /* 14px: kickers */
+    --text-small: 0.9375rem; /* 15px */
+    --text-body-s: 1rem; /* 16px */
+    --text-body: 1.125rem; /* 18px */
+    --text-lead: clamp(1.0625rem, 0.98rem + 0.45vw, 1.3125rem); /* 17–21px */
+
+    /* Display sizes (Unbounded). Fluid between 390px and 1280px viewports. */
+    --text-display-2xs: clamp(1rem, 0.85rem + 0.6vw, 1.375rem); /* 16–22: numbers */
+    --text-display-xs: clamp(1.125rem, 0.95rem + 0.75vw, 1.625rem); /* 18–26: ticker, small titles */
+    --text-display-s: clamp(1.1875rem, 0.95rem + 1vw, 1.875rem); /* 19–30: row titles */
+    --text-display-m: clamp(1.25rem, 0.95rem + 1.35vw, 2rem); /* 20–32: entry titles */
+    --text-display-card: clamp(1.375rem, 1.1rem + 1vw, 1.75rem); /* 22–28: card titles */
+    --text-display-index: clamp(1.375rem, 1rem + 1.6vw, 2.5rem); /* 22–40: list numbers */
+    --text-display-feature: clamp(1.625rem, 1rem + 2.6vw, 3.5rem); /* 26–56: featured project */
+    --text-display-figure: clamp(3.5rem, 2rem + 4.5vw, 5.5rem); /* 56–88: panel figures */
+    --text-display-l: clamp(1.875rem, 1rem + 3.6vw, 4rem); /* 30–64: section titles */
+    --text-display-stat: clamp(2.25rem, 1.4rem + 3.4vw, 4rem); /* 36–64: figures */
+    --text-display-xl: clamp(2rem, 0.6rem + 7vw, 6.5rem); /* 32–104: page titles */
+    --text-display-2xl: clamp(3.25rem, 0.7rem + 11vw, 9.375rem); /* 52–150: short page titles */
+    --text-display-hero: clamp(3rem, 0.6rem + 12.5vw, 10.5rem); /* 48–168: the name */
+    --text-display-footer: clamp(2.75rem, 0.8rem + 8.5vw, 7.5rem); /* 44–120 */
+
+    --leading-display: 0.88;
+    --leading-heading: 1.02;
+    --leading-ui: 1;
+    --leading-body: 1.6;
+
+    --tracking-giant: -0.06em;
+    --tracking-display: -0.05em;
+    --tracking-heading: -0.035em;
+    --tracking-tight: -0.02em;
+    --tracking-meta: 0.06em;
+    --tracking-label: 0.12em;
+    --tracking-kicker: 0.16em;
+
+    /* ---------- Semantic: spacing ---------- */
+    --space-1: 0.25rem; /* 4 */
+    --space-2: 0.5rem; /* 8 */
+    --space-3: 0.75rem; /* 12 */
+    --space-4: 1rem; /* 16 */
+    --space-5: 1.25rem; /* 20 */
+    --space-6: 1.5rem; /* 24 */
+    --space-7: 1.75rem; /* 28 */
+    --space-8: 2rem; /* 32 */
+    --space-9: 2.5rem; /* 40 */
+    --space-10: 3rem; /* 48 */
+    --space-11: 3.5rem; /* 56 */
+    --space-12: 4.5rem; /* 72 */
+    --space-13: 5.5rem; /* 88 */
+    --space-14: 6rem; /* 96 */
+
+    --space-gutter: clamp(1.125rem, 0.4rem + 3vw, 3rem); /* 18–48: page side padding */
+    --space-section: clamp(3.5rem, 2.4rem + 4.5vw, 5.5rem); /* 56–88: between sections */
+    --space-page-top: clamp(2rem, 1.4rem + 2.5vw, 3.5rem); /* 32–56 */
+    --space-card: clamp(1.375rem, 1rem + 1.5vw, 2.25rem); /* 22–36: card padding */
+
+    /* ---------- Semantic: sizes, borders, radius ---------- */
+    --size-container: 75rem; /* 1200px */
+    --size-measure: 47.5rem; /* 760px: long text */
+    --size-target: 2.75rem; /* 44px: primary controls */
+    --size-target-l: 3.5rem; /* 56px: call-to-action buttons */
+    --size-header: 4.75rem; /* 76px */
+    --size-header-compact: 4rem; /* 64px */
+
+    --border-thin: 1px;
+    --border-strong: 2px;
+    --border-indicator: 4px;
+    --focus-width: 3px;
+    --focus-offset: 3px;
+
+    --radius-none: 0; /* Kinetic is square: every corner is sharp */
+
+    /* ---------- Semantic: shadow ---------- */
+    --shadow-block: var(--space-4) var(--space-4) 0 0 var(--color-accent); /* offset slab behind the portrait */
+    --shadow-press: var(--space-1) var(--space-1) 0 0 var(--color-line); /* button hover */
+
+    /* ---------- Semantic: motion ---------- */
+    --duration-fast: 120ms;
+    --duration-base: 200ms;
+    --duration-ticker-item: 2.4s; /* the band's loop lasts this × the number of words */
+    --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* ---------- Dark theme ---------- */
+:root[data-theme='dark'] {
+    color-scheme: dark;
+    --color-bg: var(--p-grey-950);
+    --color-surface: var(--p-grey-900);
+    --color-text: var(--p-grey-50); /* 18.2:1 */
+    --color-text-muted: var(--p-grey-400); /* 9.4:1 on bg, 8.8:1 on surface */
+    --color-line: var(--p-grey-50);
+    --color-hairline: var(--p-grey-850);
+    --color-accent: var(--p-orange-400); /* 6.9:1 on bg */
+    --color-accent-text: var(--p-orange-300); /* 7.7:1 on bg */
+    --color-on-accent: var(--p-grey-950); /* 6.9:1 */
+    --color-inverse-bg: var(--p-grey-50);
+    --color-inverse-text: var(--p-grey-950);
+    --color-focus: var(--p-grey-50);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) {
+        color-scheme: dark;
+        --color-bg: var(--p-grey-950);
+        --color-surface: var(--p-grey-900);
+        --color-text: var(--p-grey-50);
+        --color-text-muted: var(--p-grey-400);
+        --color-line: var(--p-grey-50);
+        --color-hairline: var(--p-grey-850);
+        --color-accent: var(--p-orange-400);
+        --color-accent-text: var(--p-orange-300);
+        --color-on-accent: var(--p-grey-950);
+        --color-inverse-bg: var(--p-grey-50);
+        --color-inverse-text: var(--p-grey-950);
+        --color-focus: var(--p-grey-50);
+    }
+}

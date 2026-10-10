@@ -1,16 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use App\Models\Hobby;
-use Inertia\Inertia;
 use Inertia\Response;
 
 class HobbyController extends Controller
 {
     public function index(): Response
     {
-        return Inertia::render('Hobbies', [
+        return self::render('Hobbies', [
             'hobbies' => Hobby::query()->orderBy('id')->get()->map(fn (Hobby $hobby): array => [
                 'id' => $hobby->id,
                 'title' => $hobby->title,

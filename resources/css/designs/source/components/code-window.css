@@ -1,0 +1,79 @@
+/* CodeWindow: an editor pane with line numbers and syntax colours. */
+.code-window {
+    margin: 0;
+    overflow: hidden;
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-xl);
+    background: var(--color-surface);
+}
+
+.code-window__bar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    border-bottom: var(--border-width) solid var(--color-border);
+    background: var(--color-surface-sunken);
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: var(--text-chip);
+    font-weight: var(--weight-medium);
+    line-height: var(--leading-none);
+}
+
+.code-window__dots {
+    display: flex;
+    gap: var(--space-1-5);
+}
+
+.code-window__dots span {
+    width: var(--size-window-dot);
+    height: var(--size-window-dot);
+    border-radius: var(--radius-full);
+    background: var(--color-border);
+}
+
+.code-window__body {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0 var(--space-4);
+    margin: 0;
+    padding: var(--space-5) var(--space-5) var(--space-6);
+    overflow-x: auto;
+    font-family: var(--font-mono);
+    font-size: var(--text-code);
+    line-height: var(--leading-code);
+    white-space: pre-wrap;
+}
+
+.code-window__ln {
+    color: var(--color-text-muted);
+    text-align: right;
+    user-select: none;
+}
+
+.tok-keyword {
+    color: var(--color-syntax-keyword);
+}
+
+.tok-string {
+    color: var(--color-syntax-string);
+}
+
+.tok-literal {
+    color: var(--color-syntax-literal);
+}
+
+.code-window__footer {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3-5);
+    padding: var(--space-4) var(--space-5);
+    border-top: var(--border-width) solid var(--color-border);
+}
+
+.code-window__footer small {
+    display: block;
+    color: var(--color-text-muted);
+    font-size: var(--text-small);
+}

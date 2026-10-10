@@ -23,10 +23,19 @@
                 } catch (e) {}
             })();
         </script>
-        @vite(['resources/js/app.js'])
+        {{-- Each design ships its own stylesheet (tokens, fonts, components); only the active one is loaded. --}}
+        @vite(['resources/js/app.js', \App\Designs\SiteDesign::from($page['props']['design'])->stylesheet()])
         @inertiaHead
     </head>
     <body>
         @inertia
+        @if ($page['props']['designPreview'] ?? null)
+            {{-- Only admins see this: they are previewing a design that visitors don't see. --}}
+            <aside aria-label="Design preview" style="position:fixed;inset-inline-start:16px;inset-block-end:16px;z-index:2147483647;display:flex;flex-wrap:wrap;align-items:center;gap:12px;max-width:calc(100vw - 32px);padding:10px 16px;border-radius:12px;background:#111;color:#fff;font:500 14px/1.4 system-ui,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.35)">
+                <span>Previewing <strong>{{ $page['props']['designPreview']['label'] }}</strong> · visitors see {{ $page['props']['designPreview']['live'] }}</span>
+                <a href="{{ url()->current() }}?design=live" style="color:#fff;text-decoration:underline;text-underline-offset:3px;min-height:24px;display:inline-flex;align-items:center">Exit preview</a>
+                <a href="{{ url('/admin/appearance') }}" style="color:#fff;text-decoration:underline;text-underline-offset:3px;min-height:24px;display:inline-flex;align-items:center">Appearance settings</a>
+            </aside>
+        @endif
     </body>
 </html>

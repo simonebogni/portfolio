@@ -11,6 +11,9 @@ declare(strict_types=1);
 | Inertia page as the `profile` prop. Leave a value empty to hide the parts
 | of the UI that depend on it.
 |
+| Each design can add its own copy on top of these values: see
+| config/designs.php.
+|
 */
 return [
     'name' => env('PROFILE_NAME', 'Simone Bogni'),
@@ -26,6 +29,8 @@ return [
         'company' => env('PROFILE_CURRENT_COMPANY'),
         'since' => env('PROFILE_CURRENT_SINCE'),
         'team_size' => (int) env('PROFILE_TEAM_SIZE', 15),
+        // One or two sentences about the current role, shown on the Experience page.
+        'summary' => env('PROFILE_CURRENT_SUMMARY'),
     ],
 
     'availability' => env('PROFILE_AVAILABILITY'),

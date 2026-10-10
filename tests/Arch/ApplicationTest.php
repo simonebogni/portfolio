@@ -1,5 +1,7 @@
 <?php
 
+use App\Designs\DesignProps;
+use App\Designs\SiteDesign;
 use App\Filament\ResourceGroup;
 use App\Http\Controllers\Controller;
 use Filament\Resources\Pages\CreateRecord;
@@ -26,6 +28,7 @@ arch('models use the factory and soft delete traits')
 arch('models are only used by the application layer')
     ->expect('App\Models')
     ->toOnlyBeUsedIn([
+        'App\Designs',
         'App\Filament',
         'App\Http\Controllers',
         'App\Models',
@@ -105,4 +108,14 @@ arch('filament view pages extend ViewRecord')
 
 arch('filament navigation groups are a backed enum')
     ->expect(ResourceGroup::class)
+    ->toBeStringBackedEnum();
+
+arch('design props extend the base design props')
+    ->expect('App\Designs\Props')
+    ->classes()
+    ->toExtend(DesignProps::class)
+    ->toBeFinal();
+
+arch('site designs are a string backed enum')
+    ->expect(SiteDesign::class)
     ->toBeStringBackedEnum();

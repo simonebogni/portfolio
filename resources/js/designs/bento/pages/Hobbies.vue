@@ -1,0 +1,61 @@
+<script setup>
+import { Head } from '@inertiajs/vue3';
+import { computed } from 'vue';
+import BentoGrid from '../components/BentoGrid.vue';
+import BentoTile from '../components/BentoTile.vue';
+import PageIntro from '../components/PageIntro.vue';
+
+const props = defineProps({
+    hobbies: { type: Array, required: true },
+});
+
+/** The first hobby with a photo opens the page, next to the header. */
+const lead = computed(() => props.hobbies.find((hobby) => hobby.coverImgUrl) ?? null);
+
+/**
+ * Card layouts: two half-width cards (the one whose photo is already shown above
+ * goes text-only), then full-width cards with the photo beside the text.
+ */
+const cards = computed(() =>
+    props.hobbies.map((hobby, index) => {
+        const wide = index >= 2 || props.hobbies.length === 1;
+
+        return {
+            hobby,
+            number: String(index + 1).padStart(2, '0'),
+            span: wide ? 12 : 6,
+            layout: wide ? 'split' : 'stacked',
+            showImage: Boolean(hobby.coverImgUrl) && hobby.id !== lead.value?.id,
+        };
+    }),
+);
+</script>
+
+<template>
+    <div class="page page-hobbies">
+        <Head title="Hobbies" />
+        <BentoGrid>
+            <PageIntro :span="lead ? 5 : 12" class="intro--bottom" label="Hobbies" title="Off the clock" lead="What I do when the laptop is closed." />
+            <div v-if="lead" class="tile tile--span-7 photo">
+                <img :src="lead.coverImgUrl" :alt="`Photo for ${lead.title}`" loading="eager">
+            </div>
+            <BentoTile
+                v-for="card in cards"
+                :key="card.hobby.id"
+                as="article"
+                :span="card.span"
+                padding="none"
+                class="hobby"
+                :class="[`hobby--${card.layout}`, { 'hobby--text': !card.showImage }]"
+                :aria-labelledby="`hobby-${card.hobby.id}`"
+            >
+                <img v-if="card.showImage" class="hobby__img" :src="card.hobby.coverImgUrl" alt="" loading="lazy">
+                <div class="hobby__text">
+                    <p class="tile-label">{{ card.number }}</p>
+                    <h2 :id="`hobby-${card.hobby.id}`" class="tile-title">{{ card.hobby.title }}</h2>
+                    <p class="muted">{{ card.hobby.description }}</p>
+                </div>
+            </BentoTile>
+        </BentoGrid>
+    </div>
+</template>
