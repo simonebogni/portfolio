@@ -1,17 +1,18 @@
+import { readdirSync } from 'node:fs';
 import inertia from '@inertiajs/vite';
 import vue from '@vitejs/plugin-vue';
 import laravel from 'laravel-vite-plugin';
-import { readdirSync } from 'node:fs';
 import { defineConfig } from 'vite';
+import { aliases } from './vite.aliases.ts';
 
-// One stylesheet entry per design (resources/css/designs/<design>/app.css).
-const designStylesheets = readdirSync('resources/css/designs').map((design) => `resources/css/designs/${design}/app.css`);
+// One stylesheet entry per design (resources/js/designs/<design>/app/styles/index.css).
+const designStylesheets = readdirSync('resources/js/designs').map((design) => `resources/js/designs/${design}/app/styles/index.css`);
 
 export default defineConfig({
     plugins: [
         laravel({
-            input: ['resources/js/app.js', ...designStylesheets],
-            ssr: 'resources/js/ssr.js',
+            input: ['resources/js/app/client.ts', ...designStylesheets],
+            ssr: 'resources/js/app/ssr.ts',
             refresh: true,
         }),
         inertia(),
@@ -24,6 +25,9 @@ export default defineConfig({
             },
         }),
     ],
+    resolve: {
+        alias: aliases,
+    },
     server: {
         watch: {
             ignored: ['**/storage/framework/views/**'],

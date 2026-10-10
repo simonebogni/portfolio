@@ -16,3 +16,7 @@ jobs:
     name: "Tests"
     uses: ./.github/workflows/tests.yml
     secrets: inherit
+  frontend:
+    name: "Front end"
+    uses: ./.github/workflows/frontend.yml
+    secrets: inherit

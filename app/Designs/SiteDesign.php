@@ -11,8 +11,8 @@ use App\Designs\Props\TerrainProps;
 /**
  * The public site designs that can be switched from the admin panel.
  *
- * Each design lives in its own folders (resources/js/designs/<value>,
- * resources/css/designs/<value>, docs/designs/<value>.md) and may add props
+ * Each design lives in its own folder (resources/js/designs/<value>, with its
+ * styles in app/styles) and docs/designs/<value>.md, and may add props
  * and profile copy of its own (see props() and config/designs.php).
  */
 enum SiteDesign: string
@@ -57,7 +57,7 @@ enum SiteDesign: string
      */
     public function stylesheet(): string
     {
-        return "resources/css/designs/{$this->value}/app.css";
+        return "resources/js/designs/{$this->value}/app/styles/index.css";
     }
 
     /**

@@ -1,0 +1,2 @@
+/* Entry stylesheet of the "kinetic" design, loaded by resources/views/app.blade.php. */
+@import '../../../../../css/designs/kinetic/app.css';

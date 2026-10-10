@@ -1,0 +1,2 @@
+/* Entry stylesheet of the "bento" design, loaded by resources/views/app.blade.php. */
+@import '../../../../../css/designs/bento/app.css';

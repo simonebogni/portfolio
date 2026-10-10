@@ -24,7 +24,7 @@
             })();
         </script>
         {{-- Each design ships its own stylesheet (tokens, fonts, components); only the active one is loaded. --}}
-        @vite(['resources/js/app.js', \App\Designs\SiteDesign::from($page['props']['design'])->stylesheet()])
+        @vite(['resources/js/app/client.ts', \App\Designs\SiteDesign::from($page['props']['design'])->stylesheet()])
         @inertiaHead
     </head>
     <body>

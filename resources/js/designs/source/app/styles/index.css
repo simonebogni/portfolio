@@ -1,0 +1,2 @@
+/* Entry stylesheet of the "source" design, loaded by resources/views/app.blade.php. */
+@import '../../../../../css/designs/source/app.css';

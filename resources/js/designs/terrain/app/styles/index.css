@@ -1,0 +1,2 @@
+/* Entry stylesheet of the "terrain" design, loaded by resources/views/app.blade.php. */
+@import '../../../../../css/designs/terrain/app.css';
