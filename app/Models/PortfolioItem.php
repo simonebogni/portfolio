@@ -31,25 +31,25 @@ class PortfolioItem extends Model
     }
 
     /**
-     * @return BelongsTo
+     * @return BelongsTo<PortfolioCategory, $this>
      */
-    public function portfolioCategory()
+    public function portfolioCategory(): BelongsTo
     {
         return $this->belongsTo(PortfolioCategory::class);
     }
 
     /**
-     * @return BelongsToMany
+     * @return BelongsToMany<Image, $this>
      */
-    public function images()
+    public function images(): BelongsToMany
     {
         return $this->belongsToMany(Image::class);
     }
 
     /**
-     * @return BelongsToMany
+     * @return BelongsToMany<Tag, $this>
      */
-    public function tags()
+    public function tags(): BelongsToMany
     {
         return $this->belongsToMany(Tag::class);
     }

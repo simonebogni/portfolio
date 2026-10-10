@@ -1,5 +1,10 @@
-import {
-    Livewire
-} from '../../vendor/livewire/livewire/dist/livewire.esm'
+import { createInertiaApp } from '@inertiajs/vue3';
+import options from './inertia-options';
 
-Livewire.start()
+// The active design's stylesheet is loaded by resources/views/app.blade.php.
+createInertiaApp({
+    ...options,
+    progress: {
+        color: 'var(--color-accent)',
+    },
+});

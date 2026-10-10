@@ -1,0 +1,212 @@
+/*
+ * Blueprint design tokens.
+ *
+ * Two layers:
+ *   1. Primitives (--ink-*, --teal-*, --size-*, ...): raw values. Only this file uses them.
+ *   2. Semantic tokens (--color-*, --font-*, --space-*, ...): what components use.
+ * A theme only re-maps semantic tokens to other primitives.
+ */
+
+:root {
+    /* ---------- Primitives: colour ---------- */
+    --ink-950: #0a1117;
+    --ink-900: #0f1b24;
+    --ink-850: #111b23;
+    --ink-800: #23323e;
+    --ink-700: #3b4b57;
+    --ink-600: #475663;
+    --ink-500: #5e7280;
+    --ink-450: #7a8b97;
+    --ink-300: #9fb0bc;
+    --ink-200: #b7c4cd;
+    --ink-150: #d3dce2;
+    --ink-100: #e7eef2;
+    --ink-50: #f5f7f8;
+    --white: #ffffff;
+
+    --teal-900: #12302e;
+    --teal-700: #0b6e6e;
+    --teal-300: #5fd4c7;
+    --teal-100: #e3f2f1;
+
+    --grid-ink: rgb(15 27 36 / 6%);
+    --grid-paper: rgb(231 238 242 / 5%);
+    --shadow-ink: rgb(15 27 36 / 8%);
+    --shadow-ink-strong: rgb(15 27 36 / 16%);
+    --shadow-black: rgb(0 0 0 / 40%);
+
+    /* ---------- Primitives: type ---------- */
+    --family-grotesk: 'Schibsted Grotesk Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --family-mono: 'DM Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+    /* ---------- Semantic: colour (light) ---------- */
+    color-scheme: light;
+    --color-bg: var(--ink-50);
+    --color-surface: var(--white);
+    --color-text: var(--ink-900);
+    --color-text-muted: var(--ink-600);
+    --color-line: var(--ink-150);
+    --color-line-strong: var(--ink-450);
+    --color-grid: var(--grid-ink);
+    --color-accent: var(--teal-700);
+    --color-on-accent: var(--white);
+    --color-accent-soft: var(--teal-100);
+    --color-block: var(--ink-900);
+    --color-on-block: var(--ink-50);
+    --color-on-block-muted: var(--ink-200);
+    --color-focus: var(--teal-700);
+    --color-focus-on-block: var(--teal-300);
+    --shadow-raised: 0 1px 2px var(--shadow-ink), 0 16px 48px var(--shadow-ink-strong);
+
+    /* ---------- Semantic: typography ---------- */
+    --font-body: var(--family-grotesk);
+    --font-mono: var(--family-mono);
+
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+    --weight-heavy: 800;
+
+    --text-xs: 0.75rem; /* 12px: mono labels, chips */
+    --text-sm: 0.8125rem; /* 13px: mono kickers */
+    --text-md: 0.9375rem; /* 15px: nav, secondary */
+    --text-base: 1rem; /* 16px: buttons, list text */
+    --text-body: 1.0625rem; /* 17px: body */
+    --text-lede: 1.1875rem; /* 19px: intros */
+    --text-h4: 1.25rem; /* 20px */
+    --text-h3: 1.375rem; /* 22px */
+    --text-h3-lg: 1.875rem; /* 30px */
+    --text-h2: 2.375rem; /* 38px */
+    --text-stat: 2.125rem; /* 34px */
+    --text-footer: 2.25rem; /* 36px */
+    --text-big: 2.75rem; /* 44px: big numbers in cards */
+    --text-hero: 3.375rem; /* 54px: home headline */
+    --text-display: 3.5rem; /* 56px: page titles */
+
+    --leading-tight: 1.06;
+    --leading-snug: 1.15;
+    --leading-body: 1.6;
+    --leading-mono: 1.4;
+    --tracking-tight: -0.025em;
+    --tracking-snug: -0.02em;
+    --tracking-label: 0.06em;
+    --tracking-kicker: 0.08em;
+    --tracking-caption: 0.04em;
+    --tracking-big: -0.03em;
+    --leading-label: 1.7;
+
+    /* ---------- Semantic: spacing (4px base) ---------- */
+    --space-1: 0.25rem; /* 4 */
+    --space-2: 0.5rem; /* 8 */
+    --space-3: 0.75rem; /* 12 */
+    --space-3-5: 0.875rem; /* 14 */
+    --space-4: 1rem; /* 16 */
+    --space-5: 1.25rem; /* 20 */
+    --space-6: 1.5rem; /* 24 */
+    --space-7: 1.75rem; /* 28 */
+    --space-8: 2rem; /* 32 */
+    --space-10: 2.5rem; /* 40 */
+    --space-12: 3rem; /* 48 */
+    --space-14: 3.5rem; /* 56 */
+    --space-16: 4rem; /* 64 */
+    --space-18: 4.5rem; /* 72 */
+    --space-20: 5rem; /* 80 */
+    --space-24: 6rem; /* 96 */
+
+    --gutter: var(--space-10);
+    --container-max: 72.5rem; /* 1160px */
+    --header-height: 4.5rem; /* 72px */
+    --grid-cell: 2rem; /* blueprint grid: 32px */
+
+    /* ---------- Semantic: sizes ---------- */
+    --size-mark: 2.25rem; /* 36: brand mark */
+    --size-avatar: 3.25rem; /* 52: portrait in the diagram */
+    --size-icon-tile: 3rem; /* 48: feature icon tile */
+    --size-hobby-image: 14.375rem; /* 230 */
+    --measure-narrow: 35rem; /* 560: hero lede */
+    --measure: 42.5rem; /* 680: page intros */
+    --measure-wide: 48.75rem; /* 780: timeline text */
+    --nav-pad-x: var(--space-3-5);
+    --tag-pad-y: 0.5625rem; /* 9 */
+    --spec-label: 7.5rem; /* 120 */
+    --spec-label-compact: 6.25rem; /* 100 */
+    --section-heading-aside: 17.5rem; /* 280: kicker column */
+
+    /* ---------- Semantic: radius, size ---------- */
+    --radius-dot: 3px; /* timeline markers */
+    --radius-xs: 0.375rem; /* 6: tags, chips */
+    --radius-sm: 0.5rem; /* 8: buttons, nav */
+    --radius-md: 0.625rem; /* 10: nodes, rows */
+    --radius-lg: 0.875rem; /* 14: cards */
+    --border-thin: 1px;
+    --border-thick: 2px;
+    --target-min: 1.5rem; /* 24px: WCAG 2.2 minimum */
+    --target-primary: 2.75rem; /* 44px: primary controls */
+    --button-height: 3.125rem; /* 50px */
+
+    /* ---------- Semantic: motion ---------- */
+    --duration-fast: 120ms;
+    --duration-base: 200ms;
+    --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* ---------- Dark theme ---------- */
+:root[data-theme='dark'] {
+    color-scheme: dark;
+    --color-bg: var(--ink-950);
+    --color-surface: var(--ink-850);
+    --color-text: var(--ink-100);
+    --color-text-muted: var(--ink-300);
+    --color-line: var(--ink-800);
+    --color-line-strong: var(--ink-500);
+    --color-grid: var(--grid-paper);
+    --color-accent: var(--teal-300);
+    --color-on-accent: var(--ink-950);
+    --color-accent-soft: var(--teal-900);
+    --color-block: var(--ink-100);
+    --color-on-block: var(--ink-950);
+    --color-on-block-muted: var(--ink-700);
+    --color-focus: var(--teal-300);
+    --color-focus-on-block: var(--teal-700);
+    --shadow-raised: 0 16px 48px var(--shadow-black);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) {
+        color-scheme: dark;
+        --color-bg: var(--ink-950);
+        --color-surface: var(--ink-850);
+        --color-text: var(--ink-100);
+        --color-text-muted: var(--ink-300);
+        --color-line: var(--ink-800);
+        --color-line-strong: var(--ink-500);
+        --color-grid: var(--grid-paper);
+        --color-accent: var(--teal-300);
+        --color-on-accent: var(--ink-950);
+        --color-accent-soft: var(--teal-900);
+        --color-block: var(--ink-100);
+        --color-on-block: var(--ink-950);
+        --color-on-block-muted: var(--ink-700);
+        --color-focus: var(--teal-300);
+        --color-focus-on-block: var(--teal-700);
+        --shadow-raised: 0 16px 48px var(--shadow-black);
+    }
+}
+
+/* ---------- Responsive token overrides ---------- */
+@media (max-width: 43.75em) {
+    :root {
+        --gutter: 1.125rem; /* 18px */
+        --header-height: 4rem;
+        --text-display: 2.25rem; /* 36px */
+        --text-h2: 1.75rem; /* 28px */
+        --text-h3-lg: 1.5rem;
+        --text-lede: 1.0625rem;
+        --text-stat: 1.625rem;
+        --text-footer: 1.625rem;
+        --text-hero: 2.125rem; /* 34px */
+        --text-big: 2.25rem;
+        --size-hobby-image: 12.5rem;
+    }
+}

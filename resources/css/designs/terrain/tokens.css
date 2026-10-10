@@ -1,0 +1,233 @@
+/*
+ * Terrain design tokens.
+ *
+ * Two layers:
+ *  1. Primitives (--palette-*, --font-size-*, --space-*, ...) are raw values. Only this file uses them.
+ *  2. Semantic tokens (--color-*, --text-*, --radius-card, ...) say what a value is for.
+ *     Components and pages use semantic tokens only.
+ *
+ * Dark values are set under [data-theme="dark"], and under prefers-color-scheme: dark
+ * when the visitor hasn't picked a theme. Contrast ratios are listed in docs/design-system.md.
+ */
+
+:root {
+    /* ---- Primitives: colour ------------------------------------------- */
+    --palette-moss-25: #fafbf7;
+    --palette-moss-50: #eef0e8;
+    --palette-moss-100: #e2e8d6;
+    --palette-moss-200: #d5dacb;
+    --palette-moss-500: #7a8471;
+    --palette-moss-700: #4c5546;
+    --palette-moss-900: #1e231b;
+
+    --palette-night-50: #ecefe6;
+    --palette-night-300: #aeb7a6;
+    --palette-night-500: #6f7b67;
+    --palette-night-700: #333c2f;
+    --palette-night-800: #263021;
+    --palette-night-900: #1d231b;
+    --palette-night-950: #151913;
+
+    --palette-olive-300: #a9c98b;
+    --palette-olive-700: #3f5f2a;
+    --palette-rust-300: #e79a6b;
+    --palette-rust-700: #9a4a1e;
+
+    /* ---- Primitives: typography --------------------------------------- */
+    --font-family-display: 'Bricolage Grotesque Variable', 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;
+    --font-family-text: 'Figtree Variable', 'Figtree', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+    --font-size-12: 0.75rem;
+    --font-size-14: 0.875rem;
+    --font-size-15: 0.9375rem;
+    --font-size-16: 1rem;
+    --font-size-18: 1.125rem;
+    --font-size-20: 1.25rem;
+    --font-size-24: 1.5rem;
+    --font-size-28: 1.75rem;
+    --font-size-36: 2.25rem;
+    --font-size-48: 3rem;
+    --font-size-64: 4rem;
+    --font-size-76: 4.75rem;
+
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-heavy: 800;
+
+    /* ---- Primitives: spacing (4px grid) ------------------------------- */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-7: 1.75rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-14: 3.5rem;
+    --space-16: 4rem;
+    --space-18: 4.5rem;
+    --space-22: 5.5rem;
+    --space-24: 6rem;
+
+    /* ---- Primitives: radius ------------------------------------------- */
+    --radius-8: 8px;
+    --radius-12: 12px;
+    --radius-16: 16px;
+    --radius-20: 20px;
+    --radius-24: 24px;
+    --radius-28: 28px;
+    --radius-36: 36px;
+    --radius-40: 40px;
+    --radius-full: 999px;
+
+    /* ---- Primitives: motion ------------------------------------------- */
+    --duration-120: 120ms;
+    --duration-200: 200ms;
+    --duration-320: 320ms;
+    --ease-out-soft: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+    /* ---- Semantic: colour (light) ------------------------------------- */
+    color-scheme: light;
+    --color-bg: var(--palette-moss-50);
+    --color-surface: var(--palette-moss-25);
+    --color-surface-soft: var(--palette-moss-100);
+    --color-text: var(--palette-moss-900);
+    --color-text-muted: var(--palette-moss-700);
+    --color-border: var(--palette-moss-200);
+    --color-border-strong: var(--palette-moss-500);
+    --color-accent: var(--palette-olive-700);
+    --color-on-accent: var(--palette-moss-25);
+    --color-highlight: var(--palette-rust-700);
+    --color-topo-line: rgb(63 95 42 / 0.1);
+    --color-focus: var(--palette-olive-700);
+    --color-shadow: rgb(30 35 27 / 0.08);
+
+    /* ---- Semantic: typography ----------------------------------------- */
+    --font-display: var(--font-family-display);
+    --font-text: var(--font-family-text);
+
+    --text-body: var(--font-size-18);
+    --text-lead: clamp(var(--font-size-16) + 0.0625rem, 0.95rem + 0.6vw, var(--font-size-20));
+    --text-small: var(--font-size-16);
+    --text-meta: var(--font-size-15);
+    --text-label: var(--font-size-14);
+    --text-title-sm: var(--font-size-20);
+    --text-title-md: var(--font-size-24);
+    --text-title-lg: clamp(var(--font-size-24), 1.1rem + 1vw, var(--font-size-28));
+    --text-heading-sm: clamp(var(--font-size-28), 1.4rem + 1vw, var(--font-size-36));
+    --text-heading: clamp(var(--font-size-28) + 0.375rem, 1.45rem + 2.9vw, var(--font-size-48));
+    --text-heading-xl: clamp(var(--font-size-28) + 0.25rem, 1.3rem + 2.5vw, var(--font-size-48) - 0.25rem);
+    --text-badge: var(--font-size-16);
+    --text-badge-sm: var(--font-size-12);
+    --text-monogram: clamp(4.5rem, 3rem + 5vw, 6.875rem);
+    --text-stat: clamp(var(--font-size-28), 1.4rem + 1vw, var(--font-size-36));
+    --text-numeral: clamp(var(--font-size-48) - 0.25rem, 1.8rem + 2.5vw, var(--font-size-64));
+    --text-display: clamp(var(--font-size-48) - 0.125rem, 1.6rem + 5vw, var(--font-size-76));
+
+    --leading-tight: 1;
+    --leading-snug: 1.15;
+    --leading-body: 1.65;
+    --tracking-display: -0.03em;
+    --tracking-heading: -0.02em;
+    --tracking-eyebrow: 0.08em;
+
+    /* ---- Semantic: layout and spacing --------------------------------- */
+    --layout-max: 1140px;
+    --measure-intro: 51.25rem; /* page intro, ~65 characters */
+    --measure-heading: 45rem;
+    --layout-gutter: clamp(var(--space-5), 4vw, var(--space-10));
+    --header-height: clamp(4.5rem, 3.8rem + 2vw, 5.5rem);
+    --section-gap: clamp(var(--space-16), 3rem + 4vw, var(--space-24));
+    --card-padding: clamp(var(--space-5) + 0.125rem, 1rem + 1.2vw, var(--space-7));
+    --grid-gap: var(--space-5);
+
+    /* ---- Semantic: controls and borders ------------------------------ */
+    --control-height: 3.375rem; /* 54px primary buttons */
+    --control-size: 3rem; /* 48px round buttons, filters */
+    --target-min: 2.75rem; /* 44px text links */
+    --chip-height: 2rem;
+    --border-thin: 1px;
+    --border-strong: 1.5px;
+    --border-trail: 3px;
+
+    /* ---- Semantic: radius --------------------------------------------- */
+    --radius-control: var(--radius-full);
+    --radius-chip: var(--radius-full);
+    --radius-tile: var(--radius-24);
+    --radius-card: var(--radius-28);
+    --radius-card-tip: var(--radius-8);
+    --radius-feature: var(--radius-36);
+    --radius-media: var(--radius-40);
+    --radius-leaf: var(--radius-card) var(--radius-card) var(--radius-card) var(--radius-card-tip);
+    --radius-leaf-flip: var(--radius-card) var(--radius-card-tip) var(--radius-card) var(--radius-card);
+    --radius-feature-tip: var(--radius-12);
+    --radius-pin: 50% 50% 50% var(--radius-12);
+    --radius-pebble: var(--radius-12) var(--radius-20) var(--radius-12) var(--radius-20);
+    --radius-blob: 48% 52% 44% 56% / 55% 45% 55% 45%;
+    --radius-blob-inner: 44% 56% 50% 50% / 50% 46% 54% 50%;
+
+    /* ---- Semantic: elevation ------------------------------------------ */
+    --shadow-raised: 0 8px 24px var(--color-shadow);
+    --shadow-menu: 0 16px 40px var(--color-shadow);
+
+    /* ---- Semantic: motion --------------------------------------------- */
+    --motion-fast: var(--duration-120) var(--ease-out-soft);
+    --motion-base: var(--duration-200) var(--ease-out-soft);
+    --motion-slow: var(--duration-320) var(--ease-out-soft);
+
+    /* ---- Semantic: focus ---------------------------------------------- */
+    --focus-ring-width: 3px;
+    --focus-ring-offset: 3px;
+
+    /* ---- Semantic: texture ------------------------------------------- */
+    --topo-gap: 16px; /* distance between contour lines */
+    --topo-line: 1.5px;
+
+    /* Which theme icon the theme switch shows (sun in light, moon in dark). */
+    --theme-icon-light: inline;
+    --theme-icon-dark: none;
+}
+
+:root[data-theme='dark'] {
+    color-scheme: dark;
+    --color-bg: var(--palette-night-950);
+    --color-surface: var(--palette-night-900);
+    --color-surface-soft: var(--palette-night-800);
+    --color-text: var(--palette-night-50);
+    --color-text-muted: var(--palette-night-300);
+    --color-border: var(--palette-night-700);
+    --color-border-strong: var(--palette-night-500);
+    --color-accent: var(--palette-olive-300);
+    --color-on-accent: var(--palette-night-950);
+    --color-highlight: var(--palette-rust-300);
+    --color-topo-line: rgb(169 201 139 / 0.1);
+    --color-focus: var(--palette-olive-300);
+    --color-shadow: rgb(0 0 0 / 0.35);
+    --theme-icon-light: none;
+    --theme-icon-dark: inline;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) {
+        color-scheme: dark;
+        --color-bg: var(--palette-night-950);
+        --color-surface: var(--palette-night-900);
+        --color-surface-soft: var(--palette-night-800);
+        --color-text: var(--palette-night-50);
+        --color-text-muted: var(--palette-night-300);
+        --color-border: var(--palette-night-700);
+        --color-border-strong: var(--palette-night-500);
+        --color-accent: var(--palette-olive-300);
+        --color-on-accent: var(--palette-night-950);
+        --color-highlight: var(--palette-rust-300);
+        --color-topo-line: rgb(169 201 139 / 0.1);
+        --color-focus: var(--palette-olive-300);
+        --color-shadow: rgb(0 0 0 / 0.35);
+        --theme-icon-light: none;
+        --theme-icon-dark: inline;
+    }
+}

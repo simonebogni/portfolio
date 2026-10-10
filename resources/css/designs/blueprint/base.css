@@ -1,0 +1,125 @@
+/* Base: element defaults and utilities. Semantic tokens only. */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    line-height: var(--leading-body);
+    font-weight: var(--weight-regular);
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    margin: 0;
+    font-weight: var(--weight-bold);
+    line-height: var(--leading-snug);
+    text-wrap: balance;
+}
+
+p {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: inherit;
+    text-underline-offset: 0.2em;
+}
+
+button {
+    font: inherit;
+}
+
+:focus-visible {
+    outline: var(--border-thick) solid var(--color-focus);
+    outline-offset: var(--border-thick);
+    border-radius: var(--radius-xs);
+}
+
+main:focus {
+    outline: none;
+}
+
+.container {
+    max-width: calc(var(--container-max) + 2 * var(--gutter));
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+}
+
+.visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.skip-link {
+    position: absolute;
+    left: var(--space-4);
+    top: calc(-1 * var(--space-24));
+    z-index: 100;
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-sm);
+    background: var(--color-block);
+    color: var(--color-on-block);
+    font-weight: var(--weight-bold);
+}
+
+.skip-link:focus {
+    top: var(--space-4);
+    outline-color: var(--color-focus-on-block);
+}
+
+/* Owner placeholders from config/profile.php: "[LIKE THIS]". */
+.is-placeholder {
+    font-style: italic;
+    color: var(--color-text-muted);
+    text-decoration: underline dashed var(--color-line-strong);
+    text-underline-offset: 0.25em;
+}
+
+/* The engineering-paper grid behind page headers. */
+.blueprint-grid {
+    background-color: var(--color-bg);
+    background-image:
+        linear-gradient(var(--color-grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--color-grid) 1px, transparent 1px);
+    background-size: var(--grid-cell) var(--grid-cell);
+    border-bottom: var(--border-thin) solid var(--color-line);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

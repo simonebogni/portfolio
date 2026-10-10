@@ -30,9 +30,9 @@ class Certificate extends Model
     }
 
     /**
-     * @return BelongsToMany
+     * @return BelongsToMany<Tag, $this>
      */
-    public function tags()
+    public function tags(): BelongsToMany
     {
         return $this->belongsToMany(Tag::class);
     }

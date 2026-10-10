@@ -1,0 +1,13 @@
+/*
+ * Blueprint design system entry point.
+ * Fonts are self-hosted through Fontsource (only the weights in use).
+ */
+@import '@fontsource-variable/schibsted-grotesk/wght.css';
+@import '@fontsource/dm-mono/400.css';
+@import '@fontsource/dm-mono/500.css';
+
+@import './tokens.css';
+@import './base.css';
+@import './layout.css';
+@import './components.css';
+@import './pages.css';
