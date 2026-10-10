@@ -1,2 +1,44 @@
-/* Entry stylesheet of the "terrain" design, loaded by resources/views/app.blade.php. */
-@import '../../../../../css/designs/terrain/app.css';
+/*
+ * Terrain: entry stylesheet, loaded by resources/views/app.blade.php. Order matters: fonts, tokens and base,
+ * then the slice stylesheets in their original cascade order (see docs/designs/terrain.md).
+ */
+@import '@fontsource-variable/bricolage-grotesque/opsz.css';
+@import '@fontsource-variable/figtree/wght.css';
+
+@import './tokens.css';
+@import './base.css';
+
+@import '../../shared/ui/base-icon.css';
+@import '../../shared/ui/eyebrow-text.css';
+@import '../../shared/ui/base-button.css';
+@import '../../shared/ui/text-link.css';
+@import '../../shared/ui/icon-button.css';
+@import '../../features/theme-toggle/ui/theme-toggle.css';
+@import '../../shared/ui/page-header.css';
+@import '../../shared/ui/section-heading.css';
+@import '../../shared/ui/surface-card.css';
+@import '../../shared/ui/grid.css';
+@import '../../shared/ui/tag-list.css';
+@import '../../shared/ui/status-chip.css';
+@import '../../shared/ui/leaf-rating.css';
+@import '../../shared/ui/stat-strip.css';
+@import '../../shared/ui/terrain.css';
+@import '../../shared/ui/monogram-badge.css';
+@import '../../entities/work/ui/trail-stop.css';
+@import '../../features/portfolio-filter/ui/portfolio-filter.css';
+@import '../../entities/project/ui/project-card.css';
+@import '../../entities/project/ui/featured-project.css';
+@import '../../shared/ui/leaf-badge.css';
+@import './layout.css';
+@import '../../widgets/site-header/ui/site-header.css';
+@import '../../widgets/site-footer/ui/site-footer.css';
+@import './sections.css';
+@import '../../widgets/about-hero/ui/about-hero.css';
+@import '../../entities/skill/ui/skill-card.css';
+@import '../../entities/language/ui/language-card.css';
+@import '../../widgets/milestones/ui/milestones.css';
+@import '../../entities/education/ui/course-card.css';
+@import '../../entities/certificate/ui/certificate-card.css';
+@import '../../entities/soft-skill/ui/soft-skill-card.css';
+@import '../../pages/hobbies/ui/hobbies.css';
+@import '../../entities/hobby/ui/hobby-item.css';

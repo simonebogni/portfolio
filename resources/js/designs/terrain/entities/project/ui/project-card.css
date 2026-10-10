@@ -1,0 +1,43 @@
+/* ProjectCard and ProjectLinks. */
+
+.project {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    height: 100%;
+}
+
+.project .monogram {
+    margin-bottom: var(--space-1);
+}
+
+.project__title {
+    font-size: var(--text-title-md);
+    font-weight: var(--font-weight-bold);
+}
+
+.project__subtitle {
+    color: var(--color-highlight);
+    font-size: var(--text-meta);
+    font-weight: var(--font-weight-bold);
+}
+
+.project__summary {
+    display: -webkit-box;
+    overflow: hidden;
+    color: var(--color-text-muted);
+    font-size: var(--text-small);
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+}
+
+.project__links {
+    margin-top: auto;
+}
+
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 var(--space-5);
+}

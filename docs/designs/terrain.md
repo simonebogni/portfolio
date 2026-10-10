@@ -17,16 +17,67 @@ Earthy and human. A CV can feel like a spreadsheet; Terrain makes it feel like a
   text.
 - **Voice:** first person and warm ("Ciao!", "What I build with", "Things I’ve grown").
 
-## Files
+## Structure
 
-| Path | What it holds |
+The design is a Feature-Sliced Design tree in `resources/js/designs/terrain` (TypeScript, `<script setup lang="ts">`).
+Each layer imports only from the layers below it and from `resources/js/core` (types, `useProfile`, `useTheme`,
+`useSiteMenu`, `usePortfolioFilter`, date and text helpers); other slices are imported through their `index.ts`.
+See [frontend.md](../frontend.md).
+
+```
+app/                    Layout export (index.ts), layout/SiteLayout.vue, styles/ (the stylesheet entry)
+pages/
+  about/                About.vue: hero, highlights strip, skills, languages; model: props, highlightStats
+  experience/           Experience.vue: work trail, education and awards, courses, certificates; model: props
+  portfolio/            Portfolio.vue: page header and the project catalog; model: props
+  soft-skills/          SoftSkills.vue: numbered soft-skill cards; model: props
+  hobbies/              Hobbies.vue: hobby rows; model: props
+widgets/
+  site-header/          SiteHeader: brand, navigation, mobile menu (core useSiteMenu), theme toggle
+  site-footer/          SiteFooter: "Let’s talk" call to action and profile links
+  about-hero/           AboutHero: greeting, headline with a marked last word, portrait
+  skill-toolbox/        "What I build with" section
+  language-list/        "Languages I speak" section
+  experience-trail/     "Where I’ve worked" trail
+  milestones/           "Education and awards" section
+  course-list/          "Courses" section
+  certificate-list/     "Certifications" section
+  project-catalog/      Portfolio filter, live region, featured project and category grids
+features/
+  theme-toggle/         ThemeToggle on core useTheme
+  portfolio-filter/     PortfolioFilter buttons and the live-region wording (filterStatus)
+entities/
+  profile/              TerrainProfile type (headline, bio) and useTerrainProfile
+  project/              ProjectCard, ProjectLinks, FeaturedProject
+  work/                 TrailStop, trailPositions, currentRoleStop
+  education/            DegreeCard, CourseCard, degreesOf
+  award/                AwardCard
+  certificate/          CertificateCard, certificateIssuer
+  language/             LanguageCard, languageLevel
+  skill/                SkillCard, skillNames
+  soft-skill/           SoftSkillCard
+  hobby/                HobbyItem
+shared/
+  ui/                   BaseButton, BaseIcon, IconButton, EyebrowText, PageHeader, SectionHeading, SurfaceCard,
+                        TagList, LeafRating, StatStrip, MonogramBadge (+ the generic CSS helpers)
+  lib/                  monogram (Terrain's own initials algorithm), isHttpUrl, isSitePath
+```
+
+## Stylesheets
+
+Global CSS only (no `<style>` blocks), so server-rendered pages are styled on first paint.
+
+| Path (under `resources/js/designs/terrain`) | What it holds |
 | --- | --- |
-| `resources/css/designs/terrain/tokens.css` | Primitive and semantic tokens, light and dark. |
-| `resources/css/designs/terrain/base.css` | Element defaults, focus ring, skip link, `.wrap`, `.visually-hidden`, `.prose`, reduced motion. |
-| `resources/css/designs/terrain/components.css` | One block per component in `resources/js/designs/terrain/components`. |
-| `resources/css/designs/terrain/layout.css` | Header, navigation, mobile menu and footer. |
-| `resources/css/designs/terrain/pages.css` | Page-level layout (hero, milestones, soft skills grid, hobbies). |
-| `resources/css/designs/terrain/app.css` | Entry point: imports fonts, then the files above in that order. |
+| `app/styles/index.css` | Entry point, loaded by `resources/views/app.blade.php`: fonts, tokens, base, then every slice stylesheet. |
+| `app/styles/tokens.css` | Primitive and semantic tokens, light and dark. |
+| `app/styles/base.css` | Element defaults, focus ring, skip link, `.wrap`, `.visually-hidden`, `.prose`, reduced motion. |
+| `app/styles/layout.css`, `app/styles/sections.css` | The page column and main; spacing between page sections, empty state. |
+| `<slice>/ui/*.css` | One stylesheet per component, next to it (e.g. `entities/project/ui/project-card.css`). |
+
+The entry imports the slice stylesheets in the original cascade order (shared controls, theme toggle, shared
+blocks, trail, filter, project cards, leaf badge, then layout, header, footer, and the page blocks), so rules that
+override each other keep their order. Keep that order when adding a file.
 
 ## Tokens
 
@@ -147,7 +198,7 @@ columns below 960px and one column below **700px**, hero/feature/hobby rows stac
 | `--motion-base` | 200ms: hover colours, icon nudge |
 | `--motion-slow` | 320ms: brand mark morph |
 
-All motion is removed under `prefers-reduced-motion: reduce` (see `base.css`).
+All motion is removed under `prefers-reduced-motion: reduce` (see `app/styles/base.css`).
 
 ## Fonts
 
@@ -161,29 +212,32 @@ only the subsets a page needs (Latin in practice). `font-display: swap` keeps te
 
 ## Components
 
-All in `resources/js/designs/terrain/components`. Styles live in `components.css` (or `layout.css` for the site chrome).
+Shared UI is in `shared/ui`; the other components sit in the slice named in the second column. Their styles
+sit next to them (see Stylesheets).
 
-| Component | Props | Notes |
-| --- | --- | --- |
-| `BaseButton` | `href`, `variant` (`primary` \| `ghost`), `icon`, `block` | Inertia `<Link>` for `/paths`, `<a>` for URLs and `mailto:`, `<button>` without `href`. External links open a new tab, say so to screen readers and get an arrow icon. `block` fills the row on phones. |
-| `IconButton` | `label` (required), `href` | 48px round control. `<a>` with `href`, else `<button>`. The label is the accessible name. |
-| `BaseIcon` | `name`, `size` | Inline SVG, always `aria-hidden`. Names: sun, moon, menu, close, arrow, external, check, mail, github, linkedin, plus, minus. |
-| `ThemeToggle` | – | `IconButton` with `aria-pressed` = dark theme on. Uses `useTheme`; the sun/moon icon is switched with tokens so SSR markup is right before hydration. |
-| `EyebrowText` | `as` | Rust uppercase label above a heading. |
-| `PageHeader` | `title`, `eyebrow`, `intro`, `layout` (`stack` \| `split`) | Holds the page’s only `<h1>`. |
-| `SectionHeading` | `id`, `title`, `eyebrow`, `meta`, `level`, `variant` (`stack` \| `inline`) | Use the same `id` in the section’s `aria-labelledby`. |
-| `SurfaceCard` | `as`, `shape` (`tile` \| `leaf` \| `leaf-flip`), `tone` (`default` \| `accent`) | Generic card. Use `as="li"` inside lists. |
-| `TagList` | `tags`, `label`, `limit` | Chips. With `limit`, a "+N more" button (with `aria-expanded`) reveals the rest. |
-| `LeafRating` | `value`, `max`, `label` | Bars with half steps; `role="img"` with a text label. Always shown next to a text level. |
-| `StatStrip` | `items` (`[{ value, label }]`), `label` | Highlight numbers. |
-| `TimelineEntry` | `marker`, `title`, `when`, `org`, `ghost` | One stop inside `<ol class="trail">`. The pin is decorative; dates are in the card. |
-| `MonogramBadge` | `text`, `size` (`md` \| `xl`) | Initials from a title (`monogram()` in `lib/format.js`). Decorative. |
-| `PortfolioFilter` | `options` (`[{ value, label, count }]`), `label`, `v-model` | Toggle buttons in a `role="group"`, `aria-pressed` and a check icon on the selected one. Scrolls sideways on phones. |
-| `ProjectCard` | `item`, `headingLevel` | Portfolio grid card; description clamped to 4 lines (the full text stays in the DOM). |
-| `ProjectLinks` | `item` | "Live site" / "Source code" links, new tab, named for screen readers. |
-| `FeaturedProject` | `item`, `eyebrow` | Large card on a terrain panel; falls back to the monogram if the cover image fails. |
-| `SiteHeader` | `name` | Brand, nav pill (`aria-current`), theme toggle, menu button (`aria-expanded`, `aria-controls`). Escape closes the menu and returns focus to the button. |
-| `SiteFooter` | `profile` | "Let’s talk" call to action (email, else LinkedIn, else GitHub) and profile links. |
+| Component | Slice | Props | Notes |
+| --- | --- | --- | --- |
+| `BaseButton` | `shared/ui` | `href`, `variant` (`primary` \| `ghost`), `icon`, `block` | Inertia `<Link>` for `/paths`, `<a>` for URLs and `mailto:`, `<button>` without `href`. External links open a new tab, say so to screen readers and get an arrow icon. `block` fills the row on phones. |
+| `IconButton` | `shared/ui` | `label` (required), `href` | 48px round control. `<a>` with `href`, else `<button>`. The label is the accessible name. |
+| `BaseIcon` | `shared/ui` | `name`, `size` | Inline SVG, always `aria-hidden`. Names: sun, moon, menu, close, arrow, external, check, mail, github, linkedin, plus, minus. |
+| `ThemeToggle` | `features/theme-toggle` | – | `IconButton` with `aria-pressed` = dark theme on. Uses core `useTheme`; the sun/moon icon is switched with tokens so SSR markup is right before hydration. |
+| `EyebrowText` | `shared/ui` | `as` | Rust uppercase label above a heading. |
+| `PageHeader` | `shared/ui` | `title`, `eyebrow`, `intro`, `layout` (`stack` \| `split`) | Holds the page’s only `<h1>`. |
+| `SectionHeading` | `shared/ui` | `id`, `title`, `eyebrow`, `meta`, `level`, `variant` (`stack` \| `inline`) | Use the same `id` in the section’s `aria-labelledby`. |
+| `SurfaceCard` | `shared/ui` | `as`, `shape` (`tile` \| `leaf` \| `leaf-flip`), `tone` (`default` \| `accent`) | Generic card. Use `as="li"` inside lists. |
+| `TagList` | `shared/ui` | `tags`, `label`, `limit` | Chips. With `limit`, a "+N more" button (with `aria-expanded`) reveals the rest. |
+| `LeafRating` | `shared/ui` | `value`, `max`, `label` | Bars with half steps; `role="img"` with a text label. Always shown next to a text level. |
+| `StatStrip` | `shared/ui` | `items` (`[{ value, label }]`), `label` | Highlight numbers. |
+| `TrailStop` | `entities/work` | `marker`, `title`, `when`, `org`, `ghost` | One stop inside `<ol class="trail">`. The pin is decorative; dates are in the card. |
+| `MonogramBadge` | `shared/ui` | `text`, `size` (`md` \| `xl`) | Initials from a title (`monogram()` in `shared/lib`, Terrain’s own algorithm). Decorative. |
+| `PortfolioFilter` | `features/portfolio-filter` | `options` (`[{ value, label, count }]`), `label`, `v-model` | State from core `usePortfolioFilter` (in the `project-catalog` widget). Toggle buttons in a `role="group"`, `aria-pressed` and a check icon on the selected one. Scrolls sideways on phones. |
+| `ProjectCard` | `entities/project` | `item`, `headingLevel` | Portfolio grid card; description clamped to 4 lines (the full text stays in the DOM). |
+| `ProjectLinks` | `entities/project` | `item` | "Live site" / "Source code" links, new tab, named for screen readers. |
+| `FeaturedProject` | `entities/project` | `item`, `eyebrow` | Large card on a terrain panel; falls back to the monogram if the cover image fails. |
+| `SiteHeader` | `widgets/site-header` | `name` | Uses core `useSiteMenu`. Brand, nav pill (`aria-current`), theme toggle, menu button (`aria-expanded`, `aria-controls`). Escape closes the menu and returns focus to the button. |
+| `SiteFooter` | `widgets/site-footer` | `profile` | "Let’s talk" call to action (email, else LinkedIn, else GitHub: core `contactLink`) and profile links. |
+| `SkillCard`, `LanguageCard`, `DegreeCard`, `CourseCard`, `AwardCard`, `CertificateCard`, `SoftSkillCard`, `HobbyItem` | `entities/*` | the entity (`category`, `language`, ...; `index` for numbered ones) | One card or row per item, built on `SurfaceCard` where they are cards. |
+| `AboutHero`, `SkillToolbox`, `LanguageList`, `ExperienceTrail`, `Milestones`, `CourseList`, `CertificateList`, `ProjectCatalog` | `widgets/*` | the page data they show | Page sections, each a `<section aria-labelledby>` with its `SectionHeading` (the hero has the `<h1>`); `ProjectCatalog` renders the filter, the featured project and one section per category. |
 
 Example:
 

@@ -1,0 +1,9 @@
+/* ThemeToggle: the sun/moon icon follows the theme tokens. */
+
+.theme-icon--light {
+    display: var(--theme-icon-light);
+}
+
+.theme-icon--dark {
+    display: var(--theme-icon-dark);
+}

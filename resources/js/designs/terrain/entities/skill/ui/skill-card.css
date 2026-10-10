@@ -1,0 +1,5 @@
+/* SkillCard. */
+
+.skill-card .card__title {
+    margin-bottom: var(--space-3);
+}

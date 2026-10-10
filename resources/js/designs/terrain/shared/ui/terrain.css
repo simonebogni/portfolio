@@ -1,0 +1,10 @@
+/* Contour-line texture (.terrain). */
+
+.terrain {
+    background-color: var(--color-surface-soft);
+    background-image: repeating-radial-gradient(
+        ellipse at 70% 60%,
+        transparent 0 var(--topo-gap),
+        var(--color-topo-line) var(--topo-gap) calc(var(--topo-gap) + var(--topo-line))
+    );
+}

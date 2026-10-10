@@ -1,0 +1,13 @@
+/* Site layout: the page column (.site) and main. The header and footer styles live in their widgets. */
+
+.site {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: clip;
+}
+
+.site-main {
+    flex: 1;
+    padding-bottom: var(--section-gap);
+}

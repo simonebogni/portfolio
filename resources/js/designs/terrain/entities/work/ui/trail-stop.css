@@ -1,0 +1,107 @@
+/* TrailStop and the trail (.trail) it sits on. */
+
+.trail {
+    position: relative;
+}
+
+.trail::before {
+    content: '';
+    position: absolute;
+    top: var(--space-5);
+    bottom: var(--space-5);
+    left: calc(var(--pin-size) / 2 - var(--border-trail) / 2);
+    border-left: var(--border-trail) dashed var(--color-border);
+}
+
+.trail,
+.trail__stop {
+    --pin-size: 3.5rem;
+}
+
+.trail__stop {
+    position: relative;
+    display: grid;
+    grid-template-columns: var(--pin-size) minmax(0, 1fr);
+    gap: var(--space-6);
+}
+
+.trail__stop + .trail__stop {
+    margin-top: var(--space-6);
+}
+
+.pin {
+    display: grid;
+    place-items: center;
+    width: var(--pin-size);
+    height: var(--pin-size);
+    border-radius: var(--radius-pin);
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+    font-family: var(--font-display);
+    font-size: var(--text-meta);
+    font-weight: var(--font-weight-heavy);
+    line-height: var(--leading-tight);
+    transform: rotate(-45deg);
+}
+
+.pin > span {
+    transform: rotate(45deg);
+}
+
+.pin--ghost {
+    border: 2px dashed var(--color-accent);
+    background: var(--color-surface);
+    color: var(--color-accent);
+}
+
+.trail__card {
+    padding: var(--space-7) var(--space-8);
+}
+
+.trail__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-1) var(--space-4);
+}
+
+.trail__title {
+    font-size: var(--text-title-lg);
+    font-weight: var(--font-weight-bold);
+}
+
+.trail__when {
+    color: var(--color-highlight);
+    font-size: var(--text-meta);
+    font-weight: var(--font-weight-bold);
+}
+
+.trail__org {
+    margin: var(--space-1) 0 var(--space-4);
+    color: var(--color-text-muted);
+    font-weight: var(--font-weight-semibold);
+}
+
+.trail__tags {
+    margin-top: var(--space-4);
+}
+
+@media (max-width: 700px) {
+    .trail,
+    .trail__stop {
+        --pin-size: 2.5rem;
+    }
+
+    .trail__stop {
+        gap: var(--space-3);
+    }
+
+    .pin {
+        font-size: var(--text-badge-sm);
+    }
+
+    .trail__card {
+        padding: var(--space-5);
+    }
+}

@@ -1,0 +1,32 @@
+/* SurfaceCard (.card). */
+
+.card {
+    padding: var(--card-padding);
+    border: var(--border-thin) solid var(--color-border);
+    border-radius: var(--radius-tile);
+    background: var(--color-surface);
+}
+
+.card--leaf {
+    border-radius: var(--radius-leaf);
+}
+
+.card--leaf-flip {
+    border-radius: var(--radius-leaf-flip);
+}
+
+.card--accent {
+    border-color: var(--color-accent);
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+}
+
+.card__title {
+    margin-bottom: var(--space-3);
+    font-size: var(--text-title-md);
+    font-weight: var(--font-weight-bold);
+}
+
+.card__title--sm {
+    font-size: var(--text-title-sm);
+}

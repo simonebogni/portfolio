@@ -1,0 +1,21 @@
+/* LeafRating. */
+
+.rating {
+    display: flex;
+    gap: var(--space-1);
+}
+
+.rating__leaf {
+    flex: 1;
+    height: var(--space-2);
+    border-radius: var(--radius-chip);
+    background: var(--color-border);
+}
+
+.rating__leaf--full {
+    background: var(--color-accent);
+}
+
+.rating__leaf--half {
+    background: linear-gradient(90deg, var(--color-accent) 50%, var(--color-border) 50%);
+}

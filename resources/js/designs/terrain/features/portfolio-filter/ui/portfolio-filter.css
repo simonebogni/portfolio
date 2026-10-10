@@ -1,0 +1,65 @@
+/* PortfolioFilter. */
+
+.filters {
+    margin-bottom: var(--space-10);
+}
+
+.filters__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+}
+
+.filter {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    min-height: var(--control-size);
+    padding: 0 var(--space-5);
+    border: var(--border-strong) solid var(--color-border-strong);
+    border-radius: var(--radius-control);
+    background: var(--color-surface);
+    color: var(--color-text);
+    font-size: var(--text-meta);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--leading-tight);
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+        background-color var(--motion-base),
+        border-color var(--motion-base);
+}
+
+.filter:hover {
+    border-color: var(--color-accent);
+    background: var(--color-surface-soft);
+}
+
+.filter[aria-pressed='true'] {
+    border-color: var(--color-accent);
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+}
+
+.filter__count {
+    font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 700px) {
+    /* A single scrolling row; the page itself never scrolls sideways. */
+    .filters {
+        margin-inline: calc(-1 * var(--layout-gutter));
+    }
+
+    .filters__list {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding: var(--focus-ring-width) var(--layout-gutter) var(--space-2);
+        scroll-padding-inline: var(--layout-gutter);
+        scrollbar-width: thin;
+    }
+
+    .filters__list > li {
+        flex: none;
+    }
+}
