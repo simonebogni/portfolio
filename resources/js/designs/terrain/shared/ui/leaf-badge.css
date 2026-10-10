@@ -1,0 +1,21 @@
+/* Numbered leaf badge (.leaf-badge). */
+
+.leaf-badge {
+    display: grid;
+    place-items: center;
+    width: var(--control-size);
+    height: var(--control-size);
+    margin-bottom: var(--space-2);
+    border-radius: 0 50% 0 50%;
+    background: var(--color-surface-soft);
+    color: var(--color-accent);
+    font-family: var(--font-display);
+    font-size: var(--text-meta);
+    font-weight: var(--font-weight-heavy);
+    line-height: var(--leading-tight);
+}
+
+.card--accent .leaf-badge {
+    background: var(--color-on-accent);
+    color: var(--color-accent);
+}

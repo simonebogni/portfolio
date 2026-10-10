@@ -1,0 +1,163 @@
+/* The home hero and its "How I work" diagram (CollaborationMap). */
+
+.map {
+    margin: 0;
+    padding: var(--space-6);
+    border: var(--border-thin) solid var(--color-line);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+}
+
+.map__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-5);
+    color: var(--color-text-muted);
+    font: var(--weight-medium) var(--text-xs) / 1 var(--font-mono);
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+}
+
+.map__row {
+    display: grid;
+    grid-template-columns: repeat(var(--map-columns, 2), minmax(0, 1fr));
+    gap: var(--space-4);
+}
+
+.map__node,
+.map__team {
+    padding: var(--space-3-5) var(--space-4);
+    border: var(--border-thin) solid var(--color-line);
+    border-radius: var(--radius-md);
+    background: var(--color-bg);
+}
+
+.map__node b,
+.map__team b {
+    display: block;
+    font-size: var(--text-base);
+}
+
+.map__node span {
+    color: var(--color-text-muted);
+    font-size: var(--text-md);
+}
+
+.map__wire {
+    display: grid;
+    grid-template-columns: repeat(var(--map-columns, 2), minmax(0, 1fr));
+    height: var(--space-7);
+}
+
+.map__wire--single {
+    grid-template-columns: 1fr;
+}
+
+.map__wire i {
+    display: block;
+    width: 50%;
+    border-right: var(--border-thick) dashed var(--color-accent);
+}
+
+.map__hub {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3-5);
+    padding: var(--space-3-5) var(--space-4);
+    border-radius: var(--radius-md);
+    background: var(--color-block);
+    color: var(--color-on-block);
+}
+
+.map__hub img {
+    width: var(--size-avatar);
+    height: var(--size-avatar);
+    border-radius: var(--radius-md);
+    object-fit: cover;
+}
+
+.map__hub b {
+    display: block;
+    font-size: var(--text-body);
+}
+
+.map__hub span {
+    color: var(--color-on-block-muted);
+    font-size: var(--text-md);
+}
+
+.map__dots {
+    display: grid;
+    grid-template-columns: repeat(var(--map-dots, 15), minmax(0, 1fr));
+    gap: var(--space-1);
+    margin-top: var(--space-3);
+}
+
+.map__dots i {
+    display: block;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--color-accent);
+}
+
+.hero__inner {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: var(--space-14);
+    align-items: center;
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-20);
+}
+
+.hero__title {
+    margin: 0 0 var(--space-5);
+    font-size: var(--text-hero);
+    font-weight: var(--weight-heavy);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tight);
+}
+
+.hero__title em {
+    font-style: normal;
+    color: var(--color-accent);
+}
+
+.lede {
+    max-width: var(--measure-narrow);
+    margin: 0 0 var(--space-8);
+    color: var(--color-text-muted);
+    font-size: var(--text-lede);
+}
+
+@media (max-width: 64em) {
+    .hero__inner {
+        grid-template-columns: 1fr;
+        gap: var(--space-10);
+    }
+}
+
+@media (max-width: 43.75em) {
+    .map {
+        padding: var(--space-4);
+    }
+
+    .map__row {
+        grid-template-columns: 1fr;
+        gap: var(--space-2);
+    }
+
+    .map__wire {
+        display: none;
+    }
+
+    .map__hub {
+        margin: var(--space-2) 0;
+    }
+
+    .hero__inner {
+        gap: var(--space-8);
+        padding-top: var(--space-10);
+        padding-bottom: var(--space-10);
+    }
+}

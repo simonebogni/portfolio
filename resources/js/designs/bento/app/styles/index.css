@@ -1,0 +1,29 @@
+/*
+ * C · Bento: entry stylesheet, loaded by resources/views/app.blade.php.
+ * Order: fonts → tokens → base → the slice stylesheets, in cascade order. See docs/designs/bento.md.
+ */
+@import '@fontsource-variable/plus-jakarta-sans/wght.css';
+@import '@fontsource/geist-mono/latin-500.css';
+@import './tokens.css';
+@import './base.css';
+@import '../../shared/ui/icon.css';
+@import '../layout/site-layout.css';
+@import '../../widgets/site-header/ui/site-header.css';
+@import '../../shared/ui/icon-button.css';
+@import '../../widgets/site-footer/ui/site-footer.css';
+@import '../../shared/ui/button.css';
+@import '../../shared/ui/bento.css';
+@import '../../shared/ui/text.css';
+@import '../../shared/ui/page-intro.css';
+@import '../../shared/ui/chips.css';
+@import '../../pages/about/ui/about.css';
+@import '../../entities/language/ui/language-meter.css';
+@import '../../shared/ui/mini-card.css';
+@import '../../widgets/contact-tile/ui/contact-tile.css';
+@import '../../pages/experience/ui/experience.css';
+@import '../../widgets/work-history/ui/work-history.css';
+@import '../../entities/work/ui/timeline-entry.css';
+@import '../../features/portfolio-filter/ui/portfolio-filter.css';
+@import '../../entities/project/ui/project-card.css';
+@import '../../pages/soft-skills/ui/soft-skills.css';
+@import '../../pages/hobbies/ui/hobbies.css';

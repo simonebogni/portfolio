@@ -1,0 +1,143 @@
+/*
+ * Experience page: education, awards and certificates.
+ * Semantic tokens only.
+ */
+
+/* ---------- Experience: education and awards ---------- */
+.duo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+    border: var(--border-strong) solid var(--color-line);
+    margin-top: var(--space-8);
+}
+
+.duo__panel {
+    padding: var(--space-card);
+    box-shadow: calc(-1 * var(--border-strong)) 0 0 0 var(--color-line);
+}
+
+.duo__panel p {
+    margin: 0;
+}
+
+.duo__panel--accent {
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+}
+
+.duo__figure {
+    margin-bottom: var(--space-4) !important;
+    font-size: var(--text-display-figure);
+    line-height: 0.9;
+    letter-spacing: var(--tracking-giant);
+}
+
+.duo__title {
+    margin-bottom: var(--space-2);
+    font-size: var(--text-display-xs);
+    font-weight: var(--weight-extrabold);
+    line-height: 1.1;
+    letter-spacing: var(--tracking-heading);
+}
+
+.duo__text {
+    margin-top: var(--space-3) !important;
+}
+
+.subheading {
+    margin: var(--space-11) 0 var(--space-2);
+    padding-bottom: var(--space-3);
+    border-bottom: var(--border-strong) solid var(--color-line);
+}
+
+.course-rows__item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--space-2) var(--space-8);
+    align-items: baseline;
+    padding: var(--space-5) 0;
+    border-bottom: var(--border-thin) solid var(--color-hairline);
+}
+
+.course-rows__name {
+    margin: 0;
+    font-size: var(--text-body);
+    font-weight: var(--weight-extrabold);
+    line-height: 1.3;
+}
+
+.course-rows__place {
+    margin: 0;
+    font-size: var(--text-label-s);
+}
+
+.course-rows__item .tag-list {
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 45rem) {
+    .course-rows__item {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* ---------- Experience: certificates ---------- */
+.cert-rows__item {
+    display: grid;
+    grid-template-columns: 5rem minmax(0, 1fr) auto;
+    gap: var(--space-6);
+    align-items: center;
+    padding: var(--space-5) 0;
+    border-bottom: var(--border-thin) solid var(--color-hairline);
+}
+
+.cert-rows__index {
+    color: var(--color-accent-text);
+    font-size: var(--text-display-xs);
+}
+
+.cert-rows__title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: var(--text-display-xs);
+    font-weight: var(--weight-bold);
+    line-height: 1.1;
+    letter-spacing: var(--tracking-heading);
+}
+
+.cert-rows__meta {
+    margin: var(--space-1) 0 0;
+    color: var(--color-text-muted);
+    font-size: var(--text-small);
+    font-weight: var(--weight-semibold);
+}
+
+.cert-rows__link {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--size-target);
+    padding: 0 var(--space-4);
+    border: var(--border-strong) solid var(--color-line);
+    font-size: var(--text-label-s);
+    font-weight: var(--weight-extrabold);
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.cert-rows__link:hover {
+    background: var(--color-inverse-bg);
+    color: var(--color-inverse-text);
+}
+
+@media (max-width: 45rem) {
+    .cert-rows__item {
+        grid-template-columns: 2.75rem minmax(0, 1fr);
+        gap: var(--space-3);
+    }
+
+    .cert-rows__link {
+        grid-column: 2 / 3;
+        justify-self: start;
+    }
+}

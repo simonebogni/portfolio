@@ -1,0 +1,25 @@
+/*
+ * RatingBlocks.
+ * Semantic tokens only.
+ */
+
+/* ---------- RatingBlocks ---------- */
+.rating {
+    display: flex;
+    gap: var(--space-1);
+    margin-top: var(--space-2);
+}
+
+.rating__block {
+    flex: 1;
+    height: 0.875rem;
+    border: var(--border-strong) solid var(--color-line);
+}
+
+.rating__block--full {
+    background: var(--color-accent);
+}
+
+.rating__block--half {
+    background: linear-gradient(90deg, var(--color-accent) 50%, transparent 50%);
+}

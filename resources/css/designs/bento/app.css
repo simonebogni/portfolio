@@ -1,9 +1,0 @@
-/*
- * C · Bento — entry stylesheet.
- * Order: fonts → tokens → base → components. See docs/design-system.md.
- */
-@import '@fontsource-variable/plus-jakarta-sans/wght.css';
-@import '@fontsource/geist-mono/latin-500.css';
-@import './tokens.css';
-@import './base.css';
-@import './components.css';

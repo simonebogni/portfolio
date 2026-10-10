@@ -1,0 +1,42 @@
+/* Current role */
+
+.current-role {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    overflow: hidden;
+    border: var(--border-thin) solid var(--color-line);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+}
+
+.current-role__main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--space-8);
+}
+
+.current-role__main .when {
+    margin: 0;
+}
+
+.current-role__title {
+    font-size: var(--text-h3-lg);
+    letter-spacing: var(--tracking-snug);
+}
+
+.current-role__org {
+    margin-bottom: var(--space-2);
+    color: var(--color-text-muted);
+    font: var(--weight-medium) var(--text-md) / var(--leading-mono) var(--font-mono);
+}
+
+@media (max-width: 43.75em) {
+    .current-role {
+        grid-template-columns: 1fr;
+    }
+
+    .current-role__main {
+        padding: var(--space-5);
+    }
+}

@@ -1,0 +1,50 @@
+/* SpecList */
+
+.spec {
+    margin: 0;
+}
+
+.spec__row {
+    display: grid;
+    grid-template-columns: var(--spec-label) 1fr;
+    gap: var(--space-4);
+    padding: var(--space-3) 0;
+}
+
+.spec dt {
+    font: var(--weight-medium) var(--text-xs) / var(--leading-label) var(--font-mono);
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+}
+
+.spec dd {
+    margin: 0;
+    font-weight: var(--weight-semibold);
+}
+
+.spec--block {
+    height: 100%;
+    padding: var(--space-7) var(--space-8);
+    background: var(--color-block);
+    color: var(--color-on-block);
+}
+
+.spec--block dt {
+    color: var(--color-on-block-muted);
+}
+
+.spec--block .spec__row + .spec__row {
+    border-top: var(--border-thin) solid var(--color-on-block-muted);
+}
+
+.spec--block .is-placeholder {
+    color: var(--color-on-block-muted);
+}
+
+.spec--plain dt {
+    color: var(--color-text-muted);
+}
+
+.spec--plain .spec__row + .spec__row {
+    border-top: var(--border-thin) dashed var(--color-line);
+}

@@ -1,0 +1,99 @@
+/*
+ * TimelineEntry, and the rich text of its description.
+ * Semantic tokens only.
+ */
+
+/* ---------- TimelineEntry ---------- */
+.timeline-entry {
+    display: grid;
+    grid-template-columns: 13.75rem minmax(0, 1fr);
+    gap: var(--space-9);
+    padding: var(--space-9) 0;
+    border-bottom: var(--border-thin) solid var(--color-hairline);
+}
+
+.timeline-entry--highlight {
+    margin-inline: calc(-1 * var(--space-6));
+    padding-inline: var(--space-6);
+    background: var(--color-surface);
+}
+
+.timeline-entry__when {
+    margin: 0;
+}
+
+.timeline-entry__year {
+    display: block;
+    font-size: var(--text-display-stat);
+}
+
+.timeline-entry__period {
+    display: block;
+    margin-top: var(--space-3);
+    color: var(--color-text-muted);
+    font-size: var(--text-label-l);
+    font-weight: var(--weight-bold);
+    letter-spacing: var(--tracking-meta);
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.timeline-entry__title {
+    margin-bottom: var(--space-2);
+    font-size: var(--text-display-m);
+    font-weight: var(--weight-extrabold);
+    line-height: var(--leading-heading);
+    letter-spacing: var(--tracking-heading);
+}
+
+.timeline-entry__org {
+    margin: 0 0 var(--space-4);
+    color: var(--color-accent-text);
+    font-size: var(--text-body-s);
+    font-weight: var(--weight-extrabold);
+    letter-spacing: var(--tracking-meta);
+    text-transform: uppercase;
+}
+
+.timeline-entry__text {
+    max-width: var(--size-measure);
+    margin-bottom: var(--space-4);
+}
+
+.timeline-entry__text:empty {
+    display: none;
+}
+
+@media (max-width: 45rem) {
+    .timeline-entry {
+        grid-template-columns: minmax(0, 1fr);
+        gap: var(--space-4);
+        padding: var(--space-7) 0;
+    }
+
+    .timeline-entry--highlight {
+        margin-inline: calc(-1 * var(--space-gutter));
+        padding-inline: var(--space-gutter);
+    }
+}
+
+/* Rich text from the admin panel. */
+.rich-text > :first-child {
+    margin-top: 0;
+}
+
+.rich-text p,
+.rich-text ul,
+.rich-text ol {
+    margin: 0 0 var(--space-3);
+}
+
+.rich-text ul,
+.rich-text ol {
+    padding-left: var(--space-6);
+    list-style-position: outside !important;
+}
+
+.rich-text li::marker {
+    color: var(--color-accent-text);
+}

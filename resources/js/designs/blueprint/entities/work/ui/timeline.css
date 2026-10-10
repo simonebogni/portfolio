@@ -1,0 +1,64 @@
+/* PositionEntry: the experience timeline, and the rich text of a position. */
+
+.timeline {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-left: var(--border-thick) solid var(--color-line);
+}
+
+.timeline__entry {
+    position: relative;
+    padding: 0 0 var(--space-8) var(--space-8);
+}
+
+.timeline__entry::before {
+    content: '';
+    position: absolute;
+    left: calc(-1 * (var(--space-3) + var(--border-thick)) / 2);
+    top: var(--space-1);
+    width: var(--space-3);
+    height: var(--space-3);
+    border-radius: var(--radius-dot);
+    background: var(--color-accent);
+}
+
+.timeline__entry:last-child {
+    padding-bottom: 0;
+}
+
+.timeline__title {
+    margin: 0 0 var(--space-2);
+    font-size: var(--text-h3);
+}
+
+.timeline .chips {
+    margin-top: var(--space-3);
+    max-width: var(--measure-wide);
+}
+
+.prose {
+    max-width: var(--measure-wide);
+}
+
+.prose p,
+.prose ul,
+.prose ol {
+    margin: 0 0 var(--space-3);
+}
+
+.prose ul,
+.prose ol {
+    padding-left: var(--space-5);
+    list-style-position: outside !important;
+}
+
+.prose > :last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 43.75em) {
+    .timeline__entry {
+        padding-left: var(--space-5);
+    }
+}

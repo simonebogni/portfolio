@@ -1,0 +1,41 @@
+/* ── Languages (entities/language) ────────────────────────────────────── */
+.langs {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.lang {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-1) var(--space-3);
+}
+
+.lang__name {
+    font-weight: var(--weight-bold);
+}
+
+.lang__level {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+}
+
+.lang__meter {
+    flex: 1 0 100%;
+    height: var(--size-meter);
+    border-radius: var(--radius-pill);
+    background: var(--color-surface-sunken);
+    overflow: hidden;
+}
+
+.lang__fill {
+    display: block;
+    height: 100%;
+    background: var(--color-accent);
+    border-radius: inherit;
+}

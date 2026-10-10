@@ -1,0 +1,37 @@
+/*
+ * Entry stylesheet of the "blueprint" design, loaded by resources/views/app.blade.php.
+ * Fonts are self-hosted through Fontsource (only the weights in use). The slice stylesheets
+ * follow in cascade order: site chrome, shared UI, then the entities, widgets and pages.
+ */
+@import '@fontsource-variable/schibsted-grotesk/wght.css';
+@import '@fontsource/dm-mono/400.css';
+@import '@fontsource/dm-mono/500.css';
+
+@import './tokens.css';
+@import './base.css';
+@import './layout.css';
+
+@import '../../widgets/site-header/ui/site-header.css';
+@import '../../widgets/site-footer/ui/site-footer.css';
+
+@import '../../shared/ui/styles/icon.css';
+@import '../../shared/ui/styles/buttons.css';
+@import '../../shared/ui/styles/labels.css';
+@import '../../shared/ui/styles/page-header.css';
+@import '../../shared/ui/styles/section-heading.css';
+@import '../../shared/ui/styles/cards.css';
+@import '../../shared/ui/styles/stats.css';
+@import '../../shared/ui/styles/spec.css';
+@import '../../entities/work/ui/timeline.css';
+@import '../../shared/ui/styles/filter.css';
+@import '../../shared/ui/styles/case-card.css';
+@import '../../entities/project/ui/project-link.css';
+@import '../../widgets/hero/ui/hero.css';
+@import '../../widgets/toolbox/ui/toolbox.css';
+@import '../../widgets/languages/ui/languages.css';
+@import '../../widgets/current-role/ui/current-role.css';
+@import '../../widgets/case-studies/ui/case-studies.css';
+@import '../../pages/portfolio/ui/portfolio.css';
+@import '../../widgets/working-model/ui/working-model.css';
+@import '../../entities/soft-skill/ui/soft-skill-group.css';
+@import '../../entities/hobby/ui/hobby.css';

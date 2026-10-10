@@ -1,0 +1,22 @@
+/* IconButton. */
+
+.icon-btn {
+    display: inline-grid;
+    place-items: center;
+    width: var(--control-size);
+    height: var(--control-size);
+    padding: 0;
+    border: var(--border-thin) solid var(--color-border-strong);
+    border-radius: 50%;
+    background: var(--color-surface);
+    color: var(--color-text);
+    cursor: pointer;
+    transition:
+        background-color var(--motion-base),
+        border-color var(--motion-base);
+}
+
+.icon-btn:hover {
+    border-color: var(--color-accent);
+    background: var(--color-surface-soft);
+}

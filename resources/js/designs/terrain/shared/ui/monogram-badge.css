@@ -1,0 +1,23 @@
+/* MonogramBadge. */
+
+.monogram {
+    display: grid;
+    place-items: center;
+    width: calc(var(--control-size) + var(--space-1));
+    height: calc(var(--control-size) + var(--space-1));
+    border-radius: var(--radius-pebble);
+    background: var(--color-surface-soft);
+    color: var(--color-accent);
+    font-family: var(--font-display);
+    font-size: var(--text-badge);
+    font-weight: var(--font-weight-heavy);
+    line-height: var(--leading-tight);
+}
+
+.monogram--xl {
+    width: auto;
+    height: auto;
+    background: none;
+    font-size: var(--text-monogram);
+    letter-spacing: -0.04em;
+}

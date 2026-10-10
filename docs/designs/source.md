@@ -18,15 +18,55 @@ is described in [frontend.md](../frontend.md).
 
 ## Files
 
+The design is a Feature-Sliced Design tree in `resources/js/designs/source/` (TypeScript, `<script setup lang="ts">`).
+Logic shared with the other designs (date and text helpers, entity types, theme, site menu, portfolio filter
+state) comes from `resources/js/core`; this folder holds the Source UI and its styles.
+
 | Path | What it holds |
 | --- | --- |
-| `resources/css/designs/source/tokens.css` | Primitive (`--p-*`) and semantic tokens, light and dark, mobile overrides. |
-| `resources/css/designs/source/base.css` | Element defaults, focus ring, skip link, utilities (`.visually-hidden`, `.bare-list`, `.prose`), reduced motion. |
-| `resources/css/designs/source/layout.css` | Container, header and tab navigation, mobile menu, footer. |
-| `resources/css/designs/source/components/*.css` | One file per component family. |
-| `resources/css/designs/source/pages.css` | Page compositions (hero, grids, page-specific blocks). |
-| `resources/css/designs/source/app.css` | Entry: imports fonts, tokens, base, layout, components and pages, in that order. |
-| `resources/js/designs/source/components/*.vue` | The Vue components listed below. |
+| `app/styles/index.css` | Entry: imports fonts, tokens, base, the shell, then every slice stylesheet in cascade order. |
+| `app/styles/tokens.css` | Primitive (`--p-*`) and semantic tokens, light and dark, mobile overrides. |
+| `app/styles/base.css` | Element defaults, focus ring, skip link, utilities (`.visually-hidden`, `.bare-list`, `.prose`), reduced motion. |
+| `app/styles/layout.css` | Site shell: page column, container, main landmark. |
+| `app/styles/pages.css` | Page compositions shared by every page (`.block`, `.card-grid`, `.card-title`, `.card-text`, `.empty`). |
+| `<layer>/<slice>/ui/*.css` | Each component family's stylesheet, next to its components (e.g. `shared/ui/button/button.css`). |
+| `<layer>/<slice>/index.ts` | A slice's public API; other slices import only from it. |
+
+### Structure
+
+```
+resources/js/designs/source/
+  app/                    index.ts (Layout), layout/SiteLayout.vue, styles/ (entry, tokens, base, shell, page compositions)
+  pages/
+    about/                About.vue; model: page props (Highlights), stat cards
+    experience/           Experience.vue; model: page props, unlisted current role, certificate issuers
+    portfolio/            Portfolio.vue: filter, live region and project showcase
+    soft-skills/          SoftSkills.vue (+ page grid gap)
+    hobbies/              Hobbies.vue (+ page grid gap)
+  widgets/
+    site-header/          SiteHeader: brand, editor tabs, theme toggle, mobile menu (core useSiteMenu)
+    site-footer/          SiteFooter: name, roles, location, social links
+    about-hero/           AboutHero: hero copy and the profile written as code (model: code lines)
+    project-showcase/     ProjectShowcase: featured project and one grid per category (model: featured, sections)
+  features/
+    theme-toggle/         ThemeToggle on core useTheme
+    portfolio-filter/     PortfolioFilter toggle buttons; useAnnouncedFilter (core usePortfolioFilter + live-region text)
+  entities/
+    profile/              SourceProfile type (profile + Source copy), useSourceProfile, firstName/handle/brandMark
+    project/              ProjectCover (monogram), ProjectCard, FeaturedProject
+    skill/                SkillCard, skillCount
+    language/             LanguageCard
+    work/                 CompanyCard, CurrentRoleCard
+    education/            EducationCard (courses), OnlineProgramsCard, courseScore
+    certificate/          CertificateCard
+    award/                AwardCard
+    soft-skill/           SoftSkillCard
+    hobby/                HobbyCard
+  shared/
+    ui/                   AppIcon, AppButton, IconButton, TextLink, ChipList, BaseCard, PageHeader, SectionHeading,
+                          CodeWindow, StatList, RatingBar, TimelineList, TimelineEntry, ExpandableText (one folder each)
+    lib/                  isInternal (Inertia link or plain anchor)
+```
 
 Rule: components and pages only use **semantic** tokens. Primitives exist so the palette can be changed in one
 place; they are never referenced outside `tokens.css`.
@@ -77,7 +117,7 @@ understood. Interactive controls use `--color-border-control`.
 | `--font-sans` | IBM Plex Sans (400, 500, 600, 700), `@fontsource/ibm-plex-sans` |
 | `--font-mono` | JetBrains Mono Variable (100–800 axis), `@fontsource-variable/jetbrains-mono` |
 
-Both are self-hosted through npm and bundled by Vite (imported at the top of `app.css`); no font CDN. Only the
+Both are self-hosted through npm and bundled by Vite (imported at the top of `app/styles/index.css`); no font CDN. Only the
 weights above are imported. Each weight file declares `unicode-range` subsets, so browsers download Latin only.
 
 | Token | Desktop | Mobile (≤700px) | Use |
@@ -156,7 +196,11 @@ scale).
 
 ## Components
 
-All in `resources/js/designs/source/components/`. Each has a matching stylesheet in `resources/css/designs/source/components/`.
+The building blocks live in `shared/ui/` (one folder per component family, with its stylesheet), the theme toggle
+and portfolio filter in `features/`, the project cards in `entities/project/`. All are exported from their slice's
+`index.ts`. The entity cards (`SkillCard`, `LanguageCard`, `CompanyCard`, `CurrentRoleCard`, `EducationCard`,
+`OnlineProgramsCard`, `CertificateCard`, `AwardCard`, `SoftSkillCard`, `HobbyCard`) take the entity (plus the institute name,
+location or list number where needed) and render it on a `BaseCard`.
 
 | Component | Props | Notes |
 | --- | --- | --- |
@@ -183,17 +227,17 @@ All in `resources/js/designs/source/components/`. Each has a matching stylesheet
 ### Composition examples
 
 ```vue
-<PageHeader eyebrow="$ ls ./projects" title="Portfolio" :intro="profile.intros.portfolio" />
+<PageHeader eyebrow="$ ls ./projects" title="Portfolio" :intro="profile.intros?.portfolio" />
 
 <section aria-labelledby="skills-title">
     <SectionHeading id="skills-title" title="Programming knowledge" comment="tools I reach for" />
     <ul class="skill-grid bare-list">
-        <BaseCard v-for="category in skillCategories" :key="category.id" as="li">…</BaseCard>
+        <SkillCard v-for="category in skillCategories" :key="category.id" :category="category" />
     </ul>
 </section>
 
 <AppButton href="/portfolio" icon="arrowRight">View my work</AppButton>
-<PortfolioFilter v-model="selected" :options="options" label="Filter projects by category" />
+<PortfolioFilter :model-value="selected" :options="options" label="Filter projects by category" @update:model-value="onFilter" />
 ```
 
 ## Content sources
@@ -217,7 +261,8 @@ All in `resources/js/designs/source/components/`. Each has a matching stylesheet
   Escape closes it and returns focus to the button; it also closes on navigation.
 - Theme button: `aria-pressed` and an action label. The pre-paint script in `app.blade.php` avoids a flash.
 - Portfolio filter: toggle buttons with `aria-pressed`, a check icon on the pressed one, and a polite
-  `role="status"` region announcing "Showing 2 projects in Projects in Java."
+  `role="status"` region, empty on load, announcing each choice: "Showing 2 projects in Projects in Java." or
+  "Showing 15 projects." for All (`features/portfolio-filter`, `useAnnouncedFilter`).
 - Focus: a 3px `--color-focus` outline on every focusable element (`:focus-visible`), inset on the tabs.
 - Targets: icon buttons and filters 44px, buttons and mobile menu links 48px, text links at least 24px tall.
 - Decorative content (eyebrows, `// comments`, code lines, covers, icons, hobby photos whose subject is the heading

@@ -1,0 +1,55 @@
+/*
+ * StatList.
+ * Semantic tokens only.
+ */
+
+/* ---------- StatList ---------- */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border-bottom: var(--border-strong) solid var(--color-line);
+}
+
+.stats__item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--space-9) var(--space-7);
+    border-left: var(--border-strong) solid var(--color-line);
+}
+
+.stats__item:first-child {
+    border-left: 0;
+    padding-left: 0;
+}
+
+.stats__value {
+    font-size: var(--text-display-stat);
+    line-height: var(--leading-ui);
+}
+
+.stats__label {
+    color: var(--color-text-muted);
+    font-size: var(--text-small);
+    font-weight: var(--weight-semibold);
+    line-height: 1.3;
+}
+
+@media (max-width: 45rem) {
+    .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .stats__item {
+        padding: var(--space-6) var(--space-4);
+    }
+
+    .stats__item:nth-child(odd) {
+        border-left: 0;
+        padding-left: 0;
+    }
+
+    .stats__item:nth-child(n + 3) {
+        border-top: var(--border-strong) solid var(--color-line);
+    }
+}

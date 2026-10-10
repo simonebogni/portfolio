@@ -1,7 +1,8 @@
 # Design system: E · Kinetic
 
-The public site's visual language. It's built from CSS custom properties (`resources/css/designs/kinetic/tokens.css`) and a small
-set of Vue components (`resources/js/designs/kinetic/components/`). See [frontend.md](../frontend.md) for the architecture.
+The public site's visual language. It's built from CSS custom properties (`resources/js/designs/kinetic/app/styles/tokens.css`)
+and a small set of Vue components, organised with Feature-Sliced Design and written in TypeScript under
+`resources/js/designs/kinetic/`. See [frontend.md](../frontend.md) for the architecture.
 
 ## Concept and mood
 
@@ -15,15 +16,54 @@ Everything is square: no radius, and no soft shadows. The only shadow is the har
 portrait. Motion is limited to a few things: the scrolling skills band, small hover nudges on buttons, and the
 brand square turning on hover. All of it stops under `prefers-reduced-motion`.
 
+## Structure
+
+The design is its own Feature-Sliced Design tree in `resources/js/designs/kinetic/`. A layer imports only from the layers below it and from
+the shared core (`resources/js/core`: date and text helpers, entity types, `useProfile`, `useTheme`, `useSiteMenu`,
+`usePortfolioFilter`), and other slices only through their `index.ts`.
+
+```
+app/                    index.ts (exports Layout), layout/SiteLayout.vue, styles/ (the stylesheet entry, tokens, base)
+pages/
+  about/                About.vue; model: page props (with `stats`), highlights, ticker words
+  experience/           Experience.vue (education, awards, certificates); model: page props, education helpers
+  portfolio/            Portfolio.vue
+  soft-skills/          SoftSkills.vue
+  hobbies/              Hobbies.vue
+widgets/
+  site-header/          SiteHeader: brand, primary navigation, theme toggle, mobile menu
+  site-footer/          SiteFooter: "Let's talk" and the profile links
+  work-timeline/        WorkTimeline: the "Work" section (current role, positions newest first, year span)
+  project-showcase/     ProjectShowcase: filter, featured project, project index, empty state
+features/
+  theme-toggle/         ThemeToggle (UI on core useTheme)
+  portfolio-filter/     FilterGroup (UI on core usePortfolioFilter) and the live-region wording
+entities/
+  profile/              KineticProfile (Profile + bio and page intros), nameParts for the hero
+  project/              ProjectFeature, ProjectRow
+  work/                 TimelineEntry
+  language/             LanguageList (language cards), languageLevel
+shared/
+  ui/                   BaseButton, SmartLink, TagList, SectionHeading, PageHeader, MarqueeTicker, StatList, RatingBlocks
+  lib/                  monogram (Kinetic's own rule, see below), brandInitials
+```
+
 ## Files
 
 | File | Contents |
 | --- | --- |
-| `resources/css/designs/kinetic/tokens.css` | Primitives (`--p-*`) and semantic tokens, light and dark. |
-| `resources/css/designs/kinetic/base.css` | Element defaults, focus ring, skip link, utilities (`.container`, `.visually-hidden`, `.plain-list`, `.display`, `.label`, `.text-accent`). |
-| `resources/css/designs/kinetic/layout.css` | Site header, navigation, mobile menu, footer. |
-| `resources/css/designs/kinetic/components.css` | Styles for each component below. |
-| `resources/css/designs/kinetic/pages.css` | Page compositions (hero, stack rows, language cards, education panels, certificates, soft skills, hobbies). |
+| `app/styles/index.css` | The entry stylesheet, loaded by `resources/views/app.blade.php`: fonts, then every stylesheet below in cascade order. |
+| `app/styles/tokens.css` | Primitives (`--p-*`) and semantic tokens, light and dark. |
+| `app/styles/base.css` | Element defaults, focus ring, skip link, utilities (`.container`, `.visually-hidden`, `.plain-list`, `.display`, `.label`, `.text-accent`). |
+| `app/styles/layout.css` | The page shell (`.site`). |
+| `widgets/site-header/ui/site-header.css`, `widgets/site-footer/ui/site-footer.css` | Site header, navigation, mobile menu, footer. |
+| `shared/ui/*.css` | Buttons, tags, headings (`SectionHeading` and `PageHeader` share one file: they share a breakpoint block), rating, ticker, stats. |
+| `entities/*/ui/*.css`, `features/portfolio-filter/ui/filter-group.css` | Timeline entry and rich text, filter, featured project, project rows, language cards. |
+| `pages/*/ui/*.css`, `widgets/project-showcase/ui/project-showcase.css` | Page compositions (hero, stack rows, education panels, certificates, soft skills, hobbies) and the empty state. |
+
+Paths are relative to `resources/js/designs/kinetic/`. Each stylesheet sits next to the component it styles; `index.css` imports them in the
+original cascade order (header and footer, shared UI, entities and features, pages), so moving a rule between files
+must keep that order.
 
 Rule: components and pages use **semantic tokens only**. Primitives are only referenced inside `tokens.css`.
 
@@ -57,7 +97,7 @@ The bright orange is never used for text on white, because it reaches only 3.1:1
 | Unbounded (variable, 200–900) | `@fontsource-variable/unbounded` | `--font-display`: headlines, numbers, ticker |
 | Public Sans (variable, 100–900) | `@fontsource-variable/public-sans` | `--font-body`: text, labels, buttons |
 
-Both fonts are self-hosted and imported at the top of `app.css` from the packages' `wght.css`. That file holds the
+Both fonts are self-hosted and imported at the top of `app/styles/index.css` from the packages' `wght.css`. That file holds the
 normal style only, with one variable file per script subset, and the browser downloads only the subsets a page
 uses. The weights in use are 400, 600, 700, 800 and 900 (`--weight-*`).
 
@@ -134,25 +174,30 @@ and its pause button is hidden.
 
 ## Components
 
-All components live in `resources/js/designs/kinetic/components/`.
+Components live in the slice that matches what they are: generic UI in `shared/ui`, business things in `entities`,
+interactions in `features`, composed blocks in `widgets` (see [Structure](#structure)). Props are typed with
+`defineProps<...>()`; data types come from the core entities (`Project`, `Language`, `Company`, ...).
 
 | Component | Props | Notes |
 | --- | --- | --- |
-| `SiteHeader` | — | Brand monogram (initials of `profile.name`, with the full name for screen readers), primary nav with `aria-current="page"`, `ThemeToggle`, Menu button (`aria-expanded`, `aria-controls`). Escape closes the menu and returns focus to the button; navigating also closes it. |
-| `SiteFooter` | — | "Let's talk" link to the email, else LinkedIn, else GitHub; copyright row and profile links. |
-| `ThemeToggle` | — | Square 44px button with `aria-pressed` and a label that says what it does; uses `useTheme`, which stores the choice in `localStorage.theme`. |
+| `SiteHeader` (widget) | — | Brand monogram (initials of `profile.name`, with the full name for screen readers), primary nav with `aria-current="page"`, `ThemeToggle`, Menu button (`aria-expanded`, `aria-controls`). Escape closes the menu and returns focus to the button; navigating also closes it. |
+| `SiteFooter` (widget) | — | "Let's talk" link to the email, else LinkedIn, else GitHub; copyright row and profile links. |
+| `ThemeToggle` (feature) | — | Square 44px button with `aria-pressed` and a label that says what it does; uses core `useTheme`, which stores the choice in `localStorage.theme`. |
 | `SmartLink` | `href` | Internal paths use the Inertia `<Link>`. `http(s)` links open in a new tab and add "(opens in a new tab)" for screen readers. Other links (such as `mailto:`) stay plain anchors. |
 | `BaseButton` | `href?`, `variant` (`accent`, `inverse`, `outline`), `size` (`m` 44px, `l` 56px), `block`, `type` | Renders a link (with an → or ↗ arrow) or a `<button>`. |
 | `TagList` | `tags: string[]`, `label` = "Technologies" | Outlined uppercase chips in a labelled list. |
 | `SectionHeading` | `id`, `title`, `kicker?`, `level` = 2 | Big title over a 2px rule, with an orange kicker. Point the section's `aria-labelledby` at `id`. |
 | `PageHeader` | `title`, `accent?`, `intro?`, `size` (`xl`, `2xl`), `layout` (`stack`, `split`, `grid`), `ruled`, `accentBlock` | The page's `<h1>`. `title` + `accent` are joined with no space, so "Experi" + "ence." reads as one word. |
 | `MarqueeTicker` | `items: string[]` | Orange scrolling band, hidden from assistive technology because it repeats on-page content. It has a pause button (`aria-pressed`, WCAG 2.2.2) and is static under reduced motion. |
-| `StatList` | `items: {value, label}[]`, `label` | The row of big figures. |
+| `StatList` | `items: StatItem[]` (`{value, label}`), `label` | The row of big figures. |
 | `RatingBlocks` | `value`, `max` = 5 | Five outlined blocks, full or half filled; `role="img"` with an "x out of 5" label. |
-| `TimelineEntry` | `year`, `period`, `title`, `org`, `tags`, `highlight`, `headingLevel` = 3; default slot = description | Renders an `<li>`, so use it inside an `<ol>`. |
-| `FilterGroup` | `options: {value, label, count}[]`, `v-model`, `label`, `status` | Toggle buttons with `aria-pressed` in a labelled group, and a `role="status"` polite live region. The selected filter shows a filled square as well as the orange fill. |
-| `ProjectFeature` | `item`, `index`, `category` | The featured project: an orange slab with a monogram (decorative), then the title, description, tags, and live/source buttons. |
-| `ProjectRow` | `item`, `index`, `category` | A project index row. The title links to the live site (else the source), and the link covers the whole row. A "Code" link is added when both URLs exist. |
+| `TimelineEntry` (entity work) | `year`, `period`, `title`, `org`, `tags`, `highlight`, `headingLevel` = 3; default slot = description | Renders an `<li>`, so use it inside an `<ol>`. |
+| `FilterGroup` (feature) | `options: {value, label, count}[]`, `v-model`, `label`, `status` | Toggle buttons with `aria-pressed` in a labelled group, and a `role="status"` polite live region. The selected filter shows a filled square as well as the orange fill. |
+| `ProjectFeature` (entity project) | `item: Project`, `index`, `category` | The featured project: an orange slab with a monogram (decorative, from `monogram()`), then the title, description, tags, and live/source buttons. |
+| `ProjectRow` (entity project) | `item: Project`, `index`, `category` | A project index row. The title links to the live site (else the source), and the link covers the whole row. A "Code" link is added when both URLs exist. |
+| `LanguageList` (entity language) | `languages: Language[]` | The grid of language cards: name, level (`languageLevel`: "Native", else the speaking level, plus the certificate) and `RatingBlocks`. |
+| `WorkTimeline` (widget) | `companies`, `currentRole`, `location` | The Experience "Work" section: a highlighted "Now" entry for the current role, then every position newest first; the kicker is the year span ("2011 — now"). |
+| `ProjectShowcase` (widget) | `categories: ProjectCategory[]` | The portfolio body: `FilterGroup` on core `usePortfolioFilter` (by category id), the first visible project as `ProjectFeature`, then a `ProjectRow` per visible project. The live region reads "Showing all 15 projects" or "Showing 2 projects in Projects in Java". Shows "No projects to show yet." when there are none. |
 
 ### Usage
 
@@ -185,6 +230,11 @@ All facts come from the database through the page props. Copy that has no data s
 Derived values: the home page highlights count portfolio projects, certificates, awards and languages (the `stats`
 prop). The education figure is the last year in the programme's period. An award's figure is its placing (as in
 "2nd place" → "#2") when the title names one, and its year otherwise.
+
+The featured project's monogram (`shared/lib/monogram.ts`) is Kinetic's own rule: a single camel-cased word keeps its
+last capitals ("ItalianPSQ" → "PSQ"), several words give the initials of up to three of them, skipping "and", "of",
+"the", "with" and "in" ("Interactive CV and Portfolio" → "ICP"), and anything else its first three letters. The header
+brand uses the first letter of each word of the name, at most three (`brandInitials`). Both are pinned by unit tests.
 
 ## Accessibility notes
 

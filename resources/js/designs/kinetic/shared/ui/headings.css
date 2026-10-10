@@ -1,0 +1,107 @@
+/*
+ * SectionHeading and PageHeader (they share a breakpoint block, so they stay together).
+ * Semantic tokens only.
+ */
+
+/* ---------- SectionHeading ---------- */
+.section {
+    padding-top: var(--space-section);
+}
+
+.section-heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--space-3) var(--space-6);
+    margin: 0 0 var(--space-8);
+    padding-bottom: var(--space-5);
+    border-bottom: var(--border-strong) solid var(--color-line);
+}
+
+.section-heading__title {
+    font-size: var(--text-display-l);
+    line-height: 0.95;
+}
+
+.section-heading__kicker {
+    margin: 0;
+    color: var(--color-accent-text);
+    letter-spacing: var(--tracking-kicker);
+}
+
+/* ---------- PageHeader ---------- */
+.page-header {
+    padding: var(--space-page-top) 0 var(--space-10);
+}
+
+.page-header--ruled {
+    border-bottom: var(--border-strong) solid var(--color-line);
+}
+
+.page-header__title {
+    letter-spacing: var(--tracking-giant);
+}
+
+.page-header__title--xl {
+    font-size: var(--text-display-xl);
+}
+
+.page-header__title--2xl {
+    font-size: var(--text-display-2xl);
+    line-height: 0.86;
+}
+
+.page-header__accent-block {
+    display: block;
+}
+
+.page-header__intro {
+    max-width: 40rem;
+    margin: var(--space-7) 0 0;
+    font-size: var(--text-lead);
+}
+
+.page-header--split {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--space-6);
+}
+
+.page-header--split .page-header__intro {
+    max-width: 26rem;
+    margin: 0;
+}
+
+.page-header--grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: var(--space-9);
+    align-items: end;
+}
+
+.page-header--grid .page-header__intro {
+    margin: 0;
+}
+
+@media (max-width: 45rem) {
+    .section-heading {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .page-header {
+        padding-bottom: var(--space-8);
+    }
+
+    .page-header__intro {
+        margin-top: var(--space-5);
+    }
+
+    .page-header--grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+}

@@ -1,0 +1,62 @@
+/* Toolbox: the skill categories grid. */
+
+.stack {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style: none;
+    border: var(--border-thin) solid var(--color-line);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+}
+
+.stack__item {
+    padding: var(--space-5) var(--space-6);
+    border-top: var(--border-thin) solid var(--color-line);
+    border-left: var(--border-thin) solid var(--color-line);
+}
+
+.stack__item:nth-child(-n + 3) {
+    border-top: 0;
+}
+
+.stack__item:nth-child(3n + 1) {
+    border-left: 0;
+}
+
+/* A lone last item spans the row, so the grid never ends with empty cells. */
+.stack__item:last-child:nth-child(3n + 1) {
+    grid-column: 1 / -1;
+}
+
+.stack__item:last-child:nth-child(3n + 2) {
+    grid-column: span 2;
+}
+
+.stack__item .kicker {
+    margin-bottom: var(--space-2);
+    font-size: var(--text-sm);
+    letter-spacing: var(--tracking-label);
+}
+
+@media (max-width: 43.75em) {
+    .stack {
+        grid-template-columns: 1fr;
+    }
+
+    .stack__item,
+    .stack__item:nth-child(-n + 3) {
+        border-left: 0;
+        border-top: var(--border-thin) solid var(--color-line);
+    }
+
+    .stack__item:first-child {
+        border-top: 0;
+    }
+
+    .stack__item:last-child:nth-child(n) {
+        grid-column: auto;
+    }
+}

@@ -1,0 +1,4 @@
+/* Soft skills page. */
+.page-soft-skills .card-grid {
+    gap: var(--space-5);
+}

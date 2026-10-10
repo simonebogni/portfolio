@@ -1,0 +1,6 @@
+/* Portfolio page */
+
+.empty-state {
+    margin-top: var(--space-14);
+    color: var(--color-text-muted);
+}

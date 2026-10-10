@@ -1,0 +1,17 @@
+/* Text links (.text-link). */
+
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    min-height: var(--target-min);
+    color: var(--color-accent);
+    font-weight: var(--font-weight-bold);
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: text-decoration-color var(--motion-base);
+}
+
+.text-link:hover {
+    text-decoration-color: currentColor;
+}

@@ -1,0 +1,22 @@
+/* Status chip (.status-chip). */
+
+.status-chip {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-1) var(--space-3);
+    border: var(--border-strong) solid var(--color-accent);
+    border-radius: var(--radius-chip);
+    color: var(--color-accent);
+    font-size: var(--text-label);
+    font-weight: var(--font-weight-bold);
+}
+
+.status-chip::before {
+    content: '';
+    width: var(--space-2);
+    height: var(--space-2);
+    border-radius: 50%;
+    background: currentColor;
+}

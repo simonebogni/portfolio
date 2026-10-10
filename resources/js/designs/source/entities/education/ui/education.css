@@ -1,0 +1,50 @@
+/* EducationCard (courses and grades) and OnlineProgramsCard. */
+.courses {
+    margin-top: var(--space-4);
+}
+
+.courses summary {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--target-min);
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-size: var(--text-mono-label);
+    font-weight: var(--weight-semibold);
+    cursor: pointer;
+}
+
+.courses__count {
+    margin-left: var(--space-1);
+    color: var(--color-text-muted);
+}
+
+.courses__list {
+    margin-top: var(--space-3);
+    font-size: var(--text-small);
+}
+
+.courses__list li {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding: var(--space-1-5) 0;
+    border-top: var(--border-width) solid var(--color-border);
+}
+
+.courses__score {
+    flex: none;
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: var(--text-chip);
+}
+
+.programs {
+    display: grid;
+    gap: var(--space-1-5);
+}
+
+.programs__where {
+    color: var(--color-text-muted);
+    font-size: var(--text-small);
+}

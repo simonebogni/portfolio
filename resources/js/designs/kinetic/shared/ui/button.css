@@ -1,0 +1,79 @@
+/*
+ * BaseButton.
+ * Semantic tokens only.
+ */
+
+/* ---------- BaseButton ---------- */
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    padding: 0 var(--space-7);
+    border: var(--border-strong) solid var(--color-line);
+    font-family: var(--font-body);
+    font-size: var(--text-label-l);
+    font-weight: var(--weight-extrabold);
+    letter-spacing: var(--tracking-label);
+    line-height: var(--leading-ui);
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+        transform var(--duration-fast) var(--ease-out),
+        box-shadow var(--duration-fast) var(--ease-out);
+}
+
+.button--m {
+    min-height: var(--size-target);
+    padding: 0 var(--space-5);
+    font-size: var(--text-label);
+}
+
+.button--l {
+    min-height: var(--size-target-l);
+}
+
+.button--block {
+    width: 100%;
+}
+
+.button--accent {
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+}
+
+.button--inverse {
+    background: var(--color-inverse-bg);
+    color: var(--color-inverse-text);
+}
+
+.button--outline {
+    background: var(--color-bg);
+    color: var(--color-text);
+}
+
+.button:hover {
+    transform: translate(calc(-1 * var(--space-1)), calc(-1 * var(--space-1)));
+    box-shadow: var(--shadow-press);
+}
+
+.button--accent:hover {
+    color: var(--color-on-accent);
+}
+
+.button--inverse:hover {
+    color: var(--color-inverse-text);
+}
+
+.button--outline:hover {
+    color: var(--color-text);
+}
+
+.button__arrow {
+    transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.button:hover .button__arrow {
+    transform: translateX(var(--space-1));
+}

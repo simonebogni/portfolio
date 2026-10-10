@@ -1,0 +1,12 @@
+/* EyebrowText. */
+
+.eyebrow {
+    margin: 0 0 var(--space-4);
+    color: var(--color-highlight);
+    font-family: var(--font-text);
+    font-size: var(--text-label);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-eyebrow);
+    text-transform: uppercase;
+}

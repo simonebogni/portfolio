@@ -1,0 +1,14 @@
+/* Spacing between page sections, and the empty state. */
+
+.page-section + .page-section,
+.page-about__stats + .page-section {
+    margin-top: var(--section-gap);
+}
+
+.page-section--tight + .page-section--tight {
+    margin-top: var(--space-18);
+}
+
+.empty-state {
+    color: var(--color-text-muted);
+}

@@ -1,0 +1,15 @@
+/*
+ * App layout: the page shell around the header, main content and footer.
+ * Breakpoints: navigation collapses below 56rem (896px); content stacks below 45rem (720px).
+ * Semantic tokens only.
+ */
+
+.site {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.site > main {
+    flex: 1;
+}

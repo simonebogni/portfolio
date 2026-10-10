@@ -1,0 +1,76 @@
+/* Working model: the steps from idea to release. */
+
+.flow {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style: none;
+    border: var(--border-thin) solid var(--color-line);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+}
+
+.flow__step {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-7) var(--space-6);
+    border-left: var(--border-thin) solid var(--color-line);
+}
+
+.flow__step:first-child {
+    border-left: 0;
+}
+
+.flow__number {
+    margin-bottom: var(--space-2);
+    color: var(--color-accent);
+    font: var(--weight-medium) var(--text-sm) / 1 var(--font-mono);
+}
+
+.flow__title {
+    font-size: var(--text-h3);
+}
+
+.flow__step p {
+    color: var(--color-text-muted);
+    font-size: var(--text-base);
+}
+
+.flow__step .chips {
+    margin-top: auto;
+    padding-top: var(--space-2);
+}
+
+@media (max-width: 64em) {
+    .flow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .flow__step:nth-child(odd) {
+        border-left: 0;
+    }
+
+    .flow__step:nth-child(n + 3) {
+        border-top: var(--border-thin) solid var(--color-line);
+    }
+}
+
+@media (max-width: 43.75em) {
+    .flow {
+        grid-template-columns: 1fr;
+    }
+
+    .flow__step,
+    .flow__step:nth-child(n) {
+        border-left: 0;
+        border-top: var(--border-thin) solid var(--color-line);
+        padding: var(--space-5);
+    }
+
+    .flow__step:first-child {
+        border-top: 0;
+    }
+}
