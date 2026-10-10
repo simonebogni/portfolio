@@ -95,6 +95,8 @@ export default tseslint.config(
         rules: {
             // Prettier-like formatting is not enforced; the templates follow their own readable layout.
             'vue/max-attributes-per-line': 'off',
+            // Templates are indented with 4 spaces, like the rest of the code (.editorconfig).
+            'vue/html-indent': ['warn', 4],
             'vue/singleline-html-element-content-newline': 'off',
             'vue/html-self-closing': ['warn', { html: { void: 'always', normal: 'never', component: 'always' } }],
             // Design components are namespaced by their folder (e.g. shared/ui/Icon.vue).
