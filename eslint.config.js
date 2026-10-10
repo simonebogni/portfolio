@@ -23,9 +23,8 @@ import tseslint from 'typescript-eslint';
  * TODO(fsd): empty this list, then delete it.
  */
 const LEGACY = [
-    ...['source', 'bento', 'terrain', 'kinetic', 'blueprint'].flatMap((design) =>
-        ['components', 'composables', 'lib', 'layouts', 'pages'].map((folder) => `resources/js/designs/${design}/${folder}/**`),
-    ),
+    'resources/js/designs/*/{components,composables,lib,layouts}/**',
+    'resources/js/designs/*/pages/*.vue',
 ];
 
 const LAYERS = ['shared', 'entities', 'features', 'widgets', 'pages', 'app'];

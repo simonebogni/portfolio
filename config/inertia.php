@@ -75,8 +75,12 @@ return [
 
         'ensure_pages_exist' => false,
 
-        // Every design has its own pages folder (resources/js/designs/<design>/pages).
-        'paths' => glob(resource_path('js/designs/*/pages'), GLOB_ONLYDIR) ?: [],
+        // Every design has its own pages: resources/js/designs/<design>/pages/<slice>/ui/<Page>.vue
+        // (Feature-Sliced Design), or pages/<Page>.vue for a design not migrated yet.
+        'paths' => [
+            ...glob(resource_path('js/designs/*/pages/*/ui'), GLOB_ONLYDIR) ?: [],
+            ...glob(resource_path('js/designs/*/pages'), GLOB_ONLYDIR) ?: [],
+        ],
 
         'extensions' => [
 
